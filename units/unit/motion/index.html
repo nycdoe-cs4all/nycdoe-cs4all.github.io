@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Unit 4. Motion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/unit/motion">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <h4>
+	<a href="/teaching/nyc_doe_v7">Unit 4. Motion</a>
+	
+	<a style="float:right;"  href="/teaching/nyc_doe_v7/units/unit/functions" class="next-link"> next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/unit/media" class="previous-link"> previous |&nbsp;</a>
+	
+</h4>
+
+
+<div class="row">
+	<div class="span12">
+	
+	</div>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Big Ideas</p>
+		</div>	
+		<div class="span6"> 
+			<ul> <li>Apply math and computation expressively by creating motion graphics</li> </ul> 
+			
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Enduring Understandings</p>
+		</div>	
+		<div class="span6"> 
+			 <ul> <li>Understand the basics of programming motion graphics</li> <li>Understand how to apply randomness and trigonometry to motion</li> </ul> 
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Unit Overview</p>
+		</div>	
+		<div class="span6"> 
+			<p>This unit covers the creation of motion, from linear to random to circular.</p><p>For their final project, students make a drawing move in different directions in response to user input. In levels 2 and 3, they apply oscillating and spiral motion to a drawing, and animate not only position but also color and shape.</p>
+		</div>	
+	</div>
+
+
+<!--  -->
+
+
+
+
+	<div class="mainrow row">
+			<div class="span3"> 	
+				<p>Goals</p>
+			</div>
+			<div class="span9" style="margin-top:10px">
+				
+					<div class="row">
+						<div class="span3">
+								Animation basics
+						</div >
+						<div class="span6">
+							Understand the basics of programmatic animation	
+						</div >
+					</div>
+				
+					<div class="row">
+						<div class="span3">
+								Random motion
+						</div >
+						<div class="span6">
+							Understand how to apply randomness to motion	
+						</div >
+					</div>
+				
+					<div class="row">
+						<div class="span3">
+								Cyclic motion
+						</div >
+						<div class="span6">
+							Understand how to apply trigonometry to create fluid, cyclic motion	
+						</div >
+					</div>
+				
+			</div>
+	</div>
+
+
+<div class="row">
+	<div class="span3"> 	
+		<p>Learning Activities</p>
+	</div>	
+	<div class="span9" style="margin-top:10px">
+		
+		
+		
+			
+		
+			
+		
+			
+		
+			
+			<div class="row">
+				<div class="span3">
+						<a href=/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-01>1 . Make a flip book </a>
+				</div >
+				
+				<div class="span5">
+					Move a shape on paper, then on p5. Move faster and slower.
+				</div >
+				<div class="span1">
+					
+				</div >
+			</div>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+			<div class="row">
+				<div class="span3">
+						<a href=/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-02>2 . Move in all directions </a>
+				</div >
+				
+				<div class="span5">
+					Move to the right, left, up, down, diagonally; move at random
+				</div >
+				<div class="span1">
+					
+				</div >
+			</div>
+			
+		
+			
+			<div class="row">
+				<div class="span3">
+						<a href=/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-03>3 . Move in cycles </a>
+				</div >
+				
+				<div class="span5">
+					Oscillate up and down, move in circles, move in spirals.
+				</div >
+				<div class="span1">
+					
+				</div >
+			</div>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		
+	</div>
+</div>	
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Final Project Prompt</p>
+		</div>	
+		<div class="span6"> 
+			<p>Starting from a drawing of a character made with p5, make it move in lines, circles, or spirals, expressing a certain move. Consider animating not only position, but also color and shape.</p>
+		</div>	
+	</div>
+
+
+<div class=" row">
+		<div class="span3"> 	
+			
+		</div>
+		
+			<div class="span3"> 	
+				<p>
+					<b>Level 1</b>
+					<br/>
+					Explore moving faster, slower, in different directions, at random	
+				</p>
+			</div>
+		
+			<div class="span3"> 	
+				<p>
+					<b>Level 2</b>
+					<br/>
+					Apply oscillating or circular motion, and animate a shape	
+				</p>
+			</div>
+		
+			<div class="span3"> 	
+				<p>
+					<b>Level 3</b>
+					<br/>
+					Apply spiral motion, animate a shape, and animate color	
+				</p>
+			</div>
+		
+</div>
+
+<!-- <div class="row">
+    	<div class="span3">
+    		<p>Final Project Examples</p>
+    	</div>
+    	<div class="span3">
+    		<p>
+    			<a href="/teaching/nyc_doe_v7/code/unit_4/final_project_1/level_1">
+    				<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_1_level_1.png" style="object-fit: cover;"></img>
+    			</a>
+    		</p>
+    	</div>
+    	<div class="span3">
+    		<p>
+    			<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_1_level_2.png" style="object-fit: cover;"></img>
+    		</p>
+    	</div>
+    	<div class="span3">
+    		<p>
+    			<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_1_level_3.png" style="object-fit: cover;"></img>
+    		</p>
+    	</div>
+</div> -->
+
+
+
+
+<div class=" row">
+	<div class="span3">Final Project Examples</div>
+	
+		
+	
+		
+	
+		
+	
+		
+			<div class="span3"> 
+				<p> 
+					<a href="/teaching/nyc_doe_v7/units/final_project_example/final-project-example-04-01">
+						<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_1_level_1.png" style="object-fit: cover;"></img>
+					</a>
+				</p>
+				<p>
+					Level 1 <br/>
+					<a href="/teaching/nyc_doe_v7/units/final_project_example/final-project-example-04-01">Example Project</a><br/>
+				
+				
+					
+				
+					
+				
+					
+				
+					
+						
+						<a href="/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-04-01-level-1">Step by Step Guide</a>
+					
+				
+					
+				
+					
+				
+					
+				
+				</p>
+			</div>
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			<div class="span3"> 
+				<p> 
+					<a href="/teaching/nyc_doe_v7/units/final_project_example/final-project-example-04-02">
+						<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_1_level_2.png" style="object-fit: cover;"></img>
+					</a>
+				</p>
+				<p>
+					Level 2 <br/>
+					<a href="/teaching/nyc_doe_v7/units/final_project_example/final-project-example-04-02">Example Project</a><br/>
+				
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</p>
+			</div>
+		
+	
+		
+	
+		
+	
+		
+			<div class="span3"> 
+				<p> 
+					<a href="/teaching/nyc_doe_v7/units/final_project_example/final-project-example-04-03">
+						<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_1_level_3.png" style="object-fit: cover;"></img>
+					</a>
+				</p>
+				<p>
+					Level 3 <br/>
+					<a href="/teaching/nyc_doe_v7/units/final_project_example/final-project-example-04-03">Example Project</a><br/>
+				
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</p>
+			</div>
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+</div>
+
+		<div class="mainrow row">
+		    	<div class="span3">
+		    		<p>Final Project Inspiration</p>
+		    	</div>
+		</div>
+		
+		  
+		  
+		    <div class="mainrow row">
+		    	<div class="span3">
+		    	</div>
+		  
+
+		  <div class="span3"> 	
+		  		<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day70/" target='_blank' >
+				<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_inspiration_1.png" width="100%" ></img>
+				</a>
+				<div class="info" >
+					<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day70/" target='_blank' >Divers</a>
+				</div>
+			</div>
+
+		  
+		
+		  
+		  
+
+		  <div class="span3"> 	
+		  		<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day71/" target='_blank' >
+				<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_inspiration_2.png" width="100%" ></img>
+				</a>
+				<div class="info" >
+					<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day71/" target='_blank' >Swimmers</a>
+				</div>
+			</div>
+
+		  
+		
+		  
+		  
+
+		  <div class="span3"> 	
+		  		<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day8/" target='_blank' >
+				<img src="/teaching/nyc_doe_v7/images/unit_4_final_project_inspiration_3.png" width="100%" ></img>
+				</a>
+				<div class="info" >
+					<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day8/" target='_blank' >Rain</a>
+				</div>
+			</div>
+
+		  	
+		    </div> 
+		  
+		
+	
+		</div>
+	</div>
+</div>
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	// var folder = '../../../examples/1/';
+	var folder = "";
+	console.log( folder );
+    $(document).ready(function() {
+    	
+        $('#editor').load(folder + 'sketch.js', function(){
+        	$('#canvas_iframe').attr("src", folder + "index.html");
+        	
+        	editor = ace.edit("editor");
+        	var editor_div = document.getElementById('editor');
+
+        	editor.setTheme("ace/theme/monokai");
+		    editor.getSession().setMode("ace/mode/javascript");
+		    editor.setOption("maxLines", 1000);
+
+		    editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+
+		    editor.resize();
+		    ace.config.set("basePath", "/Scripts/Ace");
+
+		    
+
+
+        });
+    });
+</script>
+	
+
+<!-- 
+
+    Old inspirations: 
+    - { title: '', 
+        url: 'http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day86/',
+        image: '/images/placeholder.jpg' 
+    }
+
+ took out from big ideas (because we decided not to include timers:)
+ <li>Programming behaviors that evolve over time</li>
+ took out from enduring understandings: 
+ <li>Understand how to sequence events</li>
+ and from overview: 
+ Students also learn to create tweens ––automatically moving from a start point to an end point––, and timers, allowing them to program certain behaviors to happen at certain times.
+
+ And, from goals: 
+ - {
+    title: 'Timed events',
+    description: 'Understand how to program timed events'
+}
+
+
+TO_DO_MORE_INSPIRATION:<br/>
+Processing Handbook for Visual Designers: Synthesis 3: Motion and Arrays </br>
+Patterns: http://printingcode.runemadsen.com/examples/repetition/pattern_cube/index.html -->
+<!-- 
+	final_project_prompt:'asdf'
+general_description:""
+final_project_inspiration:"asdf"
+final_project_prompt:"asdf"
+
+enduring_understandings
+finished_basic
+finished_intermediate
+finished_advanced
+goals
+learning_activities -->
+
+
+<!-- 
+
+- { title: '', 
+        url: 'http://www.generative-gestaltung.de/P_2_1_3_01',
+        author: 'Generative Design book',
+        source: '',
+        image: '/images/placeholder.jpg' 
+    } -->
+
+
+
+
+
+
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

@@ -1,0 +1,122 @@
+var emoji = [];
+
+function setup() {
+  createCanvas(600, 240);
+  background(0);
+  
+  //Create 25 emoji objects
+  for(var i = 0; i < 25; i++){
+    
+    //pick a random emoji type
+    if ( int(random(0, 2)) == 0) {
+      emoji[i] = new HappySad(random(width), random(height), random(10, 50));
+    }
+    else {
+      emoji[i] = new Winky(random(width), random(height), random(10, 50));
+    }
+    
+  }
+  
+}
+
+function draw() {
+  background(0);
+  for(var i = 0; i < emoji.length; i++){
+    emoji[i].move();
+    emoji[i].display();
+  }
+  
+}
+
+//Emoji Constructor
+var Emoji = function (tempX, tempY, tempSize) {
+  this.x = tempX;//300
+  this.y = tempY;//200
+  this.size = tempSize;
+  this.speed = 2.5;
+  this.emoji = emoji;
+};
+
+Emoji.prototype.move = function() {
+  this.x += random(-this.speed, this.speed);
+  this.y += random(-this.speed, this.speed);
+};
+
+Emoji.prototype.display = function() {
+    //the default emoji
+    fill(255);
+    ellipse(this.x, this.y, this.size, this.size);
+    
+};
+///////////////////
+
+//HappySad class constructor (inherits from Emoji)
+var HappySad = function(tempX, tempY, tempSize){
+  Emoji.call(this, tempX, tempY, tempSize);
+};
+
+// Inherit from the parent class
+HappySad.prototype = Object.create(Emoji.prototype);
+HappySad.prototype.constructor = Emoji;
+
+// Override the display method
+HappySad.prototype.display = function() {
+    //face
+    fill(255);
+    ellipse(this.x, this.y, 100, 100);
+    
+    //eye 1
+    fill(0);
+    ellipse(this.x, this.y + 10, 10, 10);
+    
+    //eye 2
+    ellipse(this.x + 20, this.y + 10, 10, 10); 
+    //blink: line(310, 210, 320, 210);
+    
+    //mouth
+    if(this.happy){
+      //happy
+      arc(this.x, this.y + 25, 30, 30, 0, radians(180), PIE);  
+    }
+    else{
+      //sad
+      arc(this.x, this.y + 35, 30, 30, radians(180), 0, PIE);  
+    }
+};
+///////////////////
+
+//Winky class constructor (inherits from Emoji)
+var Winky = function(tempX, tempY, tempSize){
+  Emoji.call(this, tempX, tempY, tempSize);
+};
+
+// Inherit from the parent class
+Winky.prototype = Object.create(Emoji.prototype);
+Winky.prototype.constructor = Emoji;
+
+// Override the display method
+Winky.prototype.display = function(){
+    //face
+    fill(255);
+    ellipse(this.x, this.y, 100, 100);
+    
+    //eye 1
+    fill(0);
+    ellipse(this.x, this.y + 10, 10, 10);
+    
+    //eye 2
+    if(this.blinking){
+      //closed
+      line(this.x + 10, this.y + 10, this.x + 20, this.y + 10);
+    }
+    else{
+      //open
+      ellipse(this.x + 20, this.y + 10, 10, 10); 
+    }
+    
+    
+    
+    //mouth
+    arc(this.x, this.y + 25, 30, 30, 0, radians(180), PIE);  
+};
+///////////////////

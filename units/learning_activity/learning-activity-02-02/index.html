@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Hover and click on things</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/learning_activity/learning-activity-02-02">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<h4>
+	<a href="/teaching/nyc_doe_v7/units/unit/response-transformations">Unit 2</a>. Learning Activity 2 . Hover and click on things
+	
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- PREV NEXT LINKS COMMENTED OUT FOR NOW -->
+	<!-- <a style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-02-03" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-02-01" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Description</p>
+		</div>	
+		<div class="span6"> 
+			<p>This learning activity introduces if statements and boolean expressions, both simple and compound. They are applied to locating the mouse on the screen, and creating rectangular and circular buttons that the user can hover and click on.</p>
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Video tutorial: <a href="https://www.youtube.com/watch?v=1Osb_iGDdjk&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=10">3.1: Introduction to Conditional Statements</a> | <a href="https://github.com/CodingTrain/Rainbow-Code/tree/master/p5.js/3.1_p5.js_Introduction_to_Conditional_Statements"> Code </a> </li> <li>Learning Processing: Chapter 5. Conditionals</li> <li>Getting Started With p5.js: Chapter 5. Response (Sections: Follow, Location)<!-- , examples 5.10 to 5.15; For Touch, see 5.20 and 5.21 --></li> </ul>
+		</div>	
+	</div>
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+
+        <h5>1. Is the mouse on the left or the right side of the screen? </h5>
+        <p>This example does the following: </p>
+        <p>
+            if the mouse is on the right side of the screen,
+            </br>&nbsp;&nbsp;&nbsp;&nbsp;make the fill gray
+            </br>otherwise
+            </br>&nbsp;&nbsp;&nbsp;&nbsp;make the fill black
+        </p>
+
+        <p>We achieve this behavior using an <i>if statement</i> ––see how the code starting on line 18 ressembles our <i>pseudocode</i> above:
+            <!-- TODO: more info -->
+            
+        </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+
+        <h5>2) Is the mouse over a circle?</h5>
+        <p>To determine whether the mouse is over a circle, we calculate the distance between its position and the center of the circle using p5's <code>dist</code> function. If the distance is less than the radius of the circle, it means that the mouse is over it.</p>
+         <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+
+        <h5>3) Is it over a rectangle? </h5>
+        <p>Determining whether the mouse is over a rectangle requires a more complex <i>boolean expression</i> (see lines 13 and 14):<!-- TODO: link to more info on boolean expressions --> <!-- TODO: add drawing --> </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+        <p>What you see in lines 13 and 14 is a <i>compound boolean expression</i>.  <code>(mouseX > x)</code>, <code>(mouseX < x+w)</code>, <code>(mouseY > y)</code> and <code>(mouseY < y+h)</code> are individual boolean expressions: they evaluate to either true or false. </p><p>Here they are joined together by the <i>logical operator</i> AND (<code>&&</code>). AND evaluates to true only the expressions on its left and right are both true. Boolean expressions can also be combined using the OR (<code>||</code>) and NOT (<code>!</code>) logical operators. For more in-depth explanations please see Daniel Shiffman's video tutorials <a href="https://www.youtube.com/watch?v=r2S7j54I68c&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=12">here</a> and <a href="https://www.youtube.com/watch?v=Rk-_syQluvc">here</a>.</p>
+
+        <h5>4) Click </h5>
+        <p>When a user clicks the mouse, the computer's operating system notifies the browser, which notifies p5, which then breaks its normal draw loop flow to call our <code>mousePressed</code> function, if we have defined it. Any code we write within this function will be executed whenever a click event happens. This kind of function is known as an <i>event handler</i>: they allow us to respond to events when they happen. <!-- TODO: more info on event handlers here --></p>
+        <p>Let's add a <code>mousePressed</code> function to this mouse-following program so that the color of the circle changes to a random color whenever we click: </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+
+        <h5>5) Click on a rectangle </h5>
+        <p>Combining the code from the previous two sketches we can create a button: in the following example we check whether the mouse is over the rectangle before we re-set our R, G, B variables in our mousePressed function.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+
+        <h5>6) A circular button </h5>
+        <p>In this last example we make three changes: 
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;1. Draw a continous line by using <code>pmouseX</code> and <code>pmouseY</code>
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;2. Make our button circular and use the <code>dist</code> function to check whether the mouse is over it (if the distance between the mouse and the center of the circle is smaller than its radius, then it is), and
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;3. Add hovering functionality to our button by making its fill black if the mouse is over it.
+        </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_6"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_6" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+
+
+
+        
+     
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/la_2/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Moving smiley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-04-01-level-1">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <h4>Step by Step Guide: Moving smiley, Level 1 
+	
+<!-- Unit 4. Final Project Example  -->
+	<!-- NAVIGATION -->
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- 
+	<a style="float:right;"  href="/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-05-01-level-1" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-03-01-level-1" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+<!-- <div class="mainrow row">
+    <div class="span2">     
+        <p><b>Prompt</b></p>
+    </div>  
+    <div class="span6"> 
+        
+        
+            
+        
+            
+        
+            
+        
+            
+                <p>Starting from a drawing of a character made with p5, make it move in lines, circles, or spirals, expressing a certain move. Consider animating not only position, but also color and shape.</p>
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>       
+</div> -->
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<!-- <p><b>Example Project</b></p> -->
+	</div>	
+	<div class="span6"> 
+		<p>To see the complete code and running sketch click <a target="_blank" href="../../../units/final_project_example/final-project-example-04-01/"> here</a>.</p>
+		<p></p>
+	</div>		 
+</div>
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<p><b>Description</b></p>
+	</div>	
+
+	<div class="span6"> 
+        <p>In LA 1 we had a ball move up, down, left and right. In this final project, we apply this motion to our existing happy face drawing, and then add interactivity: by pressing different keys, the user can control the direction in which the smiley moves. 
+            <!-- Pressing the right, left, up and down arrow keys changes the values of xSpeed and ySpeed so that the ball moves in the direction of the key that was last pressed. Click on the sketch below and try pressing the arrow keys (if you don't see the circle, it is probably off the canvas: try refreshing the page). -->
+
+        </p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+            <ol start="1">
+                <li>Draw a moving ellipse</li>
+                <li>Control the direction with the keyboard</li>
+                <li>Replace the ellipse with our smiley face</li>
+            </ol>
+    </div>
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>Creating linear motion (<a href="../../../units/learning_activity/learning-activity-04-01/">LA 4.1</a> and <a href="../../../units/learning_activity/learning-activity-04-02/">LA 4.2</a>)</li>
+            <li>Responding to key presses (<a href="../../../units/learning_activity/learning-activity-02-03/">LA 2.3</a>; also see <a href="../../../units/learning_activity/learning-activity-03-04/">LA 3.4</a>, step 2: "Play four different sounds")</li>
+        </ul>
+    </p>
+    </div>       
+</div>
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Draw a moving ellipse</h5>
+        <p>Let's start from the code from <a href="../../../units/learning_activity/learning-activity-04-02/">LA 4.2</a> , at the end of step 2. We had an ellipse that could move in both the x and y axes, depending on the values of the <code>speedX</code> and <code>speedY</code> variables. Try it on the p5 editor: 
+        <pre><code>var x = 0;
+    var y = 60; 
+    var speedX = 1;
+    var speedY = 0;
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(0);
+  x = x + speedX;
+  y = y + speedY; 
+  ellipse(x, y, 20, 20);
+}
+</code></pre>
+
+<h5>2) Control the direction with the keyboard</h5>
+<p>Now, just like we did in <a href="../../../units/learning_activity/learning-activity-02-03/">LA 3.4</a> to trigger sounds, <!-- and similar to LA 2.3 to draw letters, --> let's add a keyPressed function. Depending on the key the user presses, we should change the values of <code>speedX</code> and <code>speedY</code>.
+<ul>
+        <li>If the user presses 'J', the smiley should move to the left (<code>speedX = -1</code>)</li>
+        <li>If the user presses 'L', the smiley should move to the right (<code>speedX = 1</code>)</li>
+        <li>If the user presses 'I', the smiley should move upward (<code>speedY = -1</code>)</li>
+        <li>If the user presses 'K', the smiley should move downward (<code>speedY = 1</code>)</li>
+    </ul>
+<p>Add the function below to the code from the previous step. And it should just work! We don't need to change anything in our draw loop. This is because keyPressed updates the same variables that our existing draw loop is using. What happens is the user presses a key, keyPressed is called and updates speedX and speedY accordingly, and the next time the draw function runs, it accesses these updated speeds.</p>
+<p><pre><code>function keyPressed() {
+  if (key === 'J') { //move left
+    speedX = -1;
+    speedY = 0;
+  } 
+  else if (key === 'L') { //move right
+    speedX = 1;
+    speedY = 0;
+  }
+  else if (key === 'I') { //move up
+    speedX = 0;
+    speedY = -1;
+  }
+  else if (key === 'K') { //move down
+    speedX = 0;
+    speedY = 1;
+  }
+}</code></pre></p>
+<p>Notice that when the smiley is moving right or left, it shouldn't move vertically, so we also set <code>speedY</code> to 0. If the smiley is moving up or down, we should set <code>speedX</code> to 0. What would happen if we skip this step?</p>
+
+<h5>3) Replace the ellipse with our smiley face</h5>
+<p>Finally, we need to replace the ellipse with our smiley face. Here is the code we had from <a href="../../../units/learning_activity/learning-activity-04-01/">LA 4.1</a>:</p> 
+
+    <pre><code>//Face
+    fill(249,205,173);//rosy beige
+    ellipse(x, y, 100, 100);
+
+    //Eye 1
+    fill(30);//dark gray
+    ellipse(x, y+10, 10, 10);
+
+    //Eye 2
+    ellipse(x+15, y+10, 10, 10);
+
+    //Mouth
+    fill(252,157,154);//light pink
+    arc(x, y+25, 30, 30, 0, radians(180), PIE);   </code></pre>
+
+  <p>Since in that sketch we were also using variables called <code>x</code> and <code>y</code> for positioning the smiley face, we can just paste this code where this line was in step 1: <code>ellipse(x, y, 20, 20);</code>. Try it! Now you can tweak the colors, stroke weight, and so on.</p>
+  <p>Can you make the smiley stop when it reaches the edges of the screen? (tip: take a look at the 
+    if statement in LA 1 step 1 as a reference)</p>
+    <p>Can you replace the smiley face with a drawing you made in Unit 1?</p>
+
+
+        
+	</div>		 
+</div>
+
+
+<!-- OLD 
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+            <ol start="1">
+                <li>Create an animation</li>
+                <li>Play the animation only when a key has been pressed</li>
+                <li>Stop the animation once it is done</li>
+                <li>Add a sound</li>
+            </ol>
+    </div>
+</div>
+
+        
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Create an animation</h5>
+        <p>Let's start with an animation similar to the one from <a href="../../../units/learning_activity/learning-activity-04-04/">LA 4.4</a>, step 3: 
+
+        <pre><code>var angle = 0;
+var offset = 200;
+var scalar = 30;
+var speed = 0.05;
+
+function setup() {
+    createCanvas(800, 600);
+    rectMode(CENTER);
+}
+
+function draw() {
+    background(255, 255, 0);
+    var x = offset + cos(angle) * scalar;
+    var y = offset + sin(angle) * scalar;
+    fill(0, 255, 255);
+    ellipse(x, y, 40, 40);
+    angle += speed;
+}
+</code></pre>
+        </p>
+        <h5>2) Play the animation only when a key has been pressed</h5>
+        <p>Our goal is to have a black background by default, and only see the yellow and blue animation when the user presses a key. One way to do it is to create a variable ––let's call it <code>playing</code>. <code>playing</code> is initially set to <code>false</code>. When the user presses a key, we set it to <code>true</code>. Then, in our <code>draw</code> function, we only draw and move our ellipse if <code>playing</code> is set to <code>true</code>.
+            <pre><code><strong style="color: #f60861;">var playing = false;</strong>
+
+var angle = 0;
+var offset = 200;
+var scalar = 30;
+var speed = 0.05;
+
+function setup() {
+    createCanvas(800, 600);
+    rectMode(CENTER);
+}
+
+function draw() {
+    <strong style="color: #f60861;">background(0);
+    if(playing == true){</strong>
+        background(255, 255, 0);
+        var x = offset + cos(angle) * scalar;
+        var y = offset + sin(angle) * scalar;
+        fill(0, 255, 255);
+        ellipse(x, y, 40, 40);
+        angle += speed;
+    <strong style="color: #f60861;">}</strong>
+}
+<strong style="color: #f60861;">
+function keyPressed(){
+    playing = true;
+    angle = 0;
+}</strong>
+</code></pre>
+Notice that, in <code>keyPressed</code>, we also set the angle back to 0. This is so that if the user presses the key again, the ellipse re-starts its motion. 
+        </p>
+        <h5>3) Stop the animation once it is done</h5>
+        <p>Right now, once the user presses a key once, the animation goes on forever. If we want this sketch to feel like an instrument to the user, the animation should stop eventually ––like a string on a guitar stops vibrating a while after it has been plucked.
+        </p>
+        <p>The first thing we need to define is when to consider the animation has finished. For example, let's say it is done once the ellipse has travelled a quarter of a circle (or PI/2 ––see LA X.X). Once it has, we simply set <code>playing</code> back to false. Try it:
+
+        <pre><code>var playing = false;
+
+var angle = 0;
+var offset = 200;
+var scalar = 30;
+var speed = 0.05;
+
+function setup() {
+    createCanvas(800, 600);
+    rectMode(CENTER);
+}
+
+function draw() {
+    background(0);
+    if(playing == true){
+        background(255, 255, 0);
+        var x = offset + cos(angle) * scalar;
+        var y = offset + sin(angle) * scalar;
+        fill(0, 255, 255);
+        ellipse(x, y, 40, 40);
+        angle += speed;
+
+        <strong style="color: #f60861;">if(angle > HALF_PI){
+            playing = false;
+        }</strong>
+    }
+}
+
+function keyPressed(){
+    playing = true;
+    angle = 0;
+}
+</code></pre>  
+        </p>
+        
+        
+    </div>
+</div>   -->
+
+
+
+
+<!-- <div class="mainrow row">
+	<div class="span2"> 	
+		<p></p>
+	</div>	
+	
+	<div class="span6"> 
+		
+			
+				<p><b>Level 1</b></p> 
+				<iframe id="canvas_iframe_1"  src="" width="600px" height="600px"></iframe>
+				<div class = "editor" id="editor_1" ></div>
+			
+				<p><b>Level 2</b></p> 
+				<iframe id="canvas_iframe_2"  src="" width="600px" height="600px"></iframe>
+				<div class = "editor" id="editor_2" ></div>
+			
+				<p><b>Level 3</b></p> 
+				<iframe id="canvas_iframe_3"  src="" width="600px" height="600px"></iframe>
+				<div class = "editor" id="editor_3" ></div>
+			
+		
+	</div>	 
+</div> -->
+
+
+
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_4/final_project_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'level_' + i;
+    		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    		var code =  path + '/sketch.js'
+    		
+    		$("#" + this.id).load(code, function(){
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

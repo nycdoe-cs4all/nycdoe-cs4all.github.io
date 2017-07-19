@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Random Meme Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-03-01-level-1">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <h4>Step by Step Guide: Random Meme Generator, Level 1 
+	
+<!-- Unit 3. Final Project Example  -->
+	<!-- NAVIGATION -->
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- 
+	<a style="float:right;"  href="/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-04-01-level-1" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/final_project_example_guide/final-project-example-02-01-level-1" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+<!-- <div class="mainrow row">
+    <div class="span2">     
+        <p><b>Prompt</b></p>
+    </div>  
+    <div class="span6"> 
+        
+        
+            
+        
+            
+        
+            
+                <p>Create a random meme generator: pick a collection of images and a collection of phrases. Each time you run your sketch, it should select one random image and one random text, creating a (potential) meme. What font are you using? What is your source for your images and text? </p>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>       
+</div> -->
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<!-- <p><b>Example Project</b></p> -->
+	</div>	
+	<div class="span6"> 
+		<p>To see the complete code and running sketch click <a target="_blank" href="../../../units/final_project_example/final-project-example-03-01/"> here</a>.</p>
+		<p></p>
+	</div>		 
+</div>
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<p><b>Description</b></p>
+	</div>	
+
+	<div class="span6"> 
+        <p><!-- In this final project example, we will create a random meme generator. (see <a href="../../../units/unit/media/">this unit</a>'s Project Inspiration links)--> 
+            First, let's take a look at some memes. Memes often combine an image that people are familiar with with captions written in a bold font, sometimes in bright colors.</p>
+
+    </div>
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b></b></p>
+    </div>
+    <div class="span3">     
+        <p> 
+            
+            <img src="../../../images/fp/3_1/meme_examples/1.png"style="object-fit: cover;"></img>
+            <br/>
+            <img src="../../../images/fp/3_1/meme_examples/3.jpg"style="object-fit: cover;"></img>
+            
+        </p>
+    </div>
+    <div class="span3">     
+        <p> 
+            <a href="">
+                <img src="../../../images/fp/3_1/meme_examples/2.jpg"style="object-fit: cover;"></img>
+            </a>
+        </p>
+    </div>
+    
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p></p>
+    </div>  
+
+    <div class="span6"> 
+        <p>In this example project we will write a program that selects an image, a caption, and a font and combines them to create a (potential) meme. Because the program will pick these elements at random, the results might be surprising.</p>
+        <p><img src="../../../images/fp/3_1/0_diagram.jpg"style="object-fit: cover;"></img></p>
+        <p>Each time the program runs, a new meme will be created ––
+        can you choose a set of images and captions so that your sketch generates good memes?</p> 
+	</div>		 
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>Creating an array and accessing its items (<a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a>, section 5)</li>
+            <li>Using the <code>random()</code> function (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>)</li>
+            <li>Loading and displaying images ( <a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a> ) and fonts ( 
+            <a href="../../../units/learning_activity/learning-activity-03-03/">LA 3.3</a>
+                )</li>
+            <!-- <li>For Level 3: loading and playing sound (<a href="../../../units/learning_activity/learning-activity-03-04/">LA 3.4</a>)</li> -->
+        </ul>
+    </p>
+    </div>       
+</div>
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+            
+            Before coding:
+                <ol><li>Gather a collection of images we like</li>
+                    <li>Write some captions that might work for the images</li>
+                    <li>Pick a handful of meme-like fonts for our text</li>
+                </ol>
+        
+                In our code:
+                <ol start="4">
+                    <li >Store image file paths in an array. Select a random image. Draw it.</li>
+                    <li>Store font names and captions in arrays. Pick a random font, and a random caption. Draw the caption using the selected font</li>
+                </ol>
+                <!-- <ul>
+                    <li>Store image file paths, font names, and caption texts into arrays</li>
+                    <li>Select a random image, a random font, a random text</li>
+                    <li>Draw the image, and then the text over it, using the selected font</li>
+                </ul> -->
+    </div>
+</div>
+
+        
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Gather images</h5>
+        <p>Pick or create four or five images: find them online, or take your own photos. What kind of images will you include? Will they all be cats? Perhaps every image comes from the same movie? Or perhaps they are all already popular meme backgrounds? </p><p>Once you have your images, put them all in your sketch folder, inside a folder called <code>images</code> (or any name you prefer). For step by step instructions see <a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a>. </p>
+        <img width="29%" src="../../../images/fp/3_1/0_upload.png"/>
+        <img width="70%"  src="../../../images/fp/3_1/0_sketch_folder.jpg"/>
+        <h5>2) Write caption texts</h5>
+         <p>Write down five or six captions that you think would work well with the images you chose. You will write these into your code later.</p>
+         <img width="60%" src="../../../images/fp/3_1/0_texts.JPG"/>
+        <h5>3) Choose a few fonts</h5>
+        <p>Go to <a href="www.google.com/fonts">Google Fonts</a> or to the <a href="https://fontlibrary.org/">Open Font library</a> and pick four or five favorites. Include them in your <code>index.html</code> file (for step-by-step instructions, you can review <a href="../../../units/learning_activity/learning-activity-03-03/">LA 3.3</a>)</p>
+        <img src="../../../images/fp/3_1/3_font_links_in_index.jpg"/>
+        <p>Next, write your code. Here is one way to do it:</p>
+        <h5>4) Select an image at random and draw it</h5>
+            <p>First, we create an array variable that holds the names of our image files. <!-- (line 2) --></p>
+            <img width="60%" src="../../../images/fp/3_1/4_images_folder.JPG"/>
+            <img width="100%" src="../../../images/fp/3_1/4_images_array.JPG"/>
+            <p>Next we pick a random position in the images array, and load that file into a variable called <code>chosenImage</code></p>
+            <img width="100%" src="../../../images/fp/3_1/4_images_array.gif"/>
+            <p>Because we want to make sure that the chosen image is fully downloaded from the server before we try to draw it (see <a href="../../../units/learning_activity/learning-activity-03-01/">LA 3.1</a>), we put this code in our <code>preload()</code> function. Here is our code so far: </p>
+            <img width="100%" src="../../../images/fp/3_1/4_image_load_code.png"/>
+            <p>Let's look closer into the line where we pick our random image: </p>
+                <ul>
+                    <li><code>images.length</code> holds the number of items held by the images array (in this case, 2)</li>
+                    <li><code>random(0, images.length)</code> picks a number between 0 and the length of the images array ––in this case, 2. (see <a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>, step 2)</li>
+                    <li><code>floor()</code> takes that number, and rounds it down: 0.3 becomes 0; 1.9 becomes 1.</li>
+                </ul>
+            
+            <p>Last, in our <code>draw()</code>function, we use the <code>image</code> function to display <code>chosenImage</code>:</p>
+            <img width="100%" src="../../../images/fp/3_1/4_draw_image.png"/>
+            
+            
+
+        <h5>5) Select a caption and font at random, and display the text</h5>
+        <p>Next, let's pick our caption and a font. First, we create an array with all possible font names, and another that holds all the captions we wrote:</p>
+        <img width="100%" src="../../../images/fp/3_1/5_caption_font_arrays.png"/>
+        <p>In the same way that we picked our image, we now pick a font and a caption, and store them in our <code>chosenFont</code> and <code>chosenCaption</code> variables. We can do this in <code>setup()</code>:</p>
+        <img width="100%" src="../../../images/fp/3_1/5_caption_font_pick.png"/>
+        <p>Finally, we use <code>textFont()</code> to set the font to the one we picked, and <code>text()</code> to draw our caption.</p>
+        <img width="100%" src="../../../images/fp/3_1/5_caption_draw.png"/>
+        
+        
+        
+		<p>You can see the complete, running example <a href="../../../units/final_project_example/final-project-example-03-01/">here</a>. Make sure to refresh the page several times to see different memes be generated.</p>
+        <!-- <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="620px" height="400"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div> -->
+        
+    </div>
+</div>  
+
+
+
+<!-- TODO: 	
+- introduce basic use of arrays to this unit (where/how? okay to introduce in the final project?)
+- review code comments
+ -->
+
+
+<!-- <div class="mainrow row">
+	<div class="span2"> 	
+		<p></p>
+	</div>	
+	
+	<div class="span6"> 
+		
+	</div>	 
+</div> -->
+
+
+
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/final_project_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'level_' + i;
+    		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    		var code =  path + '/sketch.js'
+    		
+    		$("#" + this.id).load(code, function(){
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

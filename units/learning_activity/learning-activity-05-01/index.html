@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Write a happy-face-drawing function</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/learning_activity/learning-activity-05-01">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+	
+
+	
+
+
+<h4>
+	<a href="/teaching/nyc_doe_v7/units/unit/functions">Unit 5</a>. Learning Activity 1 . Write a happy-face-drawing function
+	
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- PREV NEXT LINKS COMMENTED OUT FOR NOW -->
+	<!-- <a style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-05-02" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-03" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Description</p>
+		</div>	
+		<div class="span6"> 
+			<p>In this Learning Activity we draw one happy face, and then use copy-paste to draw a second one, duplicating the length of the code. Then we write a <i>function</i> called <code>drawHappyFace</code>, which allows us to draw two without repeating any code. To set the faces` position, we apply translate, push and pop.</p>
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Getting Started With p5.js: chapter 9. Functions<!-- , examples 9.03 to 9.07 --></li> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=wRHAitGzBrg&index=17&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">Video 5.1 Function basics</a> | <a href="https://github.com/CodingTrain/Rainbow-Code/tree/master/p5.js/5.1a_p5.js_functions"> Code </a></li> <li>Learning Processing: Chapter 7. Functions</li></ul>
+		</div>	
+	</div>
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+
+<!-- INCLUDE THIS: 
+short_description: 'Create your first function.'
+
+teacher_support: '<ul>
+    <li>Getting Started With p5.js, chapter 9, examples 9.03 to 9.07</li>
+    <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=zkc417YapfE&index=17&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">Video 5.2 Function parameters and arguments</a> | <a href="https://github.com/shiffman/Video-Lesson-Materials/tree/master/code_p5.js/5.2_p5.js_Function_parameters_and_arguments%20"> Code </a></li>
+    <li>Learning Processing book: Chapter 7.</li></ul>'
+
+
+ -->
+ <div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1. Draw a happy face, then draw two</h5>
+        <p>First, let's draw a happy face like we did in <a href="../../../units/learning_activity/learning-activity-01-03/">LA 1.3</a>. The only difference is here we are using the <code>translate</code> function to place it where we want, like we learned in  <a href="../../../units/learning_activity/learning-activity-02-05/">LA 2.5</a>.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="200px"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>
+        Now let's draw a second one. You can copy and paste the chunk of code that you used for the first happy face and change the parameters for the translate function to locate it next to the first one.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="200px"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        <p>
+        You can imagine the code getting longer and longer very fast as we draw a third, a tenth, a hundredth happy face. Now imagine after making all these copies you decide to change the color of the face, or make the eyes bigger. That means making the same change three, ten, a hundred times. When we have repeated code, it becomes more likely that we make mistakes, and it is harder to find them. 
+        </p>       
+        <h5>2. Write a happy-face-drawing function</h5>
+        <p>Wouldn't it be great if we could just give these lines of code a name, like "drawHappyFace", and then we could just call that name many times? Our code would look something like this:</p>
+        <pre><code>- tell our program that 'drawHappyFace' refers to all those lines of code that draw the face, then:
+- drawHappyFace;
+- drawHappyFace;
+</code></pre>
+       <p> This is exactly what a <i>function</i> does. We have encountered functions before. We have called pre-existing ones (<code>ellipse</code> is a function, <code>random</code> is a function), and we have even re-defined some p5 functions (<code>draw()</code>, <code>setup()</code>, and <code>mouseDragged()</code> are functions). But we can also write our own from scratch, and give them any name we want. Let's define a drawHappyFace function, and paste our existing face-drawing code in it:</p>
+        <pre><code><strong style="color: #f60861;">function drawHappyFace(){</strong>
+    translate(300, 100);
+
+    //Face
+    fill(249,205,173);//rosy beige
+    ellipse(0, 0, 100, 100);
+
+    //Eye 1
+    fill(30);//dark gray
+    ellipse(0, 10, 10, 10);
+
+    //Eye 2
+    ellipse(20, 10, 10, 10);
+
+    //Mouth
+    fill(252,157,154);//light pink
+    arc(0, 25, 30, 30, 0, radians(180), PIE); 
+<strong style="color: #f60861;">}</strong></code></pre>
+        <p>
+        Notice the syntax: to <i>declare</i> a function, we use the keyword <code>function</code>, then give it a name, then write <code>()</code> (more on these later). We then write the code, surrounded by <code>{ }</code>. </p><p>Now we just need to add a call to our function to the draw loop:</p>
+        <pre><code>drawHappyFace();</code></pre>
+        <p>The only problem with this function is it always draws the happy face in the same position. We want to be able to tell it to draw the second one 110 pixels to the right.</p><p>Rather than calling <code>drawHappyFace()</code>, we want to send x and y values for each face we draw ––just like we do when calling <code>ellipse</code> or <code>rect</code>:</p>        
+<pre><code>drawHappyFace(300, 200);
+drawHappyFace(410, 200);</code></pre>We can do so by adding <i>parameters</i> to our function definition, like so: <code>function drawHappyFace(x, y){ ... }</code>. Then, in the function body, before drawing, we translate to that position: <code>translate(x, y)</code>. Take a look at the function code: </p>
+        <pre><code>function drawHappyFace(<strong style="color: #f60861;">x, y</strong>){
+    <strong style="color: #f60861;">push();</strong>
+    translate(<strong style="color: #f60861;">x, y</strong>);
+
+    //Face
+    fill(249,205,173);//rosy beige
+    ellipse(0, 0, 100, 100);
+
+    //Eye 1
+    fill(30);//dark gray
+    ellipse(0, 10, 10, 10);
+
+    //Eye 2
+    ellipse(20, 10, 10, 10);
+
+    //Mouth
+    fill(252,157,154);//light pink
+    arc(0, 25, 30, 30, 0, radians(180), PIE); 
+    <strong style="color: #f60861;">pop()</strong>;
+}</code></pre>
+
+<p>Parameters work just like variables: when <code>drawHappyFace</code> is called the first time, <code>x</code> will be replaced by the number <code>300</code>, and  <code>y</code> by <code>200</code>. The second time it is called, <code>x</code> will be <code>410</code>, and <code>y</code> will be <code>200</code>.</p>
+<p>Notice that, in our function, we also added <code>push</code> and <code>pop</code> to isolate the effect of the <code>translate</code> function (see LA2.5, step 10):  
+<img href="" />
+<img src="../../../images/la/5_1/translate_push_pop.gif" />
+</p>
+
+<p>Here is the complete code:</p>
+<div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="200px"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+        </p>
+       
+    </div>
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_5/la_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Add a title and text to your page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/learning_activity/learning-activity-07-01">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+
+<h4>
+	<a href="/teaching/nyc_doe_v7/units/unit/DOM">Unit 7</a>. Learning Activity 1 . Add a title and text to your page
+	
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- PREV NEXT LINKS COMMENTED OUT FOR NOW -->
+	<!-- <a style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-07-02" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-06-04" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Description</p>
+		</div>	
+		<div class="span6"> 
+			<p><p>p5 sketches are actually web pages. Web pages are written in the HTML language (apart from Javascript). In this learning activity we look under the hood of our p5 sketches, see the HTML code behind them, and add elements to it. We add a title, a paragraph and an image ––a simple result, but one that sets the foundation students need to do creative projects later on, animating HTML elements and making them interactive.</p></p>
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=URSH0QpxKo8&list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX&index=1">Video 7.1: What is HTML? </a> </li> 
+		</div>	
+	</div>
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+
+<div class="row">
+    <div class="span2">     
+        Introduction
+    </div>  
+    <div class="span8">
+      <p>When working on the p5 editor in this class, we have been following these steps: write Javascript code into a file called sketch.js, hit the 'play' button, see the results drawn on a canvas to the right, within a panel called Preview:
+      <img src="../../../images/la/7_1/editor.png"/>
+      <!-- <img src="../../../images/la/7_1/canvas_webpage.png"/> -->
+
+      <p>So far, everything we have done ––drawing happy faces and animating them, creating floating bubbles and popping them with the mouse–– has happened within the limits of this canvas.</p>
+       <img src="../../../images/la/7_1/canvas.png"/>
+
+      <p>But there can be more to our sketches than the canvas. Our p5 sketches are actually full, independent web pages. Seeing them in the Preview frame is convenient while we are coding, as it is useful to see code and result side by side. But our pages can actually run on their own window or tab, outside of the p5 editor.</p>
+      <img src="../../../images/la/7_1/canvas_and_page.png"/>
+
+      <p>We can add many different kinds of elements to our p5 page: headers, paragraphs, images, and more ––anything you have seen on a web page, really.</p>
+    
+      <img src="../../../images/la/7_1/more_elements.jpg"/>
+
+      <p>In order to do add elements to the page that contains our canvas, we need to look into the file that defines this page: index.html. This file is written in HTML, the language of all web pages. Whenever we go to a website, what we see is an HTML file rendered by the browser.<!--  When we hit 'play' on the p5 editor, what it does is render index.html onto the Preview panel.  --> To give you an idea, an HTML file looks something like this:</p>
+      <!-- Ideally: "here is a running example" -->
+      
+      <img src="../../../images/la/7_1/html_.jpg"/>
+      <p>In this learning activity, we will look under the hood of our p5 sketches, see the HTML code behind them, and add elements to it. We will add a title, a paragraph and an image ––a simple result–– but this will give us the foundation we need to play with web pages in creative and fun ways later on. <!-- (maybe a link that runs away when you try to click on it?) --></p>
+      <!-- Maybe: Here is a sneak peek at our final project -->
+    </div>
+</div> 
+
+<div class="row">
+    <div class="span2">     
+        <p>Steps Outline</p>
+    </div>  
+    <div class="span8" >
+      <ol>
+            <li>Under the hood of p5 sketches: a first look at index.HTML</li>
+            <li>Add headers and paragraphs to index.html (and lose the canvas for a bit)</li>
+            <li>Add images</li>
+            <li>Understand the structure of the page: the Document-Object Model (DOM)</li>
+            <li>Bring the canvas back: see all elements together</li>
+        </ol>
+    </div>
+</div> 
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+    <h5>1) Under the hood of p5 sketches: a first look at index.HTML</h5>
+    <p>Until now, everything we have done ––drawing shapes, making them move, responding to user actions, and more –– we have done by writing code on one file: the file that holds our setup() and draw() functions. This file is called sketch.js, as you can see on the p5 editor: </p>
+<img src="../../../images/la/7_1/sketch_js.png"/>
+<!-- Ideally: "replace with code of ellipse moving to the right" -->
+
+<p>But there is more to our p5 sketches than just this file. Let's take a look at the other files the p5 editor includes in our projects. <!-- Whenever we hit 'play' on the p5 editor, and before sketch.js is run, p5 includes it in a file called index.html.  This is the file that is actually opened by the browser ––the file you see on the pane to the right of the code on the p5 editor.--> On the p5 editor, click on the arrow at the top left of the text area:</p>
+
+
+<img src="../../../images/la/7_1/left_arrow.png"/>
+
+<p>This opens a sidebar with a list of files ––you might remember this is where we added our image and sound files on Unit 3 (<a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a>). These are the files that make up your p5 project: there is sketch.js, but there are also others:</p>
+<img src="../../../images/la/7_1/sidebar.png"/>
+
+<p>Today we will focus on index.html. <code>index.html</code> is the file the p5 editor opens when we hit 'play'. In the same way that word processors open .docx files, and music players open .mp3 files, Internet browsers open .html files. Our p5 sketches are web pages, defined by index.html, and rendered by the browser. Click on index.html to look at its content: </p><!-- (Firefox, Chrome, Safari, Internet Explorer, or whatever Internet browser you are using)  -->
+<img src="../../../images/la/7_1/index_file_underlined.png"/>
+
+<p>All the lines of code you see here were added by the p5 editor when we created our p5 project. Notice line 10: it references our sketch.js file. It is because of this line that we see our canvas on the page: without it, the code we write in sketch.js would not be executed at all, and we would see just a blank page ––try it! Delete line 10 and run your sketch. Do you see your canvas? </p>
+
+<img src="../../../images/la/7_1/more_elements_crossed.jpg"/>
+
+
+<!-- <p>index.html determines the structure of the page: the elements that are on it. For now, you can think about it this way (we will see exceptions later on):</p>
+<img src="../../../images/la/7_1/canvas_page_comments.png"/><p>If we want to add elements to our page, like header, a description, and an image, we can do so by adding them to index.html.</p> -->
+
+<!-- 
+<img src="../../../images//la/7_1/html_ no_canvas_rendered_canvas.jpg"/> -->
+
+
+<!-- IMAGE: add notes: webpage: content defined by index.html. canvas: content defined by sketch.js
+(for now! we will push this boundary in the next LA) -->
+
+
+<!-- <p>Our first goal is to understand how HTML works, and it helps to write an HTML page from scratch. So the first thing we will do is delete all the lines p5 added to index.html.
+
+ Without line 10 (the reference to sketch.js) our canvas will be gone. This is okay: we will bring it back later. In the next section we will add some elements to the page: a header, a paragraph, and an image. </p>
+<img src="../../../images/la/7_1/more_elements_crossed.jpg"/>
+<p>Once we have understood how HTML works, we will bring back the references we deleted, which we need to include the canvas again.</p> -->
+<!-- IMAGE: add cross to canvas (ignore for now!), or highlight the elements that we are focusing on -->
+<p>In the next section, we will add a header, a description, and an image to our page, starting from a blank HTML page. Once we have understood how HTML works, we will bring our canvas back.</p>
+
+<h5>2) Add a header and a paragraph to index.html</h5>
+
+<p><!-- Before we start, let's cover some basics.  -->HTML stands for HyperText Markup Language. It describes the structure of web pages. HTML allows us to "mark up" content (like text) to tell the browser how to render it. For example, here is an HTML file and, beside it, the page as rendered by a browser:</p>
+<!-- <img src="../../../images/la/7_1/html_.JPG"/> -->
+<img src="../../../images/la/7_1/html_ no_canvas.jpg"/>
+
+<p>The text "Moving ball" is has a &lt;h1&gt; "mark" around it. The text "Click to change direction" is marked with &lt;p&gt;. These "marks" higlighted in colors are called HTML <i>tags</i>. The h1 tags tell the browser to render the text "Moving ball" as a header (in big, bold letters). The p tags tell the browser to render the text "Click to change directions" as paragraph text (in small, thin letters). <!-- The canvas tags tell the browser to add a canvas to the page, and -->The img tag tells it to render an image, and also where that image is stored (a file called "panda.jpg").</p>
+
+  
+<p>Now that you understand the basic HTML structure, you will write some yourself. Delete all lines in your index.html file that are between <code>&lt;html&gt;</code> (line 2), and <code>&lt;/html&gt;</code> (line 11).  </p>
+
+<img src="../../../images/la/7_1/index_file_crossed.png"/>
+<p>Now you have a raw, bare-bones HTML file:</p>
+
+<img src="../../../images/la/7_1/html_empty.png"/>
+<!-- <p>You can copy-paste from here: </p> -->
+<!-- <blockquote>
+  <pre>
+    <code>
+      <body>
+        <h1>This is my title</h1>
+        <p>This is my text</p>
+      </body>
+  </code>
+  </pre>
+</blockquote> -->
+
+<p>Paste the following text (or any other text you like) somewhere between <code>&lt;html&gt;</code> and <code>&lt;/html&gt;</code>. Don't worry about blank lines: when rendering your HTML code, the browser will ignore them. </p>
+<i><p>Moving ball <br/>Click to change directions</p></i>
+
+<p>Run your sketch. You have just written a web page with some text in it! The code in your index.html file has been rendered by the browser on the frame to its right, titled <i>Preview</i>. Notice that the two lines look the same (they are both rendered in thin and small letters), and that the line break was ignored.</p>
+<img src="../../../images/la/7_1/plain_html.png"/>
+
+<p>Now let's use HTML markup to tell the browser to render "Moving ball" as a header (in big, bold letters), and "Click to change directions" as paragraph text (in thin, smaller letters). To do this, add the following HTML tags to your index.html file (the tags are in pink): </p>
+<p><span style="color:#d9328f">&lt;h1&gt;</span>Moving ball<span style="color:#d9328f">&lt;/h1&gt;</span>  <span style="color:#d9328f">&lt;p&gt;</span>Click to change directions<span style="color:#d9328f">&lt;/p&gt;</span></p>
+<p><!-- By surrounding the text "Moving ball" with &lt;h1&gt; and &lt;/h1&gt; we are telling the browser that this is a header. The browser knows that headers should be rendered big and bold. By surrounding the text "Click to change directions" with &lt;p&gt; and &lt;/p&gt; we are telling the browser that this is a paragraph. The browser knows that paragraphs should be rendered small and thin. --> Run your sketch, and notice that the format has changed, and that both h1 and p are displayed one below the other, as if there was a line break between them.</p>
+<!-- <p>The browser has rendered the content of h1 in large, bold letters, added a line break after it, and then rendered the con -->
+
+<img src="../../../images/la/7_1/formatted_html.png"/>
+
+<!-- h1 and p also tell the browser to add a carriage return at the end of the text. block elements  -->
+<p>We can also use other tags to mark important parts of the text. Try this adding these tags to your paragraph:</p>
+<p>&lt;p&gt; &lt;strong&gt;Click&lt;/strong&gt; to change &lt;em&gt;directions&lt;/em&gt; &lt;p&gt;</p>
+
+<p>Notice that the word surrounded by &lt;strong&gt; and &lt;/strong&gt; is rendered in bold text, and the word surrounded by &lt;em&gt; and &lt;/em&gt; is rendered in italic text (em stands for emphasis):</p>
+ 
+  
+  <!-- note: including this because it adds to the DOM tree structure later -->
+  <img src="../../../images/la/7_1/strong_em.png"/>
+
+
+<p><strong>Exercise:</strong> add three headers and three paragraphs to your page, with any text you like. Use the strong and em tags to highlight parts of the text.</p>
+
+<h5>3) Add images</h5>
+ <p>There are many different types of HTML tags we can add to a page. We have seen h1 (header 1) and p (paragraph); there are also h2, h3, h4 (header 2, header 3, header 4), a (links to other pages), img (images), and many many others ––if you are curious, you can a full list <a href="https://www.w3schools.com/TAgs/">here</a>.</p>
+ 
+ <p>Let's create an image by using the &lt;img&gt; tag. We need to tell the browser where the image is stored, by specifying its file address:</p>
+ <p><span style="color:#d9328f">&lt;img</span> src="http://tinyurl.com/l8uax55" <span style="color:#d9328f">/&gt;</span></p>
+ <p>Above, the "src" <i>attribute</i> of &lt;img&gt; is set to the address of the panda image we want to draw (src stands for "source"). Attributes give the browser additional information about how to render content.</p>
+ <p> When we run the sketch now, an image is rendered on the page: </p>
+ <img src="../../../images/la/7_1/html_rendered.png"/>
+ 
+<!--   IMAGE: screenshot of img tag with drawn arrow for attribute name, attribute value. Maybe also pointing out that this is a tag that combines the begin and end tags -->
+
+<!--  <p>Note: apart from having an attribute, the img tag differs from h1 and p in that it combines the begin and end tag in one: instead of starting with &lt;img&gt;, having some content inside, and ending with &lt;/img&gt;, it just starts with &lt;img, has the src attribute, and ends with /&gt;. This is because the image element has no content inside, apart from the image to be fetched from the src location.</p> -->
+
+ <p><strong>Exercise:</strong> Add three images you find online to your page. One easy way to find images that aren't too big for your sketch is to look for an Image on a search engine like Google or Yahoo, and filter the size to be Icon or Small (the screenshot below is from Google image search):</p>
+<img src="../../../images/la/7_1/image_search.png"/>
+<p>To get the address of an image, right-click on it and click "Copy Link Address", or "Copy Image Location" (depending on the browser you are using). Then paste the address on your HTML code. </p>
+
+<h5>4) Understand the structure of the page: the Document-Object Model (DOM)</h5>
+
+    <p>As we have mentioned, &lt;h1&gt;, &lt;/h1&gt;, &lt;p&gt; and &lt;/p&gt; and &lt;img&gt; are all HTML <i>tags</i>. You might have noticed they often come in pairs:
+    <ul>
+      <li> <!-- &lt;html&gt; and &lt;/html&gt; are also tags. --> <!-- In HTML, anything you see surrounded by '<'
+       and a '>' is a tag --> &lt;h1&gt; is a <i>begin</i> tag. Together with its <i>end</i> tag &lt;/h1&gt; it defines an <strong>HTML element</strong>.</li>
+       <li>&lt;p&gt; is also a <i>begin</i> tag, and together with its <i>end</i> tag &lt;/p&gt; it defines another <strong>HTML element</strong>.</li>
+       <li>&lt;img src=" "/&gt; is a begin and end tag, combined: it defines an <strong>HTML element</strong> on its own.</li> 
+    </ul>
+     <p>HTML elements are the building blocks of HTML pages.</p>
+     <img src="../../../images/la/7_1/html_element.jpg"/>
+
+     <p>HTML elements can contain text, like the h1 and p elements we created, and other content like images. They can also contain other HTML elements. For example, our p element contains a strong element and an em element. And notice that &lt;html&gt;, which has been in our code all along, is also a begin tag: paired with its end tag &lt;/html&gt; it also defines an HTML element. All the elements we added between &lt;html&gt; and &lt;/html&gt; (the h1 element, the p element, the img element) are children of the html element:</p>
+
+     <img src="../../../images/la/7_1/html_code_for_dom.png"/>
+     <!-- IMAGE: draw on top: "these elements are inside the html element" -->
+
+     <p>You can visualize your HTML page as a structure where the html element is the parent of all other elements:</p>
+     <img src="../../../images/la/7_1/dom_complete_tree.jpg"/>
+
+     <p>This kind of structure is called a <i>tree structure</i>. Look at it upside down: html is like a trunk that has branches growing out of it, and each branch can have more branches growing out of them as well.</p>
+
+     <!-- Ideally: draw a tree on top of the structure? maybe a more intrincate tree, representing a more complex webpage? -->
+     <p>
+
+     <p>This tree of HTML elements is called DOM (Document Object Model). This is an important concept that we will come back to in the next learning activity. For now, just know that HTML elements can contain other elements, and start thinking of your pages as a tree structure.</p>
+
+     <img src="../../../images/la/7_1/html_tree.jpg"/>
+
+ <!--     <p>This idea of a tree is the clue to something called the DOM. DOM stands for Document Object Model. index.html is the document. The nodes in the tree (or HTML elements) are objects inside the document. And the model is the tree structure itself. </p> -->
+
+     Move this to the bottom, after getting the canvas back in (so that we also add head and body, and this is recognizable in the cartoon on LA 2)
+
+<!--      <p>We can add nodes to the tree by writing tags directly into the HTML file, like we did for h1, p, and img. But we also add nodes by calling p5 functions from our sketch.js file. For example, when we call <a href="https://p5js.org/reference/#/p5/createCanvas">createCanvas</a>, a &lt;canvas&gt; element is inserted to the index.html file, and added to our page's DOM tree ––canvas is also an HTML element, like h1, p, and img. Before sketch.js is executed, the tree looks like the image above. After it runs, the tree looks like this:</p> -->
+
+
+<h5>5) Bring the canvas back</h5>
+<p>Remember we started the previous step by deleting all the lines in the html file:</p>
+<img src="../../../images/la/7_1/index_file_crossed.png"/>
+
+<p>Without these lines, our canvas disappeared. We can see the title, paragraph and image, which we added to the index.html file, but not the canvas, which is added by the line "createCanvas" in the sketch.js file.</p>
+<!-- <img src="../../../images/la/7_1/tree_with_canvas.jpg"/> -->
+<p>If we want to see our canvas on the page (and anything we draw on it), we need index.html to reference sketch.js, and the p5 library.</p>
+
+<p>Let's take another look at the lines we deleted. To get a new index.html file, create a new sketch. Open the index.html file by finding it on the sidebar like we did before: </p>
+
+<img src="../../../images/la/7_1/index_file.png"/>
+
+<p>The lines we need back are the ones that reference 
+<strong>sketch.js</strong> (line 10), and <strong>p5.min.js</strong> (line 4)</p>
+
+
+<p>Let's add these back to index.html<!-- . We will add them within a &lt;head&gt; element, which is where file references are normally placed. And, since we are adding some standard structure, let's put the elements we created inside of an element called body -->: </p>
+<img src="../../../images/la/7_1/add_scripts.png"/>
+<!-- ANNOTATE: 'p5 library', 'sketch.js' -->
+
+
+<p>Run the project again: now we can see both our canvas, and the HTML elements we created around it. We created the paragraph, title, and image elements by writing directly into the index.html file. The Canvas is also an HTML element, but we created it in a different way: by calling createCanvas() from sketch.js.</p>
+<!-- <img src="../../../images/la/7_1/html_.jpg"/> -->
+
+<p>We need <b>sketch.js</b> to run because that's where createCanvas is, and also the code that makes our ball move and draw ––after all, sketch.js is where our  <code>setup</code> and <code>draw</code> functions are, where declare variables, and call p5 functions like <code>fill</code> and <code>ellipse</code>, or <code>translate</code>.</p>
+<p>Bring it back in and run your code. What happens?</p>
+
+<p>You probably got an error, because the <strong>p5.min.js</strong> file is missing. We need it for our sketch to run. <strong>p5.min.js</strong> is the <b>p5 library</b> file. This is where <code>fill</code>, <code>rect</code>, and <a href="https://p5js.org/reference/">all the other p5 functions</a> are <i>defined</i>. A library is a collection of functions and other resources that programmers can use on their own projects. In this case, the p5 library is a collection of functions (like <code>fill</code> and <code>ellipse</code>) that programmers (like you!) can use on their own projects (like our ellipse-moving-to-the-right sketch). Without the p5 library, the browser wouldn't know what you mean when you write <code>fill</code>, <code>ellipse</code> or <code>translate</code> in your code. 
+
+  <p>Run project. It works. But there are more lines in index.html ––what do we need those for?</p>
+  <p>For this project, we don't, but we do (and will) for others: we need <strong>p5.sound.min.js</strong> if we want to play any sounds; we need <strong>p5.dom.min.js</strong> if we want the next learning activity to work.</p>
+
+<!--   <p>If we were to draw our complete page tree, it would include these scripts, and look something like this:</p>
+    <img src="../../../images/la/7_1/tree_with_head.jpg"/> -->
+
+
+<!-- <p>mention style.css</p> -->
+
+<!-- <p>one last thing: head and body, and what the complete code looks like</p> -->
+
+<!-- <p>This tells us that adding tags to an HTML file is not the only way to add HTML elements to a web page: we can also insert elements from Javascript. Canvas was inserted on the page by the createCanvas function, which we called in sketch.js.</p> -->
+
+
+<!-- <p>In the next Learning Activity we will add HTML elements to our page from Javascript. Working with HTML elements from Javascript will allow us to have them change over time: to animate them, and make them interactive, just like we have been doing with the shapes we draw on our canvas.</p> -->
+
+
+<p><strong>Exercise:</strong> Choose one of your previous p5 sketches, and add a title, a paragraph that explain what it does, and a related photograph to it. Do this by adding HTML elements to your project's index.html file.</p>
+ <p><strong>Exercise:</strong> Draw a tree structure that represents your webpage.</p>
+
+<!-- <h5>4) Wrapping up</h5>
+
+<p>We just took the first steps in working with p5 and HTML: we wrote elements directly to the HTML file, and we added another HTML element to it (the canvas) by calling a function from sketch.js (createCanvas). We saw how those elements exist side by side on the same p5.js project. </p>
+
+<p>The next step is to make index.html and sketch.js interact more closely: what if you want the h1 text to change when the user clicks the mouse? Or maybe change the text of a paragraph when an ellipse reaches the edge of the canvas? These are the kinds of questions that we will answer in the next LA's of Unit 7.</p>      
+ -->
+    </div> 
+</div> 
+
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_7/la_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Draw Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/learning_activity/learning-activity-03-02">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<h4>
+	<a href="/teaching/nyc_doe_v7/units/unit/media">Unit 3</a>. Learning Activity 2 . Draw Images
+	
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- PREV NEXT LINKS COMMENTED OUT FOR NOW -->
+	<!-- <a style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-03-03" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-03-01" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Description</p>
+		</div>	
+		<div class="span6"> 
+			<p>In this learning activity students load, display and manipulate image files of different formats, changing their placement, size and tint color.</p>
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Learning Processing: Chapter 15. Images and Pixels</li> <li>Getting Started With p5.js: Chapter 7. Media (Section: Images)<!-- , examples 7.01 to 7.06 --></li> </ul>
+		</div>	
+	</div>
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1. Load an image</h5>
+        <p>In the last learning activity we loaded an image file in <code>preload</code> and then displayed it in <code>draw</code>. The code looked like this: </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="400px"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>In order to try these examples yourself, you will need to include your images in your sketch folder. If you are using p5's online editor, here are the steps to do so: </p>
+        <p>1. To reveal your sketch's files and folders, click on the arrow to the left of the editor window. This will reveal a side panel. 
+            <img width="100%" src="../../../images/la/3_2/upload_images_editor/0.png"/>
+        2. Click on the arrow by your project folder and click "Add folder". Add a folder called "media", or "images". 
+        <img width="100%" src="../../../images/la/3_2/upload_images_editor/1.png"/>
+        <img width="100%" src="../../../images/la/3_2/upload_images_editor/2.png"/>
+        3. Click on the arrow by your newly created folder, and then on "Add file". <img width="100%" src="../../../images/la/3_2/upload_images_editor/3.png"/> Drag your image files to the "Add file" window. 
+        <img width="100%" src="../../../images/la/3_2/upload_images_editor/4.png"/>
+        Once they are uploaded, you will see their file names in your images folder: 
+        <img width="100%" src="../../../images/la/3_2/upload_images_editor/5.png"/>
+        Because the path to your images on the editor is different from the path to our images on this web page, you will need to do a slight change to the code, replacing "../../media/pupper.jpg" with "images/pupper.jpg". This applies to all examples that load media files. 
+        </p>
+       
+        
+        <h5>2. Play with positioning, size and tint</h5>
+        <p>The second and third parameters of the <code>image</code> function set its position on the canvas. In the sketch below, instead of drawing our image at the canvas origin as above, we are drawing it at (x,y) = (40, 40). We also add a third and fourth parameters to <code>image</code>, setting the image's width and height to the mouse position (move the mouse around the sketch to see the effect). </p>
+        <p>Before the call to <code>image</code>, we call the <code>tint</code> function. Tint causes the image to be drawn with a color fill, defined by RGB or HSB values depending on the current <code>colorMode</code>. Adding a fourth parameter for the alpha channel we could make the image transparent. In the example below the tint color is set to a random hue each time the user clicks (but is always bright and saturated). </p>
+
+        
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="400px"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        <h5>3. Load many images and different formats</h5>
+        <p>p5 suppports different image formats. Below, we display GIF, PNG and SVG images ––all of which support transparency.</p>
+      <!--  TODO: explain better that images are square but have transparent backgrounds, and that they were edited in an image editing software, such as the free ?? -->
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="400px"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+        <h5>4. Create an interactive collage</h5>
+        <p>Find some images online, take some photos, make some drawings, and combine them into a p5 collage. Have their tint, size or position change in response to user actions such as typing, moving, or clicking the mouse.</p>
+        
+        <h5>5. Load random images: a first look at arrays</h5><!--  TO DO: move to separate learning activity at the end of unit -->
+        <p>We have used the <code>random()</code> function before to set colors, sizes, and positions of elements. Now let's have our program pick a random dog image for us, from a collection that we put together.</p>
+
+        <p>To accomplish this we will use a new type of variable that holds a series of elements: the <i>array</i>. </p>
+        <p>Arrays are declared like any other variable, with the keyword <code>var</code> followed by the name of the variable. We will use ours to hold the names of the files in our dog image collection, so this seems to be a good name:  <code>var possible_dog_images;</code>. </p>
+        <p>We can initialize an array by listing its elements, separating them with commas, and enclosing this list with brackets like so: <code>possible_dog_images = ["pupper.jpg", "doggo.gif"];</code></p>
+        <p>Each individual element can be accessed by its position: <code>possible_dog_images[1]</code> will return "doggo.gif", because array positions are counted starting from 0.</p>
+        <p>Take a look at the following code:</p>
+
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="400px"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+        <p>In the example above, we pick a random number between 0 and the number of elements in our array, which we can access like so: <code>possible_dog_images.length</code>. After rounding it down to a whole number using <code>floor()</code>, we save this random number in the <code>pos</code> variable. <code>possible_dog_images[pos]</code> resolves to a random image name from our collection. If you refresh this page several times, you will see that it sometimes selects "doggo.gif", and sometimes "pupper.jpg". </p>
+        <p>Can you modify this program so that it picks a random graphic symbol each time it runs? Instead of the heart, it might load a star, a speech bubble, an exclamation mark. </p>
+    </div>
+</div>
+
+<!-- 
+ <li>link an online / free image editor for them to edit their images before loading?</li> -->
+
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/la_2/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

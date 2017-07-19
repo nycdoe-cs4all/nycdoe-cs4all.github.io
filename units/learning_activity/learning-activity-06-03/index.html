@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Add and delete from the array</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/learning_activity/learning-activity-06-03">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+	
+
+
+<h4>
+	<a href="/teaching/nyc_doe_v7/units/unit/objects">Unit 6</a>. Learning Activity 3 . Add and delete from the array
+	
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- PREV NEXT LINKS COMMENTED OUT FOR NOW -->
+	<!-- <a style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-06-04" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-06-02" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Description</p>
+		</div>	
+		<div class="span6"> 
+			<p>We start this learning activity by adding a new bubble to our array each time the user clicks. Then we limit the number of bubbles by removing the oldest bubble each time we get to having 50 of them.</p>
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Getting Started With p5.js: Chapter 11. Arrays<!-- , example 10.1 --></li> <li>Daniel Shiffman tutorials: <a href="https://www.youtube.com/watch?v=EyG_2AdHlzY&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=25">6.5 Adding and Removing Objects</a> | <a href="https://github.com/CodingTrain/Rainbow-Code/tree/master/p5.js/6.5_p5.js_adding_removing_objects"> Code </a> </li> <li>Learning Processing: Chapter 9. Arrays</li></ul>
+		</div>	
+	</div>
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1)Add bubbles to the array</h5>
+        <p>In the last learning activity we created an array that holds four (or more) bubbles.</p>
+        <img src="../../../images/la/6_3/array_4.jpg"/>
+        <p>Now let's add a bubble to it each time the user clicks the mouse. This means adding a <code>mouseClicked</code> function, creating a new bubble, and adding it to the array. Something like this: </p>
+<pre><code>function mouseClicked() {
+    bubbles[<strong style="color: #f60861;">4</strong>] = new Bubble();
+}</code></pre>
+<img src="../../../images/la/6_3/array_5.jpg"/>
+<p>Of course the code above only works the first time the user clicks: once there is a bubble in position 4, the next one should be added at position 5, and so on. </p><p>In p5 arrays have a length property that keeps track of how many elements it holds. For example, the array above has elements in positions 0, 1, 2, 3 and 4. It holds 5 elements, so its length is 5. The next free position in the array is also 5. No matter how many elements an array holds, the position that comes after the last element of an array is always the same as its length. So to add an extra element at the end of the array, we can do this:</p>  
+    <pre><code>function mouseClicked() {
+    bubbles[<strong style="color: #f60861;">bubbles.length</strong>] = new Bubble();
+}</code></pre>
+<p>This works, but there is a more convenient way. The function <code>push</code> adds an element to the end of an array:
+    <pre><code>function mouseClicked() {
+    bubbles<strong style="color: #f60861;">.push(new Bubble());</strong>
+}</code></pre>
+<p>Here is a working example: </p>
+<div class="sketch_container">
+    <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+    <div class = "editor" id="editor_1" style="height:250px;">
+    </div>
+</div>
+<h5>2) Add the bubbles at the position of the mouse</h5>
+<p>Let's go one step further, and create our bubbles at the position where the user clicked the mouse. So far, the constructor function has been assigning random values to the x and y position of every bubble it creates. Now we want to specify the x,y position of the bubbles we create from <code>mouseClicked</code>. </p>
+<img src="../../../images/la/6_3/parameter_constructor.jpg"/>
+</p>Since the constructor is a function, we can add parameters to it: we just need to replace these pink lines</p> <pre><code>function Bubble<strong style="color: #f60861;">()</strong> {
+  <strong style="color: #f60861;">this.x = random(0, width);
+  this.y = random(0, height);</strong>
+
+  this.display = function() {
+    stroke(255);
+    fill(255, 0, 150, 50);
+    ellipse(this.x, this.y, 24, 24);
+  }
+
+  this.move = function() {
+    this.x = this.x + random(-1, 1);
+    this.y = this.y + random(-1, 1);
+
+  }
+}</code></pre>
+<p>with these ones, which assign x and y received from the function call to the new object's x and y: </p>
+    <pre><code>function Bubble<strong style="color: #f60861;">(x, y)</strong>{
+  <strong style="color: #f60861;">this.x = x;
+  this.y = y;</strong>
+
+  this.display = function() {
+    stroke(255);
+    fill(255, 0, 150, 50);
+    ellipse(this.x, this.y, 24, 24);
+  }
+
+  this.move = function() {
+    this.x = this.x + random(-1, 1);
+    this.y = this.y + random(-1, 1);
+
+  }
+}</code></pre>
+
+<p>Now, instead of saying <code>new Bubble()</code> and letting the constructor pick a position for it, we can say <code>new Bubble(mouseX, mouseY)</code>. Try it: </p>
+<div class="sketch_container">
+    <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+    <div class = "editor" id="editor_2" style="height:250px;">
+    </div>
+</div>
+<h5>3) Remove bubbles from the array </h5>
+<p>To remove elements from an array, we can use the <code>splice</code> function. It takes two parameters. The second one says how many elements we would like to remove; the first one sets the position of the first one. For example, <code>splice(0, 1)</code> removes 1 element from the array, starting at position 0 (which is to say the first element).</p>
+<img src="../../../images/la/6_3/array_to_splice.jpg"/>
+<img src="../../../images/la/6_3/splice_0_1.jpg"/>
+<p><code>splice(1, 3)</code> removes 3 elements from the array, starting at position 1: </p>
+<img src="../../../images/la/6_3/array_to_splice.jpg"/>
+<img src="../../../images/la/6_3/splice_1_3.jpg"/>
+
+
+<p>Below, <code>splice</code> is used to remove the first (and 'oldest') bubble from the array once the user has drawn 50 bubbles: </p>
+        <pre><code>if (bubbles.length > 50) {
+    bubbles.splice(0, 1);
+}</code></pre>
+<p>Notice that, to make the new feature clearer, we are now adding new bubbles when the user clicks and *drags* the mouse, rather than when she clicks it.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+
+</div>
+
+<!-- step_by_step: 
+    - { 
+        number: 1,
+        title: 'Adding and removing Objects', 
+        original: 'https://github.com/CodingRainbow/Rainbow-Code/blob/master/p5.js/6.5_p5.js_adding_removing_objects/sketch.js',
+        source: 'Intro to p5.js by Daniel Shiffman' 
+    }
+    - { 
+        number: 2,
+        title: 'Clicking on Objects', 
+        original: 'https://github.com/CodingRainbow/Rainbow-Code/blob/master/p5.js/6.7_p5.js_clicking_on_objects/bubble.js',
+        source: 'Intro to p5.js by Daniel Shiffman' 
+    }
+    - { 
+        number: 3,
+        title: 'Checking Objects Intersection Part 1', 
+        original: 'https://github.com/CodingRainbow/Rainbow-Code/blob/master/p5.js/6.9_p5.js_checking_objects_intersection_1/bubble.js',
+        source: 'Intro to p5.js by Daniel Shiffman' 
+    }
+    - { 
+        number: 4,
+        title: 'Checking Objects Intersection Part 2', 
+        original: 'https://github.com/CodingRainbow/Rainbow-Code/blob/master/p5.js/6.10_p5.js_checking_objects_intersection_2/bubble.js',
+        source: 'Intro to p5.js by Daniel Shiffman' 
+    } -->
+
+<!-- resources: '' -->
+<!-- 
+not sure if leaving the frame-based animation or not?
+if so, find places online where one can download assets for this. -->
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_6/la_3/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>

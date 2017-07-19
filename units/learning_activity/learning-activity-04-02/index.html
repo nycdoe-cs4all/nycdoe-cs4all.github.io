@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <title>Move in all directions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="/teaching/nyc_doe_v7/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-02">
+    <meta charset="utf-8">
+    <!-- Custom CSS -->
+<!-- 
+    <script src="javascript/libs/p5.js" type="text/javascript"></script>
+ -->
+ <!-- 
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+ -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/style.css">
+    <!-- 
+    <link rel="stylesheet" href="/teaching/nyc_doe_v7/css/prism.css">
+ -->
+</head>
+
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+          
+<div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+      <!-- <h1><a class="site-title" href="/teaching/nyc_doe_v7/index.html">Creative Coding with p5</a></h1> -->
+      <h1>Creative Coding with p5</h1>
+      <div class="nav">
+      	<a href="/teaching/nyc_doe_v7/units">INDEX</a>&emsp;
+      	</div>
+  </div>
+</div>  
+</div>
+
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+	
+
+	
+
+	
+
+
+<h4>
+	<a href="/teaching/nyc_doe_v7/units/unit/motion">Unit 4</a>. Learning Activity 2 . Move in all directions
+	
+	<!-- for some reason prev and next are reversed; probably my naming convention -->
+	<!-- PREV NEXT LINKS COMMENTED OUT FOR NOW -->
+	<!-- <a style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-03" class="next-link">|&nbsp;next</a>
+		
+	
+		<a  style="float:right;"  href="/teaching/nyc_doe_v7/units/learning_activity/learning-activity-04-01" class="previous-link"> previous&nbsp;</a>
+	 -->
+</h4>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Description</p>
+		</div>	
+		<div class="span6"> 
+			<p>This learning activity adds to the animation created on the previous one: now we move not just to the right, but also to the left, up, down, and diagonally. Finally, we create jiggly motion by using the random function.</p>
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Getting Started With p5.js: Chapter 8. Motion<!-- , example 8.01 to 8.05 --></li> <li>Learning Processing: Chapter 4. Variables; Chapter 5. Conditionals (Bouncing Ball)</li></ul>
+		</div>	
+	</div>
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+
+	
+
+<div class="row">
+    <div class="span2">  
+        <p><b>Step by Step</b></p> 
+    </div>  
+    <div class="span8">
+      <h5>1. Move left</h5>
+<p>What happens if you assign <code>speed</code> a negative number? Try it: </p>
+<pre><code>var x; 
+var speed;
+
+function setup() {
+  createCanvas(600, 120);
+  x = 300; // Start at the center
+  <strong style="color: #f60861;">speed = -1;</strong> 
+}
+
+function draw() {
+  background(0);
+  x = x + speed;
+  ellipse(x, 60, 20, 20);
+}</code></pre>
+
+<h5>2. Move up, move down</h5>
+<p>For the ball to move down, we need to change its <code>y</code> position instead of the <code>x</code>. Try it: 
+        <pre><code><strong style="color: #f60861;">var y;</strong>
+var speed;
+
+function setup() {
+  createCanvas(600, 120);
+  <strong style="color: #f60861;">y = 60;</strong> // Start at the center
+  speed = 1;
+}
+
+function draw() {
+  background(0);
+  <strong style="color: #f60861;">y = y + speed; 
+  ellipse(300, y, 20, 20);</strong>
+}</code></pre>
+
+<p>If we include both the x and y variable, we can make our ball move in both directions at the same time, resulting in diagonal motion. Try different values for <code>speedX</code> and <code>speedY</code>: </p>
+    <div class="sketch_container">
+    <iframe id="canvas_iframe_1"  src="" width="600px" height="120px"></iframe>
+    <div class = "editor" id="editor_1" style="height:250px;">
+    </div>
+
+        <h5>3. Move at random</h5>
+        <p>We have used the <code>random</code> function before. As a reminder: 
+          <ul>
+            <li><code>random(1, 10)</code> returns a number between 1 and 10, like <code>1.54</code>, <code>7.1345</code>, and <code>9.9</code></li>
+            <li><code>random(-5, 5)</code> returns a number between -5 and 5, like <code>-4.234</code>, or <code>3.25</code></li>
+          </ul>
+        <p>Try them on the p5 editor: </p>
+        <pre><code>function draw() { 
+  var result = random(-5, 5);
+  console.log(result);
+}</code></pre>
+<p>Instead of setting <code>random</code>'s min and max values to numbers, we can set them to variables. For example, <pre><code><strong style="color: #f60861;">var s = 5; </strong>
+var result = random(<strong style="color: #f60861;">-s, s</strong>); 
+console.log(result);</code></pre> will yield similar results to <code>random(-5, 5)</code>.</p>
+
+         <p>In the previous learning activity, to move our ball along a line, we would add a given number to its <code>x</code> and <code>y</code> position, on each turn of the <code>draw</code>loop:
+          <pre><code>function draw() {
+  background(0);
+  <strong style="color: #f60861;">x = x + speedX;
+  y = y + speedY;</strong>
+  ellipse(x, y, 20, 20);
+}</code></pre>
+          <p>What would happen if, instead of adding the same numbers on each frame, we added a random number to <code>x</code> and another random number to <code>y</code>? Our code might look like this:  
+<pre><code>function draw() {
+  background(0);
+  <strong style="color: #f60861;">x = x + random(-speedX, speedX);
+  y = y + random(-speedY, speedY);</strong>
+  ellipse(x, y, 20, 20);
+}</code></pre>
+
+          <p>Can you imagine what the motion will be like? Here is a working example. If you just see a black rectangle , refresh this page, or run the code on the p5 editor.</p>
+        <div class="sketch_container">
+                <iframe id="canvas_iframe_2"  src="" width="600px" height="120px"></iframe>
+                <div class = "editor" id="editor_2" style="height:250px;">
+                </div>
+        </div>
+        <p>Try setting the speed to different values.</p>
+        
+</div>
+    
+    
+<!-- 
+    <p>Now that we have motion in all four directions, let's add if statements to change the direction of the motion when the ball passes the edges of the screen. If its x position is larger than 600, speedX is set to a negative number so that the ball moves to the left. If x is lesser than 0, speedX is set to a positive number, so that the ball moves to the control the speed with our keyboard. Below, pressing the right and left arrow keys changes the direction of the xSpeed; pressing the up, and down arrow keys changes the direction of the ySpeed.
+    <div class="sketch_container">
+    <iframe id="canvas_iframe_2"  src="" width="600px" height="120px"></iframe>
+    <div class = "editor" id="editor_2" style="height:250px;">
+    </div> 
+
+	<p>Challenge: can you make the ball bounce the edges of the canvas?</p>
+	<p>Last, by adding if statements comparing the position of the ball to the edges of the screen, we can make our ball bounce off them:</p>
+
+ -->
+
+
+<!-- include Ace Editor (for embedding sketches and their code) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_4/la_2/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  	
+			  });
+		});
+    });
+</script>
+
+
+
+
+
+
+        
+  <script src="/teaching/nyc_doe_v7/javascript/libs/jquery.min.js"></script>  
+  <script src="/teaching/nyc_doe_v7/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+
+    </body>
+</html>
