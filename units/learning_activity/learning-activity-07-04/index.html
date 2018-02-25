@@ -116,7 +116,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 </div> -->
 <div class="row">
     <div class="span2">     
-        <p>Step by Step</p>
+        <p>Overview</p>
     </div>  
     <div class="span8">
         <h5><!-- 1) Zooming out of your sketch: index.HTML --></h5>
@@ -125,7 +125,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 		<p>Once we have a button, we will program the background color of the canvas to change when the user clicks on it.  To do this, we will learn about <i>callback</i> functions: functions that are set to be called when a specific event (like a mouse click) happens.</p> 
 		<p>We have made sketches before where we created button behavior <!-- (LA X.X) -->. You might remember this meant we had to detect where the mouse was relative to a rectangle or a circle, which in turn meant writing a series of if statements, and so on (see <a href="../../../units/learning_activity/learning-activity-02-02/">LA 2.2.3 – Is it over a rectangle?</a>) . </p>
 		<!-- ideally: embed example 2.2.3-->
-		<p>Now, instead of adding code to mousePressed so that a rect or a ellipse on the canvas behave like a button, we are going to use the HTML button element.</p>
+		<p>Now, instead of adding code to mousePressed so that a rect or a ellipse on the canvas behave like a button, we are going to use the <a href="https://www.w3schools.com/tags/tag_button.asp">HTML button element</a>.</p>
 		<p>The great thing about HTML buttons (and, actually, any HTML element), is that we don't need to detect where the mouse is when the user clicks it: the browser takes care of this for us. When the user clicks on an HTML element, the browser triggers a mousePressed event that's specific to the element that was clicked. And then we can tell the element (in this case, a button) which function should be called when its mousePressed event happens. This function is refered to as a callback function.</p>
 		<p>Let's start with a page that has an h1 element, a paragraph element, and a canvas element. We will add the h1 and the paragraph directly to the index.html file, and generate the canvas by calling p5's createCanvas function.</p>
 		<img src="../../../images/la/7_4/start.png"/>

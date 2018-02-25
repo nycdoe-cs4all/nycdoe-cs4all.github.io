@@ -1,37 +1,64 @@
-
-function setup() {
+function setup() { 
   createCanvas(600, 400);
-  
-  //Use the Hue, Saturation, Brightness color model
-  colorMode(HSB);
 
   //Turn off drawing strokes
   noStroke();
 
-  //Draw rectangles from their center 
-  //(makes it easier to center it on the screen)
-  rectMode(CENTER);
-
-  //Only run the draw loop once. Try commenting this out and see what happens.
+  //Only run the draw loop once. Try commenting this out and see what happens ––we will look into why on Unit 2.
   noLoop();
+} 
 
-}
-
-function draw() {
-  //Set the background color
-  background( 0, //hue. the background would be red if the saturation wasn't zero.
-              0, //saturation. zero means no color (black, gray, white)
-              random(100)); //brightness. this will be a shade of gray, between 0 (black), and 100 (white)
+function draw() { 
+  //Set the background color to a random shade between black (0) and white (255)
+  background(random(0, 255));
   
-  //brightness: 100 gives us a light color
-  fill( random(0, 90), //hue. a color between red (when 0), and green (when 90)
-        100, //saturation. 100 means the color is vibrant.
-        100);//brightness. 100 means maximum light.
-
-  //Draw the rectangle
-  rect(width/2, //x. width/2 indicates the horizontal center of the canvas.
-      height/2, //y. height/2 indicates the vertical center of the canvas.
-      random(width/3, 2*width/3), //width. this will be between a third of the width of the and two thirds.
-      random(height/3, 2*height/3));//height. this will be between a third of the height of the canvas and two thirds.
-    
+  //Set the fill to a random shade of gray
+  fill(random(255));
+  //Draw rectangle #1 
+  rect(random(0, width),//Set the x position to be a random number between 0 and the width of the canvas
+       0,               //Set the y position to 0 (the top of the canvas)
+       random(5, 40),   //Set the width of the rectangle to a random value between 5 and 40
+       height);         //Set the height of the rectangle to be the same as the height of the canvas
+               
+  
+  //Draw rectangle #2
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #3
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #4
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #5
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #6
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #7
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #8
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #9
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
+  //Draw rectangle #10
+  fill(random(255));
+  rect(random(0, width), 0, random(5, 40), height);
+  
 }
+
+
+
+

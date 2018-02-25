@@ -1,1 +1,11 @@
-This is a teacher-facing p5 curriculum. Each unit includes a series of learning activities and ends with a final project where students apply the concepts they have learned in a creative way. Final project prompts include three levels of difficulty. For each of them, a finished project example is provided.
+## to send to server:  
+$ glynn
+
+## to build:
+$ jekyll serve --watch 
+
+
+## glynn no funciona con SFTP, entonces estoy usando un cliente por ahora.
+
+
+##cheat sheet: http://ricostacruz.com/cheatsheets/jekyll.html

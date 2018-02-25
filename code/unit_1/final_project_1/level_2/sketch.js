@@ -1,40 +1,47 @@
-
-
-function setup() {
+function setup() { 
   createCanvas(600, 400);
-  background(0);
-  
-  //Use the Hue, Saturation, Brightness color model
-  colorMode(HSB);
-
-  //Draw rectangles from their center (makes it easier to center it in the screen)
-  rectMode(CENTER);
-
-  //Only run the draw loop once
-  noLoop();
 
   //Turn off drawing strokes
   noStroke();
+
+  //Only run the draw loop once. Try commenting this out and see what happens ––we will look into why on Unit 2.
+  noLoop();
+  
+} 
+
+function draw() { 
+  //Set background to white (255)
+  background(255);
+
+  //Repeat 240 times:
+  for(var i = 0; i < 240; i++){
+    //Declare a variable called diameter and initialize it with a random number between 5 and 25
+    var diameter = random(5, 25);
+    
+    //Set the fill color to blue
+    fill(18, 79, 177);
+    //Draw ellipse #1
+    ellipse(random(0, width), //Set the width to a random number between 0 and the width of the canvas
+            random(0, height),//Set the height to a random number between 0 and the height of the canvas
+            diameter,         //Set the width to the value of the diameter variable
+            diameter);        //Set the height to the value of the diameter variable
+    
+    //Set the fill color to yellow
+    fill(243, 217, 12);
+    //Draw ellipse #2
+    ellipse(random(0, width), random(0, height), diameter, diameter);
+    
+    //Set the fill color to green
+    fill(25, 152, 68);
+    //Draw ellipse #3
+    ellipse(random(0, width), random(0, height), diameter, diameter);
+    
+    //Set the fill color to red
+    fill(230, 0, 13);
+    //Draw ellipse #4
+    ellipse(random(0, width), random(0, height), diameter, diameter);
+  }
   
 }
 
-function draw() {
-  //Pick a size for the square, between a third of the width of the canvas and two thirds.
-  var size = random(width/3, 2*width/3);
 
-  //Pick a color for the square
-  var hue = random(0, 90); //somewhere between red(0) and green(90). see color wheels here: 
-  var saturation = 100; //make the color saturated
-  var brightness = 100; //make the color bright
-
-  //For the background, take the hue of the square and get the opposite hue in the color wheel, by adding 180 degrees to it
-  //Keep the saturation and brightness the same
-  background(hue + 180, saturation, brightness);
-  
-  //set the fill for the square
-  fill(hue, saturation, brightness);
-
-  //Draw the square
-  rect(width/2, height/2, size, size);
-  
-}

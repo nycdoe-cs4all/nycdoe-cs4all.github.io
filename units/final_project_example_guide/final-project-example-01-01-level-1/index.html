@@ -2,7 +2,7 @@
 <html>
 
   <head>    
-    <title>Interaction of Color</title>
+    <title>Lines Wallpaper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -45,7 +45,7 @@
 
 
 
-        <h4>Step by Step Guide: Interaction of Color, Level 1 
+        <h4>Step by Step Guide: Lines Wallpaper, Level 1 
 	
 <!-- Unit 1. Final Project Example  -->
 	<!-- NAVIGATION -->
@@ -66,7 +66,7 @@
         
         
             
-                <p>Create a cover for a music album or a book that is generative. Each time you run your sketch it is different, and yet always within your design: it should have some degree of control and some degree of randomness. </p>
+                <p>Create a pattern for a wallpaper. It should be generative: each time you run your sketch, the pattern is different. It should always be within your design, but have some degree of randomness as well. </p>
             
         
             
@@ -100,7 +100,7 @@
 	</div>	
 
 	<div class="span6"> 
-        <p>This project is an abstract composition inspired by the book Interaction of Color by Josef Albers. Each time the sketch runs, a different shade is picked for the background and the foreground rectangle, which also changes its size, within a range: the result is different each time, but the composition retains a certain character.</p>
+        <p>This project is a pattern for a wallpaper, composed of ten lines. Each time the sketch runs, the lines have different shades, widths and x positions. The result is different each time, but the composition retains a certain character.</p>
 
     </div>
 </div>
@@ -122,7 +122,7 @@
         <p>This example project applies the following concepts from previous Learning Activities:
          <ul>
             <li>Drawing basic shapes (<a href="../../../units/learning_activity/learning-activity-01-01/">LA 1.1</a>)</li>
-            <li>Setting stroke and fill; HSB color mode (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>)</li>
+            <li>Setting stroke and fill (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>)</li>
             <li>Using the random function to set positions, dimensions, and colors (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a> and <a href="../../../units/learning_activity/learning-activity-01-03/">LA 1.3</a>)</li>
         </ul>
     </p>
@@ -147,29 +147,20 @@
     </div>  
     <div class="span8">
         <h5>1) Set up the sketch</h5>
-        <p>Within the <code>setup()</code> function, let's create a canvas, 600 pixels wide and 400 pixels high <!-- (line 3) -->: <code>createCanvas(600, 400);</code></p>
-        <p>Because we would like to vary the hue of our rectangle from red to green, we set the color mode to HSB:  <code>colorMode(HSB)</code>. We also turn off strokes: <code>noStroke();</code></p>
+        <p>Within the <code>setup()</code> function, we create a canvas, 600 pixels wide and 400 pixels high <!-- (line 3) -->: <code>createCanvas(600, 400);</code></p>
+        <p>We also turn off strokes: <code>noStroke();</code></p>
         
-        <p>So far we have been drawing our rectangles from their top left corner. Now we use <code>rectMode(CENTER)</code> to draw them from the center (for more examples, see the p5 <a href="https://p5js.org/reference/#/p5/rectMode">reference</a>)</p>
         <p>The last line in our <code>setup</code> function is <code>noLoop()</code>. This tells p5 to call the <code>draw()</code> function only once. We will look into this in detail in <a href="../../../units/learning_activity/learning-activity-02-01/">the next learning activity</a>. If you are curious, comment this line out to see what happens.</p>
         <p>Here is the setup code in full:</p>
         <!-- <img src="../../../images/fp/1_1/mouse_line.gif" /> -->
 <pre><code>function setup() {
-  createCanvas(600, 400);
-  
-  //Use the Hue, Saturation, Brightness color model
-  colorMode(HSB);
+    createCanvas(600, 400);
 
-  //Turn off drawing strokes
-  noStroke();
+    //Only run the draw loop once. Try commenting this out and see what happens.
+    noLoop();
 
-  //Draw rectangles from their center 
-  //(makes it easier to center it on the screen)
-  rectMode(CENTER);
-
-  //Only run the draw loop once. Try commenting this out and see what happens.
-  noLoop();
-  
+    //Turn off drawing strokes
+    noStroke();
 }</code></pre>
   </div>
 </div>  
@@ -179,31 +170,23 @@
         <p><b></b></p>
     </div>  
     <div class="span8">
-        <h5>2) Draw a random rectangle, within certain parameters</h5>
-        <p>Our draw function is simple: we draw the background, set a fill color, and then draw a centered 
-          rectangle. Our visual composition will be different each time the program runs, similar, since it will vary within controlled ranges. To accomplish this, we use the random function.</p>
-        <p></p>
-        <p>We set the background to a shade of gray by setting its brightness to a random number between 0 and 100, and its saturation to 0 (no color). Given these two values, we can set the hue to be anything: the color will still be gray. </p>
+        <h5>2) Draw ten rectangles with random fills, widths, and x positions</h5>
+        <p>In our draw function, we set the background to a random shade between black (0), and white (255).</p><p>Then we set the fill to another random shade of gray, and draw a rectangle. We use the random function to place the rectangle anywhere on the x axis, and to set its width to vary between 5 and 40 each time the sketch runs. The rectangle will always be drawn from the top, and be as high as the canvas. To see how we accomplish these things, take a look at the comments by the parameters we send to the <code>rect</code> function:
+</p>
+        <pre><code>//Set the fill to a random shade of gray
+fill(random(255));
 
+//Draw rectangle #1 
+rect(random(0, width),//Set the x pos to a # between 0 and the width of the canvas
+     0,               //Set the y pos to 0 (the top of the canvas)
+     random(5, 40),   //Set the width of the rect to a value between 5 and 40
+     height);         //Set the height of the rect to the height of the canvas
+     </code></pre>
+      <p>
+          The rest of the code simply draws nine more rectangles. Each of them will have a random fill, a random x position and width, be drawn from the top, and span the height of the canvas.</p>
 
-        <pre><code>background( 0, //hue. the background would be red if the saturation wasn't zero.
-              0, //saturation. zero means no color (black, gray, white)
-              random(100)); //brightness. this will be a shade of gray, between 0 (black), and 100 (white)</code></pre>
-      <p>We then set the fill to a hue between red (0 degrees on the HSB color wheel) and green (90 degrees), and since we want the color to be vibrant and bright, independently of its hue, we set both saturation and brighness to be 100. </p>
-
-      <pre><code>fill( random(0, 90), //hue. a color between red (when 0), and green (when 90)
-        100, //saturation. 100 means the color is vibrant.
-        100);//brightness. 100 means maximum light.</code></pre>
-
-        <p>Finally, we draw the rectangle. We center it by setting its position to <code>(width/2, height/2)</code>. The width of our rectangle will be between a third (<code>width/3</code>) and two thirds of the canvas (<code>width/3</code>). Similarly, its height will be between a third and two thirds of the canvas' height.
-        
-<pre><code>function draw() {
-  rect(width/2, //x. width/2 indicates the horizontal center of the canvas.
-      height/2, //y. height/2 indicates the vertical center of the canvas.
-      random(width/3, 2*width/3), //width. this will be between a third of the width of the and two thirds.
-      random(width/3, 2*width/3));//height. this will be between a third of the height of the canvas and two thirds.
-}</code></pre>
-To see the complete code and running sketch click <a href="../../../units/final_project_example/final-project-example-01-01/">here</a>.
+      
+<p>To see the complete code and running sketch click <a href="../../../units/final_project_example/final-project-example-01-01/">here</a>.</p>
   </div>
 </div>
 

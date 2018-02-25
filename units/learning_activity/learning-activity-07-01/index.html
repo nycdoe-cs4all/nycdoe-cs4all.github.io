@@ -97,7 +97,7 @@
 			<p>Teacher support Resources</p>
 		</div>	
 		<div class="span6"  style="margin-top:0px"> 
-			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=URSH0QpxKo8&list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX&index=1">Video 7.1: What is HTML? </a> </li> 
+			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=URSH0QpxKo8&list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX&index=1">Video 7.1: What is HTML? </a> </li> <li><a href="https://www.w3schools.com/html/html_basic.asp">HTML element reference</a></li> </ul> 
 		</div>	
 	</div>
 
@@ -156,6 +156,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
     </div>  
     <div class="span8">
     <h5>1) Under the hood of p5 sketches: a first look at index.HTML</h5>
+    <p>In this section, we will look into index.HTML, the file that tells the browser to run the sketch.js file.</p>
     <p>Until now, everything we have done ––drawing shapes, making them move, responding to user actions, and more –– we have done by writing code on one file: the file that holds our setup() and draw() functions. This file is called sketch.js, as you can see on the p5 editor: </p>
 <img src="../../../images/la/7_1/sketch_js.png"/>
 <!-- Ideally: "replace with code of ellipse moving to the right" -->
@@ -288,15 +289,15 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
      <p>This kind of structure is called a <i>tree structure</i>. Look at it upside down: html is like a trunk that has branches growing out of it, and each branch can have more branches growing out of them as well.</p>
 
      <!-- Ideally: draw a tree on top of the structure? maybe a more intrincate tree, representing a more complex webpage? -->
-     <p>
+     <!-- <p> -->
 
      <p>This tree of HTML elements is called DOM (Document Object Model). This is an important concept that we will come back to in the next learning activity. For now, just know that HTML elements can contain other elements, and start thinking of your pages as a tree structure.</p>
 
-     <img src="../../../images/la/7_1/html_tree.jpg"/>
+     <!-- <img src="../../../images/la/7_1/html_tree.jpg"/> -->
 
  <!--     <p>This idea of a tree is the clue to something called the DOM. DOM stands for Document Object Model. index.html is the document. The nodes in the tree (or HTML elements) are objects inside the document. And the model is the tree structure itself. </p> -->
 
-     Move this to the bottom, after getting the canvas back in (so that we also add head and body, and this is recognizable in the cartoon on LA 2)
+     <!-- Move this to the bottom, after getting the canvas back in (so that we also add head and body, and this is recognizable in the cartoon on LA 2) -->
 
 <!--      <p>We can add nodes to the tree by writing tags directly into the HTML file, like we did for h1, p, and img. But we also add nodes by calling p5 functions from our sketch.js file. For example, when we call <a href="https://p5js.org/reference/#/p5/createCanvas">createCanvas</a>, a &lt;canvas&gt; element is inserted to the index.html file, and added to our page's DOM tree ––canvas is also an HTML element, like h1, p, and img. Before sketch.js is executed, the tree looks like the image above. After it runs, the tree looks like this:</p> -->
 
@@ -347,7 +348,8 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 <!-- <p>In the next Learning Activity we will add HTML elements to our page from Javascript. Working with HTML elements from Javascript will allow us to have them change over time: to animate them, and make them interactive, just like we have been doing with the shapes we draw on our canvas.</p> -->
 
 
-<p><strong>Exercise:</strong> Choose one of your previous p5 sketches, and add a title, a paragraph that explain what it does, and a related photograph to it. Do this by adding HTML elements to your project's index.html file.</p>
+<p><strong>Exercise:</strong> Practice adding HTML elements to a p5 sketch you have already made. Pick a sketch you like ––perhaps one of your final projects from previous units. Add a title to it, and a paragraph explaining what the sketch does. Do this by adding HTML elements to your project's index.html file. Optional: add an image HTML element as well. </p>
+
  <p><strong>Exercise:</strong> Draw a tree structure that represents your webpage.</p>
 
 <!-- <h5>4) Wrapping up</h5>

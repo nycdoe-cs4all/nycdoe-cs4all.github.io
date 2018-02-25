@@ -142,7 +142,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 		<img src="../../../images/la/7_3/start.png"/>
 		
 
-		<p>One thing that we didn't look into, but that will be useful now, is the fact that every one of p5's create functions returns a Javascript object:</p>
+		<p>One thing that we didn't look into, but that will be useful now, is the fact that every one of p5's create functions returns a Javascript object.</p>
 
 		<ul>
 			<li><code>createCanvas</code> returns an object containing all the information associated with the canvas element, like its position and size;</li> 
@@ -183,23 +183,20 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 		<!-- (drawing of elements on page) -->
 
+		<p>You might have noticed that the elements on an HTML page flow in an intuitive way, much like a document: each element added to the page is placed right below the previous element. This is the default way HTML elements are placed on a page, or the <strong>default <i>flow</i></strong> of the page.</p> 
 
+		<img src="../../../images/la/7_3/default_flow.png"/>
 
-		<p>You might have noticed that the elements on an HTML page flow in an intuitive way, much like a document: each element added to the page is placed right below the previous element. This is the default way HTML elements are placed on a page, or the default <i>flow</i> of the page.</p> 
+		<p>As we saw, the browser keeps a DOM object for each HTML element. By using a DOM object's <code>position</code> function, it is possible for us to override this default positioning: we can set an HTML element to be placed on a specific position on the page, regardless of where other elements are placed. This is called <strong>absolute positioning</strong>.</p>
 
-			<!-- Quizás agregar un diagrama: “default flow”
-		[h1        ]
-		(line)
-		[p        ] -->
+		<p>For example, below the "Waiting" header is placed at position (340, 360): </p>
+		<img src="../../../images/la/7_3/absolute_positioning_0.png"/>
+		<p>Every DOM object in p5 (h1, p, canvas) has a <code>position</code> function: once we have variables referencing them, we can say <code>canvas.position(100, 100)</code>, or <code>p.position(120, 130)</code>, or <code>h1.position(40, 60)</code>. Try using the position function to move the "Waiting" header from the example above.</p>
 
-		<p>By using a DOM object's <code>position</code> function, it is possible for us to override this default positioning: we can set an HTML element to be placed on a specific position on the page, regardless of where other elements are placed. This is called <strong>absolute positioning</strong>.</p>
-
-
-		<p>Every DOM object in p5 (h1, p, canvas) has a <code>position</code> function: once we have variables referencing them, we can say <code>canvas.position(100, 100)</code>, or <code>p.position(120, 130)</code>, or <code>h1.position(40, 60)</code>.</p>
 
 	<!-- 	[IMAGE: add drawing of canvas with canvas placed at 100, 100], p at 120, 130 with title “absolute positioning”  -->
 
-		<p>Let's start by placing the canvas on (0,0). Right below your <code>createCanvas</code> line, add this one: <code>canvas.position(0, 0);</code> and run your sketch.  </p>
+		<p>Now let's place the canvas on (0,0). Right below your <code>createCanvas</code> line, add this one: <code>canvas.position(0, 0);</code> and run your sketch.  </p>
 
 		<p>As you can see in your sketch and the screenshot below, the (0, 0) coordinate is relative to the whole page: p5 places the canvas on the top left corner of the page, covering the h1 and the paragraph we had before. To prove this, try setting the size of the canvas to a smaller size, for example with <code>createCanvas(100, 100)</code></p>
 
@@ -211,7 +208,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 		<p>From this you can see that absolute positioning might not be ideal in some cases: elements might turn out to be drawn on top of other elements, covering them. </p>
 		<!-- [IMAGE (maybe replacing the previous one?) red square on gray background, so that the switch to transparency is clear] -->
-		<p>But absolute possitioning does allow us to do interesting and creative things. For example, if we replace background(220) (line 16) with clear(), we get a transparent background for the canvas. The canvas is still there, it occupies the same space, but because it is transparent we can see the elements that are behind it.</p>
+		<p>But absolute possitioning does allow us to do interesting and creative things. For example, if we replace background(220) (line 16) with clear(), we get a transparent background for the canvas. The canvas is still there, it occupies the same space, and we can still see the red rectangle that we placed in the draw() function. But because the canvas is now transparent, we can also see the elements that are behind it.</p>
 
 		<img src="../../../images/la/7_3/transparent.png"/>
 
@@ -237,7 +234,9 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 		<p>Anything you draw on the canvas (with p5 drawing funcitons like rect, ellipse, etc), is positioned relative to the top-left corner of the <strong>canvas</strong>. All DOM elements (generated with create functions) are postioned relative to the top-left corner of the <strong>whole page</strong>.</p>
 
 <h5>4. Animating DOM elements</h5>
-<p>We have been animating elements on the canvas for a while: we have had rectangles move on lines, circles move at random, bubble objects tremble. All of this motion happened within our canvas element.</p><p>Now we added other HTML elements around our canvas. And we have also learned, in the previous step, how to change their position from our Javascript code. This means we can animate our headers, paragraphs and images as well, by updating their position within the draw loop. We can even animate the canvas itself.</p>
+<p>We have been animating elements on the canvas for a while: we have moved shapes in lines, in circles, around spirals, and at random (see Unit 4: Motion). All of this motion happened within our canvas element.</p>
+
+<p>Now we have added DOM objects outside of our canvas. And we have also learned, in the previous step, how to change their position by writing Javascript code. This means that we can animate our HTML headers, paragraphs and images in the same way that we animated shapes before: by updating their position within the draw loop. We can even animate the canvas itself.</p>
 <p>How does this work? Remember we have an animation loop happening (the <code>draw</code> loop). For example, if we add a couple of variables:
 <pre><code>var x = 100; 
 var y = 100;
@@ -252,7 +251,8 @@ x = x + random(-5, 5);
 <!-- (insert running sketch) -->
 
 
-<p>Since we have this animation loop, and we also have access to our DOM objects from it (because we saved them into variables when we created them), we can animate DOM objects as well.</p><p>Let's set the position of h1 to be the same as the rectangle's: (x, y). Where do you think h1 is going to be? Is it going to be on top of our red rectangle? Shouldn't it, since they are at the same position? It is not: remember rect is drawn on the canvas (positioned relative to the top left-corner of the canvas), and h1 is drawn on the page (positioned relative to the top-left corner of the whole page)</p>
+<p>Since we have this animation loop, and we also have access to our DOM objects from it (because we saved these objects into variables when we created them), we can animate DOM objects as well.</p><p>Let's set the position of h1 to be the same as the rectangle's: (x, y). Where do you think h1 is going to be? Is it going to be on top of our red rectangle? Shouldn't it, since they are at the same position? It is not: remember rect is drawn on the canvas (positioned relative to the top left-corner of the canvas), and h1 is drawn on the page (positioned relative to the top-left corner of the whole page)</p>
+<img src="../../../images/la/7_3/page_origin_canvas_origin.png"/>
 
 <p>Try it to see what happens! Here is the complete code:</p>
 <pre><code>var canvas;
@@ -287,7 +287,7 @@ function draw() {
 
 <p>To recap: in Learning Activity 1, you added elements to the HTML page that holds your canvas. Then, in Learning Activity 2, you made HTML elements using Javascript. And in this Learning Activity you learned that you can animate those elements: in the same way that you used variables to animate circles and rectangles on the canvas, you now know that you can use variables to animate HTML elements on the page. </p>
 <!--(insert running sketch) -->
-<p><b>Exercise:</b> <ul><li>1. Add a circle to the sketch, and make it move. 2. Animate the canvas itself, by using <code>position</code>.</li><li> 3. Change the content of DOM objects dynamically. <!-- For example, have a paragraph display a different random number every frame, or display the (x,y) position of a canvas element within a h1 element on the page. --></li></p>
+<p><b>Exercise:</b> <ul><li>1. Add a circle to the sketch, and make it move. 2. Animate the canvas itself, by using <code>position</code>.</li><li> 3. Have the content of DOM objects change when the user presses a key or clicks the mouse. <!-- For example, have a paragraph display a different random number every frame, or display the (x,y) position of a canvas element within a h1 element on the page. --></li></p>
 		
 <!-- 
 ---

@@ -128,7 +128,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 		<p>Then the browser adds the elements inside of the head element (these are scripts: it will check them for instructions later), the elements inside body (our &lt;p&gt;'s,  &lt;h1&gt;'s, and &lt;img&gt;'s), and then the elements inside of those, if there are any. It continues until all HTML elements are included in a tree-like structure.</p>
 		
 		<img src="../../../images/la/7_2/3.jpg"/>
-		<p>This tree structure of the page is called the DOM. The browser will keep it in its memory for as long as the page is open.</p>
+		<p>This tree structure of the page is called the DOM. This stands for Document Object Model. The browser will keep it in its memory for as long as the page is open. <!-- You can see this structure if you open the browser's developer console. --></p>
 		<!-- <p>(combined with this image: )</p>
 		<img src="../../../images/la/7_2/3_b.jpg"/> -->
 		<p>From the DOM tree it has in its memory, the browser draws the page. It knows to draw header text in a larger, bold font, to draw paragraph text in a smaller, thin font, and to go fetch the image file at its source address before drawing it.</p>
@@ -157,7 +157,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 		p5 has a special library that gives it access to the DOM. it's called  -->
 
 		
-		<p>The important thing to notice here is that we can add elements to a page directly on its HTML, but we can also add elements to it from Javascript. In fact, we can add, change, and even remove elements from Javascript. This will be useful for us to change our headers, paragraphs, images, and more on the fly ––meaning <i>after</i> index.html has been loaded. Accessing the DOM tree from Javascript will allow us to change the content of a page in reponse to user actions, to animate elements, and more.</p>
+		<p>The important thing to notice here is that we can add elements to a page directly on its HTML file, but we can also add elements to it by writing Javascript code. In fact, we can even change, and remove elements by writing Javascript code. This will be useful for us to change our headers, paragraphs, images, and more on the fly ––meaning <i>after</i> index.html has been loaded. Accessing the DOM tree from Javascript will allow us to change the content of a page in reponse to user actions, to animate elements, and more.</p>
 
 		<p>To add or change elements after the page has been loaded is refered to as accessing /changing things <i>dynamically</i>. When content doesn't change once it is defined, we say it is <i>static</i>. When it changes after that, in response from events from users or other systems (like the temperature changed), we say content is <i>dynamic</i>.</p>
 		<p>In this LA, we will add HTML elements to our page dynamically, from Javascript.</p>
@@ -168,18 +168,12 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>Step by Step</p>
     </div>  
     <div class="span8">
-		
-		
-
-
-		
-	
 
         <!-- <h5>(LA 2 used to start here)</h5> -->
 
 		<p>In the previous LA we created a page that had a header element (&lt;h1&gt;), a paragraph element (&lt;p&gt;), an image element (&lt;img src="..."&gt;), and a canvas (&lt;canvas&gt;) element. &lt;h1&gt;, &lt;p&gt;, and &lt;img&gt; were added directly on our index.html file. &lt;canvas&gt; was added in Javascript, by <code>createCanvas(200, 200)</code>.</p>
 
-		<p>Now when should we choose one method over the other? If we have a structure that will not change over time ––for example, we might always have the same title, and the same image on our page––, it makes sense to set them up directly in HTML. But if we want to create thousands of paragraphs, or animate them (like in <a href="https://p5js.org/examples/dom-modifying-the-dom.html">this example</a>); if we want to add a paragraph each time the user clicks, or if we want to make their content random, then it makes sense to generate them in code.</p>
+		<p>Now when should we choose one method over the other? If we have a structure that will not change over time ––for example, we might always have the same title, and the same image on our page––, it makes sense to set them up directly in HTML. But if we want to create hundreds of paragraphs (as in <a href="http://alpha.editor.p5js.org/luisa/sketches/B19olIyLz">this example</a>), or animate them (as in <a href="https://p5js.org/examples/dom-modifying-the-dom.html">this example</a>); if we want to add a paragraph each time the user clicks, or if we want to make their content random, then it makes sense to generate them in code. This is exactly what we will do in this LA.</p>
 		<!-- Alternative paragraph: combine:
 		<p>If all you want is a page with some text and images that don't change (perhaps a story or an essay), writing elements directly into the HTML file works well. You write the HTML, open the file in the browser, and that's it. But if you want the HTML content to be interactive, to change over time, to respond to the user ––perhaps the paragraphs move randomly around the page, or the font of the title changes whenever the user clicks on it, –– then you need to manipulate elements from sketch.js (or another script). This is what we mean when we say "DOM" manipulation: creating, changing, and deleting HTML elements from Javascript.</p> -->
 
@@ -244,7 +238,20 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 		<p>So now we can create a page with some built-in content (in this case, h1, p, img), and then content that javascript adds to the page when it runs (a canvas, an h1, a new p element each time the user clicks the mouse). In the next Learning Activity we will look at how to manipulate DOM elements: to have them change dynamically.</p>
 
-		<p></p>
+		<p>Here is the complete code (click <a href="http://alpha.editor.p5js.org/luisa/sketches/rkXs79eIf">here</a> to open it on the p5 editor):</p>
+		<pre><code>function setup() { 
+  createCanvas(400, 400);
+  createElement('h1', 'my lucky numbers below');
+} 
+
+function mousePressed(){
+  createP('my lucky number is ' + random(0, 10));
+}
+
+function draw() { 
+  background(220);
+}
+		</code></pre>
 
 
     </div> 

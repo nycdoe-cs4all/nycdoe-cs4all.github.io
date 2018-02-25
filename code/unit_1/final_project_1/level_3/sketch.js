@@ -15,8 +15,6 @@ function setup() {
 
   //Turn off drawing strokes
   noStroke();
-
-  
 }
 
 function draw() {
@@ -49,11 +47,6 @@ function draw() {
             j*size + size/3, //y. draw a third down
             size/3, 
             size/3);
-           
     }
   }
-  
-
-  
-  
 }
