@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Draw an array of bubbles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/6/learning_activities/la_1.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+			
+		
+	
+
+	
+		
+	
+
+<h4>
+	<a href="/units/6/overview.html">Unit 6</a>. Learning Activity 1 . Draw an array of bubbles
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p><p>In this learning activity we draw a large number of moving bubbles. We start by drawing one bubble, then draw a couple more. Each bubble requires variables to keep track of their position, and functions to move and display it. We see some repeated code. We then group all x and y positions into arrays, which we then fill and access with for loops. This allows us to create many more bubbles without repeating code.</p> <p></p></p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<!-- resources: '' More emojis: http://getemoji.com/ . 
+add shiffman vids 6.1, 6.2, 6.3 (covering arrays, literal objects, arrays of objects)
+-->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1) Draw a Bubble, then two, then three</h5>
+        <p>First, let's draw a bubble. Its x and y position are set to a random number in <code>setup</code> Then, each time <code>draw</code> is called, the bubble moves slightly in a random direction (this code is inside the <code>moveBubble</code> function), and drawn by the <code>displayBubble</code> function. Here is the result: <!--  [TODO: add comments to the code] --></p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>To add a second bubble, we need to add x and y variables for its position, a function that changes their values to move it, and a function that draws the bubble. We can't use the names x, y, moveBubble and displayBubble, as we have used those for the first bubble. For clarity, let's rename them to x1, y1, moveBubble1 and displayBubble1, and then add x1, y2, moveBubble2, and displayBubble2 for the second bubble.</p>
+        <p>Try adding a third bubble.</p><p>You probably noticed that, with each added bubble, the code gets considerable longer. Imagine creating 100 bubbles. We would need 100 variables for all the x positions, 100 variables for the y's, 100 move functions, 100 draw functions. <code>moveBubble78</code> would need to add to <code>x78</code>, <i>not</i> <code>x77</code> or <code>x87</code>. With all that copying and pasting, imagine how easy it would be to make a small mistake like that, and how hard it would be to spot it among hundreds and hundreds of code that look awfully similar ––almost identical, in fact.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        <h5>2) Create an Array of Bubbles</h5>
+        <p>Here is a better approach to add your third bubble: instead of three variables for x (<code>x1</code>, <code>x2</code>, <code>x3</code>) and three variables for y (<code>y1</code>, <code>y2</code>, <code>y3</code>), let's use arrays. Remember an array is a type of variable that holds a series of elements (see <a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a>). So let's create one array that holds all three <code>x</code>'s, and one array to hold the three <code>y</code>'s. We initialize them as empty arrays (lines 1 and 2), so that p5 knows that these variables are arrays, and we can add elements to certain positions, like we do in lines 9 through 18 in <code>setup</code>:</p>
+        
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+
+        <h5>3) Fill the array within a for loop</h5>
+        <p>Now let's create a hundred bubbles. You might say the example above isn't that much better than the one before it: there's still a lot of copying and pasting to be done. So let's take one more step. The advantage of using arrays instead of variables is that we can create, modify, and access their elements with for loops. Below, in <code>setup</code>, we use a for loop to initialize all the x and y's positions, another one to move each number a bit in <code>moveBubble</code>, and yet another one to draw all the bubbles in <code>displayBubble</code>. The example below creates 30 bubbles.<!-- [TODO: add comments to the code: declare, initialize, access array elements] --></p>
+        <p>The code below draws 30 bubbles. Can you modify it so that it draws 100 bubbles? 300 bubbles? Notice how the code is almost the same (and the same length!) whether we draw three, thirty or three hundred bubbles. Can you change it so that changing the number of bubbles only takes changing one number in the code?</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+        
+     <!--    <h5>2) Create a Bubble Constructor function</h5>
+        <p>We then group these variables and functions into a constructor function that 1) cleans up the code, making it easier to understand and maintain and 2) is reusable, allowing us to create many Bubbles without repeating code (adding more and more variables and functions). </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+        
+        <p>Now add a second bubble, and then a third (notice how much easier the code is to understand):</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div> -->
+    </div>
+</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Getting Started With p5.js: Chapter 11. Arrays<!-- , examples 11.4, 11.5, 11.6 (pages 168 to 170) --></li> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=VIQoUghHSxU&index=20&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">Video 6.1 What is an array?</a> | <a href="https://github.com/Codingrainbow/Rainbow-Code/tree/master/p5.js/6.1_p5.js_what_is_an_array"> Code </a><br/> <a href="https://www.youtube.com/watch?v=RXWO3mFuW-I&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=22">Video 6.2 Arrays and loops</a> | <a href="https://github.com/Codingrainbow/Rainbow-Code/tree/master/p5.js/6.2_p5.js_arrays_and_loops"> Code </a> </li> <li>Learning Processing: Chapter 9. Arrays</li></ul>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_6/la_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

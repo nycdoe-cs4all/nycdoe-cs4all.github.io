@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Lines Wallpaper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/1/final_project_examples/guide_level_1.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <h4>Step by Step Guide: Lines Wallpaper, Level 1</h4>
+<div class="mainrow row">
+	<div class="span2"> 	
+	</div>	
+	<div class="span6"> 
+		<p>To see the complete code and running sketch click <a target="_blank" href="../../../units/final_project_example/final-project-example-01-01/"> here</a>.</p>
+		<p></p>
+	</div>		 
+</div>
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<p><b>Description</b></p>
+	</div>
+	<div class="span6"> 
+        <p>This project is a pattern for a wallpaper, composed of ten lines. Each time the sketch runs, the lines have different shades, widths and x positions. The result is different each time, but the composition retains a certain character.</p>
+    </div>
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p></p>
+    </div>  
+
+    <div class="span6"> 
+        <p></p> 
+	</div>		 
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>Drawing basic shapes (<a href="../../../units/learning_activity/learning-activity-01-01/">LA 1.1</a>)</li>
+            <li>Setting stroke and fill (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>)</li>
+            <li>Using the random function to set positions, dimensions, and colors (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a> and <a href="../../../units/learning_activity/learning-activity-01-03/">LA 1.3</a>)</li>
+        </ul>
+    </p>
+    </div>       
+</div>
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+        <ol>
+            <li>Set up the sketch</li>
+            <li>Draw a random rectangle, within certain parameters</li>
+        </ol>
+    </div>
+</div>  
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Set up the sketch</h5>
+        <p>Within the <code>setup()</code> function, we create a canvas, 600 pixels wide and 400 pixels high <!-- (line 3) -->: <code>createCanvas(600, 400);</code></p>
+        <p>We also turn off strokes: <code>noStroke();</code></p>
+        
+        <p>The last line in our <code>setup</code> function is <code>noLoop()</code>. This tells p5 to call the <code>draw()</code> function only once. We will look into this in detail in <a href="../../../units/learning_activity/learning-activity-02-01/">the next learning activity</a>. If you are curious, comment this line out to see what happens.</p>
+        <p>Here is the setup code in full:</p>
+        <!-- <img src="../../../images/fp/1_1/mouse_line.gif" /> -->
+<pre><code>function setup() {
+    createCanvas(600, 400);
+
+    //Only run the draw loop once. Try commenting this out and see what happens.
+    noLoop();
+
+    //Turn off drawing strokes
+    noStroke();
+}</code></pre>
+  </div>
+</div>  
+
+<div class="row">
+    <div class="span2">     
+        <p><b></b></p>
+    </div>  
+    <div class="span8">
+        <h5>2) Draw ten rectangles with random fills, widths, and x positions</h5>
+        <p>In our draw function, we set the background to a random shade between black (0), and white (255).</p><p>Then we set the fill to another random shade of gray, and draw a rectangle. We use the random function to place the rectangle anywhere on the x axis, and to set its width to vary between 5 and 40 each time the sketch runs. The rectangle will always be drawn from the top, and be as high as the canvas. To see how we accomplish these things, take a look at the comments by the parameters we send to the <code>rect</code> function:
+</p>
+        <pre><code>//Set the fill to a random shade of gray
+fill(random(255));
+
+//Draw rectangle #1 
+rect(random(0, width),//Set the x pos to a # between 0 and the width of the canvas
+     0,               //Set the y pos to 0 (the top of the canvas)
+     random(5, 40),   //Set the width of the rect to a value between 5 and 40
+     height);         //Set the height of the rect to the height of the canvas
+     </code></pre>
+      <p>
+          The rest of the code simply draws nine more rectangles. Each of them will have a random fill, a random x position and width, be drawn from the top, and span the height of the canvas.</p>
+      
+<p>To see the complete code and running sketch click <a href="../../../units/final_project_example/final-project-example-01-01/">here</a>.</p>
+  </div>
+</div>
+
+        
+        
+        
+
+
+
+<!-- TODO: 	
+- introduce basic use of arrays to this unit (where/how? okay to introduce in the final project?)
+- review code comments
+ -->
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/final_project_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'level_' + i;
+    		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    		var code =  path + '/sketch.js'
+    		
+    		$("#" + this.id).load(code, function(){
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+			  	
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

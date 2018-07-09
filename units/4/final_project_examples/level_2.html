@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Blinky bouncey smiley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/4/final_project_examples/level_2.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <h4>Unit 4. Final Project Example, Level 2</h4>
+<h4>Blinky bouncey smiley</h4>
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<p><b>Notes</b></p>
+	</div>	
+	<div class="span6">
+		<p><a href="/units/final_project_example_guide/final-project-example-04-01-level-2/" target="_blank">Step by Step Guide</a></p>
+		<p>In this final project example we apply oscillating motion to our smiley drawing. As it bounces up and down, the smiley also blinks, and smiles wider: sine values are applied not only to drawing position but also shape.</p>
+	</div>		 
+</div>
+
+<div class="mainrow row">
+	<div class="span2"> 
+		<p><b>Sketch</b><p>
+	</div>	
+	<div class="span6"> 	
+		<iframe id="canvas_iframe_2"  src="" width="620px" height="400"></iframe>
+	</div>	
+</div>
+
+<div class="mainrow row">
+	<div class="span2"> 
+		<p><b>Code</b><p>
+	</div>	
+	<div class="span6"> 
+		<div class = "editor" id="editor_2" style="height:250px;">
+	</div>	
+</div>
+
+<!--  -->
+<!-- include Ace Editor (for embedding sketches and their code) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+	var editor;
+	var path = "/code/unit_4/final_project_1/level_2";
+	// var path = "../../../code/unit_4/final_project_1/level_2";
+
+    $(document).ready(function() {
+
+    	$('#canvas_iframe_2').attr("src", path + '/index.html');
+		var code =  path + '/sketch.js';
+
+		$(".editor").load(code, function(){
+			editor = ace.edit(this);
+		  	// editor.setTheme("ace/theme/monokai");
+		  	editor.getSession().setMode('ace/mode/javascript');
+		  	editor.setOption("maxLines", 1000);
+		  	var editor_div = document.getElementById('editor_2');
+			editor_div.style.height = editor.getSession().getDocument().getLength() *
+				editor.renderer.lineHeight + 'px';
+			editor.resize();
+		  	
+		  });
+    	
+    	//if multiple editors per page:
+  //   	$('.editor').each(function( index ) {
+  //   		var i = index + 1;
+  //   		var path = folder + 'level_' + i;
+  //   		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+  //   		var code =  path + '/sketch.js'
+    		
+  //   		$("#" + this.id).load(code, function(){
+  //   			editor = ace.edit(this);
+		// 	  	editor.setTheme("ace/theme/monokai");
+		// 	  	editor.getSession().setMode('ace/mode/csharp');
+		// 	  	editor.setOption("maxLines", 1000);
+		// 	  	var editor_div = document.getElementById('editor');
+  //   			editor_div.style.height = editor.getSession().getDocument().getLength() *
+		// 			editor.renderer.lineHeight + 'px';
+  //   			editor.resize();
+			  	
+		// 	  });
+		// });
+    });
+</script>
+
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

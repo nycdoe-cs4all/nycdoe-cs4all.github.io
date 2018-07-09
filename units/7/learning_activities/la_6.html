@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Hover on text, drag sliders: control your sketch using HTML elements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/7/learning_activities/la_6.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+			
+		
+	
+
+<h4>
+	<a href="/units/7/overview.html">Unit 7</a>. Learning Activity 6 . Hover on text, drag sliders: control your sketch using HTML elements
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p><p>In this learning activity students create a header that changes its text when the user hovers on it. To do so, they learn to use the mouseOver and mouseOut events. Then, by creating a slider that moves a ball and then drops it, they learn the difference between <i>input</i> and <i>changed</i> events.</p></p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Introduction</p>
+    </div>  
+    <div class="span8">
+        <!-- PENDING: for input/changed slider: example with ball dropping (code at bottom here)
+        for input/changed text field: type writer sound and update only on Enter (maybe better example?) (code in code section, ex 2 i think. sound upload not working on p5 editor right now) -->
+        <p>In learning activity 4 we told p5 to call a function named changeColor whenever the mouse was pressed on a button. We did this by writing the line of code below (in pink): 
+        <!-- <p>In the learning activity 4 we created a button, and told it to call a function called changeColor whenever the mouse was pressed on it: --></p>
+        <pre><code>var button = createButton(); 
+//When the mouse is pressed over the button, call the changeColor function
+<span style="color:#d9328f">button.mousePressed( changeColor ); </span>
+</code></pre> 
+<!-- <p>This means that when the mouse is pressed over the button element, the changeColor function will be executed.</p> -->
+<!-- <p>In more technical terms, we say changeColor is a <i>callback function</i> that is attached to the <strong>mousePressed</strong> event of the button element. Callback functions are also referred to as <i>event handlers</i>: for example, changeColor <i>handles</i> the mousePressed event.</p> -->
+
+<p><code>changeColor</code> is a callback function, and the pink code above attaches it to the <code>mousePressed</code> event. Apart from <code>mousePressed</code>, there are other events that we can attach callback functions to: <!-- We can also ask p5 to call a certain function when these other events happen: --> <!-- In this learning activity we will attach callback functions to the following events: --></p>
+<ul>
+    <li><strong>mouseOver</strong> ––the mouse is over a certain element. <!-- : triggered when the mouse enters an element. --></li>
+    <li><strong>mouseOut</strong> ––the mouse leaves the area of an element.</li>
+    <li><strong>input</strong> ––the user has changed the value of an element (they dragged a slider, or typed into an input field). <!-- : triggered when the value of an element changes, even if slightly --></li>
+    <li><strong>changed</strong> ––the user has finished changing the value of an element (they have dragged the slider <i>and then released it</i>, or typed text <i>and then hit the Enter key</i>).<!-- : triggered when the value of an element is done changing --></li>
+</ul>
+
+<p>Above, when we say 'an element' we mean a button, a slider, a paragraph, an input field, an image, or <i>any other</i> DOM element. This means we can tell p5 what to do when the user clicks on a paragraph, moves the mouse over an image, changes the value of a slider, and any other event/element combination.  </p>
+    </div>
+</div>
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+    <!-- <p>In this Learning Activity we will look into events triggered by user actions, and how to handle them.</p> -->
+
+
+<!-- <p>When the browser detects any of these events, it lets the p5 library know. The p5 library then checks our sketch.js code to see if we care about these events. To let p5 know that we care, we tell it the function that it should call when the event happens. Above, we told p5 to call our changeColor function whenever the mouse was pressed on our button.</p> -->
+
+<!-- STARTER code: come up with a better example
+<p>Let's go back to the sketch we have and see what types of elements we have on the page</p>
+SCREENSHOT, annotated (page with a canvas, p element, button, textfield, slider), and arrows saying what they are. -->
+<h5>1) Mouse Over and Mouse Out</h5>
+<p><strong>mouseOver</strong> and <strong>mouseOut</strong> are triggered by the browser when the mouse enters or leaves the area of an HTML element. Try hovering over this button, slider, and textfield, and look at the label below it: when an event is triggered, you will see its name there. </p>
+<p>
+    <button onmouseover="setButtonHover('mouseOver', this.value)"
+            onmouseout="setButtonHover('mouseOut', this.value)">hover on me</button>
+    <br>event: <strong id="the_button_event"></strong>
+</p>
+<p>
+    <input type="text"  onmouseover="setTextHover('mouseOver', this.value)"
+                        onmouseout="setTextHover('mouseOut', this.value)"
+                        />
+    <br>event: <strong id="the_text_event"></strong>
+</p>
+<p>
+    <input type="range" onmouseover="setSliderHover('mouseOver', this.value)"
+                        onmouseout="setSliderHover('mouseOut', this.value)"
+                        />
+    <br>event: <strong id="the_slider_event"></strong>
+</p>
+<script>
+    function setButtonHover(name, val) {
+        $("#the_button_event").html(name /*+ ", value: " + val*/);
+    }
+    function setTextHover(name, val) {
+        $("#the_text_event").html(name /*+ ", value: " + val*/);
+    }
+    function setSliderHover(name, val) {
+        $("#the_slider_event").html(name /*+ ", value: " + val*/);
+    }
+    
+</script>
+<!-- <p>Let's do something when the user mouses over a paragraph: </p>
+<pre><code>nameP.mouseOver( overParagraph ) 
+    –––> draw: this means that when I mouse over this element, the overParagraph function will be executed
+</code></pre>
+<p>So we need to write a function called overParagraph: </p>
+<pre><code>function overParagraph(){
+
+}
+</code></pre>
+<p>So, for example, let's change the content of the paragraph:</p>
+<pre><code>function overParagraph(){
+    nameP.html('your mouse is over me')
+}
+</code></pre>
+<p>Try it!</p> -->
+<p>Let's create a header element and have its text change when the user hovers on it.</p>
+<div class="sketch_container" >
+    <iframe id="canvas_iframe_1"  src="" width="600px" height="200px"></iframe>
+    <div class = "editor" id="editor_1" >
+    </div>
+    <p>Here is the result:</p>
+</div>
+<p>In the code above, we start by creating the header element (line 5), and storing it in a variable named "header". Initially, the content of header is "Hover on me". Then we attach a callback to the header's mouseOver event &mdash;a function named changeText (line 6). On line 15 we define this function, which changes the content of header to the text "too late"(line 14).</p>
+
+
+
+
+<!-- <p><strong>Exercise:</strong> Add a mouseOut callback function that changes the paragraph's text back to "Hover on me" (or to something else).</p> -->
+    <!-- <ol><li></li>
+         <li>Add a paragraph element, and have its text change</li></p> 
+         Pending: attach same callback to other events, or same event but different elements 
+    </ol> -->
+        
+
+
+
+<!-- <p>We can attach that same event handler to another element: </p> -->
+
+<!-- <p>Try these: canvas.mouseOver( overParagraph ); mouseOut ( overParagraph ); mousePressed (changeColor)</p> -->
+<!-- <p>Then the thing that happens when I mouse over the paragraph also happens when I mouse over the canvas; the thing that happens when I click on this button, also happens when I click on the canvas (but NOT when I click somewhere else)</p> -->
+
+<!-- <p>This is interesting: these functions can be attached as callbacks to multiple elements.</p> -->
+
+
+<!-- <p><strong>Exercise: </strong> Add mouseOver, mouseOut, to other two elements (which? img? p? button?)</p> -->
+
+<h5>2) Changed and Input events</h5>
+<p>The <strong>input</strong> and <strong>change</strong> events happen when the value of an element changes. Each time you drag a slider ever so slightly, an <strong>input</strong> event is triggered. When you finish your action of changing a value ––when you drag a slider and then release it–– a <strong>change</strong> event is triggered.</strong>. <!-- By handling the input event you get access to all intermediate values; by handling the change event you get just the final one. --> <!-- when the user drags a slider's handle, or when they type into a text field, for example. --> <!-- The easiest way to tell the difference between the two is to try them.</p> <p>Try the <strong>input</strong> event by typing into the text field below: --></p>
+
+<p>The sketch below illustrates the difference between input and changed: 
+    <ul><li>whenever you drag the slider, an <i>input</i> event happens, and the x position of the white circle is set to the value of the slider.</li>
+        <li>when you finally release the slider, a <i>changed</i> event happens, and the gravity variable is set so that the white circle falls.</li>
+    </ul> 
+    Notice that the input event is triggered constantly: whenever there is even a slight change in the value of the slider, the white circle moves. But the changed event is only triggered when you release the slider.</p>
+
+
+<!-- <p>An input event is triggered each time you type or delete a character.</p>Notice that the value is updated every time you add or delete a character. Then try the <strong>change</strong> event by typing text in, and then hitting Enter or Tab: the change event is only triggered when you are <i>done</i> typing.</p> --><!-- Try the <strong>input</strong> event on the text field by typing into it -->
+<!-- <p>
+    <input type="text"  oninput="setEvent('input', this.value)"
+                        onchange="setEvent('change', this.value)"
+                        />
+    <br>event: <strong id="the_event"></strong>
+    <br>value: <strong id="the_value"></strong>
+</p>
+<script>
+function setEvent(name, val) {
+    $("#the_event").html(name );
+    $("#the_value").html(val);
+}
+</script>-->
+
+<!-- <p>Now try try the <strong>input</strong> event on the slider by moving it back and forth. Notice that the value is updated constantly. The <strong>change</strong> event, on the other hand, is only triggered when you are <i>done</i> dragging, and release the slider. The input event gives all the values of an element as a user interacts with them. The change event only gives us the value of an element when the user finishes the interaction ––the final value, one could say.</p> -->
+<!-- <p>
+    <input type="range" oninput="setSliderEvent('input', this.value)"
+                        onchange="setSliderEvent('change', this.value)"
+                        />
+    <br>event: <strong id="the_slider_event_2"></strong>
+    <br>value: <strong id="the_slider_value_2"></strong>
+    <script>
+    function setSliderEvent(name, val) {
+        $("#the_slider_event_2").html(name /*+ ", value: " + val*/);
+        $("#the_slider_value_2").html(val /*+ ", value: " + val*/);
+    }
+    </script>
+</p> -->
+
+<!-- <p>And there was a draw function. And the draw function is looping over and over forever and ever</p>
+<p>So if I use the slider's value or the input's value in draw(), I'm always accessing that value continously. So if it changes, in draw I'll use the changed value of the slider. So if it changes, in draw I'll use the changed value of the slider.</p>
+<p>But what if I want an action to only happen when I move the slider? Not when the slider is just sitting there: only when I move it. What if I want an action to happen only when I move the slider and then release the mouse? Or only when I type in the text field, or not any time I type, but when I hit the Enter key?</p>
+<p>That's what the changed() and input() events do:</p>
+<p>- every time the slider changes ever so slightly, an input event is fired. <br/>
+    - any time I finish my action of changing a value, an changed event is fired</p> -->
+
+<!-- <p>It's the difference between dragging a slider vs dragging it AND releasing it (being done dragging). It's the difference between typing into the input vield vs typing AND hitting Enter (being done typing). </p>
+<p>So the changed event happens when you finished your action, and the input event happens for any change to the DOM element it is attached to</p>
+<p>Let's see this in the code</p>
+<p>(start with previous code, but maybe clean up)</p>
+<p>Goal: when I type in my name and I hit Enter, I want to see the content of the paragraph change</p>
+<p>The event for that is inputField.changed (updateText)</p>
+<p>So we need to define that function: </p>
+<pre><code>function updateText(){
+    nameP.html(inputField.value()) <–––now the text inside that paragraph will change if I hit the enter key (TAB also works, actually)
+}
+</code></pre>
+<p>Try it. Other events (from the example) are still triggering (should I leave them here?)</p>
+<p>Now let's use the input event instead of change</p> -->
+
+<div class="sketch_container" style="height:300px;">
+    <iframe id="canvas_iframe_2"  src="" width="600px" height="300px"></iframe>
+    <div class = "editor" id="editor_2" style="height:300px; display:none">
+    </div>
+</div>
+<p>Let's write the code for this sketch. First, we draw an ellipse at an (x, y) position. </p>
+<pre><code><span style="color:#d9328f">var x = 0;
+var y = 40;</span>
+
+function setup(){
+    createCanvas(600, 200);
+}
+
+function draw(){
+    background(0);
+    <span style="color:#d9328f">ellipse(x, y, 40, 40);</span>
+}
+</code></pre>
+
+
+<p>Then we add a slider, and store it in a variable. We position it under the canvas, and attach a callback function (named updateX) to the slider's input event. Inside updateX, we set the x position of the ellipse to the value of the slider.</p>
+
+<pre><code>var x = 0;
+var y = 40;
+
+<span style="color:#d9328f">var slider;</span>
+
+function setup(){
+    createCanvas(600, 200);
+    <span style="color:#d9328f">
+    slider = createSlider(0, 600, 10);
+    slider.position(200, 620);
+    
+    slider.input(updateX);</span>
+}
+
+function draw(){
+    background(0);
+    ellipse(x, y, 40, 40);
+}
+<span style="color:#d9328f">
+function updateX(){
+    x = slider.value();
+}</span>
+
+</code></pre>
+
+<p>Next, we attach a callback function to the <i>changed</i> event of the slider, and call it "drop". The drop function will be executed only when the user releases the slider. We define the drop function at the bottom.</p>
+
+<pre><code>var x = 0;
+var y = 40;
+var slider;
+
+function setup(){
+    createCanvas(600, 200);
+    
+    slider = createSlider(0, 600, 10);
+    slider.position(200, 620);
+    
+    slider.input(updateX);
+
+    <span style="color:#d9328f">slider.changed(drop);</span>
+}
+
+function draw(){
+    background(0);
+    ellipse(x, y, 40, 40);
+}
+
+function updateX(){
+    x = slider.value();
+}
+
+<span style="color:#d9328f">
+function drop(){
+    
+}</span>
+
+</code></pre>
+
+<p>Our goal is to have the ball drop when we release the slider. To make the ball move down, we can add a value to its y position every time the draw loop runs. Let's call this value "gravity". We want it to start at 0, so that the ball doesn't move when the sketch starts. Then, inside of the drop function, we can set it to a higher value (like 10). This way the ball will start moving only when the changed event is triggered, which causes the drop function to run.</p>
+
+<pre><code>var x = 0;
+var y = 40;
+<span style="color:#d9328f">
+var gravity = 0;</span>
+
+var slider;
+
+function setup(){
+    createCanvas(600, 200);
+    
+    slider = createSlider(0, 600, 10);
+    slider.position(200, 620);
+    
+    slider.input(updateX);
+    slider.changed(drop);
+}
+
+function draw(){
+    background(0);
+    <span style="color:#d9328f">
+    y = y + gravity;</span>
+    ellipse(x, y, 40, 40);
+}
+
+function updateX(){
+    x = slider.value();
+}
+
+function drop(){
+    <span style="color:#d9328f">gravity = 10;</span>
+}
+
+//maybe add reset button
+</code></pre>
+
+<p><strong>Exercise:</strong> Add a Reset button to your sketch. When clicked, it should set the ball back to its initial position, and gravity back to zero.</p>
+
+
+<!-- PENDING: add text field example (the one with sound) -->
+<!-- can't do this because: 
+1) if I embed, need the input callback to work (doesn't)
+2) if I use online editor, need the file upload to work (doesn't) -->
+
+<!-- <div class="sketch_container" style="height:300px;">
+    <iframe id="canvas_iframe_3"  src="" width="600px" height="300px"></iframe>
+    <div class = "editor" id="editor_3" style="height:300px; display:none">
+    </div>
+</div> -->
+
+    </div> 
+</div> 
+
+
+    <!-- <img src="../../../images/la/7_5/button_clicked_handler.jpg"/>
+    <p>In code, the link made by the arrow in the drawing above was done by the line in pink, which can be read as "attach the "changeColor" function to the mousePressed event of the button":</p>
+<pre><code>var button = createButton(); 
+<span style="color:#d9328f">button.mousePressed( changeColor ); </span>
+</code></pre> -->
+<!-- <p>In this case we named our <i>callback</i> function "changeColor" (we could have called it anything we wanted), and defined it later in our code:  --><!-- The result is Whenever we click on the button, the code inside that function will be executed. -->
+<!-- <pre><code>function changeColor(){
+
+}
+</code></pre> -->
+
+<!-- <p>mousePressed is one of the many events the browser can detect for all HTML elements; here are some others:  -->
+<!-- <p>When a user presses the mouse, this is detected by the browser. The browser triggers an event called 'mousePressed', and lets the p5 library know -->
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=HsDVz2_Qgow">Video 7.6: Other Events and Inputs</a>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_7/la_6/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

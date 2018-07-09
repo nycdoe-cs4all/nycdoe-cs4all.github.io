@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Emoji Sea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/6/final_project_examples/guide_level_1.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <h4>Step by Step Guide: Emoji Sea, Level 1</h4>
+<div class="mainrow row">
+	<div class="span2"> 	
+	</div>	
+	<div class="span6"> 
+		<p>To see the complete code and running sketch click <a target="_blank" href="../../../units/final_project_example/final-project-example-06-01/"> here</a>.</p>
+		<p></p>
+	</div>		 
+</div>
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Description</b></p>
+    </div> 
+     <div class="span6">
+            <p>In this final project example we create a sea of text-based emojis that jiggle around the canvas. Implemented with an array of Emoji objects that have a text-based emoji symbol, a position, and functions for moving and displaying themselves.</p>
+    </div>
+</div>
+
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>Create a constructor function (<a href="../../../units/learning_activity/learning-activity-05-01/">LA 6.2</a>)</li>
+            <li>Create an array and load it within a for loop (<a href="../../../units/learning_activity/learning-activity-05-01/">LA 6.1</a>)</li>
+            <li>Create an array of objects (<a href="../../../units/learning_activity/learning-activity-05-03/">LA 6.3</a>)</li>
+        </ul>
+    </p>
+    </div>       
+</div>
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+            <ol start="1">
+                <li>Gather a collection of emojis</li>
+                <li>Create an Emoji constructor</li>
+                <li>Draw many emojis</li>
+                <li>Draw many <i>different</i> emojis</li>
+            </ol>
+    </div>
+</div>
+
+<!-- <div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>()<a href="../../../units/learning_activity/learning-activity-05-01/">LA 5.1</a>)</li>
+            
+        </ul>
+    </p>
+    </div>       
+</div> -->
+
+<!-- <a href="../../../units/learning_activity/learning-activity-04-04/">LA X.X</a> -->        
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Gather a collection of emojis</h5>
+        <p>First, go to <a href="http://getemoji.com/">this page</a>, and pick a collection of emojis for your sketch. Emojis are represented as text, so you can copy and paste some into any text document. Here, we pasted them into a comment on our sketch code to use later:
+        <img width="100%" src="../../../images/fp/6_1/emoji_collection.png"/>
+        </p> 
+        <h5>2) Create an Emoji constructor</h5>
+        <p>Let's start by creating an Emoji constructor modeled after the Bubble constructor from <a href="../../../units/learning_activity/learning-activity-06-02/">LA 6.2</a>. Instead of drawing ellipses though, we want to draw emojis. Emojis are represented by text (that's why different software renders them differently), so instead of drawing them with the <code>image</code> function, we use the <code>text</code> function.</p><p>Here is the constructor (this is a code snippet, not ready to run yet!):
+<pre><code>function Emoji(x, y) {
+  this.x = x;
+  this.y = y;
+  
+  this.move = function() {
+    this.x += random(-1, 1);
+    this.y += random(-1, 1);
+  }
+  
+  this.display = function() {
+       text("😀", this.x, this.y);
+  }
+}
+</code></pre>
+        </p>
+        <h5>3) Draw many emojis</h5>
+        <p>Now let's use this constructor to create our emoji sea. We first declare an emoji array, then use a for loop to create 30 emojis on <code>setup</code>, and another for loop to move and display them in <code>draw</code>. Copy and paste this code in the p5 editor to see it working:</p>
+        <pre><code><strong style="color: #f60861;">var emoji = [];</strong>
+
+function setup() { 
+  createCanvas(400, 400);
+    
+    <strong style="color: #f60861;">for(var i = 0; i < 30; i++){
+        emoji[i] = new Emoji(random(width), random(height));
+    }</strong>
+} 
+
+function draw() { 
+  background(220);
+    <strong style="color: #f60861;">
+    for(var i = 0; i < 30; i++){
+        emoji[i].move();
+        emoji[i].display();
+    }</strong>
+}
+
+function Emoji(x, y) {
+  this.x = x;
+  this.y = y;
+  
+  this.move = function() {
+    this.x += random(-1, 1);
+    this.y += random(-1, 1);
+  }
+  
+  this.display = function() {
+       text("😀", this.x, this.y);
+  }
+}
+</code></pre>        
+<h5>4) Draw many <i>different</i> emojis</h5>
+<p>But we want each Emoji object to draw a different emoji from our collection. So instead of always drawing "😀", let's add an emoji property to our object. Apart from a <code>this.x</code> and <code>this.y</code>, it will have a <code>this.emoji</code>. Let's also add an extra parameter to the constructor function, so that we can set a different emoji to the object each time we create a new one ––just like we've been setting them to a different x,y position. Here is the new constructor code:
+
+    <pre><code>function Emoji(x, y, <strong style="color: #f60861;">emoji</strong>) {
+  this.x = x;
+  this.y = y;
+  <strong style="color: #f60861;">this.emoji = emoji;</strong>
+  
+  this.move = function() {
+    this.x += random(-1, 1);
+    this.y += random(-1, 1);
+  }
+  
+  this.display = function() {
+       text(<strong style="color: #f60861;">this.emoji</strong>, this.x, this.y);
+  }
+}
+</code></pre>
+
+</p>  
+<p>To assign a different emoji to each object we create, let's put our collection into an array. Then, for each emoji in the array, we create a new object, passing the i-eth emoji as a third parameter to the constructor function: 
+
+<pre><code><strong style="color: #f60861;">var emoji_symbols = ["😀", "😬", "😁", "😂", "😃", "😄", "😅", "😆", "😇", "😉", "😊", "🙂", "🙃", "😋", "😌", "😍", "😘", "😗", "😙", "😚", "😜", "😝", "😛", "🤑", "🤓", "😎", "🤗", "😏", "😶", "😐", "😑", "😒", "🙄", "🤔", "😳", "😞", "😟", "😠", "😡", "😔", "😕", "🙁", "😣", "😖", "😫", "😩", "😤", "😮", "😱", "😨", "😰", "😯", "😦", "😧", "😢", "😥", "😪", "😓", "😭", "😵", "😲", "🤐", "😷", "🤒", "🤕", "😴"];</strong>
+var emoji = [];
+
+function setup() {
+  createCanvas(600, 600);
+  background(255, 194, 32);
+  
+  //for each symbol in the emoji_symbols array,
+  //create an Emoji object and put it inside the emoji array
+  for(var i = 0; i < <strong style="color: #f60861;">emoji_symbols.length</strong>; i++){
+    emoji[i] = new Emoji(random(width), random(height), <strong style="color: #f60861;">emoji_symbols[i]</strong>);
+  }
+}
+
+function draw() { 
+  background(220);
+    for(var i = 0; i < <strong style="color: #f60861;">emoji.length</strong>; i++){
+        emoji[i].move();
+        emoji[i].display();
+    }
+}
+
+</code></pre>
+</p> 
+<p>You need to have both these snippets in the same sketch for this to work. The order is a matter of preference ––I like to have my variables on top, then setup, then draw, and then any other functions I create. <a href="../../../units/final_project_example/final-project-example-06-01/">Here</a> is the complete sketch.</p> 
+<p>Now what would you change in order to have each emoji object be of a random, different size? Can you make them move at different speeds? Remember we went over the concept of speed in <a href="../../../units/learning_activity/learning-activity-04-01/">LA 4.1</a>.</p>
+    </div>
+</div>  
+
+
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_6/final_project_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'level_' + i;
+    		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    		var code =  path + '/sketch.js'
+    		
+    		$("#" + this.id).load(code, function(){
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+			  	
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

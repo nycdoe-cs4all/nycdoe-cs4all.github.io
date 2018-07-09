@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Emoji Sea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/7/final_project_examples/guide_level_1.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <h4>Step by Step Guide: Emoji Sea, Level 1</h4>
+<div class="mainrow row">
+	<div class="span2"> 	
+	</div>	
+	<div class="span6"> 
+		<p>To see the complete code and running sketch click <a target="_blank" href="../../../units/final_project_example/final-project-example-07-01/"> here</a>.</p>
+		<p></p>
+	</div>		 
+</div>
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Description</b></p>
+    </div> 
+     <div class="span6">
+            <p>In this final project example we add an interface to Unit 1's final project: a slider allows the user to control the number of rows and columns, and a generate button is added so that the user can see different results without having to reset the page.</p>
+    </div>
+</div>
+
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>Drawing and grids (<a href="../../../units/learning_activity/learning-activity-01-04/">LA 1.4</a>)</li>
+            <li>Add a button (<a href="../../../units/learning_activity/learning-activity-07-04/">LA 7.4</a>)</li>
+            <li>Add a slider (<a href="../../../units/learning_activity/learning-activity-07-05/">LA 7.5</a>)</li>
+        </ul>
+    </p>
+    </div>       
+</div>
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+            <ol start="1">
+                <li>Pick project and read code</li>
+                <li>Add a Generate button</li>
+                <li>Add a slider</li>
+            </ol>
+    </div>
+</div>
+<!-- <a href="../../../units/learning_activity/learning-activity-04-04/">LA X.X</a> -->        
+
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Get project and read code</h5>
+        <p>First, find your final Unit 1 project and decide HTML interface elements you will add, and what they will control. In this example, we picked <a href="../../../units/final_project_example/final-project-example-01-03/">Unit 1 Final Project, Level 3</a>. Re-read the code and make sure you understand it. Now duplicate the project, or copy the code and paste it into a new project.</p>
+        <h5>2) Add a Generate button</h5>
+        <p>In setup(), let's call the createButton function, and store its result in a variable called generateBtn, which we declare at the top of our sketch. Then we bind the mousePressed event to a function called generate.
+<pre><code>
+<strong style="color: #f60861;">var generateBtn;</strong>
+function setup() {
+  <strong style="color: #f60861;">//Interface
+  generateBtn = createButton('Generate');
+  generateBtn.mousePressed(generate);
+  </strong>
+
+  //Existing setup code goes here...
+
+  
+}
+</code></pre>
+        </p> 
+        <p>Now we need to define the generate function. What we want is for the whole drawing to be re-created and drawn each time we click this button. The code for creating and drawing is now in the draw() loop. We can just cut it from there, and paste it within our new generate function: 
+                  <pre><code>
+function draw() {
+  <strong style="color: #f60861;">//Cut all the code in the draw loop, </strong>
+}
+
+function generate(){
+  <strong style="color: #f60861;">//And paste it here</strong>
+}
+</code></pre>
+</p>
+<p>Now run your sketch, and click on the generate button: it works! But now we don't see a drawing when we first load our page. To fix this, we can just call our generate function from the bottom of our setup() function: 
+<pre><code>
+function setup() {
+  //Interface
+  generateBtn = createButton('Generate');
+  generateBtn.mousePressed(generate);
+
+  //Existing setup code goes here...
+
+  <strong style="color: #f60861;">generate();</strong>
+
+}
+</code></pre>
+
+        
+        <h5>3) Add a slider</h5>
+      <p>To create a slider, we call the createSlider function (with arguments for min, max, and initial value), and store the object it returns in a variable called rowsSlider, which we declare on top:
+<pre><code>
+var generateBtn;
+<strong style="color: #f60861;">var rowsSlider;</strong>
+
+function setup() {
+  //Interface
+  <strong style="color: #f60861;">
+  rowsSlider = createSlider(1, 8, 2);
+  </strong>
+  generateBtn = createButton('Generate');
+  generateBtn.mousePressed(generate);
+
+
+  //Existing setup code goes here...
+
+  
+}
+</code></pre>
+      </p>  
+      <p>We want our slider to determine the number of rows and columns in our composition. The number of columns is determined in the first line of the generate function, which sets it to a random number: 
+<pre><code>function generate(){
+  var cols = <strong style="color: #f60861;">int(random(1, 8))</strong>; //choose between 1 and 8 columns, at random
+  var rows = cols;
+</code></pre>
+      </p>
+      <p>To set the number of rows to the current value of the slider instead, we can replace this call to random with a call to our slider's value() function:</p>
+<pre><code>function generate(){
+var cols = <strong style="color: #f60861;">rowsSlider.value()</strong>; //Access the current value of the slider
+var rows = cols;
+</code></pre>
+</p>
+<p>Try it! Move the slider, and then click on Generate to see different compositions. To see the full code, go to the running example page (find the link on top of this page)</p>
+        
+    </div>
+</div>  
+
+
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_7/final_project_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'level_' + i;
+    		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    		var code =  path + '/sketch.js'
+    		
+    		$("#" + this.id).load(code, function(){
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+			  	
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Make it vary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/1/learning_activities/la_2.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+			
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+<h4>
+	<a href="/units/1/overview.html">Unit 1</a>. Learning Activity 2 . Make it vary
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p>In this learning activity students create a drawing in which shapes have variable positions, sizes and shades. To do so, they use built-in variables, create their own, and learn to use the random function. <br/><br/> First, variables built into p5 are introduced. <code>mouseX</code> and <code>mouseY</code> are used to help with positioning shapes on the screen; <code>width</code> and <code>height</code> are used to calculate positions such as the center of the screen. Students then create their own variables to set the position, size and color of their shapes without repeating code. Finally, they set their variables to random values within a range.</p>
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Suggested Duration</p>
+		</div>	
+		<div class="span6"> 
+			<p>45 minutes</p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+        <div class="span2">     
+            <p>Step by Step</p>
+        </div>  
+        <div class="span8">
+           <h5>1) Center elements with built-in variables: width and height</h5>
+
+           <p>We have already used two <i>built-in variables</i> in the previous learning activity: <code>mouseX</code> and <code>mouseY</code>. <i>Variables</i> are placeholder names for values that change over time. We type <code>mouseX</code> knowing that p5 will replace that name with a number that represents the latest X position of the mouse. This number will change as the user moves the mouse across the canvas.</p><p> Next we will use two other variables built into p5: <code>width</code> and <code>height</code>. In the following example, their values are <code>600</code> and <code>240</code> ––the dimensions we gave our canvas when we created it in the setup function. </p>
+           <div class="sketch_container">
+                <iframe id="canvas_iframe_1"  src="" width="600px" height="240px"></iframe>
+                <div class = "editor" id="editor_1" style="height:250px;">
+                </div>
+            </div>
+
+         
+           <p>In the sketch below we use <code>width</code> and <code>height</code> to place an ellipse at the center of the screen:</p>
+           <div class="sketch_container">
+                <iframe id="canvas_iframe_2"  src="" width="600px" height="240px"></iframe>
+                <div class = "editor" id="editor_2" style="height:250px;">
+                </div>
+            </div>
+            <p>The advantage of using these variables to place our ellipse is that, if we change the size of our sketch later, the ellipse will still be centered. To prove this, try changing the width and height of the canvas to 500 and 200, and run the sketch again. </p>
+
+            <p><code>width</code> and <code>height</code> can also be use to place shapes in positions like "a third of the screen across", or "two thirds of the screen across", or "two thirds of the screen down". Try drawing these: </p>
+            <p>
+                <ul>
+                    <li><code>ellipse(width/3, height/2, 60, 60);</code></li>
+                    <li><code>ellipse(2*width/3, height/2, 60, 60);</code></li>
+                    <li><code>ellipse(width/3, 2*height/3, 60, 60);</code></li>
+                </ul>
+            </p>
+           
+            <h5>2) Place elements at random positions</h5>
+            <p>We can also place our ellipse at a random position each time our program runs. To do this, we use p5's <code>random</code> function. This function is different from other functions we have been using (like <code>ellipse</code> and <code>rect</code>) in that it <i>returns</i> a value. Each time they are called:
+                <ul>
+                    <li><code>random(50, 100)</code> returns a number between 50 and 100</li>
+                    <li><code>random(1, 5)</code> returns a number between 1 and 5</li>
+                </ul>
+            When the first parameter is omitted, random assumes it is 0:
+            <ul>
+                    <li><code>random(100)</code> returns a number between 0 and 100</li>
+                    <li><code>random(5)</code> returns a number between 0 and 5</li>
+                </ul>
+            </p>
+            <p>In the p5 editor, try running the following piece of code several times: </p>
+            <pre><code>function setup(){
+    ellipse(random(100), 60, 60, 60);
+}</code></pre>
+            <p>Now try these, and play with their values: 
+                <ul>
+                    <li><code>ellipse(random(100),random(100), 60, 60);</code></li>
+                    <li><code>ellipse(random(300, 400), 60, 60, 60);</code></li>
+                    <li><code>ellipse(random(20, 60), random(60, 120), 60, 60);</code></li>
+                </ul>
+            </p>
+            <p>What happens if we replace the last two parameters with calls to <code>random</code>?
+            </p>
+            <h5>3) Position elements with custom variables</h5>
+            <p>Suppose we want to have 5 ellipses in a row. This is one way to do it. </p>
+            <div class="sketch_container">
+                <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+                <div class = "editor" id="editor_3" style="height:250px;">
+                </div>
+            </div>
+            <p>If we now want to move them 10 pixels down, we have to change all five y positions, setting them to be 70 instead of 60:</p>
+            <p>
+                 <ul> 
+                    <li><code>ellipse(120, 70, 60, 60);</code></li>
+                    <li><code>ellipse(200, 70, 60, 60);</code></li>
+                    <li><code>ellipse(280, 70, 60, 60);</code></li>
+                    <li><code>ellipse(360, 70, 60, 60);</code></li>
+                    <li><code>ellipse(440, 70, 60, 60);</code></li>
+                </ul>
+            </p>
+
+        
+           
+           <h5></h5>
+            <p>This is a repetitive task, and error-prone. Instead, we can use variables. So far, we have use p5 built-in variables: <code>mouseX</code>, <code>mouseY</code>, <code>width</code> and <code>height</code>. We can read their values, but not change them. In the next example,  we create our own variable. First we <i>declare</i> our own variable, and call it <i>y</i>. Then we <i>assign</i> the value 70 to our variable. Now if we want to move all five ellipses 10 pixels down, we can just change the value of our variable: one line of code instead of five.</p>
+            <div class="sketch_container">
+                <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+                <div class = "editor" id="editor_4" style="height:250px;">
+                </div>
+            </div>
+
+            <p>Now try moving all ellipses a random y position.</p>
+
+            <h5>4) Make the position of our happy face random</h5>
+            <!-- <p>Rewrite the positions of the elements in our happy face so that they are relative to an <code>x</code> and a <code>y</code> variable. Now moving the face around the screen becomes much easier. We can even set <code>x</code> and <code>y </code>to random values, and the face will remain a face.</p> -->
+            <p>In our original happy face, the positions of face, eyes, and mouth, are relative to the top left corner of the canvas: 
+            <img src="../../../images/la/1_2/placement_1.jpg"/>
+            <pre><code>function setup() {
+  createCanvas(600, 120);
+}
+
+function draw() {
+  background(20);
+  //face
+  fill(255);
+  ellipse(300, 80, 100, 100);
+  
+  //eye 1
+  fill(0);
+  ellipse(300, 90, 10, 10);
+  
+  //eye 2
+  ellipse(320, 90, 10, 10);
+  
+  //mouth
+  // arc(300, 225, 30, 30, 0, radians(180), PIE);
+  
+  //mouth
+    arc(300, 105, 30, 30, 0, radians(180), PIE);
+  
+}</code></pre>
+
+            To make its position random, let's first position the elements of the face relative to the center of the face: 
+            <img src="../../../images/la/1_2/placement_2.jpg"/>
+             Now we can make that center variable. This time we need two variables: x, and y. 
+<pre><code>function setup() {
+  createCanvas(600, 120);
+}
+
+function draw() {
+  background(20);
+  var x = 300;
+  var y = 80;
+
+  //Face
+  fill(255);
+  ellipse(x, y, 100, 100);
+  
+  //Eye 1
+  fill(0);
+  ellipse(x, y+10, 10, 10);
+  
+  //Eye 2
+  ellipse(x+20, y+10, 10, 10);
+  
+  //Mouth
+    arc(x, y+25, 30, 30, 0, radians(180), PIE);
+  
+}</code></pre>
+</p>      
+            
+            
+            
+<p>Finally, we can make the position of the center random:</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+        <p>The random value will be applied whenever you refresh this page, which causes the sketch to run again.</p>
+        <p>For another example, see Daniel Shiffman's <a href="http://learningprocessing.com/exercises/chp03/exercise-03-04-Zoog-mouse">mouse-following Zoog drawing</a></p>
+    </div>
+</div>  
+
+
+
+
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Video tutorials:<br/> <a href="https://www.youtube.com/watch?v=RnS0YNuLfQQ&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=5">2.1 Variables in p5.js (mouseX, mouseY)</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.1_Variables_in_p5.js_mouseX_mouseY">Code</a> <br/> <a href="https://www.youtube.com/watch?v=nfmV2kuQKwA&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=9">2.5: The random() Function</a> <br/> <a href="https://www.youtube.com/watch?v=Bn_B3T_Vbxs&index=6&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">Video 2.2 Variables in p5.js (make your own)</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.2_Variables_in_p5.js_user_defined"> Code </a> </li> <li>Learning Processing: <!-- <a href="http://learningprocessing.com/examples/chp04/example-04-01-declaringvars"> -->Chapter 4. Variables<!-- </a> --></li> <li>Getting Started With p5.js: Chapter 4. Variables<!--, examples 4.1, 4.2 | <a href="https://github.com/lmccart/gswp5.js-code/tree/master/04_Variables">Code</a> --></li> </ul>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_2/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

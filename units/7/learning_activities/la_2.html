@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Add title and text from Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/7/learning_activities/la_2.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+			
+		
+	
+
+<h4>
+	<a href="/units/7/overview.html">Unit 7</a>. Learning Activity 2 . Add title and text from Javascript
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p><p> In this learning activity students create HTML elements using Javascript: a paragraph, a header, and of course their canvas.</p></p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Introduction</p>
+
+    </div>  
+    <div class="span8">
+    	<p>In the previous Learning Activity we learned how to add HTML elements to a web page by writing tags into index.html. We also added an HTML element to the page by calling a Javascript function (the canvas):</p>
+    	<!-- <img src="../../../images/la/7_1/html_.jpg"/> -->
+    	
+    	<img src="../../../images/la/7_2/IMG_0415.jpg"/>
+    	<img src="../../../images/la/7_1/html_plus_red_rect.png"/>
+
+    	<p>But how exactly do HTML and Javascript work together? Let's take a closer look at what the browser does when we hit 'play' in the p5 editor.</p>
+    	<p>The browser starts with a blank page and a file with instructions for it: index.html.</p>
+		<img src="../../../images/la/7_2/1.jpg"/>
+		<p>Before drawing anything on the page, the browser reads the whole index.html file to understand its structure, and builds a tree-like representation of it.</p>
+		<p>The browser goes through the HTML tags looking for begin tags that have a matching end tag. It sees the html begin (&lt;html&gt;) and close (&lt;/html&gt;) tags, and creates an element for it. Then it goes over the elements inside of html, and creates an element for each of them (&lt;head&gt; and &lt;body&gt;). </p>
+		<img src="../../../images/la/7_2/2.jpg"/>
+		<p>Then the browser adds the elements inside of the head element (these are scripts: it will check them for instructions later), the elements inside body (our &lt;p&gt;'s,  &lt;h1&gt;'s, and &lt;img&gt;'s), and then the elements inside of those, if there are any. It continues until all HTML elements are included in a tree-like structure.</p>
+		
+		<img src="../../../images/la/7_2/3.jpg"/>
+		<p>This tree structure of the page is called the DOM. This stands for Document Object Model. The browser will keep it in its memory for as long as the page is open. <!-- You can see this structure if you open the browser's developer console. --></p>
+		<!-- <p>(combined with this image: )</p>
+		<img src="../../../images/la/7_2/3_b.jpg"/> -->
+		<p>From the DOM tree it has in its memory, the browser draws the page. It knows to draw header text in a larger, bold font, to draw paragraph text in a smaller, thin font, and to go fetch the image file at its source address before drawing it.</p>
+		<img src="../../../images/la/7_2/render_DOM_html.jpg"/>
+
+		<p>Once it's done with drawing the DOM, the browser looks at the Javascript files that index.html references for any further instructions</p>
+		<img src="../../../images/la/7_2/4.jpg"/>
+
+		<p>The p5 library takes the lead, telling the browser to run the setup() and draw() functions in sketch.js</p>
+		<img src="../../../images/la/7_2/5.jpg"/>
+
+		<p>So the browser runs the setup() function we wrote in sketch.js, and finds the createCanvas line, which tells it to insert a canvas element into its DOM tree:</p>
+		<img src="../../../images/la/7_2/6.jpg"/>
+		<p>The browser always keeps the drawing of the page consistent with its DOM tree: now that the DOM has a new canvas element, it draws it on the page.</p>
+		<img src="../../../images/la/7_2/7.jpg"/>
+		<p>And this is how we end up with a page that has HTML elements defined in index.html, and a canvas element added from sketch.js.</p>
+
+		<!-- ALTERNATIVE paragraph; unify: -->
+		<!-- <p>Accessing the DOM from Javascript is refered to as DOM manipulation. Creating a canvas is just a first example. We can also create headers, paragraphs, images, and any other HTML element from Javascript, at any time. And we can also modify these elements at any time. This means we can animate HTML elements, and change their content in response to user actions, making our page dynamic. We can create a paragraph each time a user clicks the mouse, change the text of a header when they press a key, and many other combinations.</p> -->
+
+		<!-- So, to sum up: 
+		browser reads HTML file, creates DOM structure, renders page as initially laid out in index.html. 
+		then it runs our sketch.js file: sketch.js has access to the dom elements: it can create new ones, modify them, delete them (*dom library). this means that we can have our page change OVER TIME (our draw loop goes on forever, and there are events too).
+
+		One last look at index.html.
+		p5 has a special library that gives it access to the DOM. it's called  -->
+
+		
+		<p>The important thing to notice here is that we can add elements to a page directly on its HTML file, but we can also add elements to it by writing Javascript code. In fact, we can even change, and remove elements by writing Javascript code. This will be useful for us to change our headers, paragraphs, images, and more on the fly ––meaning <i>after</i> index.html has been loaded. Accessing the DOM tree from Javascript will allow us to change the content of a page in reponse to user actions, to animate elements, and more.</p>
+
+		<p>To add or change elements after the page has been loaded is refered to as accessing /changing things <i>dynamically</i>. When content doesn't change once it is defined, we say it is <i>static</i>. When it changes after that, in response from events from users or other systems (like the temperature changed), we say content is <i>dynamic</i>.</p>
+		<p>In this LA, we will add HTML elements to our page dynamically, from Javascript.</p>
+	</div>
+</div>
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+
+        <!-- <h5>(LA 2 used to start here)</h5> -->
+
+		<p>In the previous LA we created a page that had a header element (&lt;h1&gt;), a paragraph element (&lt;p&gt;), an image element (&lt;img src="..."&gt;), and a canvas (&lt;canvas&gt;) element. &lt;h1&gt;, &lt;p&gt;, and &lt;img&gt; were added directly on our index.html file. &lt;canvas&gt; was added in Javascript, by <code>createCanvas(200, 200)</code>.</p>
+
+		<p>Now when should we choose one method over the other? If we have a structure that will not change over time ––for example, we might always have the same title, and the same image on our page––, it makes sense to set them up directly in HTML. But if we want to create hundreds of paragraphs (as in <a href="http://alpha.editor.p5js.org/luisa/sketches/B19olIyLz">this example</a>), or animate them (as in <a href="https://p5js.org/examples/dom-modifying-the-dom.html">this example</a>); if we want to add a paragraph each time the user clicks, or if we want to make their content random, then it makes sense to generate them in code. This is exactly what we will do in this LA.</p>
+		<!-- Alternative paragraph: combine:
+		<p>If all you want is a page with some text and images that don't change (perhaps a story or an essay), writing elements directly into the HTML file works well. You write the HTML, open the file in the browser, and that's it. But if you want the HTML content to be interactive, to change over time, to respond to the user ––perhaps the paragraphs move randomly around the page, or the font of the title changes whenever the user clicks on it, –– then you need to manipulate elements from sketch.js (or another script). This is what we mean when we say "DOM" manipulation: creating, changing, and deleting HTML elements from Javascript.</p> -->
+
+		<!-- <p>In this Learning Activity we will look into how to create DOM elements dynamically using Javascript.</p> -->
+
+		<p>We can actually create all of these elements in Javascript: apart from <code>createCanvas</code>, p5 has many other <code>create</code> functions: </p>
+		<ul>
+			<li><code>createP()</code></li>
+			<li><code>createDiv()</code></li>
+			<li><code>createButton()</code></li>
+			<li><code>createImg()</code></li>
+			<li>...and more ––you can see the full list in the <a href="https://p5js.org/reference/#/libraries/p5.dom">p5 DOM reference</a>)</li>
+		</ul>
+
+		<p>Each of these functions needs some argument inside the parentheses ––what you need to create a paragraph is different from what you need to create an image. You can look arguments up in the p5 reference page. But for now, let's start with a simple one: <code>createP</code>. Add this line right after your <code>createCanvas</code> line: <code>createP("My lucky number is 10");</code> </p>
+
+		<p>When you run your code, you will see a new paragraph added to the bottom of the page.
+		So now we have two paragraphs. One we wrote directly into index.html ("This is a paragraph"), the other we created with Javascript ("My lucky number is 10"): </p>
+
+		<img src="../../../images/la/7_2/createP.jpg"/>
+
+		<p>Now let's try adding more and more paragraphs whenever the user clicks the mouse (this is <i>after</i> the index.html file has loaded). All we need to do is take our createP line from setup, and move it to the mousePressed function, which fires anytime the user clicks anywhere on the page. Try it!</p>
+
+		<img src="../../../images/la/7_2/mousePressed.png"/>
+
+		<p>Each time you click, a new p element is inserted to the page. There is no way for us to know in advance, when writing our HTML page, how many times the user will click the mouse while on our page, so this wouldn't be possible to do with plain HTML.</p>
+
+		<p>Now let's change the text to "my lucky number is " + random(0, 10)". Each time we click, we will get a new paragraph with a different lucky number on it. Generating random numbers indefinitely, is another thing Javascript can do, that plain HTML can't. </p>
+
+		<img src="../../../images/la/7_2/p_random.png"/>
+
+		<p>Now let's add an <code>h1</code> element in Javascript. You might notice that p5 doesn't have createH1 function. There are so many HTML tags that including a function for each of them would clutter the p5 reference. So p5 only includes specific functions for the most common DOM elements that you might want to create with code: 
+			<ul>
+		    <li><a href="https://p5js.org/reference/#/p5/createDiv">createDiv()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createP">createP()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createSpan">createSpan()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createImg">createImg()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createA">createA()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createSlider">createSlider()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createButton">createButton()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createCheckbox">createCheckbox()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createSelect">createSelect()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createRadio">createRadio()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createInput">createInput()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createFileInput">createFileInput()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createVideo">createVideo()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createAudio">createAudio()</a></li>
+		    <li><a href="https://p5js.org/reference/#/p5/createCapture">createCapture()</a></li>
+		    </ul>
+		</p>
+
+		<p><strong>Exercise:</strong> Add two paragraphs and two images to your page using createP and  createImg. Extra: read the reference for the createA function, and add a link to your page: clicking on its text should take you to a different web page. </p>
+
+		<p>For any HTML element that is not on the list above, like h1 (there are many more: take a look at the full list of elements <a href="https://www.w3schools.com/TAgs/">here</a>), there is the generic <code><a href="https://p5js.org/reference/#/p5/createElement">createElement()</a></code> function. This function takes two arguments: the first is the tag to be created, and the second the content that goes inside the tag. </p>
+
+		<p>For example, to add a title to all those random numbers, we can add this line</br> <code>createElement('h1', 'my lucky numbers below')</code>. Now we have an h1 element we created by writing it directly into index.html ("This is a header"), and another we created by calling createElement in our Javascript code ("my lucky numbers below). </p>
+
+		<img src="../../../images/la/7_2/h1_code.png"/>
+
+		<p><strong>Exercise:</strong> Add an h1, an h2, an h3 and an h4 to your sketch using the createElement function. </p>
+
+
+		<p>So now we can create a page with some built-in content (in this case, h1, p, img), and then content that javascript adds to the page when it runs (a canvas, an h1, a new p element each time the user clicks the mouse). In the next Learning Activity we will look at how to manipulate DOM elements: to have them change dynamically.</p>
+
+		<p>Here is the complete code (click <a href="http://alpha.editor.p5js.org/luisa/sketches/rkXs79eIf">here</a> to open it on the p5 editor):</p>
+		<pre><code>function setup() { 
+  createCanvas(400, 400);
+  createElement('h1', 'my lucky numbers below');
+} 
+
+function mousePressed(){
+  createP('my lucky number is ' + random(0, 10));
+}
+
+function draw() { 
+  background(220);
+}
+		</code></pre>
+
+
+    </div> 
+</div> 
+
+
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=lAtoaRz78I4&list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX&index=2">Video 7.2: Creating HTML Elements with JavaScript</a>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_7/la_2/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

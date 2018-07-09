@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Move in cycles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/4/learning_activities/la_3.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+			
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+<h4>
+	<a href="/units/4/overview.html">Unit 4</a>. Learning Activity 3 . Move in cycles
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p>In this learning activity we create cyclic motion: our ball oscillates up and down, moves on a circle, and finally on a spiral. To do this, we use trigonometry: sine and cosine values are calculated for an angle that grows with each frame, and mapped to the position of the ball.</p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!-- 
+	
+ -->
+
+<div class="row">
+    <div class="span2">  
+        <p><b>Step by Step</b></p> 
+    </div>  
+    <div class="span8">
+        <h5>1. Sine and cosine in p5</h5>
+        <p>Remember sine and cosine from middle school? Given an angle, sine and cosine oscillate between -1 and 1. Paste the following code on the p5 editor and look at the console:  </p>
+        <pre><code>var angle = 0;
+
+function draw() {
+  var result = sin(angle);
+  console.log(result);
+  angle += 1;
+}</code></pre>
+</p>
+<p>As expected, you get numbers between -1 and 1, like <code>0.9999914952150669</code>, <code>0.543768153489388</code>, <code>-0.4123931208391132</code> and <code>-0.9894020617164505</code>.
+  <p>This might be easier to grasp by visualizing it. Below, we see different angles on the green circles to the left. To the right, the black dot shows us what the value of <code>sin</code> for that angle. The sine of angle 0 is 0. It goes down until reaching its minimum, -1,  at at 90 degrees. Then it starts growing again, crossing 0 at 180 degrees, and reaching its maximum value, 1, at 270 degrees. From then it goes down until going back to 0 at 360. At this point the cycle starts over again. 
+        <img src="../../../images/la/4_3/sine_cosine.png"/>
+        <p>Image from <i>Getting Started with p5.js</i></p>
+        <h5>2. Oscillate up and down</h5>
+<p>We can use the values of sine and cosine to create oscillating motion. In the example below we create a variable called <code>angle</code>, which starts at zero. Every frame, we add <code>1</code> to it. Then we calculate the <code>sin</code> for each angle, which will be a value between <code>-1</code> and <code>1</code>. Finally, we map that value from the (-1, 1) range to a range that we can use to set the <code>y</code> position of our ball (remember we looked into the map function in <a href="../../../units/learning_activity/learning-activity-02-04/">LA 2.4</a>). 
+        
+        <div class="sketch_container">
+                <iframe id="canvas_iframe_1"  src="" width="600px" height="120px"></iframe>
+                <div class = "editor" id="editor_1" style="height:250px;">
+                </div>
+        </div> 
+
+        <!-- <p>These cycling values can be used to create oscillating motion. Here, each circle starts from a slightly different angle, so their position is offset in the sine cycle:</p> -->
+        <!-- <div class="sketch_container">
+                <iframe id="canvas_iframe_2"  src="" width="600px" height="120px"></iframe>
+                <div class = "editor" id="editor_2" style="height:250px;">
+                </div>
+        </div>  -->
+
+        <h5>3. Move on a circle</h5>
+        <!-- <p>If we have a circle of radius 1, and we draw a line from its center and at an angle from the horizontal axis, this line intersects the circle at a point P. By definition, the y coordinate of this P point is cos(angle), and its x coordinate is sin (angle).</p>
+        <p>Below, we start with angle 0, and add one to it in each frame. cos(angle), sin(angle) give us the coordinates of points along a circle. </p>--> 
+        <p>We won't go deep into trigonometry here, but we can use cosine and sine of a growing angle to get the coordinates of points around a circle. Below, <code>offset</code> determines the center of the circle, and <code>scalar</code> its radius.
+        <div class="sketch_container">
+                <iframe id="canvas_iframe_2"  src="" width="600px" height="120px"></iframe>
+                <div class = "editor" id="editor_2" style="height:250px;">
+                </div>
+        </div> 
+
+        <h5>4. Move on a spiral</h5>
+        <p>By making the <code>scalar</code> value grow with each frame, we can create a spiral: </p>
+        <div class="sketch_container">
+                <iframe id="canvas_iframe_3"  src="" width="600px" height="120px"></iframe>
+                <div class = "editor" id="editor_3" style="height:250px;">
+                </div>
+        </div> 
+
+        </div>
+</div>
+
+<!-- Move from here to there
+
+Now that we know how to make positions, shapes and colors change, let's control these changes more closely. In this learning activity we will learn to interpolate between to values (to have a shape move from point A to point B, for example), and to create timers, so that we can control when things happen in our sketches.
+ -->
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Getting Started With p5.js: Chapter 8. Motion (Section: Circular)<!-- , examples 8.07 to 8.09 --></li> <li>Learning Processing: Chapter 13. Mathematics (Sections: Polar Cartesian, Oscillation, Wave)</li></ul>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_4/la_3/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

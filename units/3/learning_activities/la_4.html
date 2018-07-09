@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Play sounds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/learning_activities/la_4.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+			
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+<h4>
+	<a href="/units/3/overview.html">Unit 3</a>. Learning Activity 4 . Play sounds
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p>In this learning activity students load and play different sound files in response to user actions. Pointers are given for further exploration of audio manipulation. </p>
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Suggested Duration</p>
+		</div>	
+		<div class="span6"> 
+			<p>30 minutes</p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1. Play a sound</h5>
+        <p>The first step to playing a sound file is to upload it to a folder in the online editor, just like we did with our images in the previous LA. Files must be smaller than 5mb.</p><p>Like images and fonts, sound files must be loaded into a variable before we can use them. Once a sound file is loaded, we can call <code>play()</code>.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="400px"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <h5>2. Play four different sounds</h5>
+        <p>In this example, we play different sound files when the user presses different keys. Press 'A' for a bleep, 'S' for a 'woof', 'D' for a bass note, 'F' for a guitar pluck. Before typing, remember to click on the sketch: </p>
+        
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="400px"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        
+        <p>Sounds can also be looped (<code>loop()</code>), stopped (<code>stop()</code>), jump to a specific moment (<code>jump</code>), and manipulated in many creative ways. See more under the Sound category on the <a href="https://p5js.org/examples/">p5 examples</a> page, and the <a href="https://p5js.org/reference/#/libraries/p5.sound">p5.sound reference page</a>. </p>
+        
+    </div>
+</div>
+
+<!-- <li>TODO: add simple exercise: now look for sounds at (freesound link) and play them on key strokes</li> -->
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Video tutorial: <a href="https://www.youtube.com/watch?v=Pn1g1wjxl_0&t=7s&index=1&list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW">11.1: Loading and Playing</a> | <a href=""> Code </a> </li> <li>Learning Processing: Chapter 20. Sound</li> <li>Getting Started With p5.js: Chapter 13. Extend (Section: p5.sound)<!-- , example 13.01 --></li> </ul>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/la_4/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Load Fonts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/learning_activities/la_3.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+			
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+<h4>
+	<a href="/units/3/overview.html">Unit 3</a>. Learning Activity 3 . Load Fonts
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p>In this learning activity students draw text with different fonts (both system fonts and custom ones), manipulating their placement, size, and color.</p>
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Suggested Duration</p>
+		</div>	
+		<div class="span6"> 
+			<p>30 minutes</p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1. Draw with fonts</h5>
+        <p>To draw text in p5, we use the <code>text</code> function. Its first parameter sets the text to display, the second and third its position. Size is set calling <code>fontSize</code>. </p>
+
+        <p>The font can be changed by calling <code>textFont</code>. Some fonts come installed in most computers. They are called 'system fonts'. Common examples are "Arial", “Courier,” “Courier New,” “Georgia,” “Helvetica,” “Palatino,” “Times New Roman,” “Trebuchet MS,” and “Verdana”.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="120px"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>Custom fonts might be installed on our computer, but not on our user's. To ensure that our text will be displayed correctly when using less common fonts, we can follow one of the following approaches. </p>
+        <h5>2. Use a web font</h5>
+        <p>Web fonts are downloaded from a server upon request. Many options are available, often for free, in websites like <a href="https://fonts.google.com/">Google Fonts</a> and <a href="https://fontlibrary.org/">Open Font library</a>. Once we have chosen a font, we can copy an 'embed' link from the website. It looks like this:
+            <code>
+             &lt;link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+            </code>
+            <br/><br/>
+        <img src="../../../images/fp/3_1/2_google_fonts_embed_link.png" width="620"/>
+        <img src="../../../images/fp/3_1/2_open_font_library_embed_link.png" width="620"/>
+        <p>We then paste the embed link into the <code>head</code> section of our sketches' <code>index.html</code> file:</p>
+        <img src="../../../images/fp/3_1/3_font_links_in_index.jpg" /></p>
+        <p>Now that the web font is linked to our sketch, we can use it with <code>textFont</code> as before:
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="120px"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        <h5>3. Use a custom font</h5>
+        <p>The steps to include a custom font in our sketch are similar to those we took to include an image in the previous learning activity. We copy the file into our sketch folder (p5 supports the TTF and OTF file formats), load it into a variable <code>preload</code> using <code>loadFont</code>, and then set our text to it using <code>textFont</code></p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="120px"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+         <h5>4. Set the text stroke and fill</h5>
+        <p>p5's color-setting functions, <code>fill</code> and <code>stroke</code>, also affect text:</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="120px"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+        <h5>5. Draw text within a box</h5>
+        <p>We can constrain a text to be drawn within a box by adding x, y, width and height parameters to the call to <code>text</code>:</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="120px"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+        <h5>6. Create a typographic composition</h5>
+        <p>Go to one of the font websites listed above, choose a couple of fonts, and create a text-based visual composition that allows the user to input text. Try changing the text's position, size, color ––or even its font–– in response to user actions.</p>
+        <p>Note: this learning activity is adapted from chapter 7 of the book Getting Started on p5.</p>
+    </div>
+</div>
+
+<!-- 
+<li>TODO: add simple exercise: now look for a font at (link) and draw some text with it</li>
+Add links to Google Fonts etc. 
+See texts in getting started book.
+
+
+
+
+ -->
+
+
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Learning Processing: Chapter 17. Text</li> <li>Getting Started With p5.js: Chapter 7. Media (Section: Fonts)<!-- , examples 7.09 to 7.13 --></li> </ul>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/la_3/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

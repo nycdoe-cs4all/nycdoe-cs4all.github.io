@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/7/overview.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <h4>
+	<a href="">DOM</a>
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Big Ideas</p>
+		</div>	
+		<div class="span6"> 
+			<ul> <li>Understand how the front end of web pages works</li> <li>p5 sketches, like most software projects, are composed by different files that interact with each other and are often written in different languages</li> </ul> 
+			
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Enduring Understandings</p>
+		</div>	
+		<div class="span6"> 
+			 <ul> <li>Understand how HTML and Javascript interact to render content on web pages.</li> </ul> 
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Unit Overview</p>
+		</div>	
+		<div class="span6"> 
+			In this unit students learn how HTML and Javascript can work together in their p5 sketches. They create HTML elements by adding them to an HTML file, then using Javascript, and then manipulate then dynamically, to animate them and add interactivity. For their final project, students add an HTML interface to one of their previous projects.
+		</div>	
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+			<div class="span3"> 	
+				<p>Goals</p>
+			</div>
+			<div class="span9" style="margin-top:10px">
+				
+					<div class="row">
+						<div class="span3">
+								Understand HTML
+						</div >
+						<div class="span6">
+							Understand the struture of HTML. Be able to add elements to an HTML file both static and dynamically	
+						</div >
+					</div>
+				
+					<div class="row">
+						<div class="span3">
+								Understand DOM Manipulation
+						</div >
+						<div class="span6">
+							Understand the DOM tree structure, and how to manipulate its objects from Javascript to create animations and add interactivity	
+						</div >
+					</div>
+				
+					<div class="row">
+						<div class="span3">
+								Create HTML Interfaces
+						</div >
+						<div class="span6">
+							Know how to create buttons, sliders, and text inputs, and to their events to control properties of p5 sketches	
+						</div >
+					</div>
+				
+			</div>
+	</div>
+
+
+<div class="row">
+	<div class="span3"> 	
+		<p>Learning Activities</p>
+	</div>	
+	<div class="span9" style="margin-top:10px">
+		
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+				<div class="row">
+					<div class="span3">
+							<a href=/units/7/learning_activities/la_1.html>1 . Add a title and text to your page </a>
+					</div >
+					
+					<div class="span5">
+						Add header, paragraph and image HTML elements to index.html
+					</div >
+					<div class="span1">
+						
+					</div >
+				</div>
+				
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+				<div class="row">
+					<div class="span3">
+							<a href=/units/7/learning_activities/la_2.html>2 . Add title and text from Javascript </a>
+					</div >
+					
+					<div class="span5">
+						Create headers and paragraphs dynamically using Javascript
+					</div >
+					<div class="span1">
+						
+					</div >
+				</div>
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+		
+			
+				
+				<div class="row">
+					<div class="span3">
+							<a href=/units/7/learning_activities/la_3.html>3 . Move canvas around </a>
+					</div >
+					
+					<div class="span5">
+						Manipulate DOM elements with html() and position()
+					</div >
+					<div class="span1">
+						
+					</div >
+				</div>
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+		
+			
+				
+				<div class="row">
+					<div class="span3">
+							<a href=/units/7/learning_activities/la_4.html>4 . Create a button that changes the background </a>
+					</div >
+					
+					<div class="span5">
+						Handling DOM events with Callbacks: When mouse pressed anywhere, make background lighter; when mouse pressed over button, set color of a rect to random
+					</div >
+					<div class="span1">
+						
+					</div >
+				</div>
+				
+			
+		
+			
+		
+			
+				
+				<div class="row">
+					<div class="span3">
+							<a href=/units/7/learning_activities/la_5.html>5 . Add an interface to your sketch: sliders, buttons, text inputs </a>
+					</div >
+					
+					<div class="span5">
+						Interacting with the DOM using Sliders, Buttons, and Text Inputs
+					</div >
+					<div class="span1">
+						
+					</div >
+				</div>
+				
+			
+		
+			
+				
+			
+		
+			
+				
+				<div class="row">
+					<div class="span3">
+							<a href=/units/7/learning_activities/la_6.html>6 . Hover on text, drag sliders: control your sketch using HTML elements </a>
+					</div >
+					
+					<div class="span5">
+						Other Events and Inputs: mouseOver, mouseOut, changed, input (for any DOM element)
+					</div >
+					<div class="span1">
+						
+					</div >
+				</div>
+				
+			
+		
+			
+		
+			
+		
+		
+	</div>
+</div>	
+
+
+	<div class="mainrow row">
+		<div class="span3"> 	
+			<p>Final Project Prompt</p>
+		</div>	
+		<div class="span6"> 
+			<p>Add an HTML interface to one of your final projects from the previous units.</p>
+		</div>	
+	</div>
+
+
+<div class=" row">
+		<div class="span3"> 	
+			
+		</div>
+		
+			<div class="span3"> 	
+				<p>
+					<b>Level 1</b>
+					<br/>
+					 	
+				</p>
+			</div>
+		
+			<div class="span3"> 	
+				<p>
+					<b>Level 2</b>
+					<br/>
+					 	
+				</p>
+			</div>
+		
+			<div class="span3"> 	
+				<p>
+					<b>Level 3</b>
+					<br/>
+					 	
+				</p>
+			</div>
+		
+</div>
+		
+<div class=" row">
+	<div class="span3">Final Project Examples</div>
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3"> 
+					<p> 
+						<a href="/units/7/final_project_examples/level_1.html">
+							<img src="/images/unit_7_final_project_1_level_1.png" style="object-fit: cover;"></img>
+						</a>
+					</p>
+					<p>
+						Level 1 <br/>
+						<a href="/units/7/final_project_examples/level_1.html">Example Project</a><br/>
+						
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+									<a href="/units/7/final_project_examples/guide_level_1.html">Step by Step Guide</a>
+								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</p>
+				</div>
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3"> 
+					<p> 
+						<a href="/units/7/final_project_examples/level_2.html">
+							<img src="/images/unit_7_final_project_1_level_2.png" style="object-fit: cover;"></img>
+						</a>
+					</p>
+					<p>
+						Level 2 <br/>
+						<a href="/units/7/final_project_examples/level_2.html">Example Project</a><br/>
+						
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</p>
+				</div>
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3"> 
+					<p> 
+						<a href="/units/7/final_project_examples/level_3.html">
+							<img src="/images/unit_7_final_project_1_level_3.png" style="object-fit: cover;"></img>
+						</a>
+					</p>
+					<p>
+						Level 3 <br/>
+						<a href="/units/7/final_project_examples/level_3.html">Example Project</a><br/>
+						
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</p>
+				</div>
+			
+		
+	
+</div>
+
+
+		<div class="mainrow row">
+		    	<div class="span3">
+		    		<p>Final Project Inspiration</p>
+		    	</div>
+		</div>
+		
+		  
+		  
+		    <div class="mainrow row">
+		    	<div class="span3">
+		    	</div>
+		  
+
+		  <div class="span3"> 	
+		  		<a href="https://threejs.org/examples/webgl_clipping_intersection.html" target='_blank' >
+				<img src="/images/unit_7_final_project_inspiration_1.png" width="100%" ></img>
+				</a>
+				<div class="info" >
+					<a href="https://threejs.org/examples/webgl_clipping_intersection.html" target='_blank' >Intersection</a>
+				</div>
+			</div>
+
+		  
+		
+		  
+		  
+
+		  <div class="span3"> 	
+		  		<a href="http://fun.the816.com/neobrush/" target='_blank' >
+				<img src="/images/unit_7_final_project_inspiration_2.png" width="100%" ></img>
+				</a>
+				<div class="info" >
+					<a href="http://fun.the816.com/neobrush/" target='_blank' >Neobrush</a>
+				</div>
+			</div>
+
+		  
+		
+		  
+		  
+
+		  <div class="span3"> 	
+		  		<a href="https://imgflip.com/memegenerator" target='_blank' >
+				<img src="/images/unit_7_final_project_inspiration_3.png" width="100%" ></img>
+				</a>
+				<div class="info" >
+					<a href="https://imgflip.com/memegenerator" target='_blank' >Meme generator</a>
+				</div>
+			</div>
+
+		  	
+		    </div> 
+		  
+		
+	
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

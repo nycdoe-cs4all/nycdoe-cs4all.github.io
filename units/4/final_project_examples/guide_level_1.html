@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Moving smiley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/4/final_project_examples/guide_level_1.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <h4>Step by Step Guide: Moving smiley, Level 1</h4>
+<div class="mainrow row">
+	<div class="span2"> 	
+	</div>	
+	<div class="span6"> 
+		<p>To see the complete code and running sketch click <a target="_blank" href="../../../units/final_project_example/final-project-example-04-01/"> here</a>.</p>
+		<p></p>
+	</div>		 
+</div>
+
+<div class="mainrow row">
+	<div class="span2"> 	
+		<p><b>Description</b></p>
+	</div>	
+
+	<div class="span6"> 
+        <p>In LA 1 we had a ball move up, down, left and right. In this final project, we apply this motion to our existing happy face drawing, and then add interactivity: by pressing different keys, the user can control the direction in which the smiley moves. 
+            <!-- Pressing the right, left, up and down arrow keys changes the values of xSpeed and ySpeed so that the ball moves in the direction of the key that was last pressed. Click on the sketch below and try pressing the arrow keys (if you don't see the circle, it is probably off the canvas: try refreshing the page). -->
+
+        </p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="span2">     
+        <p><b>Steps Outline</b></p>
+    </div> 
+     <div class="span6">
+            <ol start="1">
+                <li>Draw a moving ellipse</li>
+                <li>Control the direction with the keyboard</li>
+                <li>Replace the ellipse with our smiley face</li>
+            </ol>
+    </div>
+</div>
+<div class="mainrow row">
+    <div class="span2">     
+        <p><b>Learning Activities Reference</b>
+    </p>
+    </div>  
+    <div class="span6"> 
+        <p>This example project applies the following concepts from previous Learning Activities:
+         <ul>
+            <li>Creating linear motion (<a href="../../../units/learning_activity/learning-activity-04-01/">LA 4.1</a> and <a href="../../../units/learning_activity/learning-activity-04-02/">LA 4.2</a>)</li>
+            <li>Responding to key presses (<a href="../../../units/learning_activity/learning-activity-02-03/">LA 2.3</a>; also see <a href="../../../units/learning_activity/learning-activity-03-04/">LA 3.4</a>, step 2: "Play four different sounds")</li>
+        </ul>
+    </p>
+    </div>       
+</div>
+<div class="row">
+    <div class="span2">     
+        <p><b>Step by Step</b></p>
+    </div>  
+    <div class="span8">
+        <h5>1) Draw a moving ellipse</h5>
+        <p>Let's start from the code from <a href="../../../units/learning_activity/learning-activity-04-02/">LA 4.2</a> , at the end of step 2. We had an ellipse that could move in both the x and y axes, depending on the values of the <code>speedX</code> and <code>speedY</code> variables. Try it on the p5 editor: 
+        <pre><code>var x = 0;
+    var y = 60; 
+    var speedX = 1;
+    var speedY = 0;
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(0);
+  x = x + speedX;
+  y = y + speedY; 
+  ellipse(x, y, 20, 20);
+}
+</code></pre>
+
+<h5>2) Control the direction with the keyboard</h5>
+<p>Now, just like we did in <a href="../../../units/learning_activity/learning-activity-02-03/">LA 3.4</a> to trigger sounds, <!-- and similar to LA 2.3 to draw letters, --> let's add a keyPressed function. Depending on the key the user presses, we should change the values of <code>speedX</code> and <code>speedY</code>.
+<ul>
+        <li>If the user presses 'J', the smiley should move to the left (<code>speedX = -1</code>)</li>
+        <li>If the user presses 'L', the smiley should move to the right (<code>speedX = 1</code>)</li>
+        <li>If the user presses 'I', the smiley should move upward (<code>speedY = -1</code>)</li>
+        <li>If the user presses 'K', the smiley should move downward (<code>speedY = 1</code>)</li>
+    </ul>
+<p>Add the function below to the code from the previous step. And it should just work! We don't need to change anything in our draw loop. This is because keyPressed updates the same variables that our existing draw loop is using. What happens is the user presses a key, keyPressed is called and updates speedX and speedY accordingly, and the next time the draw function runs, it accesses these updated speeds.</p>
+<p><pre><code>function keyPressed() {
+  if (key === 'J') { //move left
+    speedX = -1;
+    speedY = 0;
+  } 
+  else if (key === 'L') { //move right
+    speedX = 1;
+    speedY = 0;
+  }
+  else if (key === 'I') { //move up
+    speedX = 0;
+    speedY = -1;
+  }
+  else if (key === 'K') { //move down
+    speedX = 0;
+    speedY = 1;
+  }
+}</code></pre></p>
+<p>Notice that when the smiley is moving right or left, it shouldn't move vertically, so we also set <code>speedY</code> to 0. If the smiley is moving up or down, we should set <code>speedX</code> to 0. What would happen if we skip this step?</p>
+
+<h5>3) Replace the ellipse with our smiley face</h5>
+<p>Finally, we need to replace the ellipse with our smiley face. Here is the code we had from <a href="../../../units/learning_activity/learning-activity-04-01/">LA 4.1</a>:</p> 
+
+    <pre><code>//Face
+    fill(249,205,173);//rosy beige
+    ellipse(x, y, 100, 100);
+
+    //Eye 1
+    fill(30);//dark gray
+    ellipse(x, y+10, 10, 10);
+
+    //Eye 2
+    ellipse(x+15, y+10, 10, 10);
+
+    //Mouth
+    fill(252,157,154);//light pink
+    arc(x, y+25, 30, 30, 0, radians(180), PIE);   </code></pre>
+
+  <p>Since in that sketch we were also using variables called <code>x</code> and <code>y</code> for positioning the smiley face, we can just paste this code where this line was in step 1: <code>ellipse(x, y, 20, 20);</code>. Try it! Now you can tweak the colors, stroke weight, and so on.</p>
+  <p>Can you make the smiley stop when it reaches the edges of the screen? (tip: take a look at the 
+    if statement in LA 1 step 1 as a reference)</p>
+    <p>Can you replace the smiley face with a drawing you made in Unit 1?</p>
+
+
+        
+	</div>		 
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_4/final_project_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'level_' + i;
+    		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    		var code =  path + '/sketch.js'
+    		
+    		$("#" + this.id).load(code, function(){
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+			  	
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

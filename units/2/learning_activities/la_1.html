@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Draw with the mouse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/learning_activities/la_1.html">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>  
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+<div class=" span12">
+  <div class="menu">
+    	<h1>Creative Coding with p5</h1>
+    	<div class="nav">
+      		<a href="/index.html">INDEX</a>&emsp;
+    	</div>
+  </div>
+</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+			
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+<h4>
+	<a href="/units/2/overview.html">Unit 2</a>. Learning Activity 1 . Draw with the mouse
+</h4>
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Objectives</p>
+		</div>	
+		<div class="span6"> 
+			<p>This learning activity introduces p5`s program flow, demonstrating how setup() and draw() function. By using p5`s mouse position variables and turning off the background function, they create expressive drawing programs</p>
+		</div>	
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Suggested Duration</p>
+		</div>	
+		<div class="span6"> 
+			<p>45 minutes</p>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+
+<!-- 
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Step by Step</p>
+    </div>  
+    <div class="span8">
+        <h5>1) Once and Forever</h5>
+        <p>So far we have been drawing static images: they don't change over time. But one of the exciting things about drawing computationally is that we can make our drawings dynamic: we can have them change over time and respond to what the user does, or to some other kind of input.</p>
+        <p>You have probably noticed that <code>setup()</code> and <code>draw()</code> come up repeatedly in the examples. These are both functions, like <code>rect</code> and <code>ellipse</code>, except that instead of calling them, we have been <i>declaring</i> them in our code. p5 takes care of calling them for us. In fact, it calls setup once, when our program starts, and then it calls draw once and again, forever (or until we close the sketch window).</p>
+        <p>To prove it, look at this example. Each time our <code>draw()</code> function is called, p5 adds 1 to a variable called <code>frameCount</code>. In the sketch below, we draw this variable to our canvas, using the <code>text</code> function. As you can see, <code>frameCount</code> keeps growing, as p5 calls <code>draw()</code> over and over again. </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>Now try removing the background line. What happens? Why? </p>
+
+        <p>Although it might seem that our ellipse is only drawn once, it is actually being drawn over and over again for as long as our sketch runs. The reason we don't see any changes is that the ellipse is being drawn, again and again, in the same exact position. For us to see any changes, something needs to vary. </p>
+
+        <h5>2) Draw with the mouse</h5>
+        <p>We have already used <code>mouseX</code> and <code>mouseY</code> in the previous learning activity, to help us place our shapes. Like <code>width</code> and <code>height</code>, <code>mouseX</code> and <code>mouseY</code> are built-in variables. p5 continuosly checks where the mouse is and updates <code>mouseX</code> and <code>mouseY</code> with the latest position. </p>
+        <p>Now, instead of writing their current values on the screen like we did before, let's use these variables to set the position of an ellipse ––to make it <i>vary</i></p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        <p>If we remove the background line, we get an interesting effect: we have made a drawing program.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+
+         <p>Let's make it more drawing like by removing the stroke and making the fill somewhat transparent.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+
+        <p>And to make the line continuous, let's use two more variables built into p5: <code>pmouseX</code> and <code>pmouseY</code>, which hold the position to the mouse previous to the current frame.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+
+        <p>From here, we can get creative. One satisfying example is to set the stroke weight heavier the faster you move. To do this, we calculate the distance between the current and the previous mouse position.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_6"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_6" style="height:250px;">
+            </div>
+        </div>
+
+        <!-- <p>Note: some of the examples in this learning activity were adapted from Getting Started with p5, chapter 5.</p> -->
+
+        
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2"> 	
+			<p>Teacher support Resources</p>
+		</div>	
+		<div class="span6"  style="margin-top:0px"> 
+			<ul> <li>Video tutorial: <a href="https://www.youtube.com/watch?v=RnS0YNuLfQQ">2.1 Variables in p5.js (mouseX, mouseY)</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.1_Variables_in_p5.js_mouseX_mouseY"> Code </a> </li> <li>Learning Processing: <!-- <a href="http://learningprocessing.com/examples/chp03/example-03-02-mouseX-mouseY"> -->Chapter 3<!-- </a> -->, sections 3.1, 3.2 and 3.4 <!-- | <a href="https://github.com/shiffman/LearningProcessing-p5.js/blob/master/chp03_flow/"> Code</a> --></li> <li>Getting Started With p5.js: Chapter 5 (Section: Follow)<!--, examples 5.04 to 5.09 | <a href="https://github.com/lmccart/gswp5.js-code/tree/master/05_Response">Code</a> --></li> </ul>
+		</div>	
+	</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/la_1/";
+
+    $(document).ready(function() {
+    	
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference: 
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+			  	
+			  });
+		});
+    });
+</script>
+
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>
