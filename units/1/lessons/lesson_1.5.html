@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-Project - Taijutu Symbol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/1/lessons/lesson_1.5">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>Mini-Project - Taijutu Symbol</h1>
+	<h2></h2></br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <img src="../../../images/lessons/1.5/image2.png"/><p>
+    </div>
+    <div class="span8">
+        Taijitu is a symbol representing the religious and philosophical tradition of Taoism (also called Daoism). The term means a 'diagram of the supreme ultimate,' and it refers to the famous Chinese concept of yin and yang, of opposites existing in complete harmony.<p>
+        The Taijitu symbol consists of two (one black and one white) swirling 'teardrop' shapes that fit within each other to form a perfect circle. Each figure contains a part of the other so that there is a black dot in the white half of the circle and a white dot in the black portion. These seemingly opposing, but complementary halves make a whole and thus, are incomplete without each other.
+        <p>
+        The dark or shady side represents Yin, and the white or sunny side represents Yang. Yin is associated with femininity, earth, water, moon and nighttime and is considered passive, cold, soft, yielding and wet. Meanwhile, Yang is associated with masculinity, sin, fire, sky, and daytime and is considered aggressive, hot, hard and dry. The white symbolizes delusion and black represents enlightenment.
+        <p>
+        <a target="_blank" href="https://youtu.be/ezmR9Attpyc">Ted Ed video on Yin Yang</a>
+        <p>
+        Project adapted from: <a target="_blank" href="https://github.com/susanev/p5js-workshops/tree/master/1-day-workshop">Susan Evan's 1-day p5.js workshop</a>
+        <p>
+    </div>
+</div>
+<div class="row">
+        <div class="span2">
+        <p>Directions</p>
+    </div>
+    <div class="span8">
+        <ol>
+
+        <li>Use shapes that we covered in this unit
+        <li>Add comments to the different shapes
+        <li>Use fill and stroke the change the colors of the shape
+        <li>Center it in the middle of the canvas.</ol>
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">
+        <p>Writing Prompt</p>
+    </div>
+    <div class="span8">
+        <li>Look around the room you are in and see how many yin/yang relationships you can see. List them.
+<li>Research and find out what are some pros and cons to coding.</li></ul>
+
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">
+        <p>Output</p>
+    </div>
+    <div class="span8">
+
+        <img src="../../../images/lessons/1.5/image3.png"/><p>
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        Create your own meaningful symbol. Like the the Taijitu, it should should have meaning and represent something.
+
+        <p><strong>Writing Prompt: </strong><ul>
+
+        <li>Explain the meaning to your symbol.
+        <li>Why did you choose to create this symbol?
+        <li>If you can add colors how would it play a role in your symbol?</li></ul>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/lesson_1.5/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>
