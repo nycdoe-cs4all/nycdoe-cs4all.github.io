@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Loading media files: preload and callbacks</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/3/learning_activities/la_1.html">
+    <link rel="canonical" href="http://localhost:4000/units/3/learning_activities/la_1">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,14 +17,14 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
@@ -31,192 +32,46 @@
         <!-- Link back to parent unit -->
 
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-		
-	
-
-<h4>
-	<a href="/units/3/overview.html">Unit 3</a>. Learning Activity 1 . Loading media files: preload and callbacks
-</h4>
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 1 Media</a><br/
+	<h1>Learning Activity 1</h1>
+	<h2>Loading media files: preload and callbacks</h2>
+	<h3></h3>
+</div>
+</br>
 
 
 	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Objectives</p>
-		</div>	
-		<div class="span6"> 
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
 			<p>This learning activity demonstrates asynchronous calls and the need to use p5`s preload function or callback functions to make sure media files are fully loaded before trying to access them in our sketches. We will not be doing any coding yet.</p>
-		</div>	
+		</div>
 	</div>
 
 
 
 	<div class="mainrow row">
-		<div class="span2"> 	
+		<div class="span2">
 			<p>Suggested Duration</p>
-		</div>	
-		<div class="span6"> 
+		</div>
+		<div class="span6">
 			<p>15 minutes</p>
-		</div>	
+		</div>
 	</div>
 
 
-
-
-
-
-
-
-<!-- 
+<!--
 TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
  -->
 <!--  -->
 
 <div class="row">
     <div class="span2">     
-        <p>Step by Step</p>
+        <p>Instructions</p>
     </div>  
     <div class="span8">
         <h5>1. Loading files</h5>
@@ -251,14 +106,6 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 
 
-	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Teacher support Resources</p>
-		</div>	
-		<div class="span6"  style="margin-top:0px"> 
-			<ul> <li>Getting Started With p5.js: Chapter 7. Media <!-- , examples <a href="https://github.com/lmccart/gswp5.js-code/blob/master/07_Media/Ex_07_07.js">7.07</a> and <a href="https://github.com/lmccart/gswp5.js-code/blob/master/07_Media/Ex_07_08.js">7.08</a> --></li> </ul>
-		</div>	
-	</div>
 
 
 
@@ -268,7 +115,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 	var folder = "../../../code/unit_3/la_1/";
 
     $(document).ready(function() {
-    	
+
     	$('.editor').each(function( index ) {
     		var i = index + 1;
     		var path = folder + 'ex_' + i;
@@ -285,16 +132,15 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 					editor.renderer.lineHeight + 'px';
     			editor.resize();
 
-    			/* For Reference: 
+    			/* For Reference:
     				editor.getSession().getDocument().getLength() *
 					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
 				*/
-			  	
+
 			  });
 		});
     });
 </script>
-
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 

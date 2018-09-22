@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.3 Rectangles, Ellipses, and Layering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_1.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>1.3 Rectangles, Ellipses, and Layering</h1>
+	<h2>How can we use shape functions to create images?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students will create a visual composition using the p5 shape-drawing functions rect() and ellipse(). They will continue to build on their understanding of functions and their parameters to recreate the robot from lesson 1.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Consult the p5 reference  </li>
+			
+				<li> Create rectangles using the rect() function  </li>
+			
+				<li> Create ellipses using the ellipse() function  </li>
+			
+				<li> Understand the concept of layering to create images using multiple shape functions  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><p><strong>Abstraction:</strong> </p><ul>
+<li>Give examples of specific patterns in something I can see, do or touch. <li>Describe different things I tried in order to achieve a goal. <li>Explain how I might help others identify patterns.</li></ul>
+<p> <strong>Algorithms:</strong> </p><ul>
+<li>Describe more than one set of instructions that might complete a task. <li>Explain why I used specific instructions to complete a task. <li>Compare and contrast my instructions with other instructions that complete the same task.</li></ul>
+<p> <strong>Programming:</strong> </p><ul>
+<li>Experiment with the commands of a programming language. <li>Describe three ways a development environment helps me create a project. <li>Explain why I chose specific commands to communicate my instructions. <li>Discuss what can and cannot be done with a specific set of commands.</ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Functions </th>
+						<td> Functions are lines of code that perform specific tasks. </td>
+					</tr>
+				
+					<tr>
+						<th> Parameters or arguments </th>
+						<td> Are the values inside of a parenthesis following the name of the function. These are used to change the outcome of a function </td>
+					</tr>
+				
+					<tr>
+						<th> rect() function </th>
+						<td> Draws a rectangle to the screen </td>
+					</tr>
+				
+					<tr>
+						<th> ellipse() function </th>
+						<td> Draws an ellipse to the screen </td>
+					</tr>
+				
+					<tr>
+						<th> Height </th>
+						<td> Vertical distance of a 2D shape </td>
+					</tr>
+				
+					<tr>
+						<th> Rectangle </th>
+						<td> A 2D figure with four straight sides and four right angles </td>
+					</tr>
+				
+					<tr>
+						<th> Ellipse </th>
+						<td> A regular oval shape </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://drive.google.com/file/d/1ZmERZDHhM4A7TB27mQcxrcPJeAi5Z0m8/view?usp=sharing">Robot Worksheet</a></li>
+				
+					<li><a href="https://p5js.org/reference/#/p5/rect">Rectangle Reference</a></li>
+				
+					<li><a href="https://p5js.org/reference/#/p5/ellipse">Ellipse Reference</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Draw A Rectangle</p>
+    </div>  
+    <div class="span8">
+
+        p5 has many built-in functions to draw different shapes. In this example, we are drawing a rectangle.
+        <p>
+        The rect function takes four parameters: x, y, width and height. The x and y values refer to location on the canvas and the width and height refer to size.
+        <p>
+
+        <img src="../../../images/lessons/1.3/recttext.png"/><p>
+
+        <p>
+        Recreate the following example and play with the parameter values.
+
+        <script type="text/p5">
+    function setup(){
+        createCanvas(600, 120);
+    }
+
+    function draw() {
+        background(180);
+
+        //Draw a rectangle at x=40, y=40, that is 400 px wide and 60px high.
+        rect(40, 40, 400, 60);
+    }
+        </script>
+
+        <p>
+        <a href="http://alpha.editor.p5js.org/owenroberts/sketches/r13EmIjAz">Example</a>
+        <p>
+        To help you place shapes where you want them on the canvas, you can add the following line to your code:
+        <p>
+        <code>text(mouseX + ", " + mouseY, 20, 20)</code>
+        <p>
+        Take a look at the example below. You can move your mouse to where you would like your shape to be, and write down the coordinates to use them as parameters in your function call.
+
+        <script type="text/p5">
+function setup(){
+    createCanvas(600, 120);
+}
+
+function draw() {
+    background(100);
+    text(mouseX + ", " + mouseY, 20, 20);
+}
+        </script>
+
+        <p>
+        You also use this blank <a href="http://alpha.editor.p5js.org/owenroberts/sketches/S1N-5TAGQ">grid template</a> to help you position your shapes. <p>
+
+
+
+    </div>
+</div>
+<div class="row">
+        <div class="span2">     
+        <p>Drawing Order</p>
+    </div>  
+    <div class="span8">
+        In p5, shape and color functions are rendered to the canvas in the order they're written in the program - from top to bottom.
+        <p>
+        <img src="../../../images/lessons/1.3/runsonce.png"/><p>
+        <p>
+        Play with the order of the shapes <a href="http://alpha.editor.p5js.org/SEP/sketches/H1qJCRkNZ">here</a>. Then remove the comments to see how the rectangles layer on one another.
+        <p>
+        <a href="http://alpha.editor.p5js.org/SEP/sketches/S1aG4fO7m">http://alpha.editor.p5js.org/SEP/sketches/S1aG4fO7m</a><p>
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">     
+        <p>Practice Drawing Rectangles</p>
+    </div>  
+    <div class="span8">
+        Recreate the following sketch using rectangles
+        <p>
+        <img src="../../../images/lessons/1.3/cornersquares.png"/><p>
+        <img src="../../../images/lessons/1.3/foursquare.png"/><p>
+        <a href="http://alpha.editor.p5js.org/Jorea/sketches/SkeFVNOzX">Solution</a>
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">     
+        <p>Draw an Ellipse</p>
+    </div>  
+    <div class="span8">
+        Now draw an ellipse. Its parameters are the same as for the rectangle.
+        <p>
+        The ellipse function takes four parameters: x, y, width and height. The x and y values refer to location on the canvas and the width and height refer to size.
+        <p>
+        <img src="../../../images/lessons/1.3/ellipsetext.png"/><p>
+
+        <p>
+        Recreate or access this <a href="http://alpha.editor.p5js.org/SEP/sketches/Hkb-m7K47">example </a>and play with the parameter values.
+        <p>
+        Your ellipse might overlap with your rectangle, like in the example below. Because the code in your sketch is executed from the top down, one line at a time, the shape that was drawn last will always be on top of the rest.<p>
+
+        <script type="text/p5">
+function setup(){
+    createCanvas(600, 120);
+}
+
+function draw() {
+    background(204);
+    rect(40, 40, 400, 60);
+    ellipse(335, 50, 50, 50);
+}
+        </script>
+        <p>
+        To change the drawing order, simply cut the line <code>ellipse(335, 50, 50, 50);</code> and paste it before the line <code>rect(40, 40, 400, 60);</code>
+
+
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">     
+        <p>Practice Drawing Ellipses</p>
+    </div>  
+    <div class="span8">
+        Recreate the following image using rectangles and ellipses:
+        <p>
+        <img src="../../../images/lessons/1.3/circleinside.png"/><p>
+
+        Some calculations will be needed in order to get the ellipse in the corner. You should <strong><em>duplicate </em></strong>your previous sketch so that they don't have to code one from scratch and keep a copy of their original sketch.
+        <p>
+    </div>
+    </div>
+
+<div class="row">
+    <div class="span2">
+        <p>Draw Your Robot</p>
+    </div>
+    <div class="span8">
+        Using code, draw the robot that you made on graph paper. You can use this <a href="http://alpha.editor.p5js.org/owenroberts/sketches/S1N-5TAGQ">starter sketch</a> that contains the following:<ul>
+
+        <li>Mouse canvas position indicator (x, y)
+        <li>Adaptable grid </ul>
+
+        <p>
+        Think about the different components that make up your robot and what order will you need to draw its shapes. List them on paper before you start coding.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        Check out the p5.js reference online and add more shapes to your robot. Can you figure out how to add a triangle? A polygon?
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_1.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

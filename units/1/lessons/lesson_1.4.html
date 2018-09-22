@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.4 Various Shapes, Stroke Weight, Fill()</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_1.4">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>1.4 Various Shapes, Stroke Weight, Fill()</h1>
+	<h2>How can we use shape functions to create images?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students will create a visual composition using various  p5 shape-drawing functions. They will continue to build on their understanding of functions and their parameters to recreate the robot from lesson 1.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Consult the p5 reference  </li>
+			
+				<li> Create triangles  </li>
+			
+				<li> Create quadrilaterals  </li>
+			
+				<li> Create arcs  </li>
+			
+				<li> Create shapes defined by their vertices  </li>
+			
+				<li> Use layering to create images  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><p><strong>Abstraction:</strong> </p><ul>
+<li>Give examples of specific patterns in something I can see, do or touch. <li>Describe different things I tried in order to achieve a goal. <li>Explain why I chose to include the specific components of my prototype over others. <li>Explain how I might help others identify patterns. <li>Explain why using patterns is necessary when creating with a computer.</li></ul>
+<p> <strong>Algorithms:</strong> </p><ul>
+<li>Describe more than one set of instructions that might complete a task. <li>Explain why I used specific instructions to complete a task. <li>Compare and contrast my instructions with other instructions that complete the same task.</li></ul>
+<p> <strong>Programming:</strong> </p><ul>
+<li>Experiment with the commands of a programming language. <li>Describe three ways a development environment helps me create a project. <li>Explain why I chose specific commands to communicate my instructions. <li>Describe the changes I made after testing at least three parts of my program. <li>Discuss what can and cannot be done with a specific set of commands.</ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Functions </th>
+						<td> Functions are lines of code that perform specific tasks. </td>
+					</tr>
+				
+					<tr>
+						<th> Parameters or arguments </th>
+						<td> Are the values inside of a parenthesis following the name of the function. These are used to change the outcome of a function </td>
+					</tr>
+				
+					<tr>
+						<th> Vertices </th>
+						<td> Typically means a corner or a point where lines meet. </td>
+					</tr>
+				
+					<tr>
+						<th> Quadrilateral </th>
+						<td> A shape with four sides </td>
+					</tr>
+				
+					<tr>
+						<th> Triangle </th>
+						<td> A shape with three sides </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://drive.google.com/file/d/0Byk7AxhPkTEJWWdUeVFteXFrT2M/view?usp=sharing">Shape Guide</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Intro</p>
+    </div>  
+    <div class="span8">
+        <p>While it's great to place shapes on the canvas using built in functions, we're going to learn a shortcut in order to help us draw more complex shapes to make more interesting drawings.
+        First, because this activity will have you problem solving, we must go over "what to do when feeling stuck": <ul>
+
+        <li>Ask yourself:  <ul>
+
+         <li>What was supposed to happen?
+         <li>What happened instead?</ul>
+        <li>If there is an error message look at the line number and error description. If the error message has a suggestion try that first.
+        <li>Check for common errors working line by line from top to bottom
+        <li>Play with the code. Make one change at a time then hit run.
+        <li>Use teamwork. Compare your code to the code of someone next to you.
+        <li>Check out the p5.js online reference. <a href="http://www.p5js.org/reference">www.p5js.org/reference</a></li></ul>
+
+    </div>
+</div>
+<div class="row">
+        <div class="span2">     
+        <p>Change The Shade and Stroke of your Shapes</p>
+    </div>  
+    <div class="span8">
+        <p>You might have noticed this: if you don't change anything, your shapes are drawn with a white fill, and a thin, black stroke. To change these, you can use the <code>fill()</code> and <code>stroke()</code> functions. When given one parameter, <code>fill()</code> is set to a shade of gray between 0 (black) and 255 (white). To get rid of the stroke add <code>noStroke()</code>  and to get rid of the fill, add  <code>noFill()</code>. You can also change the thickness of the stroke by adding <code>strokeWeight().</code> Remember that since the code runs from the top down, when you change the fill or stroke, that change will apply to all of the code beneath it.
+        <p>
+        It can be useful to compare the program to a person drawing from instructions. You might instruct a person to:
+
+        <ol>
+
+        <li>Pick up a white pen
+        <li>Draw a square
+        <li>Switch to a gray pen
+        <li>Draw an ellipse
+        <li>Draw a line</ol>
+
+        <p>
+        The square would be white and both the ellipse and the line, as well as anything else you tell the person to draw, would be gray until you tell them to switch pens again. Since the code runs from the top down, it will work the same way. If you add a white fill, and draw three shapes beneath that line of code, all three shapes will be white.
+        <p>
+        Play with the thickness of the stroke and its shade of gray <a href="http://alpha.editor.p5js.org/SEP/sketches/BJLk_dK7-">here</a>.
+        <p>
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">     
+        <p>Draw Other Shapes and Navigate the p5.js Reference</p>
+    </div>  
+    <div class="span8">
+        Use the <a href="http://www.p5js.org/reference">p5 reference </a>to complete this <a href="https://docs.google.com/document/d/1H-H5XI5pqNcyGtJsySNG20reEn-qQQWKyGGvXNS8PAM/edit?usp=sharing">worksheet</a>  and then create the following shapes in the p5.js editor:
+        <p>
+        <ul>
+
+        <li>Triangle using <code>triangle()</code> function
+        <li>Quadrilateral using <code>quad()</code> function
+        <li>Star using <code>beginShape()</code> function
+        <li>Arc.</ul>
+
+        <p>
+        Your sketch should include: <ul>
+
+        <li>A canvas size of 600 pixels wide by 120 pixels high.
+        <li>Light gray background.</ul>
+
+        <p>
+        Examples of possible outputs:
+        <p>
+
+        <img src="../../../images/lessons/1.4/star.png"/><p>
+        <p>
+        <a href="http://alpha.editor.p5js.org/SEP/sketches/Byc6nmFEX">Possible Solution</a>
+        <p>
+        To draw a polygon, first call the <code>beginShape()</code> function, then call the vertex(x, y) for each vertex of the polygon. End the shape with <code>endShape(CLOSE)</code>.
+
+        <script type="text/p5">
+function setup(){
+    createCanvas(600, 120);
+}
+
+function draw() {
+    beginShape();
+    vertex(x, y); //Coordinate of Vertex 1
+    vertex(x, y); //Coordinate of Vertex 2
+    vertex(x, y); //Coordinate of Vertex 3
+    vertex(x, y); //Coordinate of Vertex 4
+    vertex(x, y); //Coordinate of Vertex 5
+    endShape(CLOSE);
+}
+        </script>
+        <p>
+        Example:
+        <p>
+
+        <img src="../../../images/lessons/1.4/house.png"/><p>
+
+
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">     
+        <p>Extension: Arcs</p>
+    </div>  
+    <div class="span8">
+        <p>If you're up for a challenge, check out the <a href="http://p5js.org/reference/">p5.js reference</a> to make arcs and curves.
+        <p>
+        Arcs are part of ellipses (or circles). To draw an arc, we need to specify the start angle and end angle of the portion of the ellipse that we want to draw..
+        <p>
+        <img src="../../../images/lessons/1.4/arc.png"/><p>
+
+        <p>
+        In p5js, angles are specified not in degrees but a unit called RADIANS. Angles are also measured in the CLOCKWISE direction.
+
+        <table class="table">
+          <tr>
+           <td colspan="3" ><strong>Common Angle Measures</strong>
+           </td>
+          </tr>
+          <tr>
+           <td>Degrees
+           </td>
+           <td>Radians
+           </td>
+           <td>p5.js
+           </td>
+          </tr>
+          <tr>
+           <td>0°
+           </td>
+           <td>0
+           </td>
+           <td>0
+           </td>
+          </tr>
+          <tr>
+           <td>45°
+           </td>
+           <td>𝜋/4
+           </td>
+           <td>QUARTER_PI
+           </td>
+          </tr>
+          <tr>
+           <td>90°
+           </td>
+           <td>𝜋/2
+           </td>
+           <td>HALF_PI
+           </td>
+          </tr>
+          <tr>
+           <td>180°
+           </td>
+           <td>𝜋
+           </td>
+           <td>PI
+           </td>
+          </tr>
+          <tr>
+           <td>270°
+           </td>
+           <td>1.5𝜋
+           </td>
+           <td>PI+HALF_PI
+           </td>
+          </tr>
+          <tr>
+           <td>360°
+           </td>
+           <td>2𝜋
+           </td>
+           <td>TWO_PI
+           </td>
+          </tr>
+        </table>
+
+        <img src="../../../images/lessons/1.4/drawing.png"/><p>
+
+
+        If you would rather work with degrees and not radians (90 instead of PI/2), add this line to your code: `angleMode(DEGREES).`
+
+        Use this <a href="https://drive.google.com/file/d/0Byk7AxhPkTEJWWdUeVFteXFrT2M/view?usp=sharing">p5 reference cheat sheet</a> to learn more and recreate the following:
+
+        <a href="http://alpha.editor.p5js.org/SEP/sketches/HJ-XrmtVX">Possible Solution </a>
+        <p>
+        <img src="../../../images/lessons/1.4/threequartercircle.png"/><p>
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_1.4/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

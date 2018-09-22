@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Hover on text, drag sliders: control your sketch using HTML elements</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/7/learning_activities/la_6.html">
+    <link rel="canonical" href="http://localhost:4000/units/7/learning_activities/la_6">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,14 +17,14 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
@@ -31,176 +32,30 @@
         <!-- Link back to parent unit -->
 
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-		
-			
-		
-	
-
-<h4>
-	<a href="/units/7/overview.html">Unit 7</a>. Learning Activity 6 . Hover on text, drag sliders: control your sketch using HTML elements
-</h4>
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/7/overview"><h3>Unit 6 DOM</a><br/
+	<h1>Learning Activity 6</h1>
+	<h2>Hover on text, drag sliders: control your sketch using HTML elements</h2>
+	<h3></h3>
+</div>
+</br>
 
 
 	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Objectives</p>
-		</div>	
-		<div class="span6"> 
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
 			<p><p>In this learning activity students create a header that changes its text when the user hovers on it. To do so, they learn to use the mouseOver and mouseOut events. Then, by creating a slider that moves a ball and then drops it, they learn the difference between <i>input</i> and <i>changed</i> events.</p></p>
-		</div>	
+		</div>
 	</div>
 
 
 
 
-
-
-
-
-
-
-<!-- 
+<!--
 TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
  -->
 <!--  -->
@@ -234,7 +89,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 </div>
 <div class="row">
     <div class="span2">     
-        <p>Step by Step</p>
+        <p>Instructions</p>
     </div>  
     <div class="span8">
     <!-- <p>In this Learning Activity we will look into events triggered by user actions, and how to handle them.</p> -->
@@ -535,14 +390,6 @@ function drop(){
 
 
 
-	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Teacher support Resources</p>
-		</div>	
-		<div class="span6"  style="margin-top:0px"> 
-			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=HsDVz2_Qgow">Video 7.6: Other Events and Inputs</a>
-		</div>	
-	</div>
 
 
 
@@ -552,7 +399,7 @@ function drop(){
 	var folder = "../../../code/unit_7/la_6/";
 
     $(document).ready(function() {
-    	
+
     	$('.editor').each(function( index ) {
     		var i = index + 1;
     		var path = folder + 'ex_' + i;
@@ -569,16 +416,15 @@ function drop(){
 					editor.renderer.lineHeight + 'px';
     			editor.resize();
 
-    			/* For Reference: 
+    			/* For Reference:
     				editor.getSession().getDocument().getLength() *
 					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
 				*/
-			  	
+
 			  });
 		});
     });
 </script>
-
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 

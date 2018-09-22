@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Response and Transformations</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/2/overview.html">
+    <link rel="canonical" href="http://localhost:4000/units/2/overview">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,64 +17,63 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
 
-        <h4>
-	<a href="">Response and Transformations</a>
-</h4>
+        <div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/index.html"><h3>Introduction to Computational Media with p5.js</h3></a>
+	<h1>Unit 2 Response and Transformations</h1>
+	
+</div>
+<!-- Unit Description -->
+
+	<div class="row unit_description">
+		<h3>Overview</h3>
+		<p>In this unit students learn to make their sketches respond to actions taken by the user, from moving the pointer to clicking or touching it over a certain area, to typing on the keyboard. The if statement is introduced. The map function is used to convert inputs into useful ranges.</p><p>The unit also covers applying transformations to the coordinate system ––translation, rotation, scaling––, and isolating them to affect only a portion of the code, using push() and pop(). </p><p>For the final project, students create an expressive drawing tool.</p>
+	</div>
 
 
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Big Ideas</p>
-		</div>	
-		<div class="span6"> 
-			<ul> <li>Interactive systems: programming visual systems that change over time and respond to user inputs.</li> <li>Interaction design: defining the interactions between user and system.</li> <li>Designing tools for creative expression.</li>
+
+
+
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Big Ideas</p>
+			</div>
+			<div class="span6">
+				<ul> <li>Interactive systems: programming visual systems that change over time and respond to user inputs.</li> <li>Interaction design: defining the interactions between user and system.</li> <li>Designing tools for creative expression.</li>
 </ul> 
-			
-		</div>	
-	</div>
 
+			</div>
+		</div>
+	
 
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Enduring Understandings</p>
-		</div>	
-		<div class="span6"> 
-			 <ul> <li>Understand that we can create our own drawing tools, and that the creation of tools can be expressive in itself.</li> <li>Understand that the fast succession of still frames allows for the illusion of motion and for the system to respond to user clicks, hovers, and key presses.</li> <li>Understand linear transformations of the coordinate plane (scale, translate, rotate), and of one single variable (map function)</li>
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Enduring Understandings</p>
+			</div>
+			<div class="span6">
+				 <ul> <li>Understand that we can create our own drawing tools, and that the creation of tools can be expressive in itself.</li> <li>Understand that the fast succession of still frames allows for the illusion of motion and for the system to respond to user clicks, hovers, and key presses.</li> <li>Understand linear transformations of the coordinate plane (scale, translate, rotate), and of one single variable (map function)</li>
 
 </ul> 
-		</div>	
-	</div>
-
-
-
+			</div>
+		</div>
+	
+	
 	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Unit Overview</p>
-		</div>	
-		<div class="span6"> 
-			<p>In this unit students learn to make their sketches respond to actions taken by the user, from moving the pointer to clicking or touching it over a certain area, to typing on the keyboard. The if statement is introduced. The map function is used to convert inputs into useful ranges.</p><p>The unit also covers applying transformations to the coordinate system ––translation, rotation, scaling––, and isolating them to affect only a portion of the code, using push() and pop(). </p><p>For the final project, students create an expressive drawing tool.</p>
-		</div>	
-	</div>
-
-
-
-
-
-	<div class="mainrow row">
-			<div class="span3"> 	
+			<div class="span3">
 				<p>Goals</p>
 			</div>
 			<div class="span9" style="margin-top:10px">
@@ -83,7 +83,7 @@
 								1. Understand the flow of p5 
 						</div >
 						<div class="span6">
-							How the draw loop makes it possible to create motion and interactivity	
+							How the draw loop makes it possible to create motion and interactivity
 						</div >
 					</div>
 				
@@ -92,7 +92,7 @@
 								2. Respond to user actions
 						</div >
 						<div class="span6">
-							Key presses, mouse motion and clicks. Map values to useful ranges.	
+							Key presses, mouse motion and clicks. Map values to useful ranges.
 						</div >
 					</div>
 				
@@ -101,7 +101,7 @@
 								3. Transform shapes
 						</div >
 						<div class="span6">
-							Understand the linear transformations of the coordinate system (translation, rotation, scale); compose and isolate them; use them to create motion.	
+							Understand the linear transformations of the coordinate system (translation, rotation, scale); compose and isolate them; use them to create motion.
 						</div >
 					</div>
 				
@@ -109,10 +109,14 @@
 	</div>
 
 
+
+
+
+
 <div class="row">
-	<div class="span3"> 	
+	<div class="span3">
 		<p>Learning Activities</p>
-	</div>	
+	</div>
 	<div class="span9" style="margin-top:10px">
 		
 		
@@ -131,16 +135,6 @@
 			
 		
 			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
 				
 			
 		
@@ -156,15 +150,15 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/2/learning_activities/la_1.html>1 . Draw with the mouse </a>
+							<a href=/units/2/learning_activities/la_1>1 . Draw with the mouse </a>
 					</div >
-					
+
 					<div class="span5">
 						Draw where the mouse is.
 					</div >
 					<div class="span1">
 						
-							~45' 
+							~45'
 						
 					</div >
 				</div>
@@ -176,7 +170,11 @@
 			
 		
 			
+				
+			
 		
+			
+				
 			
 		
 			
@@ -217,6 +215,34 @@
 		
 			
 		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+			
+		
+			
+		
+			
+				
+			
+		
+			
+				
 			
 		
 			
@@ -231,15 +257,15 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/2/learning_activities/la_2.html>2 . Hover and click on things </a>
+							<a href=/units/2/learning_activities/la_2>2 . Hover and click on things </a>
 					</div >
-					
+
 					<div class="span5">
 						When the user clicks, change the drawing color
 					</div >
 					<div class="span1">
 						
-							~40' 
+							~40'
 						
 					</div >
 				</div>
@@ -251,37 +277,11 @@
 			
 		
 			
-				
-			
-		
-			
-				
-			
 		
 			
 		
 			
-				
-			
 		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
 			
 		
 			
@@ -294,15 +294,15 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/2/learning_activities/la_3.html>3 . Press keys </a>
+							<a href=/units/2/learning_activities/la_3>3 . Press keys </a>
 					</div >
-					
+
 					<div class="span5">
 						When the user presses the spacebar, clear the screen (and other key-triggered behaviors)
 					</div >
 					<div class="span1">
 						
-							~20' 
+							~20'
 						
 					</div >
 				</div>
@@ -315,34 +315,60 @@
 		
 			
 				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/2/learning_activities/la_4.html>4 . Map values </a>
+							<a href=/units/2/learning_activities/la_4>4 . Map values </a>
 					</div >
-					
+
 					<div class="span5">
 						Map the mouse position values to hue and saturation.
 					</div >
 					<div class="span1">
 						
-							~20' 
+							~20'
 						
 					</div >
 				</div>
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
 				
 			
 		
@@ -356,15 +382,15 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/2/learning_activities/la_5.html>5 . Translate, Rotate, Scale </a>
+							<a href=/units/2/learning_activities/la_5>5 . Translate, Rotate, Scale </a>
 					</div >
-					
+
 					<div class="span5">
 						Transform the entire drawing; transform some of its elements.
 					</div >
 					<div class="span1">
 						
-							~40' 
+							~40'
 						
 					</div >
 				</div>
@@ -379,52 +405,56 @@
 		
 			
 		
-		
+
 	</div>
-</div>	
+</div>
+
+
+
+
 
 
 	<div class="mainrow row">
-		<div class="span3"> 	
+		<div class="span3">
 			<p>Final Project Prompt</p>
-		</div>	
-		<div class="span6"> 
+		</div>
+		<div class="span6">
 			<p>Create a beautiful/whimsical drawing tool.</p>
-		</div>	
+		</div>
 	</div>
 
 
 <div class=" row">
-		<div class="span3"> 	
-			
+		<div class="span3">
+
 		</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level basic</b>
 					<br/>
-					Use the line function and the current and previous positions of the mouse to draw. When the space bar is pressed, clear the screen. When certain keys are pressed, change the drawing color, transparency, and/or stroke weight.	
+					Use the line function and the current and previous positions of the mouse to draw. When the space bar is pressed, clear the screen. When certain keys are pressed, change the drawing color, transparency, and/or stroke weight.
 				</p>
 			</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level intermediate</b>
 					<br/>
-					Instead of the line function, draw with shape functions (triangle, rect, ellipse, bezier). Use transform functions to change the brush size, rotation, position relative to the mouse. These changes should be triggered by key presses, like the previous example.	
+					Instead of the line function, draw with shape functions (triangle, rect, ellipse, bezier). Use transform functions to change the brush size, rotation, position relative to the mouse. These changes should be triggered by key presses, like the previous example.
 				</p>
 			</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level advanced</b>
 					<br/>
-					Include a tool palette: buttons for picking different colors, size, stroke, rotation. Only draw when the mouse is pressed.	
+					Include a tool palette: buttons for picking different colors, size, stroke, rotation. Only draw when the mouse is pressed.
 				</p>
 			</div>
 		
 </div>
-		
+
 <div class=" row">
 	<div class="span3">Final Project Examples</div>
 	
@@ -504,20 +534,66 @@
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 			
 		
 	
 		
 			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/2/final_project_examples/level_1.html">
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3">
+					<p>
+						<a href="/units/2/final_project_examples/level_1">
 							<img src="/images/unit_2_final_project_1_level_1.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 1 <br/>
-						<a href="/units/2/final_project_examples/level_1.html">Example Project</a><br/>
+						<a href="/units/2/final_project_examples/level_1">Example Project</a><br/>
 						
 						
 							
@@ -609,15 +685,11 @@
 							
 						
 							
-
-								
-									<a href="/units/2/final_project_examples/guide_level_1.html">Step by Step Guide</a>
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -638,11 +710,37 @@
 							
 
 								
+									<a href="/units/2/final_project_examples/guide_level_1">Step by Step Guide</a>
+								
 							
 						
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -679,8 +777,6 @@
 		
 	
 		
-			
-		
 	
 		
 			
@@ -699,34 +795,16 @@
 		
 	
 		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 			
-		
-	
-		
-			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/2/final_project_examples/level_2.html">
+				<div class="span3">
+					<p>
+						<a href="/units/2/final_project_examples/level_2">
 							<img src="/images/unit_2_final_project_1_level_2.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 2 <br/>
-						<a href="/units/2/final_project_examples/level_2.html">Example Project</a><br/>
+						<a href="/units/2/final_project_examples/level_2">Example Project</a><br/>
 						
 						
 							
@@ -818,13 +896,11 @@
 							
 						
 							
-
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -850,6 +926,30 @@
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -919,15 +1019,19 @@
 	
 		
 			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/2/final_project_examples/level_3.html">
+		
+	
+		
+			
+				<div class="span3">
+					<p>
+						<a href="/units/2/final_project_examples/level_3">
 							<img src="/images/unit_2_final_project_1_level_3.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 3 <br/>
-						<a href="/units/2/final_project_examples/level_3.html">Example Project</a><br/>
+						<a href="/units/2/final_project_examples/level_3">Example Project</a><br/>
 						
 						
 							
@@ -1019,13 +1123,11 @@
 							
 						
 							
-
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -1051,6 +1153,30 @@
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -1083,14 +1209,6 @@
 						
 					</p>
 				</div>
-			
-		
-	
-		
-			
-		
-	
-		
 			
 		
 	
@@ -1114,7 +1232,7 @@
 		    	</div>
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://learningprocessing.com/examples/chp09/example-09-08-mouse-history" target='_blank' >
 				<img src="/images/unit_2_final_project_inspiration_1.png" width="100%" ></img>
 				</a>
@@ -1128,7 +1246,7 @@
 		  
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://www.generative-gestaltung.de/P_2_3_4_01" target='_blank' >
 				<img src="/images/unit_2_final_project_inspiration_2.png" width="100%" ></img>
 				</a>
@@ -1142,7 +1260,7 @@
 		  
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://the816.com/neobrush/" target='_blank' >
 				<img src="/images/unit_2_final_project_inspiration_3.png" width="100%" ></img>
 				</a>
@@ -1151,29 +1269,11 @@
 				</div>
 			</div>
 
-		  	
-		    </div> 
+		  
+		    </div>
 		  
 		
 	
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

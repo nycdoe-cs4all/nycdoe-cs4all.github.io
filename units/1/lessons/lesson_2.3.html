@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.3 Place elements at random positions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_2.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>2.3 Place elements at random positions</h1>
+	<h2>How can we use the random function to generate different designs?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity, students will understand the concept of functions in a different way because unlike other functions we have been using (i.g. ellipse and rect) random will <em>return</em> a value. Rect() "returns" an image by generating it onto the canvas. The random() function will be one of many functions that will be used in future units in order to make sketches more complex and interactive.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use <code>random()</code> to generate different positioning, sizing and grayscale fill  </li>
+			
+				<li> Assign <code>random()</code> to a function  </li>
+			
+				<li> Use <code>random()</code> in the correct scope  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><p> <strong>Abstraction:</strong> </p><ul>
+<li>Describe how I might use patterns to express an idea. <li>Describe different things I tried in order to achieve a goal. <li>Explain why using patterns is necessary when creating with a computer.</li></ul>
+<p> <strong>Algorithms:</strong> </p><ul>
+<li>Describe more than one set of instructions that might complete a task. <li>Describe how instructions can have different outputs depending on inputs. <li>Explain why I used specific instructions to complete a task.</li></ul>
+<p> <strong>Programming:</strong> </p><ul>
+<li>Experiment with the commands of a programming language. <li>Explain why I chose specific commands to communicate my instructions. <li>Discuss what can and cannot be done with a specific set of commands.</ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> <code>random()</code> </th>
+						<td> A function that returns a number in a given interval. </td>
+					</tr>
+				
+					<tr>
+						<th> <code>int()</code> </th>
+						<td> A mathematical function that converts the value into an integer. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a href="https://youtu.be/nfmV2kuQKwA">2.5 The random() function</a> | <a href="https://github.com/CodingTrain/website/blob/master/Tutorials/P5JS/p5.js/02/2.5_p5.js_random/sketch.js">Code</a></li>
+				
+					<li><a href="https://www.w3schools.com/js/js_debugging.asp">JavaScript Debugging</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+        <div class="span2">     
+            <p>Instructions</p>
+        </div>  
+        <div class="span8">
+            <h5>Place elements at random positions</h5>
+            <p>We can also place our ellipse at a random position each time our program runs. To do this, we use p5's <code>random</code> function. This function is different from other functions we have been using (like <code>ellipse</code> and <code>rect</code>) in that it <i>returns</i> a value. Each time they are called:
+                <ul>
+                    <li><code>random(50, 100)</code> returns a number between 50 and 100</li>
+                    <li><code>random(1, 5)</code> returns a number between 1 and 5</li>
+                </ul>
+            When the first parameter is omitted, random assumes it is 0:
+            <ul>
+                    <li><code>random(100)</code> returns a number between 0 and 100</li>
+                    <li><code>random(5)</code> returns a number between 0 and 5</li>
+                </ul>
+            </p>
+            <p>In the p5 editor, try running the following piece of code several times: </p>
+            <pre><code>function setup(){
+    ellipse(random(100), 60, 60, 60);
+}</code></pre>
+            <p>Now try these, and play with their values:
+                <ul>
+                    <li><code>ellipse(random(100),random(100), 60, 60);</code></li>
+                    <li><code>ellipse(random(300, 400), 60, 60, 60);</code></li>
+                    <li><code>ellipse(random(20, 60), random(60, 120), 60, 60);</code></li>
+                </ul>
+            </p>
+            <p>What happens if we replace the last two parameters with calls to <code>random</code>?
+            </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_2.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

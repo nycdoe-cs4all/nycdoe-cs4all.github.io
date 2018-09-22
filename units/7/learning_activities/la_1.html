@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Add a title and text to your page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/7/learning_activities/la_1.html">
+    <link rel="canonical" href="http://localhost:4000/units/7/learning_activities/la_1">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,14 +17,14 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
@@ -31,176 +32,30 @@
         <!-- Link back to parent unit -->
 
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-		
-			
-		
-	
-
-<h4>
-	<a href="/units/7/overview.html">Unit 7</a>. Learning Activity 1 . Add a title and text to your page
-</h4>
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/7/overview"><h3>Unit 1 DOM</a><br/
+	<h1>Learning Activity 1</h1>
+	<h2>Add a title and text to your page</h2>
+	<h3></h3>
+</div>
+</br>
 
 
 	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Objectives</p>
-		</div>	
-		<div class="span6"> 
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
 			<p><p>p5 sketches are actually web pages. Web pages are written in the HTML language (apart from Javascript). In this learning activity we look under the hood of our p5 sketches, see the HTML code behind them, and add elements to it. We add a title, a paragraph and an image ––a simple result, but one that sets the foundation students need to do creative projects later on, animating HTML elements and making them interactive.</p></p>
-		</div>	
+		</div>
 	</div>
 
 
 
 
-
-
-
-
-
-
-<!-- 
+<!--
 TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
  -->
 <!--  -->
@@ -250,7 +105,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 <div class="row">
     <div class="span2">     
-        <p>Step by Step</p>
+        <p>Instructions</p>
     </div>  
     <div class="span8">
     <h5>1) Under the hood of p5 sketches: a first look at index.HTML</h5>
@@ -463,14 +318,6 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 
 
-	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Teacher support Resources</p>
-		</div>	
-		<div class="span6"  style="margin-top:0px"> 
-			<ul> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=URSH0QpxKo8&list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX&index=1">Video 7.1: What is HTML? </a> </li> <li><a href="https://www.w3schools.com/html/html_basic.asp">HTML element reference</a></li> </ul> 
-		</div>	
-	</div>
 
 
 
@@ -480,7 +327,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 	var folder = "../../../code/unit_7/la_1/";
 
     $(document).ready(function() {
-    	
+
     	$('.editor').each(function( index ) {
     		var i = index + 1;
     		var path = folder + 'ex_' + i;
@@ -497,16 +344,15 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 					editor.renderer.lineHeight + 'px';
     			editor.resize();
 
-    			/* For Reference: 
+    			/* For Reference:
     				editor.getSession().getDocument().getLength() *
 					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
 				*/
-			  	
+
 			  });
 		});
     });
 </script>
-
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 

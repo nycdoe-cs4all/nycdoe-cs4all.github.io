@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.2 Line Functions and Parameters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_1.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>1.2 Line Functions and Parameters</h1>
+	<h2>How do the parameters of function effect positioning on the p5 canvas?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students will create a visual composition using the p5 shape-drawing functions (point, line). They will be introduced to functions parameters and then call them in p5.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Understand the p5 canvas coordinate system  </li>
+			
+				<li> Consult the p5 reference for documentation  </li>
+			
+				<li> Create a line and point  </li>
+			
+				<li> Change the grayscale value of a canvas  </li>
+			
+				<li> Use lines to create a rectangle or a house  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><p><strong>Abstraction:</strong><ul>
+<li>Give examples of specific patterns in something I can see, do or touch. <li>Describe different things I tried in order to achieve a goal. <li>Explain how I might help others identify patterns.</ul>
+<p> <strong>Algorithms:</strong><ul>
+<li>Describe more than one set of instructions that might complete a task. <li>Explain why I used specific instructions to complete a task. <li>Compare and contrast my instructions with other instructions that complete the same task.</ul>
+<p> <strong>Programming:</strong><ul>
+<li>Experiment with the commands of a programming language <li>Explain why I chose specific commands to communicate my instructions. <li>Discuss what can and cannot be done with a specific set of commands.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Functions </th>
+						<td> Functions are lines of code that perform specific tasks. </td>
+					</tr>
+				
+					<tr>
+						<th> Parameters or arguments </th>
+						<td> Are the values inside of a parenthesis following the name of the function. These are used to change the outcome of a function </td>
+					</tr>
+				
+					<tr>
+						<th> IDE </th>
+						<td> Integrated development area is a software application that provides a place for computer programmers to develop code. </td>
+					</tr>
+				
+					<tr>
+						<th> Width </th>
+						<td> Horizontal distance of a 2D shape </td>
+					</tr>
+				
+					<tr>
+						<th> Height </th>
+						<td> Vertical distance of a 2D shape </td>
+					</tr>
+				
+					<tr>
+						<th> Vertex / Vertices </th>
+						<td> A point where two or more lines meet </td>
+					</tr>
+				
+					<tr>
+						<th> Cartesian (Coordinate) Place </th>
+						<td> Four quadrant grid with an x & y axis, origin, etc. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://p5js.org/reference/">p5 reference</a></li>
+				
+					<li><a href="https://docs.google.com/document/d/14mDvlCxeFW6elTAi1RMNdzJZv0ZZVKv3HXlK8hRfNOk/edit?usp=sharing">Line Worksheet</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>p5.js web editor overview</p>
+    </div>
+    <div class="span8">
+
+        <p>The <a href="http://alpha.editor.p5js.org/">p5 alpha editor</a> is a web based code editor that has the p5 library already added to the development environment.  It is an <strong>integrated development environment</strong> or <strong>IDE</strong>.  And IDE is a piece of software that allows a developer to write code and execute the code within one interface, and may have other features like debugging.
+        </p>
+        The code editor will by default open to the file <strong>sketch.js</strong>, which is where the main p5 program is written.  This is the<strong> text editor</strong> window.
+        <p>
+        <img src="../../../images/lessons/1.2/sketchjs.png"/></br>
+        <p>
+        When creating a new sketch, it will populate the file with some basic starter code.  This window can be used like a typical text editor.
+        <p>
+        To the right of the text editor is the <strong>Preview</strong> window.  This is actually a window with the website being created in the editor embedded inside of it.  When the sketch is executed the result will appear in the preview window.
+        <p>
+        <img src="../../../images/lessons/1.2/circlepreview.png"/><p>
+
+        <p>
+        Below the editor is the <strong>Console</strong> window.  The console is an interface that prints information such as errors, warning and developer logs for the developer to view as they are working on a project.
+        <p>
+        <img src="../../../images/lessons/1.2/console.png"/><p>
+
+        <p>
+        Directly above the text editor are some essential interactive interfaces.
+        <p>
+        <img src="../../../images/lessons/1.2/autorefresh.png"/><p>
+
+        <p>
+        The big play button with run the sketch.  The stop button will stop running the sketch.  The auto-refresh option will execute the sketch as the code is updated (I don't recommend this setting in its current version).  The title of the sketch has a pencil icon next to it which can be clicked to change the sketch name.
+        <p>
+        The sketch can also be run by hitting <strong>Command + Enter</strong> on the Mac keyboard and stopped with <strong>Command + Shift + Enter</strong>.  On Windows the key commands are the same except <strong>Control</strong> replaces Command.
+        <p>
+        The toolbar is at the top of the window.  The first menu, <strong>File</strong>, allows the user to save the current sketch, open a previously saved sketch, open an example from the p5 set of example, duplicate a saved sketch, share a sketch or download the files from a sketch.  Some of these functions will be covered in greater depth in future lessons.
+        <p>
+        <img src="../../../images/lessons/1.2/filemenu.png"/><p>
+
+        <p>
+        <strong>Command + S</strong> on the Mac can also be used to save a sketch.
+        <p>
+        The <strong>Edit </strong>section can be used to <strong>Tidy Code</strong>, or update the code formatting.  Tidy Code is a very useful feature for new students who haven't mastered code formatting, adding indentations and curly brackets and other mistakes.  Tidy Code also has a key command, <strong>Shift + Tab</strong>.  Encourage students to use this function frequently.
+        <p>
+
+        <img src="../../../images/lessons/1.2/editmenu.png"/><p>
+
+        <p>
+        The <strong>Sketch</strong> menu has options to run the sketch, stop the sketch and start and stop Accessibility enabled versions of the sketch.
+        <p>
+
+        <img src="../../../images/lessons/1.2/sketchmenu.png"/><p>
+
+        <p>
+        Finally the <strong>Help & Feedback</strong> menu includes a complete list of the keyboard shortcuts and, a link to the p5 <strong>reference</strong>, which students should use as often as possible.
+        <p>
+
+        <img src="../../../images/lessons/1.2/helpmenu.png"/><p>
+
+        <img src="../../../images/lessons/1.2/keyboardshortcuts.png"/><p>
+
+        <p>
+        There is also a link to give feedback to the creators of the alpha editor, either through a GitHub issue or a Google Form.  This is a great way to tell the developers about issues encountered while using the alpha editor which may be incorporated to future updates.
+        <p>
+
+        <img src="../../../images/lessons/1.2/feedback.png"/><p>
+
+        <p>
+        Finally, in the upper right corner, there is a link to the user account setting, including a list of the user sketches.
+        <p>
+
+        <img src="../../../images/lessons/1.2/accountmenu.png"/><p>
+
+        <p>
+        As well as a settings button that opens a menu for visual settings, such as the color theme and font size of the editor.
+        <p>
+
+        <img src="../../../images/lessons/1.2/settings.png"/><p>
+
+    </div>
+</div>
+<div class="row">
+        <div class="span2">
+        <p><code>createCanvas()</code> and <code>background()</code></p>
+    </div>
+    <div class="span8">
+        Code is just a set of instructions for the computer. In order to give instructions to p5, we'll need to use different <strong><em>functions</em></strong> and change their <strong>parameters</strong> to fit our desired output.
+        <p>
+
+        <p>
+        <strong>Functions</strong> are lines of code that perform specific tasks. Two functions are automatically added to your sketch when you open the editor.
+        <p>
+
+        <img src="../../../images/lessons/1.2/bracketed.png"/><p>
+
+        <p>
+        While setup and draw are defined by the developer in each sketch, most of the p5 functions we'll use are defined by the p5 library, and <strong>invoked</strong> in our code.
+        <p>
+        When a function is invoked, or called, the programmer is asking the program to run the code within the function.  The <strong>parenthesis operator</strong> is used to invoke the function.
+        <p>
+        Ex. <code>rect(50, 50, 100, 100)</code>;
+        <p>
+        The values inside of the parentheses are known as <strong>arguments</strong> or <strong>parameters</strong>.  These are used to change the outcome of a function.<p>
+
+        <img src="../../../images/lessons/1.2/functionname.png"/><p>
+
+        <p>
+        <strong><code>createCanvas()</code> function</strong><ul>
+
+        <li>This function creates a p5.js canvas.</li>
+        <li>The canvas is an element on the web page on which we will draw our graphics.</li>
+        <li>Syntax: <code>createCanvas(width, height)</code></li>
+
+        <p>
+
+        <img src="../../../images/lessons/1.2/createcanvas.png"/><p>
+
+        <strong><code>background()</code> function</strong><ul>
+
+        <li>This function gives our canvas a background grayscale color between 0 (black) and 255 (white)</li>
+        <li>Syntax: <code>background(value)</code></li>
+        </ul>
+
+        <p>
+
+        <img src="../../../images/lessons/1.2/backgroundblack.png"/><p>
+
+        <p>
+        What happens when if you were to add multiple background functions with different values? Which of background color is prioritized? Why?
+
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">
+        <p>Line and point function | Student Code Along</p>
+    </div>
+    <div class="span8">
+
+    To draw on the canvas, call p5.js <em>functions</em> like <code>point()</code> and <code>line()</code>.<ul>
+
+    <li>A point is defined by an (x, y) coordinate.</li>
+    <li>A line is defined by its start and end points.</li></ul>
+
+    <p>
+    In the graphs we are used to, the y-coordinate grows upward; in p5's canvas, it grows as we move down the screen.
+    <p>
+
+    <img src="../../../images/lessons/1.2/graphsingeneral.png"/><p>
+
+    <img src="../../../images/lessons/1.2/diagonalline.png"/><p>
+
+    <ul>
+
+    <li><code>point(x,y)</code>-  The function name to draw a point is "point". The parameters are (x,y) which are the x and y coordinates.
+
+    <li><code>line(x1,y1,x2,y2)</code>-  The function name to draw a line is "line."  The first x and y are the starting point and and the second are the end point.</ul>
+
+    <script type="text/p5">
+function setup(){
+    createCanvas(600, 120);
+}
+
+function draw() {
+    background(180);
+
+    // Draw a point at x=110, and y=80
+    point( 110, 80);
+
+    // Draw a line from point (300,20) to (400,100)
+    line( 300, 20, 400, 100 );
+}
+    </script>
+
+
+    <p>
+    <strong>Comments </strong>
+    <p>
+    As you can see, the lines with a '//' before them are grayed out. These are <em>comments</em>. You can use them as notes to yourself: they are ignored by the interpreter that runs the program, so they will not affect how it works.
+    <p>
+    If your program does not behave as you expect, it is useful to turn off lines of code one by one by 'commenting them out' (adding '//' to them). This will help you determine which one is causing the problem.<ul>
+
+    <li>Programmers add comments to their code as notes to themselves or others who might be reading it. </li>
+    <li>Commenting code is excellent practice and should be constantly encouraged.</li></ul>
+
+
+    </div>
+    </div>
+
+<div class="row">
+        <div class="span2">
+        <p>Practice</p>
+    </div>
+    <div class="span8">
+        <ol>
+
+        <li>Draw a point near the top-right corner of the canvas.
+        <li>Draw a point in the middle of the canvas.
+        <li>Draw a point near the bottom-left.
+        <li>Draw a horizontal line, a vertical line, a diagonal line.
+        <li>Draw a line from the top-left corner to the bottom-right corner.</li></ol>
+    </div>
+    </div>
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+    <ul>
+
+        <li>Use multiple line functions to create a rectangle and a triangle so the lines create a house (pentagon).
+        <li>Add comments for each line position. </li></ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_1.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

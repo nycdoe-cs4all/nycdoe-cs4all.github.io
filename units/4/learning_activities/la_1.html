@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Make a flip book</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/4/learning_activities/la_1.html">
+    <link rel="canonical" href="http://localhost:4000/units/4/learning_activities/la_1">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,14 +17,14 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
@@ -31,176 +32,30 @@
         <!-- Link back to parent unit -->
 
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-		
-	
-
-<h4>
-	<a href="/units/4/overview.html">Unit 4</a>. Learning Activity 1 . Make a flip book
-</h4>
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/4/overview"><h3>Unit 1 Motion</a><br/
+	<h1>Learning Activity 1</h1>
+	<h2>Make a flip book</h2>
+	<h3></h3>
+</div>
+</br>
 
 
 	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Objectives</p>
-		</div>	
-		<div class="span6"> 
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
 			<p>In this learning activity we create an animation of a ball moving to the right. We start by doing this on paper, drawing on the corners of a notebook and flipping its pages. We re-create the animation in p5, and then look into changing the speed of the motion.</p>
-		</div>	
+		</div>
 	</div>
 
 
 
 
-
-
-
-
-
-
-<!-- 
+<!--
 TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
  -->
 <!-- 
@@ -221,7 +76,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 </div>
 <div class="row">
     <div class="span2">  
-        <p><b>Step by Step</b></p> 
+        <p><b>Instructions</b></p> 
     </div>  
     <div class="span8">
     <h5>1. Move a ball towards the right</h5>
@@ -366,14 +221,6 @@ function draw() {
 
 
 
-	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Teacher support Resources</p>
-		</div>	
-		<div class="span6"  style="margin-top:0px"> 
-			<ul> <li>Getting Started With p5.js: Chapter 8. Motion<!-- , example 8.01 to 8.05 --></li> <li>Learning Processing: Chapter 4. Variables; Chapter 5. Conditionals (Bouncing Ball)</li></ul>
-		</div>	
-	</div>
 
 
 
@@ -383,7 +230,7 @@ function draw() {
 	var folder = "../../../code/unit_4/la_1/";
 
     $(document).ready(function() {
-    	
+
     	$('.editor').each(function( index ) {
     		var i = index + 1;
     		var path = folder + 'ex_' + i;
@@ -400,16 +247,15 @@ function draw() {
 					editor.renderer.lineHeight + 'px';
     			editor.resize();
 
-    			/* For Reference: 
+    			/* For Reference:
     				editor.getSession().getDocument().getLength() *
 					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
 				*/
-			  	
+
 			  });
 		});
     });
 </script>
-
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 

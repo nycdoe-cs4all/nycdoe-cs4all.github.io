@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Write a happy-face-drawing function</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/5/learning_activities/la_1.html">
+    <link rel="canonical" href="http://localhost:4000/units/5/learning_activities/la_1">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,14 +17,14 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
@@ -31,176 +32,30 @@
         <!-- Link back to parent unit -->
 
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-
-	
-
-	
-		
-	
-
-	
-		
-	
-
-<h4>
-	<a href="/units/5/overview.html">Unit 5</a>. Learning Activity 1 . Write a happy-face-drawing function
-</h4>
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/5/overview"><h3>Unit 1 Functions</a><br/
+	<h1>Learning Activity 1</h1>
+	<h2>Write a happy-face-drawing function</h2>
+	<h3></h3>
+</div>
+</br>
 
 
 	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Objectives</p>
-		</div>	
-		<div class="span6"> 
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
 			<p>In this Learning Activity we draw one happy face, and then use copy-paste to draw a second one, duplicating the length of the code. Then we write a <i>function</i> called <code>drawHappyFace</code>, which allows us to draw two without repeating any code. To set the faces` position, we apply translate, push and pop.</p>
-		</div>	
+		</div>
 	</div>
 
 
 
 
-
-
-
-
-
-
-<!-- 
+<!--
 TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
  -->
 <!--  -->
@@ -217,7 +72,7 @@ teacher_support: '<ul>
  -->
  <div class="row">
     <div class="span2">     
-        <p>Step by Step</p>
+        <p>Instructions</p>
     </div>  
     <div class="span8">
         <h5>1. Draw a happy face, then draw two</h5>
@@ -308,14 +163,6 @@ drawHappyFace(410, 200);</code></pre>We can do so by adding <i>parameters</i> to
 
 
 
-	<div class="mainrow row">
-		<div class="span2"> 	
-			<p>Teacher support Resources</p>
-		</div>	
-		<div class="span6"  style="margin-top:0px"> 
-			<ul> <li>Getting Started With p5.js: chapter 9. Functions<!-- , examples 9.03 to 9.07 --></li> <li>Daniel Shiffman tutorial: <a href="https://www.youtube.com/watch?v=wRHAitGzBrg&index=17&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">Video 5.1 Function basics</a> | <a href="https://github.com/CodingTrain/Rainbow-Code/tree/master/p5.js/5.1a_p5.js_functions"> Code </a></li> <li>Learning Processing: Chapter 7. Functions</li></ul>
-		</div>	
-	</div>
 
 
 
@@ -325,7 +172,7 @@ drawHappyFace(410, 200);</code></pre>We can do so by adding <i>parameters</i> to
 	var folder = "../../../code/unit_5/la_1/";
 
     $(document).ready(function() {
-    	
+
     	$('.editor').each(function( index ) {
     		var i = index + 1;
     		var path = folder + 'ex_' + i;
@@ -342,16 +189,15 @@ drawHappyFace(410, 200);</code></pre>We can do so by adding <i>parameters</i> to
 					editor.renderer.lineHeight + 'px';
     			editor.resize();
 
-    			/* For Reference: 
+    			/* For Reference:
     				editor.getSession().getDocument().getLength() *
 					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
 				*/
-			  	
+
 			  });
 		});
     });
 </script>
-
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 

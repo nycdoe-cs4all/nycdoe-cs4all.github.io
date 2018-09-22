@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.2 RGB vs. HSB colorMode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_3.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>3.2 RGB vs. HSB colorMode</h1>
+	<h2>How can I represent colors in a mode other than RGB?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students add color to the drawing they made in activity 1. They learn to apply the <code>background</code>, <code>fill</code>, and <code>stroke</code>functions (used in scales of gray until now), to define colors and add transparency. Both the RGB (Red, green, blue) and HSB (Hue, Saturation, Brightness) color models are applied. <p> Students apply the programming concepts they learned in the previous unit (variables, randomness) to color manipulation, defining color ranges and palettes.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> explain and utilize the HSB color mode.  </li>
+			
+				<li> understand the differences between RGB and HSB color modes.  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><strong>Abstraction:</strong><ul>
+<li>Describe how I might use patterns to express an idea. <li>Explain why using patterns is necessary when creating with a computer.</ul>
+<p> <strong>Algorithms:</strong><ul>
+<li>Describe more than one set of instructions that might complete a task. <li>Describe how instructions can have different outputs depending on inputs. <li>Explain why I used specific instructions to complete a task.</ul>
+<p> <strong>Programming:</strong><ul>
+<li>Experiment with the commands of a programming language. <li>Explain why I chose specific commands to communicate my instructions. <li>Discuss what can and cannot be done with a specific set of commands.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Hue </th>
+						<td> The shade of a color </td>
+					</tr>
+				
+					<tr>
+						<th> Saturation </th>
+						<td> The intensity or vividness of a color (sometimes referred to as chroma) </td>
+					</tr>
+				
+					<tr>
+						<th> Brightness </th>
+						<td> The amount of white or black present in a color. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a href="https://www.youtube.com/watch?v=9mucjcrhFcM&index=3&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">1.2 Color</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/1.2_p5.js_Color">Code</a></li>
+				
+					<li>Learning Processing: Chapter 1. Pixels, Section 3. Rgb Color</li>
+				
+					<li>Getting Started With p5.js: Chapter 3. Draw (Section: Color)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+        <div class="span2">
+            <p>HSB Color</p>
+        </div>
+        <div class="span8">
+            HSB is an alternative color space to RGB. In this model, colors are described by their hue, saturation, and brightness:<ul>
+
+            <li>Hue is expressed in degrees, from red(0), through all the colors around the color wheel, and back to red (360).
+            <li>Saturation is the amount of color, and ranges between 0 and 100.
+            <li>Brighness the amount of light, ranging between 0 and 100. The alpha channel goes from 0 (not visible) to 1 (fully opaque).</ul><p>
+
+            <img src="../../../images/lessons/3.2/pie.png"/><p>
+            <img src="../../../images/lessons/3.2/circle.png"/><p>
+
+            To have p5 use HSB instead of RGB, we call <code>colorMode(HSB)</code>. Here is the same example from above, using the HSB color mode instead of RGB. Notice how the colors red, green and blue are defined differently now: in RGB, red is defined by <code>(255, 0, 0)</code>; in HSB, it is <code>(360, 100, 100)</code>.
+            <p>
+
+            <img src="../../../images/lessons/3.2/bars.png"/><p>
+
+            <script type="text/p5">
+function setup() {
+    createCanvas(600, 120);
+    noStroke();
+
+    //Change color mode
+    colorMode(HSB);
+}
+
+function draw() {
+    background(0);
+
+    // Set the fill color to red
+    fill(360, 100, 100);
+    rect(152, 0, 60, height);
+
+    // Set the fill color to green
+    fill(120, 100, 100);
+    rect(0, 66, width, 40);
+
+    // Set the fill color to blue
+    fill(240, 100, 100);
+    rect(285, 0, 80, height);
+}       </script>
+
+        <p>
+        HSB makes it easier to define color ranges that fit descriptions like these, which would be harder to accomplish using RGB:<ul>
+
+        <li><em>A dark, muted red</em>. For <em>red</em>, we might set the Hue to be somewhere between 350 and 360. To make it <em>dark</em>, we can set Brightness to be between 30 and 50. A Saturation between 20 and 40 will make it <em>muted</em>.
+        <li><em>A light, vibrant blue</em>. What Hue, Saturation and Brighness ranges would you choose to get a color that fits this description?</ul>
+
+        <p>
+        The ability to define colors in these terms is convenient for designing parametric color palettes. Here is our happy face, with random colors being chosen from HSB ranges. Notice how even though a new combination is generated with each refresh, the color palette retains a certain character.
+        <p>
+
+
+        <img src="../../../images/lessons/3.2/face.png"/><p>
+
+            <script type="text/p5">
+            //Declare variables
+        var x;
+        var y;
+
+        var backgroundHue;
+        var faceHue;
+        var backgroundGrayValue;
+        var mouthHue;
+
+function setup() {
+  createCanvas(600, 120);
+  noStroke();
+
+  //Initialize variables
+  x = random(50, 550);
+  y = random(50, 70);
+
+  //Set the color mode to HSB
+  colorMode(HSB);
+
+  // Pick a greenish-blue hue value for the background
+  backgroundHue = random(153, 182);
+
+  // Pick a pinkish-yellow hue for the face
+  faceHue = random(12, 53);
+
+  // Pick a dark gray for the eyes
+  backgroundGray = random(10, 30);
+
+  // Pick a pinkishRed for the mouth
+  mouthHue = random(340, 350);
+
+        }
+
+function draw() {
+
+  background(backgroundHue, 46, 75);//sky blue
+
+  //Face
+  fill(faceHue, 22, 96);//emoji yellow
+  ellipse(x, y, 100, 100);
+
+  //Eye 1
+  fill(backgroundGray);//dark gray
+  ellipse(x, y+10, 10, 10);
+
+  //Eye 2
+  ellipse(x+20, y+10, 10, 10);
+
+  //Mouth
+  fill(mouthHue, 55, 80);//reddish orange
+  arc(x, y+25, 30, 30, 0, radians(180), PIE);
+
+  }</script>
+  <p>
+  Now define an HSB color palette and apply it to a drawing from the previous activities.
+
+    </div>
+</div>
+
+<div class="row">
+        <div class="span2">
+            <p>Color Palettes</p>
+        </div>
+        <div class="span8">
+            As you'll be using color often, you may want to familiarize yourself with color terms and different palettes that are pleasing to the eye. You should be familiar with the following:<ul>
+
+            <li>Color palette - in the digital world, refers to the full range of <strong>colors</strong> that can be displayed on a device screen or other interface,
+            <li>Primary Color - any of a group of colors from which all other colors can be obtained by mixing.
+            <li>Secondary Color - a color resulting from the mixing of two primary colors.
+            <li>Accent Color - are colors that are used for emphasis in a color scheme.
+            <li>Complementary Colors - colors directly opposite each other in the color spectrum, such as red and green or blue and orange, that when combined in the right proportions, produce white light.
+            <li>Analogous Colors - groups of three <strong>colors</strong> that are next to each other on the <strong>color</strong> wheel, sharing a common <strong>color</strong>, with one being the dominant <strong>color</strong>, which tends to be a primary or secondary <strong>color</strong>, and a tertiary. Red, orange, and red-orange are examples.</ul>
+
+            <p>
+            If you're not sure how to start organizing your color palette, try using <a href="https://color.adobe.com/create/color-wheel/">Adobe Color Picker</a> or <a href="http://paletton.com/">Paletton</a>!
+        </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_3.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.3 Color Palettes and Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_3.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>3.3 Color Palettes and Design</h1>
+	<h2>What are our best practices for working with code?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students add color to the drawing they made in activity 1. They learn to apply the <code>background</code>, <code>fill</code>, and <code>stroke </code>functions (used in scales of gray until now), to define colors and add transparency. Both the RGB (Red, green, blue) and HSB (Hue, Saturation, Brightness) color models are applied. <p> Students apply the programming concepts they learned in the previous unit (variables, randomness) to color manipulation, defining color ranges and palettes.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Understand how to pick a color palette and use color wisely.  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><strong>Abstraction:</strong><ul>
+<li>Describe how I might use patterns to express an idea. <li>Explain why using patterns is necessary when creating with a computer.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Color Palette </th>
+						<td> In the digital world, refers to the full range of <strong>colors</strong> that can be displayed on a device screen or other interface. </td>
+					</tr>
+				
+					<tr>
+						<th> Primary Color </th>
+						<td> Any of a group of colors from which all other colors can be obtained by mixing. </td>
+					</tr>
+				
+					<tr>
+						<th> Secondary Color </th>
+						<td> a color resulting from the mixing of two primary colors. </td>
+					</tr>
+				
+					<tr>
+						<th> Accent Colors </th>
+						<td> Colors that are used for emphasis in a color scheme. </td>
+					</tr>
+				
+					<tr>
+						<th> Complementary Colors </th>
+						<td> Colors directly opposite each other in the color spectrum, such as red and green or blue and orange, that when combined in the right proportions, produce white light. </td>
+					</tr>
+				
+					<tr>
+						<th> Analogous Colors </th>
+						<td> Groups of three colors that are next to each other on the color wheel, sharing a common color, with one being the dominant color, which tends to be a primary or secondary color, and a tertiary. Red, orange, and red-orange are examples. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://color.adobe.com/create/color-wheel/">Adobe Color Picker</li>
+				
+					<li>Some Fine Art: <a href="https://www.nga.gov/content/dam/ngaweb/Education/rothko/1950scombo.jpg">1</a> | <a href="https://sep.yimg.com/ay/artbook/jackson-pollock-108.gif">2</a> | <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr5f2EGOyqXcs9mWQO6OP7-GaMuaxaqLVsFmCsH6dVLbn23aLf9Q">3</a> | <a href="http://www.skny.com/media/cache/resolve/500x500_fit/56d5695ecfaf342a038b4568/d9ebd8038de6676c169fd6d47dce7cc2.jpeg">4</a> | <a href="https://rtlln1kraz3heqyqi5ac19ce-wpengine.netdna-ssl.com/wp-content/uploads/2014/06/Eliasson-Yourrainbowpanorama-2011-CreditStudioOlafurEliasson-300x240.jpg">5</a> | <a href="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/world-map-abstract-mondrian-style-michael-tompsett.jpg">6</a> |  <ul>
+<li>(For reference: Mark Rothko, Jackson Pollock, Frida Kahlo, Kehinde Willey, Olafur Eliasson, Mondrian)</li> </ul></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+        <div class="span2">
+            <p>HSB Color</p>
+        </div>
+        <div class="span8">
+            As you'll be using color often, you may want to familiarize yourself with color terms and different palettes that are pleasing to the eye. You should be familiar with the following:
+            <p>
+            <strong>Color palette</strong> - in the digital world, refers to the full range of <strong>colors</strong> that can be displayed on a device screen or other interface.
+            <p>
+            <strong>Primary Color</strong> - any of a group of colors from which all other colors can be obtained by mixing.
+            <p>
+            <img src="../../../images/lessons/3.3/pie.png"/><p>
+            <p>
+            <strong>Secondary Color</strong> - a color resulting from the mixing of two primary colors.
+            <p>
+            <img src="../../../images/lessons/3.3/three.png"/><p>
+
+            <p>
+            <strong>Accent Color</strong> - are colors that are used for emphasis in a color scheme.
+            <p>
+            <strong>Complementary Colors</strong> - colors directly opposite each other in the color spectrum, such as red and green or blue and orange, that when combined in the right proportions, produce white light.
+            <p>
+            <img src="../../../images/lessons/3.3/greendale.png"/><p>
+
+            <strong>Analogous Colors</strong> - groups of three colors that are next to each other on the color wheel, sharing a common color, with one being the<strong> dominant colo</strong>r, which tends to be a primary or secondary color, and a tertiary. Ex. Red, orange, and red-orange.
+            <p>       
+            <img src="../../../images/lessons/3.3/analogous.png"/><p>
+            <p>
+            If you're not sure how to start organizing your color palette, try using <a href="https://color.adobe.com/create/color-wheel/">Adobe Color Picker</a> or <a href="http://paletton.com/">Paletton</a>!
+
+
+
+    </div>
+</div>
+
+<div class="row">
+        <div class="span2">
+            <p>Practice</p>
+        </div>
+        <div class="span8">
+            Pick a previous project (from LA1 or LA2) and colorize it only using colors from a color palette . Use Paletton or Adobe Color Picker to come up with your palette. Try to be mindful of what colors you are using more and less than others.
+        </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_3.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

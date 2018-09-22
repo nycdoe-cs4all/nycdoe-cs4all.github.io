@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Motion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/4/overview.html">
+    <link rel="canonical" href="http://localhost:4000/units/4/overview">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,61 +17,60 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
 
-        <h4>
-	<a href="">Motion</a>
-</h4>
+        <div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/index.html"><h3>Introduction to Computational Media with p5.js</h3></a>
+	<h1>Unit 4 Motion</h1>
+	
+</div>
+<!-- Unit Description -->
 
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Big Ideas</p>
-		</div>	
-		<div class="span6"> 
-			<ul> <li>Apply math and computation expressively by creating motion graphics</li> </ul> 
-			
-		</div>	
-	</div>
-
-
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Enduring Understandings</p>
-		</div>	
-		<div class="span6"> 
-			 <ul> <li>Understand the basics of programming motion graphics</li> <li>Understand how to apply randomness and trigonometry to motion</li> </ul> 
-		</div>	
-	</div>
-
-
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Unit Overview</p>
-		</div>	
-		<div class="span6"> 
-			<p>This unit covers the creation of motion, from linear to random to circular.</p><p>For their final project, students make a drawing move in different directions in response to user input. In levels 2 and 3, they apply oscillating and spiral motion to a drawing, and animate not only position but also color and shape.</p>
-		</div>	
+	<div class="row unit_description">
+		<h3>Overview</h3>
+		<p>This unit covers the creation of motion, from linear to random to circular.</p><p>For their final project, students make a drawing move in different directions in response to user input. In levels 2 and 3, they apply oscillating and spiral motion to a drawing, and animate not only position but also color and shape.</p>
 	</div>
 
 
 
 
 
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Big Ideas</p>
+			</div>
+			<div class="span6">
+				<ul> <li>Apply math and computation expressively by creating motion graphics</li> </ul> 
+
+			</div>
+		</div>
+	
+
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Enduring Understandings</p>
+			</div>
+			<div class="span6">
+				 <ul> <li>Understand the basics of programming motion graphics</li> <li>Understand how to apply randomness and trigonometry to motion</li> </ul> 
+			</div>
+		</div>
+	
+	
 	<div class="mainrow row">
-			<div class="span3"> 	
+			<div class="span3">
 				<p>Goals</p>
 			</div>
 			<div class="span9" style="margin-top:10px">
@@ -80,7 +80,7 @@
 								Animation basics
 						</div >
 						<div class="span6">
-							Understand the basics of programmatic animation	
+							Understand the basics of programmatic animation
 						</div >
 					</div>
 				
@@ -89,7 +89,7 @@
 								Random motion
 						</div >
 						<div class="span6">
-							Understand how to apply randomness to motion	
+							Understand how to apply randomness to motion
 						</div >
 					</div>
 				
@@ -98,7 +98,7 @@
 								Cyclic motion
 						</div >
 						<div class="span6">
-							Understand how to apply trigonometry to create fluid, cyclic motion	
+							Understand how to apply trigonometry to create fluid, cyclic motion
 						</div >
 					</div>
 				
@@ -106,14 +106,16 @@
 	</div>
 
 
+
+
+
+
 <div class="row">
-	<div class="span3"> 	
+	<div class="span3">
 		<p>Learning Activities</p>
-	</div>	
+	</div>
 	<div class="span9" style="margin-top:10px">
 		
-		
-			
 		
 			
 		
@@ -133,9 +135,9 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/4/learning_activities/la_1.html>1 . Make a flip book </a>
+							<a href=/units/4/learning_activities/la_1>1 . Make a flip book </a>
 					</div >
-					
+
 					<div class="span5">
 						Move a shape on paper, then on p5. Move faster and slower.
 					</div >
@@ -215,28 +217,28 @@
 			
 		
 			
-				
+		
+			
+		
+			
+		
+			
+		
 			
 		
 			
 				
 			
 		
-			
-				
-			
-		
-			
-				
 			
 		
 			
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/4/learning_activities/la_2.html>2 . Move in all directions </a>
+							<a href=/units/4/learning_activities/la_2>2 . Move in all directions </a>
 					</div >
-					
+
 					<div class="span5">
 						Move to the right, left, up, down, diagonally; move at random
 					</div >
@@ -252,6 +254,42 @@
 			
 		
 			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
 		
 			
 				
@@ -265,9 +303,9 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/4/learning_activities/la_3.html>3 . Move in cycles </a>
+							<a href=/units/4/learning_activities/la_3>3 . Move in cycles </a>
 					</div >
-					
+
 					<div class="span5">
 						Oscillate up and down, move in circles, move in spirals.
 					</div >
@@ -283,17 +321,11 @@
 			
 		
 			
-				
-			
-		
-			
-				
-			
 		
 			
 		
 			
-				
+		
 			
 		
 			
@@ -323,8 +355,6 @@
 			
 		
 			
-		
-			
 				
 			
 		
@@ -333,59 +363,59 @@
 			
 		
 			
-				
-			
 		
 			
 		
-			
-		
-		
+
 	</div>
-</div>	
+</div>
+
+
+
+
 
 
 	<div class="mainrow row">
-		<div class="span3"> 	
+		<div class="span3">
 			<p>Final Project Prompt</p>
-		</div>	
-		<div class="span6"> 
+		</div>
+		<div class="span6">
 			<p>Starting from a drawing of a character made with p5, make it move in lines, circles, or spirals, expressing a certain move. Consider animating not only position, but also color and shape.</p>
-		</div>	
+		</div>
 	</div>
 
 
 <div class=" row">
-		<div class="span3"> 	
-			
+		<div class="span3">
+
 		</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level 1</b>
 					<br/>
-					Explore moving faster, slower, in different directions, at random	
+					Explore moving faster, slower, in different directions, at random
 				</p>
 			</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level 2</b>
 					<br/>
-					Apply oscillating or circular motion, and animate a shape	
+					Apply oscillating or circular motion, and animate a shape
 				</p>
 			</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level 3</b>
 					<br/>
-					Apply spiral motion, animate a shape, and animate color	
+					Apply spiral motion, animate a shape, and animate color
 				</p>
 			</div>
 		
 </div>
-		
+
 <div class=" row">
 	<div class="span3">Final Project Examples</div>
 	
@@ -465,6 +495,44 @@
 		
 	
 		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
 			
 		
 	
@@ -474,15 +542,29 @@
 	
 		
 			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/4/final_project_examples/level_1.html">
+		
+	
+		
+			
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3">
+					<p>
+						<a href="/units/4/final_project_examples/level_1">
 							<img src="/images/unit_4_final_project_1_level_1.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 1 <br/>
-						<a href="/units/4/final_project_examples/level_1.html">Example Project</a><br/>
+						<a href="/units/4/final_project_examples/level_1">Example Project</a><br/>
 						
 						
 							
@@ -561,6 +643,56 @@
 						
 							
 						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+									<a href="/units/4/final_project_examples/guide_level_1">Step by Step Guide</a>
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
+							
+						
+							
+
+								
 							
 						
 							
@@ -579,35 +711,7 @@
 							
 						
 							
-
-								
-							
 						
-							
-
-								
-									<a href="/units/4/final_project_examples/guide_level_1.html">Step by Step Guide</a>
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
 							
 						
 							
@@ -645,65 +749,15 @@
 	
 		
 			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/4/final_project_examples/level_2.html">
+				<div class="span3">
+					<p>
+						<a href="/units/4/final_project_examples/level_2">
 							<img src="/images/unit_4_final_project_1_level_2.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 2 <br/>
-						<a href="/units/4/final_project_examples/level_2.html">Example Project</a><br/>
+						<a href="/units/4/final_project_examples/level_2">Example Project</a><br/>
 						
 						
 							
@@ -795,13 +849,11 @@
 							
 						
 							
-
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -827,6 +879,30 @@
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -872,15 +948,31 @@
 	
 		
 			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/4/final_project_examples/level_3.html">
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3">
+					<p>
+						<a href="/units/4/final_project_examples/level_3">
 							<img src="/images/unit_4_final_project_1_level_3.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 3 <br/>
-						<a href="/units/4/final_project_examples/level_3.html">Example Project</a><br/>
+						<a href="/units/4/final_project_examples/level_3">Example Project</a><br/>
 						
 						
 							
@@ -972,13 +1064,11 @@
 							
 						
 							
-
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -1004,6 +1094,30 @@
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -1036,6 +1150,10 @@
 						
 					</p>
 				</div>
+			
+		
+	
+		
 			
 		
 	
@@ -1075,7 +1193,7 @@
 		    	</div>
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day70/" target='_blank' >
 				<img src="/images/unit_4_final_project_inspiration_1.png" width="100%" ></img>
 				</a>
@@ -1089,7 +1207,7 @@
 		  
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day71/" target='_blank' >
 				<img src="/images/unit_4_final_project_inspiration_2.png" width="100%" ></img>
 				</a>
@@ -1103,7 +1221,7 @@
 		  
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://www.leslieruckman.com/ITP2016/100DaysOfMaking/Day8/" target='_blank' >
 				<img src="/images/unit_4_final_project_inspiration_3.png" width="100%" ></img>
 				</a>
@@ -1112,29 +1230,11 @@
 				</div>
 			</div>
 
-		  	
-		    </div> 
+		  
+		    </div>
 		  
 		
 	
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

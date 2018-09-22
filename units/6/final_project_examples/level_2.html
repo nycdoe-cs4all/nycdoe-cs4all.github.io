@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Emoji Sea</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/6/final_project_examples/level_2.html">
+    <link rel="canonical" href="http://localhost:4000/units/6/final_project_examples/level_2">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,14 +17,14 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
@@ -32,31 +33,31 @@
 <h4>Emoji Sea</h4>
 
 <div class="mainrow row">
-	<div class="span2"> 	
+	<div class="span2">
 		<p><b>Notes</b></p>
-	</div>	
+	</div>
 	<div class="span6">
 		<p><a href="/units/final_project_example_guide/final-project-example-06-01-level-2/" target="_blank">Step by Step Guide</a></p>
 		<p>A sea of text-based emojis that jiggle around the canvas. In this Level 2 example, emojis are hand-drawn, photographed, and loaded into the sketch as images. <br/><br/>Loading too many large images will make your script run slower. For your reference: in this example, we are loading 24 PNG images. Each is 128 pixels wide x 116 pixels high, and about 8KB in file size.</p>
-	</div>		 
+	</div>
 </div>
 
 <div class="mainrow row">
-	<div class="span2"> 
+	<div class="span2">
 		<p><b>Sketch</b><p>
-	</div>	
-	<div class="span6"> 	
+	</div>
+	<div class="span6">
 		<iframe id="canvas_iframe_2"  src="" width="620px" height="400"></iframe>
-	</div>	
+	</div>
 </div>
 
 <div class="mainrow row">
-	<div class="span2"> 
+	<div class="span2">
 		<p><b>Code</b><p>
-	</div>	
-	<div class="span6"> 
+	</div>
+	<div class="span6">
 		<div class = "editor" id="editor_2" style="height:250px;">
-	</div>	
+	</div>
 </div>
 
 <!--  -->
@@ -83,9 +84,9 @@
 			editor_div.style.height = editor.getSession().getDocument().getLength() *
 				editor.renderer.lineHeight + 'px';
 			editor.resize();
-		  	
+
 		  });
-    	
+
     	//if multiple editors per page:
   //   	$('.editor').each(function( index ) {
   //   		var i = index + 1;
@@ -93,7 +94,7 @@
   //   		$('#canvas_iframe_' + i).attr("src", path + '/index.html');
 
   //   		var code =  path + '/sketch.js'
-    		
+
   //   		$("#" + this.id).load(code, function(){
   //   			editor = ace.edit(this);
 		// 	  	editor.setTheme("ace/theme/monokai");
@@ -103,13 +104,11 @@
   //   			editor_div.style.height = editor.getSession().getDocument().getLength() *
 		// 			editor.renderer.lineHeight + 'px';
   //   			editor.resize();
-			  	
+
 		// 	  });
 		// });
     });
 </script>
-
-
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 

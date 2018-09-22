@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.1 p5.js Introduction and Deconstruction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_1.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>1.1 p5.js Introduction and Deconstruction</h1>
+	<h2>How can we break down a robot into basic shapes in p5.js?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students will create a visual composition using the p5 shape-drawing functions (ellipse, rect, line, point, quad, triangle), and set their fill and stroke to a grayscale value. <br/><br/> They will understand the p5 canvas coordinate system, call functions and pass parameters to them, and consult the p5 reference for documentation about them.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Create an account on <a href="https://alpha.editor.p5js.org/signup">the editor</a>  </li>
+			
+				<li> Explain what p5.js is  </li>
+			
+				<li> Describe things you can create on p5.js  </li>
+			
+				<li> Understand the p5 canvas coordinate system  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><strong>Abstraction:</strong><ul>
+<li>Give examples of specific patterns in something I can see, do or touch. <li>Describe different things I tried in order to achieve a goal. <li>Explain how I might help others identify patterns.</ul>
+<p> <strong>Algorithms:</strong><ul>
+<li>Explain why I used specific instructions to complete a task. <li>Compare and contrast my instructions with other instructions that complete the same task.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Computational Media </th>
+						<td> The practice of using programming to build expressive and interactive computer applications and media. </td>
+					</tr>
+				
+					<tr>
+						<th> p5.js </th>
+						<td> An open source Javascript library that allows people to make web pages animated and interactive. </td>
+					</tr>
+				
+					<tr>
+						<th> IDE </th>
+						<td> Integrated development area is a software application that provides a place for computer programmers to develop code. </td>
+					</tr>
+				
+					<tr>
+						<th> Unplugged Activity </th>
+						<td> An activity that can be conducted without the use of computers or electronic equipment. </td>
+					</tr>
+				
+					<tr>
+						<th> Abstraction </th>
+						<td> Abstraction is the process of taking away or removing characteristics from something in order to reduce it to a set of essential characteristics. </td>
+					</tr>
+				
+					<tr>
+						<th> Width </th>
+						<td> Horizontal distance of a 2D shape </td>
+					</tr>
+				
+					<tr>
+						<th> Height </th>
+						<td> Vertical distance of a 2D shape </td>
+					</tr>
+				
+					<tr>
+						<th> Radius </th>
+						<td> Distance from the center to edge of a circle </td>
+					</tr>
+				
+					<tr>
+						<th> Diameter </th>
+						<td> Distance from edge to edge of a circle passing through the center point </td>
+					</tr>
+				
+					<tr>
+						<th> Cartesian (Coordinate) Place </th>
+						<td> Four quadrant grid with an x & y axis, origin, etc. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a href="https://www.youtube.com/watch?v=D1ELEeIs0j8">1.2 Basics of Drawing</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/1.1_p5.js_basics_of_drawing">Code</a></li>
+				
+					<li>Learning Processing: Chapter 1. Pixels</li>
+				
+					<li>Getting Started With p5.js: Chapter 3. Draw</li>
+				
+					<li><a href="https://drive.google.com/file/d/1ZmERZDHhM4A7TB27mQcxrcPJeAi5Z0m8/view?usp=sharing">Robot Worksheet</a></li>
+				
+					<li><a href="https://processing.org/tutorials/drawing/">Processing Drawing Tutorial</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">     
+        <p>Intro: What is p5?</p>
+    </div>  
+    <div class="span8">
+        <p>In this course we are going to make projects using p5.js. Before we explain what is p5.js, watch this  <a href="http://hello.p5js.org/">video</a> and see for yourself what kind of projects you can make it with it!</p>
+        <p>
+        p5.js (or simply p5) is a JavaScript library for creating visual and interactive art in web browsers. p5.js works with the three native web languages (JavaScript, HTML, and CSS) to make work that is easily shareable on the Internet.</br>This programming language will be used in this course to introduce basic programming concepts and apply them to create computational media by building expressive and interactive computer applications and media.
+    </div>
+</div>
+<div class="row">
+        <div class="span2">     
+        <p>Unplugged Activity: Draw a Robot and Write Pseudocode</p>
+    </div>  
+    <div class="span8">
+        <p>Before we start to give instructions to computers, we are going to practice by writing instructions on paper. You will use a graph that has the p5.js coordinate system to draw out a design, and write down instructions on how another person could draw them.</p>
+        <p>
+        p5.js (or simply p5) is a JavaScript library for creating visual and interactive art in web browsers. p5.js works with the three native web languages (JavaScript, HTML, and CSS) to make work that is easily shareable on the Internet.</br>This programming language will be used in this course to introduce basic programming concepts and apply them to create computational media by building expressive and interactive computer applications and media.
+        </br></br>
+        </div>
+        </div>
+
+    <div class="row">
+            <div class="span2">
+            <p>Step 1: Draw a robot using basic shapes</p>
+        </div>
+        <div class="span8">
+
+        <ul><li>Use only two types of shapes: ellipses and rectangles</li>
+        <li>Combine up to 5 shapes total.</li>
+        <li>Place the shapes on the coordinate system on the worksheet, following the guidelines on the next pages.</li>
+        </ul>
+        </div>
+        </div>
+
+    <div class="row">
+            <div class="span2">
+            <p>Drawing Area: The Canvas</p>
+        </div>
+        <div class="span8">        </br>
+        <p>In p5, we use code to draw graphics on a “canvas”. The canvas displays the output of your code.</p>
+        <img src="../../../images/lessons/1.1/visualoutcome.png"/>
+        <p>In a computer screen every pixel is a coordinate. It has an “x” value (horizontal) and a “y” value (vertical) that determines where the pixel is going to be located. But computers use a different coordinate system than the one you’re used to: the origin is located in the top left and the x value increases to the right while the y-value increases down vertically.</p>
+        <img src="../../../images/lessons/1.1/coordinategrid.png"/>
+        Source: https://processing.org/tutorials/drawing/
+        <p>Example:</p>
+        <img src="../../../images/lessons/1.1/robot.png"/>
+        <p>Use the following information to draw the robot on your worksheet.</p>
+
+        </div>
+        </div>
+
+    <div class="row">
+            <div class="span2">
+            <p>Rectangles</p>
+        </div>
+        <div class="span8">
+        <ul><li>Draw rectangles along grid lines.</li></ul>
+        <img src="../../../images/lessons/1.1/heightwidthsquare.png"/></br>
+
+        </div>
+        </div>
+
+    <div class="row">
+            <div class="span2">
+            <p>Ellipses</p>
+        </div>
+        <div class="span8">
+        <ul><li>Draw a point at two intersecting lines.</li>
+        <li>Draw an ellipse around that point with even width and height.</li></ul>
+        <img src="../../../images/lessons/1.1/heightwidth.png"/></br>
+
+        </div>
+        </div>
+
+    <div class="row">
+            <div class="span2">
+            <p>Step 2: Deconstruct Your Drawing</p>
+        </div>
+        <div class="span8">
+        <p>On the second page of the worksheet, list each shape used in your drawing. In the instructions section, provide the information for each shape as if you were instructing someone to draw your robot.
+
+        You will need to specify the shape, the x and y coordinate, and the width and height of the shape (where applicable). Keep in mind that the x and y coordinate of a rectangle refer to one of it’s corners, while for an ellipse they refer to it’s center.
+
+        Also keep in mind the p5 coordinate system with the origin in the upper left corner.</p>
+        <img src="../../../images/lessons/1.1/shapeinstructions.png"/></br>
+    </div>
+    </div>
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        <p>Add a hat or another element to the robot:</p>
+        <ol><li>Using rectangles and ellipses.</li>
+        <li>Find a partner and add one feature to their robot and have then them deconstruct the position and size of the new feature.</li></ol>
+        <p>Create a symbol that’s meaningful to you:</p>
+        <ol><li>Think about the things that are meaningful to you, your community, or your family.</li>
+        <li>If you had to make a super simple symbol for those things, what basic shapes would you use?</li>
+        <li>Design a symbol on paper and then code in p5.</li>
+        <li>Write a short paragraph explaining your symbol and its importance.</li>
+        </ol>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_1.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

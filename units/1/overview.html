@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
-    <title>Drawing, Variables, Loops, Random</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <head>
+    <title>Drawing, Variables, Random</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/1/overview.html">
+    <link rel="canonical" href="http://localhost:4000/units/1/overview">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,61 +17,60 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
 
-        <h4>
-	<a href="">Drawing, Variables, Loops, Random</a>
-</h4>
+        <div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/index.html"><h3>Introduction to Computational Media with p5.js</h3></a>
+	<h1>Unit 1 Drawing, Variables, Random</h1>
+	
+</div>
+<!-- Unit Description -->
 
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Big Ideas</p>
-		</div>	
-		<div class="span6"> 
-			<ul> <li>Code as a creative and expressive medium</li> <li>The concept of creating design <i>systems</i>: programmatically defining ranges for positions, dimensions, and colors, by using variables, randomness, and repetition. Drawing as collaboration between designer and system.</li> </ul> 
-			
-		</div>	
-	</div>
-
-
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Enduring Understandings</p>
-		</div>	
-		<div class="span6"> 
-			 <ul> <li>Understand the basics of computation (execution flow, function calls, variables, loops)</li> <li>Understand the basics of 2D computer graphics: drawing on a canvas, the coordinate system, calling drawing functions, setting colors in different color spaces</li> <li>Understand the application of variables, repetition and randomness to the creation of parametric drawings</li> </ul> 
-		</div>	
-	</div>
-
-
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Unit Overview</p>
-		</div>	
-		<div class="span6"> 
-			<p>In this unit students get acquainted with the p5 canvas coordinate system, drawing shapes and colors on it. Programming concepts covered include calling built-in p5 functions with different parameters, working with variables (both built-in and custom), creating repetition (for loops and nested for loops for creating grids), and using controlled randomness.</p><p>Students are introduced to the p5 web editor and practice consulting the p5 online documentation. In the final project, students apply these skills to creating a wallpaper pattern.</p>
-		</div>	
+	<div class="row unit_description">
+		<h3>Overview</h3>
+		<p>In this unit students get acquainted with the p5 canvas coordinate system, drawing shapes and colors on it. Programming concepts covered include calling built-in p5 functions with different parameters, working with variables (both built-in and custom), and using controlled randomness.</p>
 	</div>
 
 
 
 
 
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Big Ideas</p>
+			</div>
+			<div class="span6">
+				<ul> <li>Code as a creative and expressive medium</li> <li>The concept of creating design <i>systems</i>: programmatically defining ranges for positions, dimensions, and colors, by using variables, randomness, and repetition. Drawing as collaboration between designer and system.</li> </ul> 
+
+			</div>
+		</div>
+	
+
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Enduring Understandings</p>
+			</div>
+			<div class="span6">
+				 <ul> <li>Understand the basics of computation (execution flow, function calls, variables)</li> <li>Understand the basics of 2D computer graphics: drawing on a canvas, the coordinate system, calling drawing functions, setting colors in different color spaces</li> <li>Understand the application of variables, repetition and randomness to the creation of parametric drawings</li> </ul> 
+			</div>
+		</div>
+	
+	
 	<div class="mainrow row">
-			<div class="span3"> 	
+			<div class="span3">
 				<p>Goals</p>
 			</div>
 			<div class="span9" style="margin-top:10px">
@@ -80,7 +80,7 @@
 								1. Get familiarized with p5
 						</div >
 						<div class="span6">
-							Write and run sketches on the p5 online editor, place figures in the coordinate system, call functions with different sets of parameters, look them up in the p5 reference	
+							Write and run sketches on the p5 online editor, place figures in the coordinate system, call functions with different sets of parameters, look them up in the p5 reference
 						</div >
 					</div>
 				
@@ -89,7 +89,7 @@
 								2. Create a drawing using variables and randomness
 						</div >
 						<div class="span6">
-							Use variables and the random function to create a drawing that varies each time the sketch is run.	
+							Use variables and the random function to create a drawing that varies each time the sketch is run.
 						</div >
 					</div>
 				
@@ -98,16 +98,7 @@
 								3. Understand color models
 						</div >
 						<div class="span6">
-							Use the RGB (Red, Green, Blue) and HSB (Hue, Saturation, Brightness) color systems. Define color ranges and palettes	
-						</div >
-					</div>
-				
-					<div class="row">
-						<div class="span3">
-								4. Understand for loops
-						</div >
-						<div class="span6">
-							Create grids using nested for loops, manipulate them for creating compelling visual patterns	
+							Use the RGB (Red, Green, Blue) and HSB (Hue, Saturation, Brightness) color systems. Define color ranges and palettes
 						</div >
 					</div>
 				
@@ -115,1041 +106,682 @@
 	</div>
 
 
-<div class="row">
-	<div class="span3"> 	
-		<p>Learning Activities</p>
-	</div>	
-	<div class="span9" style="margin-top:10px">
-		
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a href=/units/1/learning_activities/la_1.html>1 . Create a grayscale drawing </a>
-					</div >
-					
-					<div class="span5">
-						Draw ellipses, rectangles, and other shapes. Change their fill and stroke to different shades of gray.
-					</div >
-					<div class="span1">
-						
-							~45' 
-						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a href=/units/1/learning_activities/la_2.html>2 . Make it vary </a>
-					</div >
-					
-					<div class="span5">
-						Use built-in variables to set shape positions (mouseX, mouseY, width, height). Create new variables to determine position and shade. Set them to random values.
-					</div >
-					<div class="span1">
-						
-							~45' 
-						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a href=/units/1/learning_activities/la_3.html>3 . Make it colorful </a>
-					</div >
-					
-					<div class="span5">
-						Create color compositions. Use the RGB and HSB color systems; add transparency.
-					</div >
-					<div class="span1">
-						
-							~45' 
-						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a href=/units/1/learning_activities/la_4.html>4 . Repeat shapes, draw in grids </a>
-					</div >
-					
-					<div class="span5">
-						Use a for loop to draw the same shape many times, then draw each shape slightly differently. Use two for loops to draw a grid with rows and columns.
-					</div >
-					<div class="span1">
-						
-							~45' 
-						
-					</div >
-				</div>
-				
-			
-		
-			
-		
-			
-				
-			
-		
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
-		
-		
+
+
+
+
+
+	<div class="row unit_description">
+		<h3>Big Ideas</h3>
+		<ul> <li>Code as a creative and expressive medium</li> <li>The concept of creating design <i>systems</i>: programmatically defining ranges for positions, dimensions, and colors, by using variables, randomness, and repetition. Drawing as collaboration between designer and system.</li> </ul> 
 	</div>
-</div>	
+
+
+	<div class="row unit_description">
+		<h3>Enduring Understandings</h3>
+		 <ul> <li>Understand the basics of computation (execution flow, function calls, variables)</li> <li>Understand the basics of 2D computer graphics: drawing on a canvas, the coordinate system, calling drawing functions, setting colors in different color spaces</li> <li>Understand the application of variables, repetition and randomness to the creation of parametric drawings</li> </ul> 
+	</div>
+
+<div class="row">
+		<h3>Lesson Sequence</h3>
+		
+		
+			<ul><li><strong>LA 1 Create a Grayscale Drawing</strong>
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_1.1>1.1 p5.js Introduction and Deconstruction</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_1.2>1.2 Line Functions and Parameters</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_1.3>1.3 Rectangles, Ellipses, and Layering</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_1.4>1.4 Various Shapes, Stroke Weight, Fill()</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			 <!-- Lesson loop -->
+		</li></ul>
+		
+			<ul><li><strong>LA 2 Make It Vary</strong>
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_2.1>2.1 Center elements with built-in variables: width and height</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_2.2>2.2 Custom Variables</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_2.3>2.3 Place elements at random positions</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_2.4>Mini-Project - Custom Emoji</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			 <!-- Lesson loop -->
+		</li></ul>
+		
+			<ul><li><strong>LA 3 Make It Colorful</strong>
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_3.1>3.1 Intro to Color</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_3.2>3.2 RGB vs. HSB colorMode</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						
+							<ul><li>
+								<a class="linkcheck" href=/units/1/lessons/lesson_3.3>3.3 Color Palettes and Design</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			 <!-- Lesson loop -->
+		</li></ul>
+		 <!-- Learning activity loop -->
+</div>
+
+
+
+
 
 
 	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Final Project Prompt</p>
-		</div>	
-		<div class="span6"> 
-			<p>Create a pattern for a wallpaper. It should be generative: each time you run your sketch, the pattern is different. It should always be within your design, but have some degree of randomness as well. </p>
-		</div>	
-	</div>
-
-
-<div class=" row">
-		<div class="span3"> 	
-			
-		</div>
-		
-			<div class="span3"> 	
-				<p>
-					<b>Level 1</b>
-					<br/>
-					Use the p5 drawing functions and the random function.	
-				</p>
-			</div>
-		
-			<div class="span3"> 	
-				<p>
-					<b>Level 2</b>
-					<br/>
-					Add color, use variables and a for loop.	
-				</p>
-			</div>
-		
-			<div class="span3"> 	
-				<p>
-					<b>Level 3</b>
-					<br/>
-					Create a grid of elements using nested loops.	
-				</p>
-			</div>
-		
-</div>
-		
-<div class=" row">
-	<div class="span3">Final Project Examples</div>
-	
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/1/final_project_examples/level_1.html">
-							<img src="/images/unit_1_final_project_1_level_1.png" style="object-fit: cover;"></img>
-						</a>
-					</p>
-					<p>
-						Level 1 <br/>
-						<a href="/units/1/final_project_examples/level_1.html">Example Project</a><br/>
-						
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-									<a href="/units/1/final_project_examples/guide_level_1.html">Step by Step Guide</a>
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-					</p>
-				</div>
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/1/final_project_examples/level_2.html">
-							<img src="/images/unit_1_final_project_1_level_2.png" style="object-fit: cover;"></img>
-						</a>
-					</p>
-					<p>
-						Level 2 <br/>
-						<a href="/units/1/final_project_examples/level_2.html">Example Project</a><br/>
-						
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-					</p>
-				</div>
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/1/final_project_examples/level_3.html">
-							<img src="/images/unit_1_final_project_1_level_3.png" style="object-fit: cover;"></img>
-						</a>
-					</p>
-					<p>
-						Level 3 <br/>
-						<a href="/units/1/final_project_examples/level_3.html">Example Project</a><br/>
-						
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-					</p>
-				</div>
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-</div>
-
-
-		<div class="mainrow row">
-		    	<div class="span3">
-		    		<p>Final Project Inspiration</p>
-		    	</div>
-		</div>
-		
-		  
-		  
-		    <div class="mainrow row">
-		    	<div class="span3">
-		    	</div>
-		  
-
-		  <div class="span3"> 	
-		  		<a href="http://www.generative-gestaltung.de/P_1_2_3_01" target='_blank' >
-				<img src="/images/unit_1_final_project_inspiration_1.png" width="100%" ></img>
-				</a>
-				<div class="info" >
-					<a href="http://www.generative-gestaltung.de/P_1_2_3_01" target='_blank' >Example from Generative Gestaltung book</a>
-				</div>
-			</div>
-
-		  
-		
-		  
-		  
-
-		  <div class="span3"> 	
-		  		<a href="http://www.thisiscolossal.com/2012/01/yayoi-kusama-obiliteration-room/" target='_blank' >
-				<img src="/images/unit_1_final_project_inspiration_2.png" width="100%" ></img>
-				</a>
-				<div class="info" >
-					<a href="http://www.thisiscolossal.com/2012/01/yayoi-kusama-obiliteration-room/" target='_blank' >Yayoi Kusama, Obliteration Room</a>
-				</div>
-			</div>
-
-		  
-		
-		  
-		  
-
-		  <div class="span3"> 	
-		  		<a href="http://printingcode.runemadsen.com/lecture-repetition/" target='_blank' >
-				<img src="/images/unit_1_final_project_inspiration_3.png" width="100%" ></img>
-				</a>
-				<div class="info" >
-					<a href="http://printingcode.runemadsen.com/lecture-repetition/" target='_blank' >Rune Madsen`s lecture on patterns</a>
-				</div>
-			</div>
-
-		  	
-		    </div> 
-		  
-		
-	
+		<div class="span6">
+			<h3>Final Project - Abstract Album Art</h3>
 		</div>
 	</div>
-</div>
 
 
 
@@ -1157,17 +789,42 @@
 
 
 
+<img src="../../images/unit_1_finalproject_new.png"/><p>
+In Fine Art, we often use abstraction to represent complex feelings, emotions, and moods by using shapes, strokes, and convey those feelings.
+<p>
+For some people with a condition called <strong><a href="https://www.ted.com/talks/neil_harbisson_i_listen_to_color">synesthesia</a>, </strong>this is how they experience the world all the time. While scientists don't completely understand synesthesia, the rare phenomenon causes people to experience two senses at once. For example, when people hear music, they might also "see" colors. Or when they taste a flavor, they might also hear a certain tone.
+<p>
+In this project, we are going to imagine that we all have synesthesia. You will pick a song or album and create a dynamic (it changes!) album cover that represents the mood, emotions, and feelings present in the song/album. You should do your best to focus on representing these things with colors and shapes - for example, a dark, moody song might have a dark color palette. A song with a particular rhythm might have shapes in a pattern that mirror this beat.
+<p>
+While it's natural to want to utilize text or images, we are only going to use the tools we have learned so far in p5 for this project.
+<p>
+<strong>Requirements</strong>:<ol>
 
+<li>Use shapes that we covered in this unit
+<li>Use built in variables that make your design dynamic (size or color changes with mouse position)
+<li>Create & use custom variables to control two or more elements of your design
+<li>Have your design change slightly each time it is run by using the random feature with some of your custom variables.(EX- have parts of your design move slightly each time the program is run, or shift slightly in color)</ol>
 
+<p>
+<strong>Writing Prompt: </strong>
+<p>
 
+    Write a paragraph explaining your design decisions, including color choice and composition, and why it is representative of the album you chose.
 
+    <p>
+    <strong>Sample Output </strong>
+    <p><img src="../../images/unit_1_final_project_sample.gif"/><p>
+    <strong>Extensions: </strong>
+    <p>
+    <ul><li>Level 1: Students can complete and justify an album art cover.
+    <li>Level 2: Level 1 AND…
 
-
-
-
-
-
-
+Students leave thoughtful comments in their code that make it easier for an outsider to read.
+    <li>Level 3: Level 2 AND…
+<p>
+Student code is free from superfluous lines (every line of code has a purpose) and is efficient.
+<p>
+Students can create an 'album launch' website to house their project. <em>Research HTML and CSS on their own!</em></li></ul>
 
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.1 Intro to Color</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_3.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/1/overview"><h3>Unit 1 Drawing, Variables, Random<br/>
+	How can code be used as a creative and expressive medium?</h3></a>
+	<h1>3.1 Intro to Color</h1>
+	<h2>How do computers mix colors?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students add color to any of their previous designs. They learn to apply the <code>background()</code>, <code>fill()</code>, and <code>stroke()</code> functions (used in scales of gray until now), to define colors and add transparency. The RGB (red, green, blue) color model is applied. <p> Students apply the programming concepts they learned in the previous unit (variables, randomness) to color manipulation, defining color ranges and palettes.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Describe the process by which computers mix colors (additive mixing)  </li>
+			
+				<li> Use <code>fill()</code> to change the color of shapes in RGB color mode.  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><strong>Abstraction:</strong><ul>
+<li>Describe how I might use patterns to express an idea. <li>Explain why using patterns is necessary when creating with a computer.</ul>
+<p> <strong>Algorithms:</strong><ul>
+<li>Describe more than one set of instructions that might complete a task. <li>Describe how instructions can have different outputs depending on inputs. <li>Explain why I used specific instructions to complete a task.</ul>
+<p> <strong>Programming:</strong><ul>
+<li>Experiment with the commands of a programming language. <li>Explain why I chose specific commands to communicate my instructions. <li>Discuss what can and cannot be done with a specific set of commands.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> <code>fill() function</code> </th>
+						<td> Sets the color used to fill shapes.This color is either specified in terms of the RGB or HSB color depending on the current <code>colorMode()</code> </td>
+					</tr>
+				
+					<tr>
+						<th> Subtractive Mixing </th>
+						<td> The mixing you are used to seeing with paint - paint tints absorb different lights from around them to create the visual color you see. </td>
+					</tr>
+				
+					<tr>
+						<th> Additive Mixing </th>
+						<td> Mixing done with light - adding lights to create the different colors you see. </td>
+					</tr>
+				
+					<tr>
+						<th> RGB </th>
+						<td> Red, Green, Blue color mode, the default in p5.js </td>
+					</tr>
+				
+					<tr>
+						<th> Opacity </th>
+						<td> How see-through a shape is. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a href="https://www.youtube.com/watch?v=9mucjcrhFcM&index=3&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">1.2 Color</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/1.2_p5.js_Color">Code</a></li>
+				
+					<li>Learning Processing: Chapter 1. Pixels, Section 3. Rgb Color</li>
+				
+					<li>Getting Started With p5.js: Chapter 3. Draw (Section: Color)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+        <div class="span2">
+            <p>RGB Color and Additive Mixing</p>
+        </div>
+        <div class="span8">
+            So far, fill has been used to accept only one number, and it's created greyscale drawings. In reality, fill accepts three values in a default color mode called RGB - or Red, Green, Blue.
+            <p>
+            We can use these colors to change elements of our drawing, however, we need to be aware that they work differently than colors we may have used in art classes. If you run <a href="https://alpha.editor.p5js.org/SEP/sketches/H1y6f957X">this project</a>, you will see three circles in red, green, and blue that overlap and mix - yet this mixing is probably different than what you are used to.
+            <p>
+            This is because computers use <em>additive mixing</em>, a process that <em>adds</em> different colored lights to create color. Traditional media uses <em>subtractive mixing,</em> which absorbs different colored lights to create color. (an in-depth explanation of the RGB color model can be found <strong><a href="http://dba.med.sc.edu/price/irf/Adobe_tg/models/rgbcmy.html">here</a></strong>)
+            <p>
+
+            <img src="../../../images/lessons/3.1/colormixing.png"/><p>
+
+            In our mixing program, we have also adjusted the <em>transparency</em> (the optional fourth value in fill) to allow colors to mix. Its range is 0 (transparent: not visible) to 255 (opaque). You will notice that when we want to change fill, we call a new color before the shape we want to change. Because the draw function is a repeated loop, this presents one color from being applied to every shape.<p>
+
+            <img src="../../../images/lessons/3.1/bars.png"/><p>
+
+                <script type="text/p5">
+function setup() {
+  createCanvas(600, 120);
+}
+
+function draw() {
+  background(0);
+  noStroke();
+
+  // Set the fill color to red
+  fill(255, 0, 0, 250); //set transparency to 250
+  rect(152, 0, 60, height);
+
+  // Set the fill color to green
+  fill(0, 255, 0, 180); //set transparency to 180
+  rect(0, 66, width, 40);
+
+  // Set the fill color to blue
+  fill(0, 0, 255, 70); //set transparency to 70
+  rect(285, 0, 80, height);
+}</script>
+
+        <p>
+        Try adding colors to a previous sketch. <strong><a href="http://www.w3schools.com/colors/colors_picker.asp">This page</a></strong> is useful for picking colors. For color palette inspiration, you can take a look at <strong><a href="https://color.adobe.com/">this one</a></strong> and <strong><a href="http://www.colourlovers.com/palettes">this one</a></strong>. Here is our happy face, in color:
+        <p>
+
+        <img src="../../../images/lessons/3.1/happygreen.png"/><p>
+
+            <script type="text/p5">
+    //Declare variables
+    var x;
+    var y;
+
+    function setup() {
+      createCanvas(600, 120);
+
+      //Initialize variables
+      x = random(50, 550);
+      y = random(50, 70);
+
+      noStroke();
+
+    }
+
+    function draw() {
+      background(131, 175, 155);//greenish blue
+
+      //Face
+      fill(249,205,173);//rosy beige
+      ellipse(x, y, 100, 100);
+
+      //Eye 1
+      fill(30);//dark gray
+      ellipse(x, y+10, 10, 10);
+
+      //Eye 2
+      ellipse(x+20, y+10, 10, 10);
+
+      //Mouth
+      fill(252, 157, 154);//light pink
+      arc(x, y+25, 30, 30, 0, radians(180), PIE);
+
+  }</script>
+        <p>
+        Here it is with a more vibrant color palette and a thicker stroke:
+        <p>
+
+            <img src="../../../images/lessons/3.1/happyblue.png"/><p>
+
+                <script type="text/p5">
+//Declare variables
+var x;
+var y;
+
+function setup() {
+  createCanvas(600, 120);
+
+  //Initialize variables
+  x = random(50, 550);
+  y = random(50, 70);
+
+}
+
+function draw() {
+  strokeWeight(4);
+  stroke(30);//dark gray
+
+  background(150,189,255);//sky blue
+
+  //Face
+  fill(255,181,61);//emoji yellow
+  ellipse(x, y, 100, 100);
+
+  //Eye 1
+  fill(30);//dark gray
+  ellipse(x, y+10, 10, 10);
+
+  //Eye 2
+  ellipse(x+20, y+10, 10, 10);
+
+  //Mouth
+  fill(255,98,59);//reddish orange
+  arc(x, y+25, 30, 30, 0, radians(180), PIE);
+
+  //Add a border
+  noFill();
+  rect(2, 2, width-4, height-4);
+
+}</script>
+
+
+
+
+    </div>
+</div>
+
+<div class="row">
+        <div class="span2">
+            <p>Practice</p>
+        </div>
+        <div class="span8">
+            Add color to a previous design or try the following challenge:<ol>
+
+            <li>Open this <a href="https://alpha.editor.p5js.org/SEP/sketches/SJjuB99Xm">sample code</a>.
+            <li>Set a different <code>fill()</code> and <code>stroke()</code> for each ellipse</li></ol>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_1/la_3.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

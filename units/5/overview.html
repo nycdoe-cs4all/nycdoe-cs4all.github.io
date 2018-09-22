@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <title>Functions</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="/units/5/overview.html">
+    <link rel="canonical" href="http://localhost:4000/units/5/overview">
     <meta charset="utf-8">
-    <script src="/javascript/libs/jquery.min.js"></script>  
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">   
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,62 +17,61 @@
       <?php include_once("analyticstracking.php")   ?>
       <div class="container">  
         <div class="row header-row">   
-<div class=" span12">
-  <div class="menu">
-    	<h1>Creative Coding with p5</h1>
-    	<div class="nav">
-      		<a href="/index.html">INDEX</a>&emsp;
-    	</div>
-  </div>
-</div>  
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
 </div>
 
 
 
-        <h4>
-	<a href="">Functions</a>
-</h4>
+        <div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/index.html"><h3>Introduction to Computational Media with p5.js</h3></a>
+	<h1>Unit 5 Functions</h1>
+	
+</div>
+<!-- Unit Description -->
+
+	<div class="row unit_description">
+		<h3>Overview</h3>
+		In this unit students go from drawing within the draw loop, to drawing within a function they create, to adding parameters to it and a return value.
+	</div>
 
 
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Big Ideas</p>
-		</div>	
-		<div class="span6"> 
-			<ul> <li>Understand how to abstract procedures for clarity and reuse</li>
+
+
+
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Big Ideas</p>
+			</div>
+			<div class="span6">
+				<ul> <li>Understand how to abstract procedures for clarity and reuse</li>
 </ul> 
-			
-		</div>	
-	</div>
 
+			</div>
+		</div>
+	
 
-
+	
+		<div class="mainrow row">
+			<div class="span3">
+				<p>Enduring Understandings</p>
+			</div>
+			<div class="span6">
+				 <ul> <li>Understand the purpose of functions</li> <li>Understand how to extract repeating behaviors into functions with parameters</li> </ul> 
+			</div>
+		</div>
+	
+	
 	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Enduring Understandings</p>
-		</div>	
-		<div class="span6"> 
-			 <ul> <li>Understand the purpose of functions</li> <li>Understand how to extract repeating behaviors into functions with parameters</li> </ul> 
-		</div>	
-	</div>
-
-
-
-	<div class="mainrow row">
-		<div class="span3"> 	
-			<p>Unit Overview</p>
-		</div>	
-		<div class="span6"> 
-			In this unit students go from drawing within the draw loop, to drawing within a function they create, to adding parameters to it and a return value.
-		</div>	
-	</div>
-
-
-
-
-
-	<div class="mainrow row">
-			<div class="span3"> 	
+			<div class="span3">
 				<p>Goals</p>
 			</div>
 			<div class="span9" style="margin-top:10px">
@@ -81,7 +81,7 @@
 								Functions
 						</div >
 						<div class="span6">
-							Understand how to create a function	
+							Understand how to create a function
 						</div >
 					</div>
 				
@@ -90,7 +90,7 @@
 								Returning values
 						</div >
 						<div class="span6">
-							Understand how to create a function that returns a value	
+							Understand how to create a function that returns a value
 						</div >
 					</div>
 				
@@ -99,7 +99,7 @@
 								 
 						</div >
 						<div class="span6">
-							 	
+							 
 						</div >
 					</div>
 				
@@ -108,7 +108,7 @@
 								 
 						</div >
 						<div class="span6">
-							 	
+							 
 						</div >
 					</div>
 				
@@ -116,10 +116,14 @@
 	</div>
 
 
+
+
+
+
 <div class="row">
-	<div class="span3"> 	
+	<div class="span3">
 		<p>Learning Activities</p>
-	</div>	
+	</div>
 	<div class="span9" style="margin-top:10px">
 		
 		
@@ -138,6 +142,12 @@
 			
 		
 			
+				
+			
+		
+			
+				
+			
 		
 			
 				
@@ -159,9 +169,9 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/5/learning_activities/la_1.html>1 . Write a happy-face-drawing function </a>
+							<a href=/units/5/learning_activities/la_1>1 . Write a happy-face-drawing function </a>
 					</div >
-					
+
 					<div class="span5">
 						Draw a happy face; draw two happy faces; write a happy-face-drawing function; draw many happy-faces.
 					</div >
@@ -173,59 +183,63 @@
 			
 		
 			
-				
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
 			
 		
 			
 				
 			
 		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				
 			
 		
 			
@@ -240,9 +254,9 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/5/learning_activities/la_2.html>2 . Draw many smiley faces, slightly differently </a>
+							<a href=/units/5/learning_activities/la_2>2 . Draw many smiley faces, slightly differently </a>
 					</div >
-					
+
 					<div class="span5">
 						Draw many happy-faces of different sizes
 					</div >
@@ -262,6 +276,22 @@
 			
 		
 			
+				
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+			
 		
 			
 				
@@ -279,9 +309,9 @@
 				
 				<div class="row">
 					<div class="span3">
-							<a href=/units/5/learning_activities/la_3.html>3 . Return a value </a>
+							<a href=/units/5/learning_activities/la_3>3 . Return a value </a>
 					</div >
-					
+
 					<div class="span5">
 						Create a function that returns a value
 					</div >
@@ -303,6 +333,12 @@
 			
 		
 			
+		
+			
+		
+			
+		
+			
 				
 			
 		
@@ -323,16 +359,6 @@
 			
 		
 			
-				
-			
-		
-			
-		
-			
-				
-			
-		
-			
 		
 			
 				
@@ -350,52 +376,56 @@
 		
 			
 		
-		
+
 	</div>
-</div>	
+</div>
+
+
+
+
 
 
 	<div class="mainrow row">
-		<div class="span3"> 	
+		<div class="span3">
 			<p>Final Project Prompt</p>
-		</div>	
-		<div class="span6"> 
+		</div>
+		<div class="span6">
 			<p>Using functions, create a character that responds to user clicks and key presses by changing its expression</p>
-		</div>	
+		</div>
 	</div>
 
 
 <div class=" row">
-		<div class="span3"> 	
-			
+		<div class="span3">
+
 		</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level 1</b>
 					<br/>
-					Using functions, create a responsive character: when the user clicks, the character does something	
+					Using functions, create a responsive character: when the user clicks, the character does something
 				</p>
 			</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level 2</b>
 					<br/>
-					Add a different response that happens when the user presses a key	
+					Add a different response that happens when the user presses a key
 				</p>
 			</div>
 		
-			<div class="span3"> 	
+			<div class="span3">
 				<p>
 					<b>Level 3</b>
 					<br/>
-					Make a drawing stamp: when the user clicks, call your character-drawing function. Draw from two different types of character at random	
+					Make a drawing stamp: when the user clicks, call your character-drawing function. Draw from two different types of character at random
 				</p>
 			</div>
 		
 </div>
-		
+
 <div class=" row">
 	<div class="span3">Final Project Examples</div>
 	
@@ -475,7 +505,37 @@
 		
 	
 		
-			
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 		
 	
 		
@@ -488,15 +548,19 @@
 	
 		
 			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/5/final_project_examples/level_1.html">
+		
+	
+		
+			
+				<div class="span3">
+					<p>
+						<a href="/units/5/final_project_examples/level_1">
 							<img src="/images/unit_5_final_project_1_level_1.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 1 <br/>
-						<a href="/units/5/final_project_examples/level_1.html">Example Project</a><br/>
+						<a href="/units/5/final_project_examples/level_1">Example Project</a><br/>
 						
 						
 							
@@ -585,6 +649,21 @@
 						
 							
 						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+									<a href="/units/5/final_project_examples/guide_level_1">Step by Step Guide</a>
+								
 							
 						
 							
@@ -605,8 +684,6 @@
 							
 
 								
-									<a href="/units/5/final_project_examples/guide_level_1.html">Step by Step Guide</a>
-								
 							
 						
 							
@@ -615,13 +692,22 @@
 							
 						
 							
-
-								
+						
+							
+						
+							
+						
+							
+						
 							
 						
 							
 
 								
+							
+						
+							
+						
 							
 						
 							
@@ -662,26 +748,6 @@
 		
 	
 		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
 	
 		
 			
@@ -705,19 +771,15 @@
 	
 		
 			
-		
-	
-		
-			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/5/final_project_examples/level_2.html">
+				<div class="span3">
+					<p>
+						<a href="/units/5/final_project_examples/level_2">
 							<img src="/images/unit_5_final_project_1_level_2.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 2 <br/>
-						<a href="/units/5/final_project_examples/level_2.html">Example Project</a><br/>
+						<a href="/units/5/final_project_examples/level_2">Example Project</a><br/>
 						
 						
 							
@@ -809,13 +871,11 @@
 							
 						
 							
-
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -841,6 +901,30 @@
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -886,15 +970,23 @@
 	
 		
 			
-				<div class="span3"> 
-					<p> 
-						<a href="/units/5/final_project_examples/level_3.html">
+		
+	
+		
+			
+		
+	
+		
+			
+				<div class="span3">
+					<p>
+						<a href="/units/5/final_project_examples/level_3">
 							<img src="/images/unit_5_final_project_1_level_3.png" style="object-fit: cover;"></img>
 						</a>
 					</p>
 					<p>
 						Level 3 <br/>
-						<a href="/units/5/final_project_examples/level_3.html">Example Project</a><br/>
+						<a href="/units/5/final_project_examples/level_3">Example Project</a><br/>
 						
 						
 							
@@ -986,13 +1078,11 @@
 							
 						
 							
-
-								
+						
 							
 						
 							
-
-								
+						
 							
 						
 							
@@ -1018,6 +1108,30 @@
 							
 
 								
+							
+						
+							
+
+								
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+
+								
+							
+						
+							
+						
 							
 						
 							
@@ -1050,6 +1164,10 @@
 						
 					</p>
 				</div>
+			
+		
+	
+		
 			
 		
 	
@@ -1085,7 +1203,7 @@
 		    	</div>
 		  
 
-		  <div class="span3"> 	
+		  <div class="span3">
 		  		<a href="http://www.patatap.com/" target='_blank' >
 				<img src="/images/unit_5_final_project_inspiration_1.jpg" width="100%" ></img>
 				</a>
@@ -1097,24 +1215,6 @@
 		  
 		
 	
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
