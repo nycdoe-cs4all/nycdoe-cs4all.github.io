@@ -175,120 +175,30 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
             In our mixing program, we have also adjusted the <em>transparency</em> (the optional fourth value in fill) to allow colors to mix. Its range is 0 (transparent: not visible) to 255 (opaque). You will notice that when we want to change fill, we call a new color before the shape we want to change. Because the draw function is a repeated loop, this presents one color from being applied to every shape.<p>
 
-            <img src="../../../images/lessons/3.1/bars.png"/><p>
-
-                <script type="text/p5">
-function setup() {
-  createCanvas(600, 120);
-}
-
-function draw() {
-  background(0);
-  noStroke();
-
-  // Set the fill color to red
-  fill(255, 0, 0, 250); //set transparency to 250
-  rect(152, 0, 60, height);
-
-  // Set the fill color to green
-  fill(0, 255, 0, 180); //set transparency to 180
-  rect(0, 66, width, 40);
-
-  // Set the fill color to blue
-  fill(0, 0, 255, 70); //set transparency to 70
-  rect(285, 0, 80, height);
-}</script>
+                <div class="sketch_container">
+                   <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+                   <div class = "editor" id="editor_1" style="height:250px;">
+                   </div>
+               </div>
 
         <p>
         Try adding colors to a previous sketch. <strong><a target="_blank" href="http://www.w3schools.com/colors/colors_picker.asp">This page</a></strong> is useful for picking colors. For color palette inspiration, you can take a look at <strong><a target="_blank" href="https://color.adobe.com/">this one</a></strong> and <strong><a target="_blank" href="http://www.colourlovers.com/palettes">this one</a></strong>. Here is our happy face, in color:
         <p>
 
-        <img src="../../../images/lessons/3.1/happygreen.png"/><p>
-
-            <script type="text/p5">
-    //Declare variables
-    var x;
-    var y;
-
-    function setup() {
-      createCanvas(600, 120);
-
-      //Initialize variables
-      x = random(50, 550);
-      y = random(50, 70);
-
-      noStroke();
-
-    }
-
-    function draw() {
-      background(131, 175, 155);//greenish blue
-
-      //Face
-      fill(249,205,173);//rosy beige
-      ellipse(x, y, 100, 100);
-
-      //Eye 1
-      fill(30);//dark gray
-      ellipse(x, y+10, 10, 10);
-
-      //Eye 2
-      ellipse(x+20, y+10, 10, 10);
-
-      //Mouth
-      fill(252, 157, 154);//light pink
-      arc(x, y+25, 30, 30, 0, radians(180), PIE);
-
-  }</script>
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_2" style="height:250px;">
+               </div>
+           </div>
         <p>
         Here it is with a more vibrant color palette and a thicker stroke:
         <p>
 
-            <img src="../../../images/lessons/3.1/happyblue.png"/><p>
-
-                <script type="text/p5">
-//Declare variables
-var x;
-var y;
-
-function setup() {
-  createCanvas(600, 120);
-
-  //Initialize variables
-  x = random(50, 550);
-  y = random(50, 70);
-
-}
-
-function draw() {
-  strokeWeight(4);
-  stroke(30);//dark gray
-
-  background(150,189,255);//sky blue
-
-  //Face
-  fill(255,181,61);//emoji yellow
-  ellipse(x, y, 100, 100);
-
-  //Eye 1
-  fill(30);//dark gray
-  ellipse(x, y+10, 10, 10);
-
-  //Eye 2
-  ellipse(x+20, y+10, 10, 10);
-
-  //Mouth
-  fill(255,98,59);//reddish orange
-  arc(x, y+25, 30, 30, 0, radians(180), PIE);
-
-  //Add a border
-  noFill();
-  rect(2, 2, width-4, height-4);
-
-}</script>
-
-
-
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_3" style="height:250px;">
+               </div>
+           </div>
 
     </div>
 </div>

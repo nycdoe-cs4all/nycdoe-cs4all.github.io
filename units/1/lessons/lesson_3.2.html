@@ -166,32 +166,12 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
             To have p5 use HSB instead of RGB, we call <code>colorMode(HSB)</code>. Here is the same example from above, using the HSB color mode instead of RGB. Notice how the colors red, green and blue are defined differently now: in RGB, red is defined by <code>(255, 0, 0)</code>; in HSB, it is <code>(360, 100, 100)</code>.
             <p>
 
-            <img src="../../../images/lessons/3.2/bars.png"/><p>
 
-            <script type="text/p5">
-function setup() {
-    createCanvas(600, 120);
-    noStroke();
-
-    //Change color mode
-    colorMode(HSB);
-}
-
-function draw() {
-    background(0);
-
-    // Set the fill color to red
-    fill(360, 100, 100);
-    rect(152, 0, 60, height);
-
-    // Set the fill color to green
-    fill(120, 100, 100);
-    rect(0, 66, width, 40);
-
-    // Set the fill color to blue
-    fill(240, 100, 100);
-    rect(285, 0, 80, height);
-}       </script>
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_1" style="height:250px;">
+               </div>
+           </div>
 
         <p>
         HSB makes it easier to define color ranges that fit descriptions like these, which would be harder to accomplish using RGB:<ul>
@@ -203,64 +183,11 @@ function draw() {
         The ability to define colors in these terms is convenient for designing parametric color palettes. Here is our happy face, with random colors being chosen from HSB ranges. Notice how even though a new combination is generated with each refresh, the color palette retains a certain character.
         <p>
 
-
-        <img src="../../../images/lessons/3.2/face.png"/><p>
-
-            <script type="text/p5">
-            //Declare variables
-        var x;
-        var y;
-
-        var backgroundHue;
-        var faceHue;
-        var backgroundGrayValue;
-        var mouthHue;
-
-function setup() {
-  createCanvas(600, 120);
-  noStroke();
-
-  //Initialize variables
-  x = random(50, 550);
-  y = random(50, 70);
-
-  //Set the color mode to HSB
-  colorMode(HSB);
-
-  // Pick a greenish-blue hue value for the background
-  backgroundHue = random(153, 182);
-
-  // Pick a pinkish-yellow hue for the face
-  faceHue = random(12, 53);
-
-  // Pick a dark gray for the eyes
-  backgroundGray = random(10, 30);
-
-  // Pick a pinkishRed for the mouth
-  mouthHue = random(340, 350);
-
-        }
-
-function draw() {
-
-  background(backgroundHue, 46, 75);//sky blue
-
-  //Face
-  fill(faceHue, 22, 96);//emoji yellow
-  ellipse(x, y, 100, 100);
-
-  //Eye 1
-  fill(backgroundGray);//dark gray
-  ellipse(x, y+10, 10, 10);
-
-  //Eye 2
-  ellipse(x+20, y+10, 10, 10);
-
-  //Mouth
-  fill(mouthHue, 55, 80);//reddish orange
-  arc(x, y+25, 30, 30, 0, radians(180), PIE);
-
-  }</script>
+        <div class="sketch_container">
+           <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+           <div class = "editor" id="editor_2" style="height:250px;">
+           </div>
+       </div>
   <p>
   Now define an HSB color palette and apply it to a drawing from the previous activities.
 
