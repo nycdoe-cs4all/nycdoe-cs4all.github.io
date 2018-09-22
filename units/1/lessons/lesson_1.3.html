@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_1.3">
+    <link rel="canonical" href="/units/1/lessons/lesson_1.3">
     <meta charset="utf-8">
     <script src="/javascript/libs/jquery.min.js"></script>
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -157,11 +157,11 @@
 		<div class="span6">
 			<ul>
 				
-					<li><a href="https://drive.google.com/file/d/1ZmERZDHhM4A7TB27mQcxrcPJeAi5Z0m8/view?usp=sharing">Robot Worksheet</a></li>
+					<li><a target="_blank" href="https://drive.google.com/file/d/1ZmERZDHhM4A7TB27mQcxrcPJeAi5Z0m8/view?usp=sharing">Robot Worksheet</a></li>
 				
-					<li><a href="https://p5js.org/reference/#/p5/rect">Rectangle Reference</a></li>
+					<li><a target="_blank" href="https://p5js.org/reference/#/p5/rect">Rectangle Reference</a></li>
 				
-					<li><a href="https://p5js.org/reference/#/p5/ellipse">Ellipse Reference</a></li>
+					<li><a target="_blank" href="https://p5js.org/reference/#/p5/ellipse">Ellipse Reference</a></li>
 				
 			</ul>
 		</div>
@@ -189,21 +189,14 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>
         Recreate the following example and play with the parameter values.
 
-        <script type="text/p5">
-    function setup(){
-        createCanvas(600, 120);
-    }
-
-    function draw() {
-        background(180);
-
-        //Draw a rectangle at x=40, y=40, that is 400 px wide and 60px high.
-        rect(40, 40, 400, 60);
-    }
-        </script>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
 
         <p>
-        <a href="http://alpha.editor.p5js.org/owenroberts/sketches/r13EmIjAz">Example</a>
+        <a target="_blank" href="http://alpha.editor.p5js.org/owenroberts/sketches/r13EmIjAz">Example</a>
         <p>
         To help you place shapes where you want them on the canvas, you can add the following line to your code:
         <p>
@@ -211,19 +204,14 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>
         Take a look at the example below. You can move your mouse to where you would like your shape to be, and write down the coordinates to use them as parameters in your function call.
 
-        <script type="text/p5">
-function setup(){
-    createCanvas(600, 120);
-}
-
-function draw() {
-    background(100);
-    text(mouseX + ", " + mouseY, 20, 20);
-}
-        </script>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
 
         <p>
-        You also use this blank <a href="http://alpha.editor.p5js.org/owenroberts/sketches/S1N-5TAGQ">grid template</a> to help you position your shapes. <p>
+        You also use this blank <a target="_blank" href="http://alpha.editor.p5js.org/owenroberts/sketches/S1N-5TAGQ">grid template</a> to help you position your shapes. <p>
 
 
 
@@ -238,9 +226,9 @@ function draw() {
         <p>
         <img src="../../../images/lessons/1.3/runsonce.png"/><p>
         <p>
-        Play with the order of the shapes <a href="http://alpha.editor.p5js.org/SEP/sketches/H1qJCRkNZ">here</a>. Then remove the comments to see how the rectangles layer on one another.
+        Play with the order of the shapes <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/H1qJCRkNZ">here</a>. Then remove the comments to see how the rectangles layer on one another.
         <p>
-        <a href="http://alpha.editor.p5js.org/SEP/sketches/S1aG4fO7m">http://alpha.editor.p5js.org/SEP/sketches/S1aG4fO7m</a><p>
+        <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/S1aG4fO7m">http://alpha.editor.p5js.org/SEP/sketches/S1aG4fO7m</a><p>
 
     </div>
     </div>
@@ -254,7 +242,7 @@ function draw() {
         <p>
         <img src="../../../images/lessons/1.3/cornersquares.png"/><p>
         <img src="../../../images/lessons/1.3/foursquare.png"/><p>
-        <a href="http://alpha.editor.p5js.org/Jorea/sketches/SkeFVNOzX">Solution</a>
+        <a target="_blank" href="http://alpha.editor.p5js.org/Jorea/sketches/SkeFVNOzX">Solution</a>
 
     </div>
     </div>
@@ -271,21 +259,15 @@ function draw() {
         <img src="../../../images/lessons/1.3/ellipsetext.png"/><p>
 
         <p>
-        Recreate or access this <a href="http://alpha.editor.p5js.org/SEP/sketches/Hkb-m7K47">example </a>and play with the parameter values.
+        Recreate or access this <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/Hkb-m7K47">example </a>and play with the parameter values.
         <p>
         Your ellipse might overlap with your rectangle, like in the example below. Because the code in your sketch is executed from the top down, one line at a time, the shape that was drawn last will always be on top of the rest.<p>
 
-        <script type="text/p5">
-function setup(){
-    createCanvas(600, 120);
-}
-
-function draw() {
-    background(204);
-    rect(40, 40, 400, 60);
-    ellipse(335, 50, 50, 50);
-}
-        </script>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
         <p>
         To change the drawing order, simply cut the line <code>ellipse(335, 50, 50, 50);</code> and paste it before the line <code>rect(40, 40, 400, 60);</code>
 
@@ -313,7 +295,7 @@ function draw() {
         <p>Draw Your Robot</p>
     </div>
     <div class="span8">
-        Using code, draw the robot that you made on graph paper. You can use this <a href="http://alpha.editor.p5js.org/owenroberts/sketches/S1N-5TAGQ">starter sketch</a> that contains the following:<ul>
+        Using code, draw the robot that you made on graph paper. You can use this <a target="_blank" href="http://alpha.editor.p5js.org/owenroberts/sketches/S1N-5TAGQ">starter sketch</a> that contains the following:<ul>
 
         <li>Mouse canvas position indicator (x, y)
         <li>Adaptable grid </ul>
@@ -343,7 +325,7 @@ function draw() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	var editor;
-	var folder = "../../../code/unit_1/la_1.3/";
+	var folder = "../../../code/unit_1/lesson_1.3/";
 
     $(document).ready(function() {
 

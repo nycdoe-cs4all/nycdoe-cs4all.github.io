@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_2.2">
+    <link rel="canonical" href="/units/1/lessons/lesson_2.2">
     <meta charset="utf-8">
     <script src="/javascript/libs/jquery.min.js"></script>
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -138,15 +138,15 @@
 		<div class="span6">
 			<ul>
 				
-					<li><a href="http://alpha.editor.p5js.org/SEP/sketches/rJsRRER7Q">Ellipse Variable Intro</a></li>
+					<li><a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/rJsRRER7Q">Ellipse Variable Intro</a></li>
 				
-					<li><a href="http://alpha.editor.p5js.org/SEP/sketches/H1zfOrRXX">Code Along 2 (with original code)</a></li>
+					<li><a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/H1zfOrRXX">Code Along 2 (with original code)</a></li>
 				
-					<li>Video Tutorial: <a href="https://www.youtube.com/watch?v=Bn_B3T_Vbxs&index=6&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">2.2 Variables in p5.js (make your own)</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.2_Variables_in_p5.js_user_defined">Code</a></li>
+					<li>Video Tutorial: <a target="_blank" href="https://www.youtube.com/watch?v=Bn_B3T_Vbxs&index=6&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">2.2 Variables in p5.js (make your own)</a> | <a target="_blank" href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.2_Variables_in_p5.js_user_defined">Code</a></li>
 				
-					<li>Learning Processing Book: <a href="http://learningprocessing.com/examples/chp04/example-04-01-declaringvars">Chapter 4, Variables</a></li>
+					<li>Learning Processing Book: <a target="_blank" href="http://learningprocessing.com/examples/chp04/example-04-01-declaringvars">Chapter 4, Variables</a></li>
 				
-					<li>Getting Started With p5.js: Chapter 4, examples 4.1, 4.2 | <a href="https://github.com/lmccart/gswp5.js-code/tree/master/04_Variables">Code</a></li>
+					<li>Getting Started With p5.js: Chapter 4, examples 4.1, 4.2 | <a target="_blank" href="https://github.com/lmccart/gswp5.js-code/tree/master/04_Variables">Code</a></li>
 				
 			</ul>
 		</div>
@@ -165,8 +165,12 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
     <div class="span8">
         <p>Suppose we want to have 5 ellipses in a row. This is one way to do it.
         <p>
-        <img src="../../../images/lessons/2.2/5circlecode.png"/><p>
-        <a href="http://alpha.editor.p5js.org/SEP/sketches/SkSif3cXb">Here</a> is the code of the example above. Try moving the entire row 10 pixels down, we have to change all five y positions, setting them to be 70 instead of 60:<ul>
+        <div class="sketch_container">
+           <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+           <div class = "editor" id="editor_1" style="height:250px;">
+           </div>
+       </div>
+        <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/SkSif3cXb">Here</a> is the code of the example above. Try moving the entire row 10 pixels down, we have to change all five y positions, setting them to be 70 instead of 60:<ul>
 
         <li><code>ellipse(120, 70, 60, 60);</code>
         <li><code>ellipse(200, 70, 60, 60);</code>
@@ -186,54 +190,22 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>
         <img src="../../../images/lessons/2.2/declare.png"/><p>
         <p>
-        Notice where we placed these lines of code. The declared variable is way at the top before setup. We gave it a value in setup, and then use it in our draw function although we can use it in setup as well. Play with the variable <a href="http://alpha.editor.p5js.org/SEP/sketches/B1hXEh9QW">here</a>. Change the value or use it for the x or y location of the ellipse.
+        Notice where we placed these lines of code. The declared variable is way at the top before setup. We gave it a value in setup, and then use it in our draw function although we can use it in setup as well. Play with the variable <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/B1hXEh9QW">here</a>. Change the value or use it for the x or y location of the ellipse.
         <p>
-        To make the code in the previous example more efficient, we'll <strong><em>declare</em></strong> our own variable, and call it <strong><em>y</em></strong> with <code>var y</code>. Then we <strong><em>assign</em></strong> a value to our variable. We told the program that there is a container called <strong><em>y</em></strong>. Now we need to give it a value to hold inside that container. We will do that by setting the value of our variable to 70. Now if we want to move all five ellipses 10 pixels down, we can just change the value of our variable: one line of code instead of five. See the code below and <a href="http://alpha.editor.p5js.org/SEP/sketches/HJT9Hn57W">here</a> is the link to the code.
+        To make the code in the previous example more efficient, we'll <strong><em>declare</em></strong> our own variable, and call it <strong><em>y</em></strong> with <code>var y</code>. Then we <strong><em>assign</em></strong> a value to our variable. We told the program that there is a container called <strong><em>y</em></strong>. Now we need to give it a value to hold inside that container. We will do that by setting the value of our variable to 70. Now if we want to move all five ellipses 10 pixels down, we can just change the value of our variable: one line of code instead of five. See the code below and <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/HJT9Hn57W">here</a> is the link to the code.
         <p>
-<script type="text/p5">
-var y;//declaring the variable
-
-function setup() {
-  createCanvas(600, 120);
-  y=70;//set an initial value for the variable
-}
-
-function draw() {
-background(180);
-//use the variable
-ellipse(120,y,60,60);
-ellipse(200,y,60,60);
-ellipse(280,y,60,60);
-ellipse(360,y,60,60);
-ellipse(440,y,60,60);
-
-}
-
-
-</script>
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_2" style="height:250px;">
+               </div>
+           </div>
         <p>
         Keep in mind that it does not matter what we name these variables. If we are creating these variable we can call them whatever we want. Try changing the name to any random word or letter to demonstrate that it is just a "container" word that holds a value which we can then apply and quickly change in multiple places in our code. In this example I called the variable 'bob' and it works the same way.
-<script type="text/p5">
-var bob;//declaring the variable
-
-function setup() {
-  createCanvas(600, 120);
-  bob=70;//set an initial value for the variable
-}
-
-function draw() {
-background(180);
-//use the variable
-ellipse(120,bob,60,60);
-ellipse(200,bob,60,60);
-ellipse(280,bob,60,60);
-ellipse(360,bob,60,60);
-ellipse(440,bob,60,60);
-
-}
-
-
-</script>
+        <div class="sketch_container">
+           <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+           <div class = "editor" id="editor_3" style="height:250px;">
+           </div>
+       </div>
 
         <p>
         It is good practice, however, to give our variables names that make sense to us so that we would remember what they are used for. If you are using a variable for a position on the y-axis, it's a good idea to call that variable "y", "ypos" or the like.
@@ -242,7 +214,7 @@ ellipse(440,bob,60,60);
         <p>
         <img src="../../../images/lessons/2.2/declareand.png"/><p>
         <p>
-        You'll see custom variables created this way very often, but it won't work using built in variables like width, height, or random. In <a href="http://alpha.editor.p5js.org/SEP/sketches/SJvLI297-">this code</a> change the value of <code>variableName</code> to 70, then set the value to the width of the canvas using the built in variable 'width'.
+        You'll see custom variables created this way very often, but it won't work using built in variables like width, height, or random. In <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/SJvLI297-">this code</a> change the value of <code>variableName</code> to 70, then set the value to the width of the canvas using the built in variable 'width'.
     </div>
 </div>
 
@@ -251,81 +223,33 @@ ellipse(440,bob,60,60);
         <p>Change the Position of the Face</p>
     </div>
     <div class="span8">
-        <p>Draw a simple face <a href="http://alpha.editor.p5js.org/SEP/sketches/rkl9uncXW">here</a> by adding eyes and a mouth. No matter where you place it, the positions of face, eyes, and mouth, are going to be relative to the top left corner of the canvas:
+        <p>Draw a simple face <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/rkl9uncXW">here</a> by adding eyes and a mouth. No matter where you place it, the positions of face, eyes, and mouth, are going to be relative to the top left corner of the canvas:
         <p>
         <img src="../../../images/lessons/2.2/draw320.jpg"/><p>
         <img src="../../../images/lessons/2.2/kumonnocode.png"/><p>
-<script type="text/p5">
-
-function setup() {
-  createCanvas(600, 120);
-}
-
-function draw() {
-  background(220);
-  fill(255);
-  ellipse(300, 60, 100, 100);
-  fill(0);
-  ellipse(280, 40, 10, 10);
-  ellipse(320, 40, 10, 10);
-  rectMode(CENTER);
-  rect(300, 70, 30, 10);
-}
-
-
-</script>
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_4" style="height:250px;">
+               </div>
+           </div>
         <p>
-        Now let's create and initialize variables for the x and y location of the face. We can keep the values the same and nothing will change. Keep working on your drawing, but you can refer to this example, <a href="http://alpha.editor.p5js.org/SEP/sketches/B1V8q35Q-">here</a>.
+        Now let's create and initialize variables for the x and y location of the face. We can keep the values the same and nothing will change. Keep working on your drawing, but you can refer to this example, <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/B1V8q35Q-">here</a>.
         <p>
 
-<script type="text/p5">
-var x; //declare a variable for the x location
-var y; //declare a variable for the y location
-
-function setup() {
-  createCanvas(500, 500);
-  x = 250;
-  y = 250;
-}
-
-function draw() {
-  background(150);
-  fill(255);
-  ellipse(x, y, 200, 200);
-  fill(0);
-  ellipse(220, 220, 30, 30);
-  ellipse(280, 220, 30, 30);
-  rectMode(CENTER);
-  rect(250, 280, 100, 20);
-}
-
-
-</script>
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_5" style="height:250px;">
+               </div>
+           </div>
         Change the values of x and y and see what happens. You should notice that the face moved but the eyes and mouth are left behind. If you recall what we did in learning activity 4, we placed the shapes in relation to the canvas using <code>width</code> and <code>height</code> so that the placement of the shapes remained the same when we changed the canvas size. We'll need to apply this idea by placing the features in relation to the position of the face using the variables that we created.
         <p>
-        Let's first position the features relative to the center of the face. We created a variable for the x position and y position of the face. Let's return those variables to their original location and then add the features based on that variable. If the left eye is 20 pixels to the left of the center of the face, and 20 pixels higher, the ellipse should be placed at <code>(x-20,y-20)</code>. The right eye will be 20 pixels to the right of the center of the face, and at the same height as the left eye placing it at <code>(x+20,y-20)</code>. Reference <a href="http://alpha.editor.p5js.org/SEP/sketches/SyeznnqX-">this example</a>.
+        Let's first position the features relative to the center of the face. We created a variable for the x position and y position of the face. Let's return those variables to their original location and then add the features based on that variable. If the left eye is 20 pixels to the left of the center of the face, and 20 pixels higher, the ellipse should be placed at <code>(x-20,y-20)</code>. The right eye will be 20 pixels to the right of the center of the face, and at the same height as the left eye placing it at <code>(x+20,y-20)</code>. Reference <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/SyeznnqX-">this example</a>.
         <p>
-<script type="text/p5">
-var x; //declare a variable for the x location
-var y; //declare a variable for the y location
-
-function setup() {
-  createCanvas(500, 500);
-  x = 250;
-  y = 250;
-}
-
-function draw() {
-  background(150);
-  fill(255);
-  ellipse(x, y, 200, 200); //Use
-  fill(0);
-  ellipse(x - 30, y - 30, 30, 30); //left eye
-  ellipse(x + 30, y - 30, 30, 30); //right eye
-  rectMode(CENTER);
-  rect(x, y + 30, 100, 20); //mouth
-}
-</script>
+            <div class="sketch_container">
+               <iframe id="canvas_iframe_6"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_6" style="height:250px;">
+               </div>
+           </div>
         Finally, we can change the values of x and y and all of the pieces will move together.
 
 
@@ -343,7 +267,7 @@ function draw() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	var editor;
-	var folder = "../../../code/unit_1/la_2.2/";
+	var folder = "../../../code/unit_1/lesson_2.2/";
 
     $(document).ready(function() {
 

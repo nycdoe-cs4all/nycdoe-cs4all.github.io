@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_2.1">
+    <link rel="canonical" href="/units/1/lessons/lesson_2.1">
     <meta charset="utf-8">
     <script src="/javascript/libs/jquery.min.js"></script>
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -15,8 +15,8 @@
 
     <body>
       <?php include_once("analyticstracking.php")   ?>
-      <div class="container">
-        <div class="row header-row">
+      <div class="container">  
+        <div class="row header-row">   
 	<div class=" span12">
 	  <!-- <div class="menu">
 	    	<h1>Introduction to Computational Media with p5.js</h1>
@@ -24,7 +24,7 @@
 	      		<a href="/index.html">INDEX</a>&emsp;
 	    	</div>
 	  </div> -->
-	</div>
+	</div>  
 </div>
 
 
@@ -71,14 +71,16 @@
 		<div class="span6">
 			<p>Students will be able to:</p>
 			<ul>
-
+			
 				<li> Identify repeated values in their code and use variables in their place.  </li>
-
+			
 				<li> Create and implement custom variables  </li>
-
+			
 		</ul>
 		</div>
 	</div>
+
+
 
 
 
@@ -88,37 +90,37 @@
 		</div>
 		<div class="span8">
 			<table class="table">
-
+				
 					<tr>
 						<th> Variables </th>
 						<td> In CS, variables hold an assigned value or data of a specific type, they can also hold arrays of values which will be introduced later. </td>
 					</tr>
-
+				
 					<tr>
 						<th> Width </th>
 						<td> System variable that holds width of canvas as declared in set up. </td>
 					</tr>
-
+				
 					<tr>
 						<th> Height </th>
 						<td> System variable that holds height of canvas as declared in setup. </td>
 					</tr>
-
+				
 					<tr>
 						<th> MouseX </th>
 						<td> System variable that holds the current x-position of the mouse. </td>
 					</tr>
-
+				
 					<tr>
 						<th> MouseY </th>
 						<td> System variable that holds the current y-position of the mouse. </td>
 					</tr>
-
+				
 					<tr>
 						<th> <code>console.log()</code> </th>
 						<td> A function that logs a value to the console when the program is run. </td>
 					</tr>
-
+				
 			</table>
 		</div>
 	</div>
@@ -131,17 +133,17 @@
 		</div>
 		<div class="span6">
 			<ul>
-
-					<li><a href="http://alpha.editor.p5js.org/SEP/sketches/rJsRRER7Q">Ellipse Variable Intro</a></li>
-
-					<li><a href="http://alpha.editor.p5js.org/SEP/sketches/H1zfOrRXX">Code Along 2 (with original code)</a></li>
-
-					<li>Video Tutorial: <a href="https://www.youtube.com/watch?v=Bn_B3T_Vbxs&index=6&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">2.2 Variables in p5.js (make your own)</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.2_Variables_in_p5.js_user_defined">Code</a></li>
-
-					<li><a href="https://www.youtube.com/watch?v=diGjw5tghYU">2.1 Variables in p5.js</a></li>
-
-					<li><a href="https://youtu.be/Bn_B3T_Vbxs">2.2 Variables in p5.js (Make your own)</a></li>
-
+				
+					<li><a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/rJsRRER7Q">Ellipse Variable Intro</a></li>
+				
+					<li><a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/H1zfOrRXX">Code Along 2 (with original code)</a></li>
+				
+					<li>Video Tutorial: <a target="_blank" href="https://www.youtube.com/watch?v=Bn_B3T_Vbxs&index=6&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">2.2 Variables in p5.js (make your own)</a> | <a target="_blank" href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js/2.2_Variables_in_p5.js_user_defined">Code</a></li>
+				
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=diGjw5tghYU">2.1 Variables in p5.js</a></li>
+				
+					<li><a target="_blank" href="https://youtu.be/Bn_B3T_Vbxs">2.2 Variables in p5.js (Make your own)</a></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -153,14 +155,14 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 <!--  -->
 
 <div class="row">
-        <div class="span2">
+        <div class="span2">     
             <p>Instructions</p>
-        </div>
+        </div>  
         <div class="span8">
            <h5>Center elements with built-in variables: width and height</h5>
 
            <p>We have already used two <i>built-in variables</i> in the previous learning activity: <code>mouseX</code> and <code>mouseY</code>. <i>Variables</i> are placeholder names for values that change over time. We type <code>mouseX</code> knowing that p5 will replace that name with a number that represents the latest X position of the mouse. This number will change as the user moves the mouse across the canvas.</p><p> Next we will use two other variables built into p5: <code>width</code> and <code>height</code>. In the following example, their values are <code>600</code> and <code>240</code> ––the dimensions we gave our canvas when we created it in the setup function. </p>
-           <script type="text/p5">
+           <!-- <script type="text/p5">
 function setup() {
  createCanvas(600, 240);
 
@@ -176,21 +178,24 @@ function draw() {
 	text(height, 40, 60);
 
 }
-           </script>
+           </script> -->
+
+           <div class="sketch_container">
+               <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_1" style="height:250px;">
+               </div>
+           </div>
+
+
 
 
            <p>In the sketch below we use <code>width</code> and <code>height</code> to place an ellipse at the center of the screen:</p>
 
-           <script type="text/p5">
-function setup() {
- createCanvas(600, 240);
-}
-
-function draw() {
-	background(180);
- 	ellipse(width/2, height/2, 60, 60);
-}
-           </script>
+           <div class="sketch_container">
+               <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+               <div class = "editor" id="editor_2" style="height:250px;">
+               </div>
+           </div>
 
             <p>The advantage of using these variables to place our ellipse is that, if we change the size of our sketch later, the ellipse will still be centered. To prove this, try changing the width and height of the canvas to 500 and 200, and run the sketch again. </p>
 
@@ -216,7 +221,7 @@ function draw() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	var editor;
-	var folder = "../../../code/unit_1/la_2.1/";
+	var folder = "../../../code/unit_1/lesson_2.1/";
 
     $(document).ready(function() {
 
@@ -246,7 +251,7 @@ function draw() {
     });
 </script>
 
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
 
       </div>
     </body>

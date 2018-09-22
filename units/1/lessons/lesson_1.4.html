@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <link rel="canonical" href="http://localhost:4000/units/1/lessons/lesson_1.4">
+    <link rel="canonical" href="/units/1/lessons/lesson_1.4">
     <meta charset="utf-8">
     <script src="/javascript/libs/jquery.min.js"></script>
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -151,7 +151,7 @@
 		<div class="span6">
 			<ul>
 				
-					<li><a href="https://drive.google.com/file/d/0Byk7AxhPkTEJWWdUeVFteXFrT2M/view?usp=sharing">Shape Guide</a></li>
+					<li><a target="_blank" href="https://drive.google.com/file/d/0Byk7AxhPkTEJWWdUeVFteXFrT2M/view?usp=sharing">Shape Guide</a></li>
 				
 			</ul>
 		</div>
@@ -179,7 +179,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <li>Check for common errors working line by line from top to bottom
         <li>Play with the code. Make one change at a time then hit run.
         <li>Use teamwork. Compare your code to the code of someone next to you.
-        <li>Check out the p5.js online reference. <a href="http://www.p5js.org/reference">www.p5js.org/reference</a></li></ul>
+        <li>Check out the p5.js online reference. <a target="_blank" href="http://www.p5js.org/reference">www.p5js.org/reference</a></li></ul>
 
     </div>
 </div>
@@ -203,7 +203,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>
         The square would be white and both the ellipse and the line, as well as anything else you tell the person to draw, would be gray until you tell them to switch pens again. Since the code runs from the top down, it will work the same way. If you add a white fill, and draw three shapes beneath that line of code, all three shapes will be white.
         <p>
-        Play with the thickness of the stroke and its shade of gray <a href="http://alpha.editor.p5js.org/SEP/sketches/BJLk_dK7-">here</a>.
+        Play with the thickness of the stroke and its shade of gray <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/BJLk_dK7-">here</a>.
         <p>
 
     </div>
@@ -214,7 +214,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>Draw Other Shapes and Navigate the p5.js Reference</p>
     </div>  
     <div class="span8">
-        Use the <a href="http://www.p5js.org/reference">p5 reference </a>to complete this <a href="https://docs.google.com/document/d/1H-H5XI5pqNcyGtJsySNG20reEn-qQQWKyGGvXNS8PAM/edit?usp=sharing">worksheet</a>  and then create the following shapes in the p5.js editor:
+        Use the <a target="_blank" href="http://www.p5js.org/reference">p5 reference </a>to complete this <a target="_blank" href="https://docs.google.com/document/d/1H-H5XI5pqNcyGtJsySNG20reEn-qQQWKyGGvXNS8PAM/edit?usp=sharing">worksheet</a>  and then create the following shapes in the p5.js editor:
         <p>
         <ul>
 
@@ -235,25 +235,14 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
         <img src="../../../images/lessons/1.4/star.png"/><p>
         <p>
-        <a href="http://alpha.editor.p5js.org/SEP/sketches/Byc6nmFEX">Possible Solution</a>
+        <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/Byc6nmFEX">Possible Solution</a>
         <p>
         To draw a polygon, first call the <code>beginShape()</code> function, then call the vertex(x, y) for each vertex of the polygon. End the shape with <code>endShape(CLOSE)</code>.
 
-        <script type="text/p5">
-function setup(){
-    createCanvas(600, 120);
-}
-
-function draw() {
-    beginShape();
-    vertex(x, y); //Coordinate of Vertex 1
-    vertex(x, y); //Coordinate of Vertex 2
-    vertex(x, y); //Coordinate of Vertex 3
-    vertex(x, y); //Coordinate of Vertex 4
-    vertex(x, y); //Coordinate of Vertex 5
-    endShape(CLOSE);
-}
-        </script>
+        <div class="sketch_container">
+               <div class = "editor" id="editor_1" style="height:250px;">
+               </div>
+       </div>
         <p>
         Example:
         <p>
@@ -270,7 +259,7 @@ function draw() {
         <p>Extension: Arcs</p>
     </div>  
     <div class="span8">
-        <p>If you're up for a challenge, check out the <a href="http://p5js.org/reference/">p5.js reference</a> to make arcs and curves.
+        <p>If you're up for a challenge, check out the <a target="_blank" href="http://p5js.org/reference/">p5.js reference</a> to make arcs and curves.
         <p>
         Arcs are part of ellipses (or circles). To draw an arc, we need to specify the start angle and end angle of the portion of the ellipse that we want to draw..
         <p>
@@ -347,9 +336,9 @@ function draw() {
 
         If you would rather work with degrees and not radians (90 instead of PI/2), add this line to your code: `angleMode(DEGREES).`
 
-        Use this <a href="https://drive.google.com/file/d/0Byk7AxhPkTEJWWdUeVFteXFrT2M/view?usp=sharing">p5 reference cheat sheet</a> to learn more and recreate the following:
+        Use this <a target="_blank" href="https://drive.google.com/file/d/0Byk7AxhPkTEJWWdUeVFteXFrT2M/view?usp=sharing">p5 reference cheat sheet</a> to learn more and recreate the following:
 
-        <a href="http://alpha.editor.p5js.org/SEP/sketches/HJ-XrmtVX">Possible Solution </a>
+        <a target="_blank" href="http://alpha.editor.p5js.org/SEP/sketches/HJ-XrmtVX">Possible Solution </a>
         <p>
         <img src="../../../images/lessons/1.4/threequartercircle.png"/><p>
 
@@ -367,7 +356,7 @@ function draw() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	var editor;
-	var folder = "../../../code/unit_1/la_1.4/";
+	var folder = "../../../code/unit_1/lesson_1.4/";
 
     $(document).ready(function() {
 
