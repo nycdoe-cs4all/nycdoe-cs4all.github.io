@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Response and Transformations</title>
+    <title>Response & Draw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -32,384 +32,800 @@
         <div class="row unit_header">
 	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
 	<a target="_blank" href="/index.html"><h3>Introduction to Computational Media with p5.js</h3></a>
-	<h1>Unit 2 Response and Transformations</h1>
+	<h1>Unit 2 Response & Draw</h1>
 	
 </div>
 <!-- Unit Description -->
 
 	<div class="row unit_description">
 		<h3>Overview</h3>
-		<p>In this unit students learn to make their sketches respond to actions taken by the user, from moving the pointer to clicking or touching it over a certain area, to typing on the keyboard. The if statement is introduced. The map function is used to convert inputs into useful ranges.</p><p>The unit also covers applying transformations to the coordinate system ––translation, rotation, scaling––, and isolating them to affect only a portion of the code, using push() and pop(). </p><p>For the final project, students create an expressive drawing tool.</p>
+		<p>In this unit, students learn to make their sketches respond to actions taken by the user, from moving the pointer to clicking or touching it over a certain area, to typing on the keyboard. The if statement is introduced. The map function is used to convert inputs into useful ranges. For the final project, students create an expressive drawing tool.</p>
 	</div>
 
 
 
 
 
-	
-		<div class="mainrow row">
-			<div class="span3">
-				<p>Big Ideas</p>
-			</div>
-			<div class="span6">
-				<ul> <li>Interactive systems: programming visual systems that change over time and respond to user inputs.</li> <li>Interaction design: defining the interactions between user and system.</li> <li>Designing tools for creative expression.</li>
-</ul> 
 
-			</div>
-		</div>
-	
 
-	
-		<div class="mainrow row">
-			<div class="span3">
-				<p>Enduring Understandings</p>
-			</div>
-			<div class="span6">
-				 <ul> <li>Understand that we can create our own drawing tools, and that the creation of tools can be expressive in itself.</li> <li>Understand that the fast succession of still frames allows for the illusion of motion and for the system to respond to user clicks, hovers, and key presses.</li> <li>Understand linear transformations of the coordinate plane (scale, translate, rotate), and of one single variable (map function)</li>
 
-</ul> 
-			</div>
-		</div>
-	
-	
-	<div class="mainrow row">
-			<div class="span3">
-				<p>Goals</p>
-			</div>
-			<div class="span9" style="margin-top:10px">
-				
-					<div class="row">
-						<div class="span3">
-								1. Understand the flow of p5 
-						</div >
-						<div class="span6">
-							How the draw loop makes it possible to create motion and interactivity
-						</div >
-					</div>
-				
-					<div class="row">
-						<div class="span3">
-								2. Respond to user actions
-						</div >
-						<div class="span6">
-							Key presses, mouse motion and clicks. Map values to useful ranges.
-						</div >
-					</div>
-				
-					<div class="row">
-						<div class="span3">
-								3. Transform shapes
-						</div >
-						<div class="span6">
-							Understand the linear transformations of the coordinate system (translation, rotation, scale); compose and isolate them; use them to create motion.
-						</div >
-					</div>
-				
-			</div>
+
+
+
+
+	<div class="row unit_description">
+		<h3>Big Ideas</h3>
+		<ul> <li>Interactive systems: programming visual systems that change over time and respond to user inputs.</li> <li>Interaction design: defining the interactions between user and system.</li> <li>Designing tools for creative expression.</li>
+</ul>  
 	</div>
 
 
-
-
-
+	<div class="row unit_description">
+		<h3>Enduring Understandings</h3>
+		 <ul> <li>Understand that we can create our own drawing tools, and that the creation of tools can be expressive in itself.</li> <li>Understand that the fast succession of still frames allows for the illusion of motion and for the system to respond to user clicks, hovers, and key presses.</li> <li>Understand linear transformations of the coordinate plane (scale, translate, rotate), and of one single variable (map function)</li> </ul> 
+	</div>
 
 
 <div class="row">
-	<div class="span3">
-		<p>Learning Activities</p>
-	</div>
-	<div class="span9" style="margin-top:10px">
+		<h3>Lesson Sequence</h3>
 		
 		
+			<ul><li><strong>LA 1 Draw With Mouse</strong>
 			
-		
+				 <!-- check for lesson -->
 			
-		
+				 <!-- check for lesson -->
 			
-		
+				 <!-- check for lesson -->
 			
-		
+				 <!-- check for lesson -->
 			
-		
+				 <!-- check for lesson -->
 			
-		
+				 <!-- check for lesson -->
 			
-		
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
 			
 				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a target="_blank" href=/units/2/learning_activities/la_1>1 . Draw with the mouse </a>
-					</div >
-
-					<div class="span5">
-						Draw where the mouse is.
-					</div >
-					<div class="span1">
+					
 						
-							~45'
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_1.1>1.1 Conditionals and If Statements</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
 						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_1.2>1.2 Conditionals and If, Else If, Else Statements</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
-			
-		
-			
-		
-			
-				
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a target="_blank" href=/units/2/learning_activities/la_2>2 . Hover and click on things </a>
-					</div >
-
-					<div class="span5">
-						When the user clicks, change the drawing color
-					</div >
-					<div class="span1">
+					
 						
-							~40'
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_1.3>1.3 Logical Operators AND and OR</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
 						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_1.4>1.4 Draw With Mouse</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
-			
-		
-			
-				
-			
-		
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a target="_blank" href=/units/2/learning_activities/la_3>3 . Press keys </a>
-					</div >
-
-					<div class="span5">
-						When the user presses the spacebar, clear the screen (and other key-triggered behaviors)
-					</div >
-					<div class="span1">
+					
 						
-							~20'
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_1.5>1.5 Map Function</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			 <!-- Lesson loop -->
+		</li></ul>
+		
+			<ul><li><strong>LA 2 Hover and Click on Things</strong>
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
 						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_2.1>2.1 Hover and Conditional Statements</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
-			
-		
-			
-				
-			
-		
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-				<div class="row">
-					<div class="span3">
-							<a target="_blank" href=/units/2/learning_activities/la_4>4 . Map values </a>
-					</div >
-
-					<div class="span5">
-						Map the mouse position values to hue and saturation.
-					</div >
-					<div class="span1">
+					
 						
-							~20'
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_2.2>2.2 Rectangles and Clicks</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
 						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
-			
-		
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_2.3>Mini-Project - Light Switch Game</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
-				<div class="row">
-					<div class="span3">
-							<a target="_blank" href=/units/2/learning_activities/la_5>5 . Translate, Rotate, Scale </a>
-					</div >
-
-					<div class="span5">
-						Transform the entire drawing; transform some of its elements.
-					</div >
-					<div class="span1">
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			 <!-- Lesson loop -->
+		</li></ul>
+		
+			<ul><li><strong>LA 3 Press Keys</strong>
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				
+					
 						
-							~40'
-						
-					</div >
-				</div>
-				
-			
-		
-			
-				
-			
-		
+							<ul><li>
+								<a target="_blank" class="linkcheck" href=/units/2/lessons/lesson_3.1>3.1 Key Presses and Conditionals</a>
+							</li></ul>
+						 <!-- make sure la is correct -->
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
 				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
-		
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
-		
+				
+					 <!-- make sure unit is correct -->
+				 <!-- check for lesson -->
 			
-		
-
-	</div>
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			
+				 <!-- check for lesson -->
+			 <!-- Lesson loop -->
+		</li></ul>
+		 <!-- Learning activity loop -->
 </div>
 
 
@@ -418,873 +834,198 @@
 
 
 	<div class="mainrow row">
-		<div class="span3">
-			<p>Final Project Prompt</p>
-		</div>
 		<div class="span6">
-			<p>Create a beautiful/whimsical drawing tool.</p>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a target="_blank" href=/units/2/final_project><h3>Final Project - Paint in P5</h3>
+			<img src="../../images/unit_2_final_project_new.png"></a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		</div>
 	</div>
 
 
-<div class=" row">
-		<div class="span3">
-
-		</div>
-		
-			<div class="span3">
-				<p>
-					<b>Level basic</b>
-					<br/>
-					Use the line function and the current and previous positions of the mouse to draw. When the space bar is pressed, clear the screen. When certain keys are pressed, change the drawing color, transparency, and/or stroke weight.
-				</p>
-			</div>
-		
-			<div class="span3">
-				<p>
-					<b>Level intermediate</b>
-					<br/>
-					Instead of the line function, draw with shape functions (triangle, rect, ellipse, bezier). Use transform functions to change the brush size, rotation, position relative to the mouse. These changes should be triggered by key presses, like the previous example.
-				</p>
-			</div>
-		
-			<div class="span3">
-				<p>
-					<b>Level advanced</b>
-					<br/>
-					Include a tool palette: buttons for picking different colors, size, stroke, rotation. Only draw when the mouse is pressed.
-				</p>
-			</div>
-		
-</div>
-
-<div class=" row">
-	<div class="span3">Final Project Examples</div>
-	
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-				<div class="span3">
-					<p>
-						<a target="_blank" href="/units/2/final_project_examples/level_1">
-							<img src="/images/unit_2_final_project_1_level_1.png" style="object-fit: cover;"></img>
-						</a>
-					</p>
-					<p>
-						Level 1 <br/>
-						<a target="_blank" href="/units/2/final_project_examples/level_1">Example Project</a><br/>
-						
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-									<a target="_blank" href="/units/2/final_project_examples/guide_level_1">Step by Step Guide</a>
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-					</p>
-				</div>
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-				<div class="span3">
-					<p>
-						<a target="_blank" href="/units/2/final_project_examples/level_2">
-							<img src="/images/unit_2_final_project_1_level_2.png" style="object-fit: cover;"></img>
-						</a>
-					</p>
-					<p>
-						Level 2 <br/>
-						<a target="_blank" href="/units/2/final_project_examples/level_2">Example Project</a><br/>
-						
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-					</p>
-				</div>
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-		
-	
-		
-			
-				<div class="span3">
-					<p>
-						<a target="_blank" href="/units/2/final_project_examples/level_3">
-							<img src="/images/unit_2_final_project_1_level_3.png" style="object-fit: cover;"></img>
-						</a>
-					</p>
-					<p>
-						Level 3 <br/>
-						<a target="_blank" href="/units/2/final_project_examples/level_3">Example Project</a><br/>
-						
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-
-								
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-							
-						
-					</p>
-				</div>
-			
-		
-	
-</div>
 
 
-		<div class="mainrow row">
-		    	<div class="span3">
-		    		<p>Final Project Inspiration</p>
-		    	</div>
-		</div>
-		
-		  
-		  
-		    <div class="mainrow row">
-		    	<div class="span3">
-		    	</div>
-		  
-
-		  <div class="span3">
-		  		<a target="_blank" href="http://learningprocessing.com/examples/chp09/example-09-08-mouse-history" target='_blank' >
-				<img src="/images/unit_2_final_project_inspiration_1.png" width="100%" ></img>
-				</a>
-				<div class="info" >
-					<a target="_blank" href="http://learningprocessing.com/examples/chp09/example-09-08-mouse-history" target='_blank' >Mouse history</a>
-				</div>
-			</div>
-
-		  
-		
-		  
-		  
-
-		  <div class="span3">
-		  		<a target="_blank" href="http://www.generative-gestaltung.de/P_2_3_4_01" target='_blank' >
-				<img src="/images/unit_2_final_project_inspiration_2.png" width="100%" ></img>
-				</a>
-				<div class="info" >
-					<a target="_blank" href="http://www.generative-gestaltung.de/P_2_3_4_01" target='_blank' >Drawing with Shapes</a>
-				</div>
-			</div>
-
-		  
-		
-		  
-		  
-
-		  <div class="span3">
-		  		<a target="_blank" href="http://the816.com/neobrush/" target='_blank' >
-				<img src="/images/unit_2_final_project_inspiration_3.png" width="100%" ></img>
-				</a>
-				<div class="info" >
-					<a target="_blank" href="http://the816.com/neobrush/" target='_blank' >Neo Brush</a>
-				</div>
-			</div>
-
-		  
-		    </div>
-		  
-		
-	
 
 
 

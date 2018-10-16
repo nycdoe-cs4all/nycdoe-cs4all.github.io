@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-Project - Light Switch Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/lessons/lesson_2.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/2/overview"><h3>Unit 2 Response & Draw<br/>
+	How can control flow allow for user interactions?</h3></a>
+	<h1>Mini-Project - Light Switch Game</h1>
+	<h2></h2></br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <img src="../../../images/lessons/unit_2/2.3/image1.gif"/>
+    </div>
+    <div class="span8">
+        <img src="../../../images/lessons/unit_2/2.3/image3.gif"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Prompt</p>
+    </div>
+    <div class="span8">
+        <p>
+            Congratulations! Your great aunt’s second cousin twice removed (on your mother’s side) has recently left you a spooky old house. This is great, because “free house”. As you can imagine, however, this does come with its fair share of problems, because spooky, and old.
+        </p>
+        <p>
+            The biggest problem your great aunt’s second cousin twice removed’s attorney warns you about when handing over the deed is that the wiring in the house is pretty old and nonsensical. Sometimes, a light switch controls multiple lights: it might turn more than one light on at a time, and will also turn some lights off. Because the house is spooky, you need to figure out how to turn all of the lights on as quickly as possible.
+        </p>
+        <p>
+            The attorney recommends you try to make this into a game to help you practice and to distract you from the dark foreboding shadows that definitely are not hiding anything you need to worry about (but let’s turn the lights on just in case?).
+        </p>
+        <p>
+            Create a p5 program that will have at least 6 buttons - your light switches. Each light switch should control several other lights, and maybe also the light you clicked. Create a solvable puzzle game in which you need to find the right order to press the switches so all lights are turned on at once.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Requirements</p>
+    </div>
+    <div class="span8">
+        <p>Work with a partner to complete the following:</p>
+        <ol>
+            <li>Create a game with at least six clickable buttons.</li>
+            <li>Create a flowchart of your game so you can guarantee that there is a combination of switches that you can click to turn them all on, solving the puzzle.</li>
+            <li>Create a p5 program where each switch turns a combination of lights on and/or off.</li>
+            <li>Add any necessary design elements to make this game look appealing!</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Writing Prompt</p>
+    </div>
+    <div class="span8">
+        <p>Describe your design process, including stepping through the code to explain exactly how to reach a solution and why your solution works.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+            <ul>
+                <li>Figure out how to draw a new background and “scene” if you win, so that the player knows they have completed the challenge.</li>
+                <li>Figure out how to keep score, and make something happen if the user has clicked too many times without solving the puzzle.</li>
+            </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/lesson_2.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

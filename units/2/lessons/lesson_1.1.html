@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.1 Conditionals and If Statements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/lessons/lesson_1.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/2/overview"><h3>Unit 2 Response & Draw<br/>
+	How can control flow allow for user interactions?</h3></a>
+	<h1>1.1 Conditionals and If Statements</h1>
+	<h2>How can we add conditional statements to make our programs interactive?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity introduces booleans and conditional statements. Students will create an interactive sketch that includes a visual element that changes based on a condition. </p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use an if-then statement  </li>
+			
+				<li> Create conditional statements (event handlers)  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Conditional Statements </th>
+						<td> A set of rules performed if a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Boolean Expression </th>
+						<td> A logical statement that is either TRUE or FALSE. </td>
+					</tr>
+				
+					<tr>
+						<th> Expression </th>
+						<td> A group of terms (the terms are separated by + or - signs) </td>
+					</tr>
+				
+					<tr>
+						<th> Relational Operators </th>
+						<td> <, >, >=, <=, &&, || </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a target="_blank" href="https://www.youtube.com/watch?v=1Osb_iGDdjk">Conditional Statements</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Boolean Expressions</p>
+    </div>
+    <div class="span8">
+        <p>In this lesson, we are going to make our sketches interactive as opposed to static. The interactions that we will build in this learning activity are going to be based on <strong>conditional statements</strong>:
+        <p>
+        <img src="../../../images/lessons/unit_2/1.1/ifthen.png"/><p>
+        If a button, mouse, or key is pressed, or if a mouse is moved, we want something to happen. The conditional statements that we write affect the computer's output. We are going to write a program that changes the color of a shape based on the position of the mouse but first let's discuss conditional logic or <strong><em>boolean expressions</em></strong>. The word boolean indicates that something is <strong>true</strong> or <strong>false</strong>.
+        <p>
+        We want the computer to look at an <strong>expression</strong> and evaluate whether it is <strong><em>true</em></strong> or <strong><em>false</em></strong>, if it's true do one thing, and if it's false do another. Let's take a look at some expressions and evaluate them as true or false. <ul>
+
+        <li><strong>26>5 </strong> → 26 is greater than 5. Let's read that as a question. Is 26 greater than 5? Yes it is. This expression evaluates to "<strong>true</strong>."
+        <li><strong>10=14</strong>  →  Since 10 is not equal to 14. This expression evaluates to "<strong>false</strong>"
+        <li><strong>4>210</strong>  →  This expression is also "<strong>false</strong>"
+        <li><strong>2=2 </strong>→ "<strong>true</strong>"</li></ul>
+
+        <p>
+        These "greater than" or "less than" signs are <strong>relational operators</strong> -  they compare two numbers, which is what we're going to do in our first conditional statement. Our conditional statements will look like this;
+        <p>
+            <img src="../../../images/lessons/unit_2/1.1/ifboolean.png"/><p>
+                The boolean expression inside the parentheses is the expression being evaluated. <strong>If</strong> the expression is true, <strong>then</strong> the computer will execute the code inside the curly brackets. If it evaluates to false, the code is not run and the program will continue with the code that follows the expression.
+        <p>
+
+            <img src="../../../images/lessons/unit_2/1.1/if56.png"/><p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Using Variables in Conditional Statements</p>
+    </div>
+    <div class="span8">
+        <p>
+        The statements we have written so far are pretty pointless. 5 will always be less than 6 and 5 will never be less than 4, so there can only be one result from these statements. These are pretty fixed.
+        <p>
+        On the other hand, we've had already written expressions using values that are <em>constantly changing</em>. They were called <strong>variables</strong>, and while some of them don't change (like when we create variables for the size or static location of a shape), some of them are changing all the time.
+        <p>
+        mouseX and mouseY are two of the built-in variables that we used. The value of the mouse location changes <em>wheneve</em>r you move your mouse. If we wrote the boolean expression "mouseX>100"  it can be true or false. If the mouse were anywhere between 0 and 100 pixels on the x-axis, this expression would evaluate to false. If the mouse were anywhere between 101 and the width of the canvas, the expression would evaluate to true.
+        <p>
+        Let's write a sketch that will turn the background black if(mouseX>300). 300 is the center of our 600-pixel wide canvas so it will be easy to tell if our conditional is working. Based on our statement, if the value of mouseX is greater than 300, the background should turn black. We are also going to set an initial color for the canvas (I set it to white.) That way when my conditional evaluates to false (when mouseX<300), the canvas will turn white again.
+        <p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise 1: Change the Background with Conditionals</p>
+    </div>
+    <div class="span8">
+        <p>Use this <a href="http://alpha.editor.p5js.org/SEP/sketches/BJnFv69QZ">example</a> and try turning the canvas black when the Y position of your mouse is greater than 60, or another number. See what happens when you change the variable to mouseY.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Changing a Fill with a Conditional</p>
+    </div>
+    <div class="span8">
+        <p>We can use conditionals to change color, size, or any other values in our sketches. We're going to use the same conditional from the last example to change the fill of a square.
+        <p>
+        If the X position of the mouse passes the center of the canvas, the fill of the rectangle will turn blue.
+        <p>
+        It's important to remember to draw the rectangle <em>after</em> the conditional so that the fill() will be applied to the rect. See this <a href="http://alpha.editor.p5js.org/SEP/sketches/r1C8u6c7-">example</a>.
+        <p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Changing a Custom Variable with a Conditional</p>
+    </div>
+    <div class="span8">
+        <p>We can also change <strong>custom variables</strong> inside conditional statements. In this <a href="http://alpha.editor.p5js.org/SEP/sketches/ryn71NT4W">example</a>, both the width and height of the rectangle are determined by a variable called <strong>x</strong>. That variable is changed inside the conditional statement.
+            <p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise 2: Make Your Own Interactive Sketch</p>
+    </div>
+    <div class="span8">
+        <p>Use the mouse position to change a variable and create an interactive sketch.
+        <p>
+        <strong>Requirements:</strong><ul>
+
+        <li>Create more than two variations by writing a conditional statement using the x position and y position of your mouse.
+        <li>You can change the color, size or position of a shape. See this <a href="http://alpha.editor.p5js.org/SEP/sketches/HkHt9YKoM">example</a>.
+        <li>You can adapt a previous sketch and add interactivity to it.</li></ul>
+
+        <p>
+
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/lesson_1.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

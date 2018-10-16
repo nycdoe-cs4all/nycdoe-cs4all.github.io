@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.1 Hover and Conditional Statements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/lessons/lesson_2.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/2/overview"><h3>Unit 2 Response & Draw<br/>
+	How can control flow allow for user interactions?</h3></a>
+	<h1>2.1 Hover and Conditional Statements</h1>
+	<h2>How can I use conditionals to create hover reactions?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity introduces if statements and boolean expressions, both simple and compound. They are applied to locating the mouse on the screen, and creating circular buttons that the user can hover on for a reaction.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 - 90 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use the <code>dist()</code> function to calculate the distance between a circle center and the mouse  </li>
+			
+				<li> Use conditionals to create hover reactions.  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> <code>dist()</code> </th>
+						<td> Calculates the distance between two points. </td>
+					</tr>
+				
+					<tr>
+						<th> Hover </th>
+						<td> When the mouse cursor is moved over an object. </td>
+					</tr>
+				
+					<tr>
+						<th> Hover Reaction </th>
+						<td> Something the object does in response to the cursor being moved over it. </td>
+					</tr>
+				
+					<tr>
+						<th> User Experience </th>
+						<td> A person’s internal experience as they interact with an existing product or service. (note: this is different from user experience design) </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a href="https://www.youtube.com/watch?v=1Osb_iGDdjk&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=10">3.1: Introduction to Conditional Statements</a> | <a href="https://github.com/CodingTrain/Rainbow-Code/tree/master/p5.js/3.1_p5.js_Introduction_to_Conditional_Statements">Code</a></li>
+				
+					<li>Learning Processing: Chapter 5. Conditionals</li>
+				
+					<li>Getting Started With p5.js: Chapter 5. Response (Sections: Follow, Location)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Is the mouse on the left or the right side of the screen? </p>
+    </div>
+    <div class="span8">
+        <p>This example does the following: </p>
+        <p>
+            if the mouse is on the right side of the screen,
+            </br>&nbsp;&nbsp;&nbsp;&nbsp;make the fill gray
+            </br>otherwise
+            </br>&nbsp;&nbsp;&nbsp;&nbsp;make the fill black
+        </p>
+
+        <p>We achieve this behavior using an <i>if statement</i> ––see how the code starting on line 18 ressembles our <i>pseudocode</i> above:
+
+        </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+
+<div class="row">
+    <div class="span2">
+        <p>Is the Mouse Over a Circle?</p>
+    </div>
+    <div class="span8">        <p>To determine whether the mouse is over a circle, we calculate the distance between its position and the center of the circle using p5's <code>dist</code> function. If the distance is less than the radius of the circle, it means that the mouse is over it.</p>
+         <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/lesson_2.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

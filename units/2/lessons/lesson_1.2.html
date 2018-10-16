@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.2 Conditionals and If, Else If, Else Statements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/lessons/lesson_1.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/2/overview"><h3>Unit 2 Response & Draw<br/>
+	How can control flow allow for user interactions?</h3></a>
+	<h1>1.2 Conditionals and If, Else If, Else Statements</h1>
+	<h2>How can we write multiple conditions to our code?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity builds on the students’ knowledge of conditional statements. They will use conditional statements to create a sketch of a traffic light that changes colors based on the mouse position.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 - 90 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use an Else statement  </li>
+			
+				<li> Use an else-if statement  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Conditional Statements </th>
+						<td> A set of rules performed if a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Boolean Expression </th>
+						<td> A logical statement that is either TRUE or FALSE. </td>
+					</tr>
+				
+					<tr>
+						<th> Else </th>
+						<td> The second half of a conditional statement, covers every outcome not specified in if </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a target="_blank" href="https://www.youtube.com/watch?v=r2S7j54I68c">Else, else if, AND, and OR</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Else</p>
+    </div>
+    <div class="span8">
+        <p>Now that we know how to make things happen in our sketch when a condition is met, we 'll increase the possible results of our conditionals by introducing <em>one more line of code</em>.
+        <p>
+        If you think about how we speak as humans, we use conditionals all the time. "If it's cold outside, wear a coat." "If you're hungry, have a snack." These statements are often followed by "else" statements, or "otherwise."<strong> </strong>"If it's nice out, play outside, <em>otherwise</em>, play inside."<strong> </strong>
+        <p>
+        We can do the same in code.
+        <p>
+        <img src="../../../images/lessons/unit_2/1.2/ifmousex.png"/><p>
+        These lines of code tell the program to draw a black background if the x position of the mouse is greater than 300, and it also tells the program what to do if the mouse is not greater than 300. Can you predict what's going to happen is the mouse position is not greater than 300?
+        <p>
+        If the statement is <strong><em>true</em></strong>, the program will run task 1. If the statement is <strong><em>false</em></strong>, the program will run task 2.
+        <p>
+        <img src="../../../images/lessons/unit_2/1.2/ifstatement.png"/><p>
+        <a href="http://alpha.editor.p5js.org/SEP/sketches/SJvabE6NW">In this example</a>, a square will be drawn if the mouse is on the right side of the screen, or an ellipse if it's on the left.
+        <p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Student Exercise 1: Use "if" and "else"</p>
+    </div>
+    <div class="span8">
+        <p>Return to your project from the previous lesson and add "else" to your conditional. Make sure you "duplicate" your project first, and work on the new copy.
+        <p>
+        <strong>Hint:</strong> Think about what should happen to your shapes when the condition is false -- What would be its color, size or location? How does it look before the condition is met?
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Else If</p>
+    </div>
+    <div class="span8">
+        <p>We can use "else" to add more possible outcomes to our sketches. Since there are often more than two possible conditions that we want to work with, we can instruct the program to perform different tasks based on a <strong>range of conditions</strong>.
+        <p>
+        I might want to tell someone that if it's cold they should wear a coat, but I also may want to say:
+        <p>
+        "if it's freezing, wear a coat,
+        <p>
+        if it's cold, wear a jacket,
+        <p>
+        otherwise just wear a sweater."
+        <p>
+        We can do this by adding "<strong>else if</strong>" to our conditionals <em>between</em> "if" and "else."
+        <p>
+        <img src="../../../images/lessons/unit_2/1.2/ifcondition1.png"/><p>
+
+        The program will test each condition in order. As soon as one condition evaluates to <strong>true</strong>, the code inside those brackets is executed and the program continues after the statement.  <a href="http://alpha.editor.p5js.org/SEP/sketches/SJ2Oz4aVZ">In the following sketch </a>we test the location of the mouse, and at every 100 pixels, we draw an ellipse close to it. Notice how we begin with the highest value.
+        <p>
+
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Student Exercise 2: Debug Else If</p>
+    </div>
+    <div class="span8">
+        <p>Try flipping the order of the example. Instead of starting with mouseX>500, begin with mouseX>100 and increase the value in each "else if and else statement."
+        <p>
+        You should notice that the first two ellipses are drawn and then the second remains in the same location as you move your mouse to the right.  Why do you think that is? Can you debug it?
+        <p>
+        The code exits the loop as soon as one condition evaluates to true, which is why the the rest of the ellipses are not drawn. As soon as you move your mouse to a greater x-position than 100, the conditional evaluates to true, and the program skips the rest of the conditionals, so you only see the ellipse drawn at 150. (<a href="https://alpha.editor.p5js.org/SEP/sketches/HkyAZ2UcM">Reference</a>)
+        <p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+        <p>
+        Now try removing "else." Just write a series of "if" statements. You will notice that as soon as they are separated into separate statements, when they all evaluate to true, they will all run.
+        <p>
+        After all, a mouseX position that is greater than 500, is also greater than 400, 300, 200, and 100. If they are all true, the code in all of their brackets will be executed. When you use "else if" the program will <em>only run the first conditional that evaluates to true</em>. This is important because now you can have a sketch that will do multiple things, but only one at a time if a condition is met.
+        <p>
+
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Student Exercise 3: Make A Traffic Light</p>
+    </div>
+    <div class="span8">
+        <p>Use conditionals to program a traffic light that changes colors according to the position of your mouse. <strong>Only one ellipse can light up at a time.</strong>
+        <p>
+        Things that should be in your sketch in your code:
+        <p>
+        One rectangle with three ellipses inside of it and stacked vertically. Something that looks like a…. Traffic light!
+        <p>
+
+            Top circle should turn red if condition1 is met
+        <p>
+
+            Middle circle should turn yellow if condition 2 is met
+        <p>
+
+            Bottom circle should turn green
+        <p>
+        There are many ways to go about this. In the example below I created variables for each color and then changed the value of that variable based on the position of the mouse.
+        <p>
+         I used the built in variables for colors. If you are not in need of a particular shade of a color. You can add a color by writing the name of the color is single quotes.
+        <p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/lesson_1.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>

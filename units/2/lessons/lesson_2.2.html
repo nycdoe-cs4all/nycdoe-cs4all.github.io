@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.2 Rectangles and Clicks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/lessons/lesson_2.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">  
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/2/overview"><h3>Unit 2 Response & Draw<br/>
+	How can control flow allow for user interactions?</h3></a>
+	<h1>2.2 Rectangles and Clicks</h1>
+	<h2>How can I use mouse clicks in p5.js?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity introduces if statements and boolean expressions, both simple and compound. They are applied to locating the mouse on the screen, and creating rectangular and circular buttons that the user can hover and click on.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 - 90 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use conditionals to define a reactive rectangular button.  </li>
+			
+				<li> Use <code>mouseIsPressed</code> to create mouse click reactions.  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> <code>mouseIsPressed</code> </th>
+						<td> A built-in variable that is True when the mouse button is pressed, and False when it is not pressed. </td>
+					</tr>
+				
+					<tr>
+						<th> Efficiency </th>
+						<td> In this case, making it easier and faster to debug and edit your code. </td>
+					</tr>
+				
+					<tr>
+						<th> Nesting Conditionals </th>
+						<td> When one conditional lives within another -- meaning then that both of the conditions have to be met before your code will execute. </td>
+					</tr>
+				
+					<tr>
+						<th> User Experience </th>
+						<td> A person’s internal experience as they interact with an existing product or service. (note: this is different from user experience design) </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a href="https://www.youtube.com/watch?v=1Osb_iGDdjk&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=10">3.1: Introduction to Conditional Statements</a> | <a href="https://github.com/CodingTrain/Rainbow-Code/tree/master/p5.js/3.1_p5.js_Introduction_to_Conditional_Statements">Code</a></li>
+				
+					<li>Learning Processing: Chapter 5. Conditionals</li>
+				
+					<li>Getting Started With p5.js: Chapter 5. Response (Sections: Follow, Location)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Is it Over a Rectangle?</p>
+    </div>
+    <div class="span8">        <p>Determining whether the mouse is over a rectangle requires a more complex <i>boolean expression</i> (see lines 13 and 14):<!-- TODO: link to more info on boolean expressions --> <!-- TODO: add drawing --> </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>What you see in lines 13 and 14 is a <i>compound boolean expression</i>.  <code>(mouseX > x)</code>, <code>(mouseX < x+w)</code>, <code>(mouseY > y)</code> and <code>(mouseY < y+h)</code> are individual boolean expressions: they evaluate to either true or false. </p><p>Here they are joined together by the <i>logical operator</i> AND (<code>&&</code>). AND evaluates to true only the expressions on its left and right are both true. Boolean expressions can also be combined using the OR (<code>||</code>) and NOT (<code>!</code>) logical operators. For more in-depth explanations please see Daniel Shiffman's video tutorials <a href="https://www.youtube.com/watch?v=r2S7j54I68c&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=12">here</a> and <a href="https://www.youtube.com/watch?v=Rk-_syQluvc">here</a>.</p>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Click</p>
+    </div>
+    <div class="span8">        <p>When a user clicks the mouse, the <code>mouseIsPressed</code> variable is set to True. We write a conditional using this boolean variable to make something happen when the mouse is clicked. Any code we write within this conditional will be executed whenever a click event happens. This kind of conditional is known as an <i>event handler</i>: they allow us to respond to events when they happen.</p>
+        <p>Let's add a <code>mouseIsPressed</code> conditional to this mouse-following program so that the color of the circle changes to a random color whenever we click: </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Click on a Rectangle</p>
+    </div>
+    <div class="span8">
+        <p>Combining the code from the previous two sketches we can create a button: in the following example we check whether the mouse is over the rectangle before we re-set our R, G, B variables in our <code>mouseIsPressed</code> conditional.</p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>A Circular Button</p>
+    </div>
+    <div class="span8">
+        <p>In this last example we make three changes:
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;1. Draw a continous line by using <code>pmouseX</code> and <code>pmouseY</code>
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;2. Make our button circular and use the <code>dist</code> function to check whether the mouse is over it (if the distance between the mouse and the center of the circle is smaller than its radius, then it is), and
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;3. Add hovering functionality to our button by making its fill black if the mouse is over it.
+        </p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/lesson_2.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+      </div>
+    </body>
+</html>
