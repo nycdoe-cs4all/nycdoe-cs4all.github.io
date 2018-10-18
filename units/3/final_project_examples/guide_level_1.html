@@ -15,7 +15,7 @@
 
     <body>
       <?php include_once("analyticstracking.php")   ?>
-      <div class="container">  
+      <div class="container">
         <div class="row header-row">   
 	<div class=" span12">
 	  <!-- <div class="menu">
@@ -42,10 +42,10 @@
 <div class="mainrow row">
 	<div class="span2"> 	
 		<p><b>Description</b></p>
-	</div>	
+	</div>
 
-	<div class="span6"> 
-        <p><!-- In this final project example, we will create a random meme generator. (see <a href="../../../units/unit/media/">this unit</a>'s Project Inspiration links)--> 
+	<div class="span6">
+        <p><!-- In this final project example, we will create a random meme generator. (see <a href="../../../units/unit/media/">this unit</a>'s Project Inspiration links)-->
             First, let's take a look at some memes. Memes often combine an image that people are familiar with with captions written in a bold font, sometimes in bright colors.</p>
 
     </div>
@@ -55,33 +55,33 @@
         <p><b></b></p>
     </div>
     <div class="span3">     
-        <p> 
-            
+        <p>
+
             <img src="../../../images/fp/3_1/meme_examples/1.png"style="object-fit: cover;"></img>
             <br/>
             <img src="../../../images/fp/3_1/meme_examples/3.jpg"style="object-fit: cover;"></img>
-            
+
         </p>
     </div>
     <div class="span3">     
-        <p> 
+        <p>
             <a href="">
                 <img src="../../../images/fp/3_1/meme_examples/2.jpg"style="object-fit: cover;"></img>
             </a>
         </p>
     </div>
-    
+
 </div>
 <div class="mainrow row">
     <div class="span2">     
         <p></p>
     </div>  
 
-    <div class="span6"> 
+    <div class="span6">
         <p>In this example project we will write a program that selects an image, a caption, and a font and combines them to create a (potential) meme. Because the program will pick these elements at random, the results might be surprising.</p>
         <p><img src="../../../images/fp/3_1/0_diagram.jpg"style="object-fit: cover;"></img></p>
         <p>Each time the program runs, a new meme will be created ––
-        can you choose a set of images and captions so that your sketch generates good memes?</p> 
+        can you choose a set of images and captions so that your sketch generates good memes?</p>
 	</div>		 
 </div>
 <div class="mainrow row">
@@ -89,12 +89,12 @@
         <p><b>Learning Activities Reference</b>
     </p>
     </div>  
-    <div class="span6"> 
+    <div class="span6">
         <p>This example project applies the following concepts from previous Learning Activities:
          <ul>
             <li>Creating an array and accessing its items (<a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a>, section 5)</li>
             <li>Using the <code>random()</code> function (<a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>)</li>
-            <li>Loading and displaying images ( <a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a> ) and fonts ( 
+            <li>Loading and displaying images ( <a href="../../../units/learning_activity/learning-activity-03-02/">LA 3.2</a> ) and fonts (
             <a href="../../../units/learning_activity/learning-activity-03-03/">LA 3.3</a>
                 )</li>
             <!-- <li>For Level 3: loading and playing sound (<a href="../../../units/learning_activity/learning-activity-03-04/">LA 3.4</a>)</li> -->
@@ -106,15 +106,15 @@
 <div class="row">
     <div class="span2">     
         <p><b>Steps Outline</b></p>
-    </div> 
+    </div>
      <div class="span6">
-            
+
             Before coding:
                 <ol><li>Gather a collection of images we like</li>
                     <li>Write some captions that might work for the images</li>
                     <li>Pick a handful of meme-like fonts for our text</li>
                 </ol>
-        
+
                 In our code:
                 <ol start="4">
                     <li >Store image file paths in an array. Select a random image. Draw it.</li>
@@ -128,7 +128,7 @@
     </div>
 </div>
 
-        
+
 
 <div class="row">
     <div class="span2">     
@@ -160,11 +160,11 @@
                     <li><code>random(0, images.length)</code> picks a number between 0 and the length of the images array ––in this case, 2. (see <a href="../../../units/learning_activity/learning-activity-01-02/">LA 1.2</a>, step 2)</li>
                     <li><code>floor()</code> takes that number, and rounds it down: 0.3 becomes 0; 1.9 becomes 1.</li>
                 </ul>
-            
+
             <p>Last, in our <code>draw()</code>function, we use the <code>image</code> function to display <code>chosenImage</code>:</p>
             <img width="100%" src="../../../images/fp/3_1/4_draw_image.png"/>
-            
-            
+
+
 
         <h5>5) Select a caption and font at random, and display the text</h5>
         <p>Next, let's pick our caption and a font. First, we create an array with all possible font names, and another that holds all the captions we wrote:</p>
@@ -173,20 +173,18 @@
         <img width="100%" src="../../../images/fp/3_1/5_caption_font_pick.png"/>
         <p>Finally, we use <code>textFont()</code> to set the font to the one we picked, and <code>text()</code> to draw our caption.</p>
         <img width="100%" src="../../../images/fp/3_1/5_caption_draw.png"/>
-        
-        
-        
+
+
+
 		<p>You can see the complete, running example <a href="../../../units/final_project_example/final-project-example-03-01/">here</a>. Make sure to refresh the page several times to see different memes be generated.</p>
         <!-- <div class="sketch_container">
             <iframe id="canvas_iframe_1"  src="" width="620px" height="400"></iframe>
             <div class = "editor" id="editor_1" style="height:250px;">
             </div>
         </div> -->
-        
+
     </div>
 </div>  
-
-
 
 
 <script type="text/javascript">
@@ -219,6 +217,8 @@
 
         <script src="/bootstrap/js/bootstrap.min.js"></script>  
 
+        <div class="extra-room">
+        </div>
       </div>
     </body>
 </html>

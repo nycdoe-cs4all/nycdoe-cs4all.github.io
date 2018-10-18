@@ -5,6 +5,7 @@
 	float: right;
 }
 
+
 .unit_header h1,
 .unit_header h2,
 .unit_header h3 {
@@ -14,6 +15,17 @@
 
 .unit_header h2 {
 	line-height: 22px;
+}
+
+.unit_header{
+	margin-bottom: 4em;
+}
+
+.extra-room{
+	padding: 4em;
+}
+.index-room{
+	padding: 2em;
 }
 
 
@@ -191,7 +203,7 @@ a:hover {
 }
 
 .span2 {
-	font-size: large;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
@@ -242,7 +254,7 @@ h2 {
 }
 
 h1 {
-	font-size: 24px;
+	font-size: 30px;
 }
 
 h2 {
