@@ -1,18 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.3 Logical Operators AND and OR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/2/lessons/lesson_1.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/2/overview"><h3>Unit 2 Response & Draw<br/>
+	How can control flow allow for user interactions?</h3></a>
+	<h1>1.3 Logical Operators AND and OR</h1>
+	<h2>How can we make logical operators more interactive?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity builds on conditional statements using the Logical Operators && and ||. Students create a hover button by changing the fill of a rectangle while hovering over it with the mouse.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 - 90 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Create compound conditional statements  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><strong>Abstraction</strong><ul>
+<li>Describe different things I tried in order to achieve a goal. <li>Describe how I might use patterns to express an idea. <li>Explain characteristics or patterns that informed a function or an interface I created.</li></ul>
+<p> <strong>Algorithms</strong><ul>
+<li>Demonstrate the benefit of using an event, conditional or loop in my prototype. <li>Compare and contrast how conditionals or loops were used in classmates prototypes.</li></ul>
+<p> <strong>Programming</strong><ul>
+<li>Discuss what can and cannot be done with a specific set of commands. <li>Describe the changes I made after testing at least three parts of my program.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Conditional Statements </th>
+						<td> A set of rules performed if a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Boolean Expression </th>
+						<td> A logical statement that is either TRUE or FALSE. </td>
+					</tr>
+				
+					<tr>
+						<th> || OR </th>
+						<td> Joins two statements such that if one is true, the whole statement is true. </td>
+					</tr>
+				
+					<tr>
+						<th> && AND </th>
+						<td> Joins two statements to make sure they are both true. If one is false, the whole statement is false. They must both be true for the whole statement is false. </td>
+					</tr>
+				
+					<tr>
+						<th> Expression </th>
+						<td> A group of terms (the terms are separated by + or - signs) </td>
+					</tr>
+				
+					<tr>
+						<th> Relational operators </th>
+						<td> <, >, >=, <=, &&, || </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li>Video tutorial: <a target="_blank" href="https://www.youtube.com/watch?v=r2S7j54I68c">Else, else if, AND, and OR</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
 <div class="row">
     <div class="span2">
-        <p>&amp;&amp; And</p>
+        <p>&& And</p>
     </div>
     <div class="span8">
-        Let's add another element to our conditional statements. Say we want a change to occur in our sketch while the mouse is hovering over a specific range in our canvas. We can do this by using Logical Operators in our conditional statements. In the following example, the ellipse becomes a square when mouseX is between 200 and 400. While we can't use "between" in our conditionals, we can tell the program to draw an ellipse when mouseX is greater than 200 <strong>and</strong> less than 400. "And" is the first logical operator that we'll us and the syntax to write "And" in p5 is two ampersands (&amp;&amp;.) <a href="http://alpha.editor.p5js.org/SEP/sketches/B1MNwN6E-">In this sketch</a>, we draw an ellipse when mouseX is greater than 200, and when mouseX is less than 400. Otherwise (else) we draw a rectangle.
+        Let's add another element to our conditional statements. Say we want a change to occur in our sketch while the mouse is hovering over a specific range in our canvas. We can do this by using Logical Operators in our conditional statements. In the following example, the ellipse becomes a square when mouseX is between 200 and 400. While we can't use "between" in our conditionals, we can tell the program to draw an ellipse when mouseX is greater than 200 <strong>and</strong> less than 400. "And" is the first logical operator that we'll us and the syntax to write "And" in p5 is two ampersands (&&.) <a href="http://alpha.editor.p5js.org/SEP/sketches/B1MNwN6E-">In this sketch</a>, we draw an ellipse when mouseX is greater than 200, and when mouseX is less than 400. Otherwise (else) we draw a rectangle.
         <p>
-        &amp;&amp; is used whenever you want the bracketed code to be executed only if both conditions evaluate to true.
+        && is used whenever you want the bracketed code to be executed only if both conditions evaluate to true.
         <div class="sketch_container">
-            <iframe id="canvas_iframe_1" src="" width="600px" height="auto"></iframe>
-            <div class="editor" id="editor_1" style="height:250px;">
+            <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_1" style="height:250px;">
             </div>
         </div>
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
 <div class="row">
     <div class="span2">
@@ -23,12 +183,12 @@
         <p>
         Instead, <a href="http://alpha.editor.p5js.org/SEP/sketches/HJFv_E6NW">let's edit that code and pick two separate ranges</a>. If the mouse is hovering within either of them, we'll draw an ellipse.
         <div class="sketch_container">
-            <iframe id="canvas_iframe_2" src="" width="600px" height="auto"></iframe>
-            <div class="editor" id="editor_2" style="height:250px;">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
             </div>
         </div>
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
 <div class="row">
     <div class="span2">
@@ -39,21 +199,68 @@
         <p>
         You'll need to think about the the locations of the beginning and end of the shape on the x and y axis. The mouseX position needs to be greater than the left side of the rect, <strong>and</strong> less than the right side of the rect, <strong>and</strong> greater than the top line of the rect, <strong>and</strong> less than the bottom line of the rect. The boolean will be long but it's just a repetition of the same concept.
         <p>
-        The square is located in the center of the canvas and the width is 40 pixels. The first line of the rect is therefore 20 pixels less than the center of the canvas (width/2-20.) The second line is 20 pixels greater than the center of the canvas (width/2+20).  Your boolean will therefore read (mouseX&gt;width/2-20) &amp;&amp; (mouseX&lt;width/2+20). If you add on the mouseY you will have a rollover button.
+        The square is located in the center of the canvas and the width is 40 pixels. The first line of the rect is therefore 20 pixels less than the center of the canvas (width/2-20.) The second line is 20 pixels greater than the center of the canvas (width/2+20).  Your boolean will therefore read (mouseX>width/2-20) && (mouseX<width/2+20). If you add on the mouseY you will have a rollover button.
         <p>
         <div class="sketch_container">
-            <iframe id="canvas_iframe_3" src="" width="600px" height="auto"></iframe>
-            <div class="editor" id="editor_3" style="height:250px;">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
             </div>
         </div>
         <p>
         If you're feeling ambitious, make 2 rollover buttons!
         <p>
         <div class="sketch_container">
-            <iframe id="canvas_iframe_4" src="" width="600px" height="auto"></iframe>
-            <div class="editor" id="editor_4" style="height:250px;">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
             </div>
         </div>
-    &lt;/div&gt;
-&lt;/div&gt;
-</p></p></p></p></p></p></div></div></p></p></div></div></p></div></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_2/lesson_1.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>
