@@ -89,7 +89,7 @@ Maybe add saving an image, and ask students to print it out (if they have access
         </div>
         <p>Now imagine we need to draw them closer, or farther apart from each other. This would mean re-calculating all of the x positions and updating them for all five ellipses.</p>
 
-
+        
         <h5>2) Repeat shapes with a for loop</h5>
         <p>In writing the code above, we followed a thought process similar to this: </p>
         <img src="../../../images/la/1_4/loops_0_pseudo_code-01.jpg"/>
@@ -97,14 +97,14 @@ Maybe add saving an image, and ask students to print it out (if they have access
         <img src="../../../images/la/1_4/loops_1_if_statement-01.jpg"/>
         <p>What we are missing is a code statement that allows us to create the arrow that goes back to asking whether we got to the end of the screen. There is a <i>control structure</i> called while loop that does exactly this: </p>
         <img src="../../../images/la/1_4/loops_2_while_statement-01.jpg"/>
-        <p>There are three steps we need to take to have our while work correctly. First, we initialize a variable. Second, we check whether it meets a condition. And third, we change the value of that variable in a way that will eventually make it meet the condition.</p>
+        <p>There are three steps we need to take to have our while work correctly. First, we initialize a variable. Second, we check whether it meets a condition. And third, we change the value of that variable in a way that will eventually make it meet the condition.</p> 
         <img src="../../../images/la/1_4/loops_2_while_statement_annotated-01.jpg"/>
         <p>Because repeating a block of code over and over until a condition is met is such a common thing in programming, a shorthand for the while loop was created that puts the three steps together. It's called a for loop, and its syntax is as follows:</p>
         <!-- <img src="../../../images/la/1_4/loops_3_for_loop-01.png"/> -->
         <img src="../../../images/la/1_4/loops_3_for_loop_annotated-01.jpg"/>
-
+        
         <p>Here are our five ellipses from above, drawn using a for loop. Notice how we no longer have repeated lines in our code</p>
-
+        
         <!-- TODO: explain for loop with a drawing; add more steps: first a variable for x, then a while loop, then a for looop -->
         <div class="sketch_container">
             <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
@@ -117,7 +117,7 @@ Maybe add saving an image, and ask students to print it out (if they have access
             <div class = "editor" id="editor_3" style="height:250px;">
             </div>
         </div>
-
+    
         <h5>3) Add a column to your row</h5>
         <p>Above, we have drawn a row of ellipses. Let's draw a column by adding a second for loop that draws circles at the same x position, but varies their y.</p>
         <div class="sketch_container">
@@ -125,7 +125,7 @@ Maybe add saving an image, and ask students to print it out (if they have access
             <div class = "editor" id="editor_4" style="height:250px;">
             </div>
         </div>
-
+    
         <h5>4) Add many columns to your row: draw a grid</h5>
         <p>If we draw a column of circles <i>for each</i> of the circles in our row, we can create a grid of circles. <p>Take a look at this animation: each time we draw a circle in the top row (with y = 60), we also draw another two (with y = 90 and y = 120):</p><p><img src="../../../images/la/1_4/nested_for.gif"/></p>
 
@@ -170,9 +170,9 @@ Maybe add saving an image, and ask students to print it out (if they have access
             <div class = "editor" id="editor_8" style="height:250px;">
             </div>
         </div> -->
-
+        
         <h5>6) Make a grid your own drawing into a grid</h5>
-
+        
         <p>We can also create grids of more complex drawings, such as the happy face we created in previous learning activities. In this sketch it was made smaller (by dividing sizes and positions by 5 approximately), and drawn within two nested for loops. </p>
         <div class="sketch_container">
             <iframe id="canvas_iframe_9"  src="" width="600px" height="auto"></iframe>
@@ -182,6 +182,10 @@ Maybe add saving an image, and ask students to print it out (if they have access
         <p>Note that here we have added the variable <code>x</code> to avoid repeating <code>i*30</code> four times (to draw the face, the left eye, the right eye, the mouth). If we did, the program would still work, but it would be harder to read and modify. The same goes for <code>y</code>, which stands for <code>j*30</code>. Using variables to avoid any repeating code is generally a good practice.
     </div>
 </div>
+
+
+
+
 
 
 
