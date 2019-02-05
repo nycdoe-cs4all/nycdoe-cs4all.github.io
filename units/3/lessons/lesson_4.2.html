@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-Project: Kinetic Type</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_4.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>Mini-Project: Kinetic Type</h1>
+	<h2></h2></br>
+</div>
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Draw With Fonts</p>
+    </div>
+    <div class="span8">
+        If you've ever sat through a dull class or meeting with a song stuck in your head, you've probably passed the time by doodling the lyrics on whatever paper is closest. You might've written them out in your best handwriting - maybe even testing cursive or script - or maybe you opted for big, block letters to emphasize your favorite part. If you had lots of time on your hands, maybe you even mixed all three.
+        <p>
+        This is not a new activity - people have been doodling lyrics for <em>years.</em> As computers and access to design and animation software became more commonplace, people starting updating their tributes to their favorite tune to the digital space. There was even a brief trend for kinetic type, which illustrated lyrics using design, typography, and animation to the beat of the song, as in the following examples:<ul>
+
+        <li><a href="https://drive.google.com/open?id=1YUL383KYNcBM7al3lvYM0dJUJUrZd4XP">Ain't No Rest for the Wicked</a> (Cage the Elephant)
+        <li><a href="https://drive.google.com/open?id=1D84cA85HJkfAfGPyrEcaQLEMMRjCj4qh">Harder, Better, Faster, Stronger</a> (Daft Punk)
+        <li><a href="https://drive.google.com/open?id=1ecaH9iOV-bmAkIhRSE8MbxknZ8El120W">Closer</a> (Chainsmokers)
+        <li><a href="https://vimeo.com/69375692">From Paper to Screen</a></ul>
+            <p>
+        While we don't have quite the animation skills yet to make something this elaborate, we are all able to use a variety of fonts, text, and type along with user interactions like buttons and key presses to create a tribute to our favorite song that matches the mood, beat, or rhythm of the song.
+        <p>
+        Your task is to:<ul>
+
+        <li>Pick a song or poem* that you will create a lyrical composition for
+        <li>Use at least 3 fonts
+        <li>Create a design that highlights your favorite parts of the song and incorporates user interactions (EX: maybe something changes colors or moves when it is clicked or a button is pressed!)
+        <li>Integrate other p5 elements you have learned so far to improve your program</li></ul>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Sample Output</p>
+    </div>
+    <div class="span8">
+        <p><a href="https://editor.p5js.org/cmorgantywls/sketches/ryZNVx_ff">Example</a>
+            <p><img src="../../../images/lessons/unit_3/4.2/kinetic.gif"/>
+            <p><img src="../../../images/lessons/unit_3/4.2/poem.png"/>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Sample Output</p>
+    </div>
+    <div class="span8">
+        <p>Write your own poem and animate it as it is meant to be performed. For inspiration, check out Melisa Lozada-Oliva, who primarily writes poems that explore her culture and upbringing and are meant to be performed:<ul>
+
+        <li><a href="https://drive.google.com/open?id=1M8P8PYTmeEOwuDqRvPHHvLYJaMQSne_K">My Spanish</a> (Melisa Lozada-Oliva)
+        <li><a href="https://drive.google.com/open?id=17w-j4ivEPMQOJvC0Eo_5Am-v7rjrQQuL">Bitches</a> (Melisa Lozada-Oliva)</li></ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_4.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

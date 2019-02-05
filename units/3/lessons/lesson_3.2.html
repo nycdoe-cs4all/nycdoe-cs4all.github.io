@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.2 Images && Arrays with ML5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_3.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>3.2 Images && Arrays with ML5</h1>
+	<h2>How can our computer interact with an array of images?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity, students will use p5 and ml5 to put images into an array and apply that array to a machine learning model. Training models from scratch is well above the scope of this course, so most of that is given in a code along - students will then have a chance to form a hypothesis about their model and test it with images of their own. Due to restrictions with the p5 editor, this lesson takes place on repl.it so that ml5 can be used. A similar online IDE such as Cloud9 could also be used based on your comfort level.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>135 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use an array to store images  </li>
+			
+				<li> Understand the basics of machine learning  </li>
+			
+				<li> Create a program that will select and identify an image using MobileNet  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Artificial Intelligence </th>
+						<td> training a computer to do something humans would identify as thinking </td>
+					</tr>
+				
+					<tr>
+						<th> Machine Learning </th>
+						<td> an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed </td>
+					</tr>
+				
+					<tr>
+						<th> Bias </th>
+						<td> prejudice in favor of or against one thing, person, or group compared with another, usually in a way considered to be unfair. Bias can be personal or a part of great social systems of power and oppression. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://ml5js.org/">ml5js</a> - a simplified machine learning library in javascript</li>
+				
+					<li><a href="https://ml5js.org/docs/image-classification-example">Image Classification</a> - the ml5 example this lesson is adapted from. It works heavily with HTML - we&#39;ve transitioned the HTML elements to p5 to match course knowledge and make the classifier more interactive.</li>
+				
+					<li><a href="https://repl.it/repls">Repl.it</a> - you can create an account, fork a project, and start coding here, or you can join a classroom and shared on a project/assignment.</li>
+				
+					<li><a href="https://repl.it/site/docs/misc/free-features">Repl.it walkthrough</a>: Covers the repl.it interface and its free features.</li>
+				
+					<li><a href="https://repl.it/@cmorgantywls/ML5precodealong">Pre-Code Along</a>: students can fork and use this example to work from during the code along.</li>
+				
+					<li><a href="https://repl.it/@cmorgantywls/workingML5play">Finished Version</a>: a finished version using lots of p5 and ml5</li>
+				
+					<li><a href="https://soundcloud.com/alexismadrigal/google-duplex-calling-a-restaurant">Google Duplex Schedules a Hair Appointment</a> - a great brain starter!</li>
+				
+					<li><strong>Additional resources on Machine Learning:</strong></li>
+				
+					<li><a href="https://www.ajlunited.org/">Algorithmic Justice League</a></li>
+				
+					<li><a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a> - <em>software used across the country to predict future criminals is racist.</em></li>
+				
+					<li><a href="https://www.sciencedaily.com/releases/2018/05/180528190839.htm">Man Against Machine: AI is better at diagnosing skin cancer than dermatologist</a></li>
+				
+					<li><a href="https://www.nytimes.com/2019/01/31/opinion/ai-bias-healthcare.html">AI Could Worsen Health Disparities</a></li>
+				
+					<li><a href="https://www.npr.org/sections/alltechconsidered/2016/03/15/470422089/can-computer-programs-be-racist-and-sexist">Can Computer Problems Be Racist and Sexist?</a></li>
+				
+					<li><a href="https://www.theguardian.com/technology/2016/mar/24/tay-microsofts-ai-chatbot-gets-a-crash-course-in-racism-from-twitter">Tay Chatbot becomes racist</a></li>
+				
+					<li><a href="https://techcrunch.com/2016/04/15/artificial-intelligence-and-racist/">Artificial Intelligence and Racism</a></li>
+				
+					<li><a href="https://alumni.berkeley.edu/california-magazine/just-in/2015-06-08/good-bad-and-robot-experts-are-trying-make-machines-be-moral">Experts are trying to make machines be "moral"</a></li>
+				
+					<li>(and on a nonserious note) <a href="https://twitter.com/KeatonPatti/status/1072877290902745089">Making a Bot Watch 1000 hours of Hallmark Movies, write script</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>What is Machine Learning?</p>
+    </div>
+    <div class="span8">
+        <p><strong>Machine learning</strong> is an application of artificial intelligence (AI) that provides a system the ability to automatically learn and improve from experience without being explicitly programmed.
+        <p>
+        Rather than coding millions of conditionals, programmers set up a model that allow machines to learn from data. After they have started learning, machines will learn from all new data that they are given.
+        <p>
+        There are lots of examples of machine learning at play that you may not even realize are driven by machine learning:<ul>
+
+        <li>Your e-mail learns what spam looks like once you start marking messages as spam and filters them automatically. (It will get better and better at doing this over time!)
+        <li>Spotify learns what kind of music you listen to and then predicts things you might enjoy. (Netflix does this, too!)
+        <li>Pinterest, Amazon, and other websites also do this when they suggest similar things you like/looked at/have purchased.
+        <li>Siri, Alexa, and other personal assistance may use machine learning to adapt to the sound of your voice, the types of requests you are making, etc.</li></ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>How do Machines Learn?</p>
+    </div>
+    <div class="span8">
+        <p>Machines must first be taught to learn. A simplified process might look something like this:<ol>
+
+            <li>A human creates a model, which is a prediction that the machine will use based on the data they have RIGHT NOW.
+            <li>Teach the model to the computer.
+            <li>Give the computer LOTS AND LOTS AND LOTS OF DATA. SO MUCH DATA. (This is called the 'training set')
+            <li>The model learns from this data and adjusts the model to fit what it is learning so it can make better predictions than with what the human initially told it. (It uses math to make these predictions better!)
+            <li>Repeat steps 3 && 4
+            <li>Keep repeating and adding new data until the computer has a high confidence in making its predictions.
+            <li>The machine has learned && keeps learning!</li></ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>How This Looks In a Basic Model</p>
+    </div>
+    <div class="span8">
+        <p>Let's imagine that it's the first day of school. A student walks in, and the teacher immediately hands her a test. The student has no idea what to do, but instead of teaching, the teacher just hands the student a page of answers. The student assumes they are correct and keeps filling them in.
+        <p>
+        Each day, the student comes in and the teacher repeats the pattern of giving a test and then a page of answers that the student fills in. Even though the student is filling in the given answers, she is still reading the questions and answer choices and learning from that. Eventually, the teacher could give her a blank test and she might remember enough to start filling in the answers on her own.
+        <p>
+        This is the basis of how a neural network, the backbone of ml5, is created, except the teacher is a programmer, and the student is the machine that is being taught to identify or answer something very specific. In the machine learning model, this test/answer page setup would happen <em>thousands</em> of times before the computer is ready to start answering on its own with confidence.
+        <p>
+        This sounds like a beautiful system, but it can be flawed. The problem with this is that we assume the teacher is giving her student the 'right answers,' and that she is learning correctly from them. What if the teacher was giving the student a times table each day, and every day was giving her answers so that 3x7=37? The student would learn incorrectly, and when asked to answer questions on their own would only know how to give the wrong answer. This can happen to machines, too, and they will then give (at best) inaccurate results, and (at worst) biased or racist results.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Working with a basic machine learning model</p>
+    </div>
+    <div class="span8">
+        <p>We are going to look at a basic machine learning example that was taught to identify what is in a picture. Usually, when computers see pictures, they just see a series of bits that tell it things like what colors go where, but the computer has no idea what's in the picture. (And even if it does know what the picture looks like, it doesn't know what to do with that information.) Our code uses ml5, a library like p5 that makes machine learning a little easier for everyone to use.
+        <p>
+        This works off of MobileNet, a model that was trained on thousands and thousands of pictures that exist in the public domain. Most of these pictures were of animals, so that is what we will test it on. Based on the confidence of the model and it's predictions, let's see if we can predict which animals it does best on!
+        <p>
+        To get to ml5 (so it can talk with our model), we need to make sure our HTML points to the ml5 library. If you've looked in the p5 library, you've seen something similar for p5!
+        <p>
+        All of this code can be found <a href="https://repl.it/@cmorgantywls/ML5precodealong">here</a> - you can click FORK and it will make a copy that you can work into on your own.
+        <p>
+        Once we've established all our libraries in the HTML of our repl.it, we can dive back into the Javascript. There is <em>a lot</em> that goes into machine learning, and we aren't expecting you to know all of it - we are just going to focus on the p5 parts that we know how to use.
+        <p>
+        Look at the javascript below. What looks familiar to p5? What is a new part of the ml5 library? Do we have any theories about what is happening? Once you've read through the code, click run (on repl.it) and see what happens.
+        <div class="sketch_container">
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Adding Arrays And A Slider To Our Model</p>
+    </div>
+    <div class="span8">
+        <p>Right now, our model is pretty boring - it's just <em>one</em> picture, and there is no way for a user to interact. We want to make this more exciting, so we are going to do the following:<ul>
+
+            <li>Create an <strong>array</strong> of different images
+            <li>Create a <strong>slider</strong> so that the user can pick an image from the array
+            <li>Make the image appear on the screen and the model make a prediction about what it is seeing.</ul>
+
+                <p>
+        First, let's create an array that can hold all of our images. The initial repl.it has some images preloaded, and we will use these for now - eventually, you can go back and add in your own set of images and replace them in the array.
+        <p>
+        To add images to an array, we can do something like this, ideally at the top of our program where it has a global scope and can be used anywhere:
+        <p><code>var listOfImg = ["cat.jpg", "dog.jpg", "mouse.jpg", "robin.jpg"]</code>
+        <p>This is great, but we haven't done anything with this array, nor do we have a way to call specific items from the array. While we could make an image randomly appear, that won't be super useful if we want to pull up information about a <em>specific</em> image. So, instead, let's create a slider that will pick an image for us. It might look something like the code below.
+        <p>
+        Notice that we have also used an array method to find the length of our array, rather than hard-coding in a number. This is useful if we want to add more images later - we don't have to worry about updating our code.
+        <p>
+        A final version of this can be found <a href="https://repl.it/@cmorgantywls/workingML5play">here</a>.
+        <div class="sketch_container">
+             <div class = "editor" id="editor_2" style="height:250px;">
+             </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Hypothesis On The Model</p>
+    </div>
+    <div class="span8">
+        <p>Your ml5 creation is currently running off of MobileNet - this is a machine learning model built by a person and trained on hundreds and thousands of free images that are in the public domain online. (Lots and lots of animal photos!)
+        <p>
+        This means that the things it has learned to identify have some <strong>bias</strong> - in this case, based on the images available and how it was taught to recognize them. There are lots of examples of machines inheriting the bias of their creators based on the model they are trained on - some example articles can be found in the resources section.
+        <p>
+        It's time for <em>you</em> to make a prediction about this model - for example, you might say, "<em>I predict that based on how it was trained, this machine will recognize types of birds with greater accuracy and higher level of confidence then it will predict types of dogs." </em>or "<em>I predict that this model will be better able to recognize people with long hair than with short hair." </em>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Test your Hypothesis on the Model && Justify your Conclusion</p>
+    </div>
+    <div class="span8">
+        <p>To test your hypothesis, you will need to find multiple images that you will load into your program and put into the array. You will probably want to find examples and non-examples for your model - if we are testing if the model is better at recognizing birds than at recognizing dogs, I will want to find images of both.
+        <p>
+        Remember, the model likes things without a busy background, so keep that in mind for accurate results.
+        <p>
+        Once you've updated your program and tested your model, answer the following:<ul>
+
+        <li>Summarize your results!
+        <li>Was your hypothesis accurate? Why do you think this? (Use data from your predictions to back up your answer!)
+        <li>How could this model be retrained to give better results?</li></ul>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_3.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

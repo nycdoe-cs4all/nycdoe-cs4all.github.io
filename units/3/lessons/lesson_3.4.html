@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-Project: Vision Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_3.4">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>Mini-Project: Vision Board</h1>
+	<h2></h2></br>
+</div>
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Prompt</p>
+    </div>
+    <div class="span8">
+        <p>People all around the world swear by making a <em>vision board</em> to set intentions around what they want their life to look like. These boards are pleasing to look at and highlight ideals the individual person is trying to achieve.
+       <p>
+       For this project, you are going to create a vision board collage full of things you'd like to bring into your life. As you are <em>collaging</em> this project, it will work best if you find images that have a transparent background to start, since it will be easy to put the images together that way.
+       <p>
+       To create your vision board, you will do the following:<ol>
+
+       <li>Gather images that represent your dream life in the coming year. (Don't care so much about the coming year? Think about your dream life after high school, or after college.)
+       <li>Figure out a way to display these images that is fun, interesting, and reinforces your dream. (If your dream is to be more organized, maybe your board reflects that!)
+       <li>Use <strong>tint</strong> to create a foreground, middle ground, background, and/or to make the images go better together.
+       <li>Make your vision board interactive! Make something change or appear when the mouse hovers over a certain area, when the mouse is clicked, or when a button is pressed.</ol>
+           <p>
+       Then, respond to the following:<ol>
+       <li>What is your vision for your life?
+       <li>How does this program capture that?
+       <li>What are things you will need to do to make your dreams a reality?</li></ol>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Sample Output</p>
+    </div>
+    <div class="span8">
+        <p><a href="https://alpha.editor.p5js.org/melisa_cald/sketches/SJqEOISfG">Example</a>
+        <p><img src="../../../images/lessons/unit_3/3.4/image1.png"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Sample Output</p>
+    </div>
+    <div class="span8">
+        <ul>
+        <li>When an object is clicked or hovered on, display a message or reminder about how to achieve that dream.
+        <li>Make an element of your vision board vary each time to program is run, or change based on key presses or clicks.
+        <li>Use a for loop to draw an image repeatedly.</li></ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_3.4/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

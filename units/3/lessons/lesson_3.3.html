@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.3 Image Manipulation (Position, Size, Tint)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_3.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>3.3 Image Manipulation (Position, Size, Tint)</h1>
+	<h2>How can I manipulate an image in p5?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity students load, display and manipulate image files of different formats, changing their placement, size and tint color. They will discuss how tint can be used to create an illusion of depth.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Use a for loop to draw multiple instances of an image  </li>
+			
+				<li> Use tint to alter the appearance of an image  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Tint </th>
+						<td> a colored overlay that adjusts the appearance of pictures. (think Instagram filters!) </td>
+					</tr>
+				
+					<tr>
+						<th> Foreground </th>
+						<td> elements at the front of a scene </td>
+					</tr>
+				
+					<tr>
+						<th> Middleground </th>
+						<td> elements in the middle of a scene </td>
+					</tr>
+				
+					<tr>
+						<th> Background </th>
+						<td> elements farthest away in the back of a scene </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://editor.p5js.org/cs4all/sketches/mk1PbEGqL">Sample project</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Load an image</p>
+    </div>
+    <div class="span8">
+        <p>In learning activity 3.1, we loaded an image file in <code>preload</code> and then displayed it in <code>draw()</code>. The code looked like this:
+     <div class="sketch_container">
+         <div class = "editor" id="editor_1" style="height:250px;">
+         </div>
+     </div>
+     <p>
+        In this activity, we are going to play with our image a bit. Just for fun, go find an image of some creature you find in nature - try to find one with a <strong>transparent background</strong> (most likely this will be a png file). When searching from Google Images, click <strong>Tools</strong> after your search, then click <strong>Colors -> Transparent</strong> to filter for images with a transparent background.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Load an image</p>
+    </div>
+    <div class="span8">
+        <p>As we've seen before, the second and third parameters of the <code>image</code> function set its position on the canvas. In the sketch below, instead of drawing our image at the canvas origin as above, we are drawing it at (x,y) = (200, 300). If we were to add a fourth and fifth parameter, so it reads <code>image(tree,200,300,100,200); </code> we would be adjusting the width and height to 100px and 200px respectively.
+        <p>
+        Before the call to <code>image</code>, we call the <code>tint</code> function. Tint causes the image to be drawn with a color fill, defined by RGB or HSB values depending on the current <code>colorMode</code>. Adding a fourth parameter for the alpha channel we could make the image transparent. In the example below the tint color uses HSB to create a slightly bluer version of our tree:     <div class="sketch_container">
+        <div class = "editor" id="editor_2" style="height:250px;">
+        </div>
+     </div>
+     <p>
+        When we change tint with high saturation and brightness, the results can be very overwhelming - however, if we are more subtle in our adjustments, they can work like Instagram filters and make images look better, or go better together.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>An experiment in opacity</p>
+    </div>
+    <div class="span8">
+        <p>Let’s add another tree, and with this one, adjust the opacity. What do you notice?
+     <div class="sketch_container">
+        <div class = "editor" id="editor_3" style="height:250px;">
+        </div>
+     </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Using tint to create depth</p>
+    </div>
+    <div class="span8">
+        <p>From an art perspective, any scene you create has a foreground, a middle ground, and a background. Check out this classical example to understand each one:
+        <p><img src="../../../images/lessons/unit_3/3.3/image1.png"/><p>
+        <p>Generally, the foreground has <strong>the warmest, most saturated colors</strong>, because you are supposed to feel that it is <em>close.</em> Warm colors tend to be reds and oranges, but sometimes we see this effect with other colors that are just very saturated. The <strong>middle ground </strong>has colors somewhere in the middle, while the <strong>background</strong> has <strong>the coolest, least saturated colors.</strong> Cool colors are generally blues, purples, and greens, but this effect can be achieved with any unsaturated color. While it's not true in this example, sometimes the background might be darker, as well, depending on the scene that is being created.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Create A Forest Scene</p>
+    </div>
+    <div class="span8">
+        <p>Find an image of a tree with a transparent background. <strong>Using several for loops,</strong> create 'rows' of trees to create a forest scene. Give each row a unique tint so that it creates the illusion of having a foreground, middle ground, and background.
+        <p>
+        An example of this is shown below:
+     <div class="sketch_container">
+        <div class = "editor" id="editor_4" style="height:250px;">
+        </div>
+     </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Challenge Yourself: Improve Your Scene</p>
+    </div>
+    <div class="span8">
+        <p>Can you add the following to your project?<ul>
+
+        <li>Add multiple tree images to an array, and select a random tree to draw each time.
+        <li>Hide several creatures within your forest - play with opacity if you want them to be super camouflaged!
+        <li>Increase the brightness of the tint on a row of trees if it is clicked on.</li></ul>
+     <div class="sketch_container">
+        <div class = "editor" id="editor_4" style="height:250px;">
+        </div>
+     </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_3.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

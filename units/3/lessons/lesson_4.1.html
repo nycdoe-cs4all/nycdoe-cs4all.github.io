@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>4.1 Fonts and Text Styling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_4.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>4.1 Fonts and Text Styling</h1>
+	<h2>How can I use custom fonts and text to enhance my programs?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity, students draw text with different fonts (both system fonts and custom ones), manipulating their placement, size, and color.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Apply basic typographic principles when adding text to their programs  </li>
+			
+				<li> Add custom fonts from websites like Google Fonts to their programs  </li>
+			
+				<li> Create and style text in p5.js  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Font </th>
+						<td> A font is a set of printable or displayable text character s in a specific style and size.  </td>
+					</tr>
+				
+					<tr>
+						<th> Serifs </th>
+						<td> Serifs are semi-structural details or small decorative flourishes on the ends of some of the strokes that make up letters and symbols. An example would be the Times New Roman font. </td>
+					</tr>
+				
+					<tr>
+						<th> Sans Serif </th>
+						<td> Sans serif does not have these details or flourishes. An example would be the Arial font. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://whatis.techtarget.com/definition/font">What is a font?</a></li>
+				
+					<li><a href="https://fontpair.co/">Google Font pairings</a></li>
+				
+					<li><a href="https://drive.google.com/open?id=13Git94LR3TgbAf1jQ3AHdOXCXjOqLSIU">What is HTML and CSS?</a></li>
+				
+					<li><a href="https://drive.google.com/open?id=0BzEvNJib39cVdmc3SXpoQVBxOFE">Papyrus</a> (SNL Skit)</li>
+				
+					<li><a href="https://www.greatbigstory.com/stories/the-rise-and-fall-of-comic-sans">The Rise and Fall of Comic Sans</a> (3 min video)</li>
+				
+					<li><a href="https://drive.google.com/open?id=1jNppnkxxvwwXEWqCSsW5RNoBYLh0BD6G">Why You Hate Comic Sans</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Draw With Fonts</p>
+    </div>
+    <div class="span8">
+        <p>To draw text in p5, we use the <code>text</code> function. Its first parameter sets the text to display, the second and third its position. Size is set calling <code>fontSize</code>.
+        <p>
+        The font can be changed by calling <code>textFont</code>. Some fonts come installed in most computers. They are called 'system fonts'. Common examples are "Arial", "Courier," "Courier New," "Georgia," "Helvetica," "Palatino," "Times New Roman," "Trebuchet MS," and "Verdana".
+        <p>
+
+         <div class="sketch_container">
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+         <p>
+        Custom fonts might be installed on our computer, but not on our user's. To ensure that our text will be displayed correctly when using less common fonts, we can follow one of the following approaches.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Not All Fonts Are Created Equal</p>
+    </div>
+    <div class="span8">
+        <p>Although there are all kinds of crazy fonts out there - fonts that look like handwriting, fonts that look like big boxy letters - the readable fonts you would typically type large chunks of text in fall into two main categories:
+            <p><img src="../../../images/lessons/unit_3/4.1/sans.png"/>
+         <p>
+             Outside of the decorative serif (the little line on the end of letters!), there are so many other issues that typographers and designers are concerned with when they add text to projects. These are not issues we will be focusing on in this lesson, but it is worth noting that things like the space between characters (<em>kerning</em>), the maximum height of characters, and even the angle of certain parts of the letters are all things professional designers think about.
+        <p>
+        General rules for web typography follow, and can be explored further <a href="https://blog.marvelapp.com/ten-tips-typography-web-design/?utm_source=weekly-newsletter&utm_medium=email&utm_campaign=marvel-newsletter-2017-12-04&utm_term=">here</a>:<ol>
+
+        <li>Keep the number of fonts used to a minimum.
+        <li>Big chunks of text should be in standard fonts (a serif or sans-serif).
+        <li>Limit line length.
+        <li>Make sure your typeface looks good in various sizes!
+        <li>Use fonts with distinguishable letters.
+        <li>AVOID ALL CAPS EVERYTHING, IT IS ANNOYING AND LOSES IMPACT.
+        <li>Don't minimize spacing between lines of text.
+        <li>Make sure you have sufficient color contrast if you expect something to be readable.
+        <li>Avoid coloring text in red and green (because of color blindness)
+        <li>Avoid using blinking text when possible (so you don't trigger seizures)</ol>
+
+        <p>
+        It's also worth knowing that some fonts come with a lot of baggage from the design community - fonts like Papyrus and Comic Sans give people a lot of strong feelings! Tread carefully if you choose to use them.<ul>
+
+        <li><a href="https://drive.google.com/open?id=0BzEvNJib39cVdmc3SXpoQVBxOFE">Papyrus</a> (SNL Skit)
+        <li><a href="https://www.greatbigstory.com/stories/the-rise-and-fall-of-comic-sans">The Rise and Fall of Comic Sans</a> (3 min video)</ul>
+        <p><img src="../../../images/lessons/unit_3/4.1/kanyegothic.jpg"/>
+        <p><img src="../../../images/lessons/unit_3/4.1/kanyeemotional.png"/>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Use a Web Font</p>
+    </div>
+    <div class="span8">
+        <p>Fonts on the web are downloaded from a server upon request. Many options are available, often for free, in websites like <a href="https://fonts.google.com/">Google Fonts</a> and <a href="https://fontlibrary.org/">Open Font library</a>. Once we have chosen a font, we can copy an 'embed' link from the website. It looks like this: <code>&lt;link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"&gt;</code>
+        <p><img src="../../../images/lessons/unit_3/4.1/google.png"/>
+        <p><img src="../../../images/lessons/unit_3/4.1/usethis.png"/>
+        <p>
+        We then paste the embed link into the <code>head</code> section of our sketches' <code>index.html</code> file:
+        <p><img src="../../../images/lessons/unit_3/4.1/p5screen.jpg"/>
+        <p>
+        Now that the web font is linked to our sketch, we can use it with <code>textFont</code> as before:
+        <div class="sketch_container">
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Use a Downloaded Font</p>
+    </div>
+    <div class="span8">
+        <p>Maybe the sites that host web fonts don't have what you're looking for - that's okay! You can download font files directly to your computer and upload them into your program so they can be used and seen everywhere.
+        <p>
+        The steps to include a downloaded font in our sketch are similar to those we took to include an image in the previous learning activity. We copy the file into our sketch folder (p5 supports the TTF and OTF file formats), load it into a variable <code>preload</code> using <code>loadFont</code>, and then set our text to it using <code>textFont</code>
+        <div class="sketch_container">
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Set the Text Stroke And Fill</p>
+    </div>
+    <div class="span8">
+        <p>p5's color-setting functions, <code>fill</code> and <code>stroke</code>, also affect text, as the text has both a line around the outside and a fill on the inside (even if sometimes it's very narrow):
+        <div class="sketch_container">
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Draw Text within a box</p>
+    </div>
+    <div class="span8">
+        <p>pWe can constrain a text to be drawn within a box by adding x, y, width, and height parameters to the call to <code>text</code>:
+        <div class="sketch_container">
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Build Your Own Font Library</p>
+    </div>
+    <div class="span8">
+        <p>Go on Google Font or any other font resources and find the following, ensuring that they all go well together:<ol>
+
+        <li>3 Serif Fonts
+        <li>3 Sans Serif Fonts
+        <li>2 Display Fonts
+        <li>2 Handwriting Fonts</ol>
+
+        <p>
+        Load each into your program and display a sample sentence in the font so you have this for reference!
+        <p>
+        You can use <a href="https://fontpair.co/">https://fontpair.co/</a> as a reference to figure out which font pairings work well depending on the message or text you're trying to display.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Extension</p>
+    </div>
+    <div class="span8">
+        <p>As an extension, create an array of sentences the computer will randomly choose from to display. If you need more, try to make the computer pair a random serif and display, etc for two random sample sentences each time the program is run.
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_4.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>
