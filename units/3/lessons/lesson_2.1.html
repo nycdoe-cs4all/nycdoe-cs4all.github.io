@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.1 Introduction to Arrays</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_2.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>2.1 Introduction to Arrays</h1>
+	<h2>How can arrays help us simplify code?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this lesson, students will be introduced to the concept of arrays.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Explain how an array can be used instead of multiple variables  </li>
+			
+				<li> Create arrays  </li>
+			
+				<li> Retrieve information from arrays  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Array </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Index </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> Element </th>
+						<td> The while loop loops through a block of code as long as a specified condition is true. </td>
+					</tr>
+				
+					<tr>
+						<th> Zero-Indexed </th>
+						<td> The first element of an array has an index of 0, not 1 </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">7.1 What is an Array?</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code </a>(6.1)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 9. Arrays</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</strong></li></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>What Are Arrays?</p>
+    </div>
+    <div class="span8">
+        <p>
+        Computer scientists spend a lot of time thinking about information. After all, computers are just tools to manipulate pieces of information in certain ways. Before computers were around, humans invented lots of different ways to store information. The library was given the Dewey Decimal system, in which numbers were associated with the information in certain books. That's a pretty complicated way of storing information.
+     <p>
+     But one way of storing information that you've definitely used before is a list. Maybe you've made a list of people to invite to your birthday. Maybe you made a list of things to buy at the grocery store. Something useful about lists is that they're one object themselves: you don't have to carry around a lot of different scraps of paper containing the name of everything you want to get at the store. You can just carry the list. And lists can change - you can cross something off a list, add something to a list, or replace one element with another. So how can we translate the efficiency and usefulness of a list to coding? Simple: we use an <strong>array</strong>.
+     <p>
+     By now, you should understand what a variable is. It's a name that you give to a piece of data or information. You can change the value of the variable, but the name will always stay the same. Sometimes, we need to create many variables, which can get really complicated really quickly. But with arrays, we can store many separate values in one variable name. How does it work?
+     <p>
+     Think of variables and arrays like buildings. Let's say you want to count the number of people on each floor of a building. If the building only has one floor, it's easy, right? You can just say "The building has 30 people in it." But if we're thinking about the Empire State Building, it's harder than that. You need to find a way to talk about the number of people on each floor of the Empire State Building.
+     <p>
+     So how would you say that in real life? You'd probably say something like "There are 20 people on the first floor, 30 people on the second floor, 32 people on the third floor…" and so on. And we all know you're talking about the same building, the Empire State Building, you're just referring to each floor separately.
+     <p>
+     So you can think of an array as something similar. It's a bunch of different values, but with the same name. And we write it in a similar way as we would talk about buildings with floors. If we had a variable that held the number of people on the ground floor of a single-story building, the declaration might look something like this: <code>var building = 30;</code>. But if we're talking about a building with many floors, our array might look like this:<code> building[0] = 25;</code> <code>building[1] = 40, building[2] = 30;.</code> Notice the '<code>[ ]</code>' after the name of our variable? That's where we put the <strong>index</strong>, or number, of the <strong>element</strong>, or specific value within the array, that we want to access or change.
+     <p>
+         <img src="../../../images/lessons/unit_3/2.1/image1.png"/><p>
+    <p>
+        Using the syntax, and assuming this is the building we're talking about, what would <code>building[3]</code> be equal to? What about <code>building[1]</code>?
+        <p>
+        You may have noticed something weird. When I was declaring values in the array, I started with <code>building[0]</code>. Why did I do that, and not start with <code>building[1]</code>? Because in p5, arrays are <strong>zero-indexed</strong>, which means they start at zero. Think of it like a building that counts the ground floor as zero and starts counting at one after you've gone up a floor.
+        <p>
+        Here's another way of thinking about what an array looks like.
+    <p>
+        <img src="../../../images/lessons/unit_3/2.1/table.png"/><p>
+    So here, assuming our array is named "colors," we can access the array using the syntax we learned earlier. <code>Colors[2]</code> would equal 'green', and <code>colors[0]</code> would equal 'red'. What would <code>colors[4]</code> equal? Let's test this, using <code>console.log()</code>.
+
+    <p><a href="https://editor.p5js.org/cs4all/sketches/zPPyXXzoQ">Click here for the example!</a>
+     <p>
+         Notice that we have two different arrays printing out different types of data to the console!
+        <p>In p5, arrays can hold any type of data. They can hold numbers, text, or Boolean (true or false) values. We can declare an array like we would a variable, but by listing out the values in the declaration, we can create the array quickly. If I wanted to declare the above "colors" array,  I would simply write <code>var colors = [ 'red', 'blue', 'green', 'yellow', 'orange']</code>;
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Make a Building</p>
+    </div>
+    <div class="span8">
+        <p>It’s time to put our new knowledge of arrays to work! We’ve been using the building analogy to describe what an array is, so let’s actually put it into practice and design a building!
+            <p>Your building can look any way you want – as long as it has three or more floors, all different colors. And how do we store these colors? In an array, of course! You can make each floor an ellipse, a rectangle, even a triangle. But when it comes to using fill() to color each floor, remember -- you should be getting the color value from your array.
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+
+</div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        <p>After you complete your project think about the following and try out this challenge:
+            <ol><li>How could you maybe use another array to make your code even easier to understand and more simple?
+                <li>What other values are you changing for each floor?
+                <li>Could you change the text used for colors to RGB values instead?
+                <li>Is there a way to do that using one array instead of three?</ol>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_2.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.5 Nested For Loops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_1.5">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>1.5 Nested For Loops</h1>
+	<h2>How can we use iteration to abstract artwork?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p> In this learning activity, students will create a grid using nested for loops.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Create for loops  </li>
+			
+				<li> Nest two for loops  </li>
+			
+				<li> Create a grid of shapes  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Loops </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Iterations </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> For Loop </th>
+						<td> The for loop loops through a block of code a specific number of times </td>
+					</tr>
+				
+					<tr>
+						<th> Nested Loop </th>
+						<td> one loop is running inside of another loop </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">4.1 While and for loop</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code</a>(4.1a to 4.2b)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 6. Loops</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Add A Column To Your Row</p>
+    </div>
+    <div class="span8">
+        <p>
+            In a previous lesson, we drew rows and columns using for loops. Here is an example of how we accomplished that using multiple for loops. The first for loop increments the x position creating a row of ellipses and the second loop increments the y position creating a column of ellipses.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Draw A Grid With Multiple For Loops</p>
+    </div>
+    <div class="span8">
+        <p>
+        Try creating a grid using the method that we used in the past. You can start with a row and just a few columns, just to get an idea of how tedious it would get to program each column separately. In the example below I drew four columns and the code is already pretty long.
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+         <p>If we think about it,  we want to draw a column of circles for each of the circles in our row. When x=20, we want to draw a column at 20, when x= 40, we want to draw a column there too. Take a look at this animation: each time we draw a circle in the top row (with y = 60), we also draw another two (with y = 90 and y = 120): x is incrementing by 30, and each time 30 is added to x, a column is created as well with y incrementing by 30 until it reaches the height of the canvas.
+         <img src="../../../images/lessons/unit_3/1.5/rows.gif"/><p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Nested Loops</p>
+    </div>
+    <div class="span8">
+        <p>There is a short and easy way to do this in code with a “nested for loop.” A nested loop means one loop is running inside of the other loop.
+        <p>We’ve actually seen this before. We are running a for loop inside of a draw loop. The for loop repeats a block of code, and the draw loop repeats all of the code that is inside it as well. That’s how we created our drawing app. The draw loop would run again and again and redraw our ellipse in the location of our mouse.
+        <p>You might think that if this is the case, when we draw ellipses in a for loop, we should see the ellipses being drawn one at a time (like the animation above) because an ellipse should only be drawn once every time the draw loop runs, but in fact the draw loop only updates once everything inside of it has been run, including the entire for loop.
+         <img src="../../../images/lessons/unit_3/1.5/draw.png"/><p>
+        <p>If we nested a for loop inside of another for loop, the same concept would apply. The nested loop would run until completed each time the exterior loop is run. In the example below we draw an ellipse at an x location with the variable x and a y location with the variable y. X is incremented by 30 in the outer for loop (which will draw a row) and in the inner for loop, y is incremented by 30 (which will draw a column).
+        <p>Each time the x loop is run, it draws an ellipse in the row,  as well as an entire column at that x location as illustrated by the animation above.  Since this canvas is 120 pixels high, and three ellipses will be drawn per column before the condition y &lt; width is no longer true and the loop is completed, the inner loop will run three times for every one time that the outer loop is run.
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_2" style="height:250px;">
+            </div>
+        </div>
+        <p>The first time the outer for loop runs, x is 30. Then the inner for loop runs. y starts at 30. A circle is drawn. y is set to 60. The second circle is drawn, 30 px below the first. Then y is set to 90, and a third circle is drawn, 30px below the previous one. Now the inner for loop is done, the outer loop sets x to 60, and the cycle continues.
+        <p>It’s ok if the concept doesn’t click right away. You can still use the formula to create grid systems in your code.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #2: Use A Nested For Loop To Turn Your Design Into A Grid</p>
+    </div>
+    <div class="span8">
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_3" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_1.5/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

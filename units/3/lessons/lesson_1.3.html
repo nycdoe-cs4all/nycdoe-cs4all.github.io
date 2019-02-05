@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.3 For Loops II</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_1.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>1.3 For Loops II</h1>
+	<h2>How can we use iteration to abstract artwork?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity, students will expand their understanding of for loops by using them to draw repeated designs on the y-axis in addition to the x-axis.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Create for loops  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Loops </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Iterations </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> For Loop </th>
+						<td> The for loop loops through a block of code a specific number of times </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">4.1 While and for loop</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code</a>(4.1a to 4.2b)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 6. Loops</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Drawing Columns</p>
+    </div>
+    <div class="span8">
+        <p>
+        Try drawing a vertical column instead of a horizontal row. We will need to change the y value instead of the x value. Remember that if you want to draw repeated shapes filling the height of the canvas, your condition will be <code>(y &lt; height)</code>, and not width. <a href="http://alpha.editor.p5js.org/ehersh/sketches/SJ6uKH4ig">Example</a><p>
+        <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Diagonal Line</p>
+    </div>
+    <div class="span8">
+        <p>
+        Say we wanted to increment both the x and y value each time the loop runs. Incrementing and x and y value of a repeating shape each loop would result in a diagonal line. Try incrementing both the x and y values in your for loop. There are a few ways that you can do this, but the simplest way might be to use the same variable for the x and y location of your shapes.
+         <p>
+         In this example, the x and y locations are contained in the variable y. The first shape is therefore drawn at the x-location 0  and the y-location 0. The shapes are incremented by 40 as long as y is less than or equal to the height of the canvas which is 600. <a href="http://alpha.editor.p5js.org/ehersh/sketches/Sk0weIVoe">Example</a>.
+         <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_2" style="height:250px;">
+             </div>
+         </div>
+         <p>We can see the diagonal line, but it doesn’t cover the entire canvas. Let’s see what happens if we draw a square canvas so that the width and height are equal.
+             <div class="sketch_container">
+                 <iframe id="canvas_iframe_3"  src="" width="600px" height="600px"></iframe>
+                 <div class = "editor" id="editor_3" style="height:250px;">
+                 </div>
+             </div>
+        <p>This design looks a lot more symmetrical, but we won’t always have a square canvas. Sometimes we will want to use the same variable to increment multiple values (like both the x and y location) but we will want to adjust the variable for one of the values.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Adjusting Variables Inside A Loop</p>
+    </div>
+    <div class="span8">
+        <p>In the previous example, we had a canvas that was 600 pixels in width and 120 pixels in height.  The width of the canvas was 5 times larger than its height. If I wanted to draw a diagonal line from the upper left corner of the canvas to the lower right, each shape would need to be incremented by 5 times the number of pixels on the x-axis compared to the y-axis.
+        <p>We can accomplish this by adding an x variable instead of using the same variable for both the x and y location, and if the y variable is incrementing by 10 <code>(y=y+10)</code>, the x variable can increment by 50 <code>(x=x+50)</code>, I simplified the design to clarify this concept.<p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_4" style="height:250px;">
+            </div>
+        </div>
+
+        <p>We can achieve the same result using only 1 variable  by doing a little math inside of our for loop structure. We can use the same variable for the x and y locations of our shapes, but we can multiply the x location by 5.<p>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise: Design Using Multiple For Loops</p>
+    </div>
+    <div class="span8">
+        <p>Use loops to repeat your design in multiple directions. You can create a column and row, two diagonals at different angles, or maybe an X if you are up for a challenge.<p>
+            <div class="sketch_container">
+            <iframe id="canvas_iframe_6"  src="" width="600px" height="600px"></iframe>
+            <div class = "editor" id="editor_6" style="height:250px;">
+            </div>
+        </div>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_7"  src="" width="600px" height="600px"></iframe>
+            <div class = "editor" id="editor_7" style="height:250px;">
+            </div>
+        </div>
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_8"  src="" width="600px" height="600px"></iframe>
+            <div class = "editor" id="editor_8" style="height:250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_1.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

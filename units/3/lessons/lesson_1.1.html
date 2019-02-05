@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.1 While Loops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_1.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>1.1 While Loops</h1>
+	<h2>How can we use iteration to abstract artwork?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This lesson introduces repetition using while loops. Students will create a sketch with a repeated element to fill a specific space.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Explain how the components of the while loops are essential to efficiency  </li>
+			
+				<li> Create while loops  </li>
+			
+				<li> Use while loops to generate multiple shapes  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Loops </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Iterations </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> While Loop </th>
+						<td> The while loop loops through a block of code as long as a specified condition is true. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">4.1 While and for loop</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code</a>(4.1a to 4.2b)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 6. Loops</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Draw the Same Shape Many Times</p>
+    </div>
+    <div class="span8">
+        <p>
+        Suppose we want to draw five circles on a horizontal line, 100 pixels apart from each other. We might do it this way:
+         <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+         <p><a href="http://alpha.editor.p5js.org/cs4all/sketches/SJBdyZeVZ">Now draw these ellipses 50 pixels apart from each other.</a>
+         <p>
+         It's very tedious to recalculate all of the x positions and update them for all five ellipses.
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Repeat Shapes With A While Loop</p>
+    </div>
+    <div class="span8">
+        <p>In writing the code above, we followed a thought process similar to this:
+        <p>
+        <img src="../../../images/lessons/unit_3/1.1/repeat.jpg"/><p>
+        Our ellipse on the left of the screen begins our row of ellipses is at 100 pixels.  We draw a new one every 100 pixels, so there's one at 200, another at 300 etc. We want a new ellipse every 100 pixels until we get to the end of the screen. We can do this with a few lines of code instead of programming each ellipse separately.
+        <p>
+        We already know how to write conditional statements, so we can just write a statement that says, the x location of the ellipse is 100, <span style="text-decoration:underline;">if</span> x is less than the width of the canvas, then draw an ellipse at x and add 100 to x every time you draw an ellipse.
+        <p>
+        We can approximate this process in code like this:
+        <p>
+        <img src="../../../images/lessons/unit_3/1.1/repeatpseudo.jpg"/><p>
+        <a href="https://editor.p5js.org/cs4all/sketches/ByzqJ-lNW">Try it and see what happens. </a>
+        <p>
+         The following example shows the conditional statement that we just described. We declared a variable called x and initialized it to 100. If x is less than the canvas width, we drew an ellipse at the x-location of x (which is 100), but then increased x by 100.
+        <p>
+        You'll notice a line of code "console.log(x)". Our console helps us debug our code and will write the value in the parentheses into the console. In this case, it shows us that x did indeed increase by 100, but there is still only 1 ellipse on the screen. If the value of x is now 200, why is there no ellipse drawn at 200 as well?
+        <p>
+        <img src="../../../images/lessons/unit_3/1.1/topconsole.png"/><p>
+        <img src="../../../images/lessons/unit_3/1.1/console.png"/><p>
+
+        You might remember when we began to work with conditional statements that we spoke about how a conditional runs until it evaluates to "true" and then it moves on. In this case, if x is less than width (which it is to begin with), an ellipse will be drawn at x, and x will be increased by 100. Then the code will continue until the end of the draw loop and repeat the draw loop again (which sets x to 100 all over again.)
+        <p>
+        We need that conditional statement to <strong>repeat</strong> itself <strong>until</strong> the conditional is no longer true.
+        <p>
+         There is a <em>control structure</em> called while loop that does this for us and it's one structure that we use for repetition. A control structure is a block of code that dictates the flow of the code:
+
+         <p>
+         <img src="../../../images/lessons/unit_3/1.1/varx.jpg"/><p>
+         There are three steps we need to take to have our while loop work correctly. <ol>
+
+         <li>We declare and initialize a variable.  Initializing a variable is setting the initial value for that variable, or where you want it to start. In this case, we would like to it begin at 100 pixels.
+         <li>We check whether it meets a condition. The condition is inside the parentheses. We want to execute the code in the brackets on condition that x is still less than the width of the canvas.
+         <li>We change the value of that variable in a way that will eventually make it meet the condition. In the code below, 100 is added to x inside the brackets. Every time the code is run x will increase by 100 until it's value is larger than the width of the canvas. Then the loop will be completed and the program will move on in the code.</ol>
+         <p>
+             <img src="../../../images/lessons/unit_3/1.1/varxred.jpg"/><p>
+         <a href="http://alpha.editor.p5js.org/cs4all/sketches/HJUxl-eN-">When we run this code we will see the same result that we saw when we programmed each individual ellipse 100 pixels apart. </a>
+         <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_2" style="height:250px;">
+             </div>
+         </div>
+         <p>
+         Our code is cleaner now, but the benefit of using a while loop is how easily we can change it. Say I wanted a row of ellipses with the same spacing, but I wanted the row to start at the beginning of the canvas.
+         <p>
+         I will "initialize" variable x to 20 because the ellipse is 40 pixels wide and if I set x to 0, half of my ellipse would be off the canvas.
+         <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_3" style="height:250px;">
+             </div>
+         </div>
+         <p>
+         Notice how the program added an extra circle and we didn’t even have to ask. That happens because the program will continue to draw circles as long as x is less than the width of the canvas.
+         <p>
+         The spacing between the shapes is based on the number by which we increment the variable. In the previous examples, we added 100 to x every time the loop ran. What happens if we only increment the variable by 40 (the width of the ellipse)?
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_4" style="height:250px;">
+             </div>
+         </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise 1: Play With While Loops</p>
+    </div>
+    <div class="span8">
+        <p>Use the loop to make the following changes:<ul>
+
+     <li>Start the row at the left end of the canvas
+     <li>Draw the ellipses 50 pixels apart
+     <li>Draw ellipses only on the left half of the canvas</ul>
+
+    <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_5" style="height:250px;">
+             </div>
+         </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #2: Use a while loop with multiple shapes</p>
+    </div>
+    <div class="span8">
+        <p>Now that we know how to draw a shape repeatedly by incrementing a variable, we can think about adding other shapes to our loop that also use our x variable. Try creating a design that you can repeat inside a while loop.
+        <p>The following example uses multiple ellipses with the same location but with different sizes.
+            <div class="sketch_container">
+                <iframe id="canvas_iframe_6"  src="" width="600px" height="auto"></iframe>
+                <div class = "editor" id="editor_6" style="height:250px;">
+                </div>
+            </div>
+        <p>This example requires thinking about how to draw more shapes and place them in relation to the x variable which we have done before in a previous lesson.
+            <div class="sketch_container">
+                <iframe id="canvas_iframe_7"  src="" width="600px" height="auto"></iframe>
+                <div class = "editor" id="editor_7" style="height:250px;">
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_1.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

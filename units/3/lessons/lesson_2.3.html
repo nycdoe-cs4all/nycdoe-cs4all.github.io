@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.3 Arrays and Loops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_2.3">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>2.3 Arrays and Loops</h1>
+	<h2>How can the random and floor functions be used to pick from an array?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this lesson, students will be introduced to the idea of randomly choosing elements from arrays.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Explain how the random() function serves to return a random number  </li>
+			
+				<li> Explain how the floor() function returns the input, rounded down  </li>
+			
+				<li> Use the combination of random() and floor() to select random elements from arrays  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Array </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Index </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> Element </th>
+						<td> The while loop loops through a block of code as long as a specified condition is true. </td>
+					</tr>
+				
+					<tr>
+						<th> Zero-Indexed </th>
+						<td> The first element of an array has an index of 0, not 1 </td>
+					</tr>
+				
+					<tr>
+						<th> <code>random()</code> </th>
+						<td> Returns back a random number in between its parameters </td>
+					</tr>
+				
+					<tr>
+						<th> <code>floor()</code> </th>
+						<td> Returns the input number rounded down </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">7.1 What is an Array?</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code </a>(6.1)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 9. Arrays</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</strong></li></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Arrays and Loops</p>
+    </div>
+    <div class="span8">
+        <p>We learned about loops recently -- they let you repeat a piece of code many times over. It turns out that loops are especially useful and powerful when joined with arrays! Let’s think of a real-world example.
+        <p>Say you have a list of all your friends and their heights. You’re an artist, so you like to draw your friends to perfect scale. In real life, you would go through the list, read the height, and draw your friend. You’d be repeating your steps for each member of the list. This is a real-life loop! It’s something you can easily do in code, too -- you can write code to draw objects based on some elements stored in an array.
+        <p>Review: For loops start by initializing a variable, then they check for a condition, increment the variable, and execute a task until the condition is met.
+        <p>Let’s look at an example using colors!
+     <div class="sketch_container">
+         <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+         <div class = "editor" id="editor_1" style="height:250px;">
+         </div>
+     </div>
+     <p>
+         We want to be able to draw three rectangles in a row.
+         <ul><li>The colors for each rectangle will be stored in an array.
+             <li>Each rectangle should be at a position of 100 more than the rectangle before it. </ul>
+         <p>So in order to draw each rectangle:
+             <ol><li>We loop through the number of colors in the array, fill with the current color
+                 <li>And then draw the rectangle itself at a different position.
+            </ol>
+        <p>Remember, the “i” variable is the current index of the array on that iteration through the loop.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Make a rainbow snowman</p>
+    </div>
+    <div class="span8">
+        <p>Scientists have recently discovered a big advance in snowman-building technology. Gone are the days of cheery stovepipe hats and coal smiles. Gone are the days of carrot noses. Modern snowmen, like modern buildings, are one thing, and one thing only: tall.
+        <p>Scientists have developed a way of creating 7-snowball-high snowpeople that are colored in every shade of the rainbow. Your mission, should you choose to accept it, is to create a rainbow snowman using one, and only one, for loop to determine both the position of each ellipse, the size of each ellipse, and the color of each ellipse. Your snowman should come out looking something like this.
+
+     <div class="sketch_container">
+         <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+         <div class = "editor" id="editor_2" style="height:250px;">
+         </div>
+     </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+
+        <p>Upon clicking, randomize or reverse the order colors or the sizes!
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_2.3/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

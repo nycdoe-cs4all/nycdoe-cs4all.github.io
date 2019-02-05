@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.2 For Loops I</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_1.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>1.2 For Loops I</h1>
+	<h2>How can we use iteration to abstract artwork?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity introduces repetition using for loops. Students will alter their code from the previous lesson to demonstrate an understanding of the structure of a for loop. They will change the values inside the for loop to achieve different results in their design.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Explain how the components of the while loops are essential to efficiency  </li>
+			
+				<li> Create for loops  </li>
+			
+				<li> Use for loops to generate multiple shapes  </li>
+			
+				<li> Explain the difference between while and for loops  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Loops </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Iterations </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> For Loop </th>
+						<td> The for loop loops through a block of code a specific number of times </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">4.1 While and for loop</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code</a>(4.1a to 4.2b)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 6. Loops</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Draw the Same Shape Many Times</p>
+    </div>
+    <div class="span8">
+        <p>
+        Suppose we want to draw five circles on a horizontal line, 100 pixels apart from each other. We might do it this way:
+         <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Draw two rows of any shape. Use a while loop to draw the first row and a for loop to draw the second.</p>
+    </div>
+    <div class="span8">
+        <p>Change the y location so that they don't overlap, and you can change the color as well. <a href="http://alpha.editor.p5js.org/ehersh/sketches/rJ78QrVse">Notice how the result is the same, but the code used in a for loop is more concise. </a>
+     <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_2" style="height:250px;">
+             </div>
+         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #2:  Return to your designs from the previous assignment and repeat your design with a different Y value using a for loop.</p>
+    </div>
+    <div class="span8">
+     <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_3" style="height:250px;">
+             </div>
+         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #3: Play with for loops</p>
+    </div>
+    <div class="span8">
+     <p>For loops take some practice. Remove the while loop from your code and play with the variables inside the for loop to achieve different results. Pay attention to what each element in the loop controls.
+    <p>In this example, I initialized the x variable as 0 so the row begins on the left side of the canvas, incremented the x location by 50 pixels so that they are drawn closer together, and only drew them on condition that x is less than or equal to width/2 so that they are only drawn on the left half of the canvas.
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_4" style="height:250px;">
+             </div>
+         </div>
+        <p>Notice how easy it is to create different versions of the same design. Imagine how long it would take to change the spacing, size, and location of multiple shapes if we programmed each one individually.
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_1.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

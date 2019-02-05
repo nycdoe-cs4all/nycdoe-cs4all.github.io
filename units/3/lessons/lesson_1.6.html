@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-Project: Wallpaper Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_1.6">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>Mini-Project: Wallpaper Design</h1>
+	<h2>How can we use iteration to abstract artwork?</h2></br>
+</div>
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Prompt</p>
+    </div>
+    <div class="span8">
+        <p>
+            You recently have been hired by Microsoft’s design team to create 2 new wallpapers for their new line laptops. In order to boost sales and reach out to many different audiences, Microsoft would like these wallpapers to have some different color themes and use repetition. Be as creative and original as possible!
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Task</p>
+    </div>
+    <div class="span8">
+        <p>
+            Create 2 variations of a desktop background using repeated elements. The design should be easily altered by changing the values in the for loop to create variations in the design.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Requirements</p>
+    </div>
+    <div class="span8">
+        <p>
+            <ol><li>Your canvas size should be (800 x 450)
+                <li>The program should include at least one for loop.
+                <li>The for loop(s) should be used to increment values such as width, height, or color.
+                <li>Variations should result from changing different values in the loop. Tthe designs should not only vary in color. Play with size, number of repetitions etc.
+                <li>Save three different variations of the same design.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Writing Prompt</p>
+    </div>
+    <div class="span8">
+        <p>
+            Write a paragraph explaining what your wallpaper means to you and why it should be added to a new line of laptops by Apple or Microsoft.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Examples</p>
+    </div>
+    <div class="span8">
+        <p>
+        <img src="../../../images/lessons/unit_3/1.6/red.png"/><p>
+        <img src="../../../images/lessons/unit_3/1.6/multicolor.png"/><p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        <p>
+        Randomize your wallpaper!
+        <p>Use the random function to generate variations of your wallpaper.
+        <p>It should randomize the size or color of the shapes while keeping the same design in place.<p>
+
+        <img src="../../../images/lessons/unit_3/1.6/first.gif"/><p>
+        <img src="../../../images/lessons/unit_3/1.6/second.gif"/><p>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_1.6/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

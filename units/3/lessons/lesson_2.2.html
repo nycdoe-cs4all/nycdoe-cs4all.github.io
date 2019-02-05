@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2.2 Arrays and floor()</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_2.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>2.2 Arrays and floor()</h1>
+	<h2>How can the random and floor functions be used to pick from an array?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this lesson, students will be introduced to the idea of randomly choosing elements from arrays.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Explain how the random() function serves to return a random number  </li>
+			
+				<li> Explain how the floor() function returns the input, rounded down  </li>
+			
+				<li> Use the combination of random() and floor() to select random elements from arrays  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Array </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Index </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> Element </th>
+						<td> The while loop loops through a block of code as long as a specified condition is true. </td>
+					</tr>
+				
+					<tr>
+						<th> Zero-Indexed </th>
+						<td> The first element of an array has an index of 0, not 1 </td>
+					</tr>
+				
+					<tr>
+						<th> <code>random()</code> </th>
+						<td> Returns back a random number in between its parameters </td>
+					</tr>
+				
+					<tr>
+						<th> <code>floor()</code> </th>
+						<td> Returns the input number rounded down </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">7.1 What is an Array?</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code </a>(6.1)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 9. Arrays</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</strong></li></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>What Are the <code>random()</code> and <code>floor()</code> functions?</p>
+    </div>
+    <div class="span8">
+        <p>
+        The <code>random()</code> function does one amazing thing - it gives us a number, randomly chosen. Thankfully, it's controlled chaos. We can tell the random function that we want a number between, say, 3 and 7. Or 5.894858 and 9.483984.
+         <p>
+         If I write <code>var num = random(4, 9);,</code> <code>num</code> will be equal to a number that is greater than or equal to four, and less than nine. The problem there is that that number could very well be 5.93943. If we want to be able to use this function to pick an element from an array, we need to make sure that the random() function is returning a whole number.
+         <p>
+         In order to do this, we can use another function called <strong><code>floor()</code></strong>. This will take any decimal number and round it down to the nearest whole number. <code>floor(5.9058588585)</code> will equal 5, as will <code>floor(5.48484)</code> and <code>floor(5.00000)</code>.
+         So if we have an array called "colors" with 4 elements in it, we could run the following code:
+         <p><a href="https://editor.p5js.org/cs4all/sketches/SQkygHgl_">Click here for the example!</a>
+     <p>
+         And the console output would be a random element from that array.
+         <p>
+         If we don't know the length of the array or we want to keep changing it, we can use the array length property. Luckily arrays can store properties about themselves, such as the size or current length of the array. For example<code> console.log(words.length)</code> will print you the current length of an array called <code>words</code>.
+         <p>
+         So we could say<code> random(0, colors.length)</code>.
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Pull Values From An Array To Set Or Change The Color Of Multiple Shapes</p>
+    </div>
+    <div class="span8">
+        <p>Let’s set up a sketch with a few shapes. In my example, I’ve included a rectangle and a circle. Declare an array with colors in it, and set the colors equal to randomly chosen elements from that array. See the example for how to do that! Now, every time you reload the sketch, the shapes will update with different colors.
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #2: Fortune Cookie Message Generator</p>
+    </div>
+    <div class="span8">
+        <p>Pick 10 fortune cookie messages from this <a href="https://quotes.yourdictionary.com/articles/funny-fortune-cookie-sayings.html">list</a>, store them in an array, and whenever the user loads the sketch, a different text message will be displayed.
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        <p>Use <code>random()</code> and multiple arrays to create one of the following:
+            <ul><li>Group pairing program - Create a program that randomly pairs students in your class in a group project.
+                <li>Mad lib generator - Create a program that randomly inserts words in an existing sentence to make it funny, surreal, or just plain weird.
+                <li>Bonus: Make it interactive. Update or modify the parameter(s) whenever you press play, click, or press a key.</ul>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_2.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

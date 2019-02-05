@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.4 Variation In For Loops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_1.4">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>1.4 Variation In For Loops</h1>
+	<h2>How can we use iteration to abstract artwork?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>In this learning activity, students will expand their understanding of for loops by using them to draw repeated designs with varying sizes and colors.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Create for loops  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Loops </th>
+						<td> A sequence of instructions that is repeated until a certain condition is met. </td>
+					</tr>
+				
+					<tr>
+						<th> Iterations </th>
+						<td> The repetition of a process or utterance. </td>
+					</tr>
+				
+					<tr>
+						<th> For Loop </th>
+						<td> The for loop loops through a block of code a specific number of times </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=cnRD9o6odjk&t=500s">4.1 While and for loop</a> | <a href="https://github.com/CodingRainbow/Rainbow-Code/tree/master/p5.js">Code</a>(4.1a to 4.2b)</li>
+				
+					<li><a href="http://learningprocessing.com/examples/">Learning Processing</a>: Chapter 6. Loops</li>
+				
+					<li><a href="https://p5js.org/books/">Getting Started With p5.js</a>: Chapter 4. Variables (Section: Repetition)</li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Incrementing Size</p>
+    </div>
+    <div class="span8">
+        <p>
+            Until now, we used our growing values inside of our loops to adjust the location of our shapes, but our growing x value can be used to play with other parameters apart from the ellipse's position. Here, we use an incrementing x value to change the circles' sizes: Notice how in this code, the x variable is also used for the width and height of the ellipse but it is divided by 10.<p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_1"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
+             </div>
+         </div>
+         <p>
+             We saw the concept of adjusting the existing variable to better fit the parameter in the previous lesson when we multiplied the x location by 5 to allow the diagonal line to fit the canvas. In this case the x variable is being divided by 10 when used for the size. X is being incremented by 100 in our loop. Let’s see what happens when we don’t divide x and just use the variable for the size of the ellipses.
+         <p>
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_2"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_2" style="height:250px;">
+             </div>
+         </div>
+         <p>It’s hard to see, but our ellipse begins at 100 pixels in width and height, and then increments to 200,300, etc. Our canvas is only 400 pixels in height, which means that when x=400, the ellipse is already too big for our canvas.
+             <p>When we divide x by 10 however, the first ellipse is 10 pixels in height and width since x is set to 100 and 100/10=10. In the second loop x=200. 200/10=20, so our second ellipse is 20 pixels in height and width. This process continues and our ellipse grows but at increments that better fit our canvas.
+         <div class="sketch_container">
+             <iframe id="canvas_iframe_3"  src="" width="600px" height="auto"></iframe>
+             <div class = "editor" id="editor_3" style="height:250px;">
+             </div>
+         </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Incrementing Color</p>
+    </div>
+    <div class="span8">
+        <p>We can increment color the same way. Use x for any value and divide x to achieve the effect that you want.
+            <div class="sketch_container">
+                <iframe id="canvas_iframe_4"  src="" width="600px" height="auto"></iframe>
+                <div class = "editor" id="editor_4" style="height:250px;">
+                </div>
+            </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise 1: Incrementing Color in a For Loop</p>
+    </div>
+    <div class="span8">
+        <p>
+        <a href="http://alpha.editor.p5js.org/cs4all/sketches/r1xEB4eEZ">Play with these values and note the changes in the ellipses.</a> Try using x for the other color values or for alpha so that the ellipses range from transparent to opaque.
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_5"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_5" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Specific Numbers of Repetition</p>
+    </div>
+    <div class="span8">
+        <p>
+        We can also use loops to create a specific number of elements and alter a value inside of the loop itself. This is a very common way to use for loops. In this example I wanted to draw 5 ellipses and so I wrote a loop that would run 5 times. I decreased the size of the ellipse inside of the loop so that we will get a smaller circle every time.
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_6"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_6" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #2: Create a design with an incrementing color or size value</p>
+    </div>
+    <div class="span8">
+        <p>
+        In the example below I iterated on my smiley face designs and added a mouth that opens a little bit more with each face that is drawn.
+        <div class="sketch_container">
+            <iframe id="canvas_iframe_7"  src="" width="600px" height="auto"></iframe>
+            <div class = "editor" id="editor_7" style="height:250px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_1.4/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>
