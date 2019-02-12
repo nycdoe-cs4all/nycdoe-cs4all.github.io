@@ -1,19 +1,13 @@
 function setup() {
-  createCanvas(600, 120);
+  createCanvas(600, 200);
 }
 
 function draw() {
   background(220);
 
-  ///(initialize the variable; check for a condition; increment the variable)
-  for (var x = 0; x < width; x = x + 25) {
-    noStroke();
+  for (var x = 0; x < width; x = x + 100) {
+      fill(0,0,x);
 
-    //use the incrementing variable for the red value.
-    //Divide it by 2 so that it increments less drastically
-    fill(x / 2, 0, 0);
-
-    //draw an ellipse with the x location of the variable called x
-    ellipse(x, 60, 20, 20);
+    ellipse(x, 100, 40, 40);
   }
 }

@@ -1,4 +1,4 @@
-var tree
+var tree;
 
 function preload() {
   tree = loadImage("birch.png")
@@ -14,17 +14,17 @@ function setup() {
 function draw() {
   background(220);
 
-  for(x=0; x<300; x+=50){
+  for(x=0; x&lt;300; x+=50){
     tint(180,70,60)
     image(tree,x,0,150,200);
   }
 
-  for(x=0; x<300; x+=50){
+  for(x=0; x&lt;300; x+=50){
     tint(70,50,60)
     image(tree,x,100,150,200);
   }
 
-  for(x=0; x<300; x+=50){
+  for(x=0; x&lt;300; x+=50){
     tint(20,20,80)
     image(tree,x,200,150,200);
   }

@@ -165,6 +165,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
              </div>
          </div>
          <p>If we think about it,  we want to draw a column of circles for each of the circles in our row. When x=20, we want to draw a column at 20, when x= 40, we want to draw a column there too. Take a look at this animation: each time we draw a circle in the top row (with y = 60), we also draw another two (with y = 90 and y = 120): x is incrementing by 30, and each time 30 is added to x, a column is created as well with y incrementing by 30 until it reaches the height of the canvas.
+        <p>
          <img src="../../../images/lessons/unit_3/1.5/rows.gif"/><p>
     </div>
 </div>
@@ -177,7 +178,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
         <p>There is a short and easy way to do this in code with a “nested for loop.” A nested loop means one loop is running inside of the other loop.
         <p>We’ve actually seen this before. We are running a for loop inside of a draw loop. The for loop repeats a block of code, and the draw loop repeats all of the code that is inside it as well. That’s how we created our drawing app. The draw loop would run again and again and redraw our ellipse in the location of our mouse.
         <p>You might think that if this is the case, when we draw ellipses in a for loop, we should see the ellipses being drawn one at a time (like the animation above) because an ellipse should only be drawn once every time the draw loop runs, but in fact the draw loop only updates once everything inside of it has been run, including the entire for loop.
-         <img src="../../../images/lessons/unit_3/1.5/draw.png"/><p>
+         <p><img src="../../../images/lessons/unit_3/1.5/draw.png"/><p>
         <p>If we nested a for loop inside of another for loop, the same concept would apply. The nested loop would run until completed each time the exterior loop is run. In the example below we draw an ellipse at an x location with the variable x and a y location with the variable y. X is incremented by 30 in the outer for loop (which will draw a row) and in the inner for loop, y is incremented by 30 (which will draw a column).
         <p>Each time the x loop is run, it draws an ellipse in the row,  as well as an entire column at that x location as illustrated by the animation above.  Since this canvas is 120 pixels high, and three ellipses will be drawn per column before the condition y &lt; width is no longer true and the loop is completed, the inner loop will run three times for every one time that the outer loop is run.
         <div class="sketch_container">

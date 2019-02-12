@@ -1,7 +1,7 @@
 var tree;
 
 function preload() {
-  tree = loadImage("../../media/birch.png")
+  tree = loadImage("birch.png")
 }
 
 function setup() {
@@ -11,6 +11,6 @@ function setup() {
 }
 
 function draw() {
-  background(64);
+  background(128);
   image(tree,200,200,100,200);
  }

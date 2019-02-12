@@ -7,9 +7,9 @@ function setup() {
 }
 
 function draw() {
-  background(64);
+  background(128);
  //when the image has finished loading, call our imageLoaded function (defined below)
-  tree = loadImage("../../media/birch.png", imageLoaded)
+  tree = loadImage("birch.png", imageLoaded)
   }
 
 function imageLoaded(){ //this function could be called whatever we want

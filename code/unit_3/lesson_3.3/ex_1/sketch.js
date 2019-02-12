@@ -1,4 +1,4 @@
-var tree
+var tree;
 
 function preload() {
   tree = loadImage("birch.png")

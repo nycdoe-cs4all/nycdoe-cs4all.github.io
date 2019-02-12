@@ -9,7 +9,7 @@ function draw() {
 
 	//WHILE LOOP
 	var x= 100;//initialize the variable to 100
-	while(x<width){ //check for a condition (keep this loop going as long as this is true)
+	while(width &gt; x){ //check for a condition (keep this loop going as long as this is true)
 		//draw design
 		fill(255,0,0);//add a red fill
 		ellipse(x,y1,40,40); //draw an ellipse at the x-location of the variable x and y1
@@ -24,7 +24,7 @@ function draw() {
 
 	//FOR LOOP
 	//for(initialize;condition;increment)
-	for(x=100;x<width;x=x+100){//the for loop contains all of the same elements but in 1 line
+	for(x=100;x&lt;width;x=x+100){//the for loop contains all of the same elements but in 1 line
 
 		fill(255,0,0);//add a red fill
 		ellipse(x,y2,40,40); //draw an ellipse at the x-location of the variable x and y2

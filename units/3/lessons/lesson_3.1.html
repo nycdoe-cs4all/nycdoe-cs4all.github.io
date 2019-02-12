@@ -159,7 +159,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 <div class="row">
     <div class="span2">
-        <p>Finding, Saving && Uploading Images</p>
+        <p>Loading Files</p>
     </div>
     <div class="span8">
         <p>p5 can draw images, text with certain font types, and play sounds. In order to display (or play) them, it must first load the file in question. Take a look at the sketch below: we load the birch.png file within setup(), and then call the image function to draw it in draw(). From this code, one would expect to see an image in the sketch. However, chances are you are only seeing the gray background.
@@ -169,13 +169,14 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
              <div class = "editor" id="editor_1" style="height:250px;">
              </div>
         </div>
+        <p><a href="https://editor.p5js.org/cs4all/sketches/P8cSm0I12">Code</a>
         <p>Why is this happening? Let's look at what loadImage does in more detail. The file birch.png is stored in on a server computer somewhere on the web. loadImage makes a request to the server to send the file to the computer where p5 is running. Image files can be sizeable: the transfer takes some time. This would not be a problem if Javascript, the language we are programming in, was synchronous ––if, after calling a function, it paused running until that function has finished doing its task. Javascript, however, is asynchronous, meaning that it allows multiple things to happen at the same time. After we call loadImage, and while the transfer is still not complete, p5 goes on to execute the lines that come next on our program: it creates the canvas (line 5), and continues to the draw function, where it draws the gray background), and attempts to draw birch.png, most likely before it has been fully transferred to our computer.
     </div>
 </div>
 
 <div class="row">
     <div class="span2">
-        <p>Use <code>preload()</code></p>
+        <p>Use preload()</p>
     </div>
     <div class="span8">
         <p>To solve this problem, p5 adds another step to our familiar <code>setup()</code> once, and <code>draw()</code> forever program flow: the <code>preload()</code> function. When it runs our sketch, p5 calls <code>preload()</code> first, and then pauses execution until <code>loadImage</code> has finished loading our image file. In the following example, we place our call to <code>loadImage</code> within the preload function, to make sure that the image drawing function will never be called before <code>birch.png</code> is fully loaded.
@@ -184,6 +185,8 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
              <div class = "editor" id="editor_2" style="height:250px;">
              </div>
         </div>
+        <p><a href="https://editor.p5js.org/cs4all/sketches/Yy5DF2sOL">Code</a>
+        <p>
     </div>
 </div>
 
@@ -222,6 +225,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
              <div class = "editor" id="editor_4" style="height:250px;">
              </div>
         </div>
+        <p><a href="https://editor.p5js.org/cs4all/sketches/3-Ldo0Vsx">Code</a>
         <p>Both the preload and callback techniques apply to any other type of media files that need to be loaded into your sketch, such as sound or font files.
     </div>
 </div>
