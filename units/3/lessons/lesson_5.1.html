@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5.1 Sound Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_5.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>5.1 Sound Files</h1>
+	<h2>How can can sounds be embedded with code?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This lesson covers the basics of digital audio file formats and how to download and use sounds in a p5 sketch. This lesson also introduces resources for downloading free, Creative Commons licensed sounds for use in projects.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> search for Creative Commons license sound files and add them to a p5 project  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> File Format </th>
+						<td> The structure of how information is stored (encoded) in a computer file. </td>
+					</tr>
+				
+					<tr>
+						<th> File Compression </th>
+						<td> Data compression, source coding, or bit-rate reduction involves encoding information using fewer bits (unit of computer memory) than the original representation. </td>
+					</tr>
+				
+					<tr>
+						<th> Variables </th>
+						<td> They store information that can be used and manipulated in a program. It’s helpful to think of them as a container that holds information. </td>
+					</tr>
+				
+					<tr>
+						<th> Audio File </th>
+						<td> A file format that stores digital audio data. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://archive.org/details/audio">Archive.org</a></li>
+				
+					<li><a href="https://www.youtube.com/watch?v=ZviF5FGEdM4&t=9s">Archive.org Video Tutorial</a></li>
+				
+					<li><a href="https://www.youtube.com/watch?v=_3sNMfO4joM">Free Music Archive Video Tutorial</a></li>
+				
+					<li><a href="https://soundcloud.com/wearecc">wearecc - Creative Commons Soundcloud Channel</a></li>
+				
+					<li><a href="https://creativecommons.org/licenses/">Creative Commons License</a></li>
+				
+					<li><a href="https://en.wikipedia.org/wiki/Creative_Commons_license#Types_of_licenses">Type of Creative Commons Licenses</a></li>
+				
+					<li><a href="https://www.makeuseof.com/tag/audio-file-format-right-needs/">Audio File Formats</a></li>
+				
+					<li><a href="https://en.wikipedia.org/wiki/Audio_file_format">Audio File Format Wikipedia</a></li>
+				
+					<li><a href="https://en.wikipedia.org/wiki/Data_compression#Audio">Data Compression</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Creative Commons</p>
+    </div>
+    <div class="span8">
+        <p>For projects in this learning activity, sounds published under the Creative Commons license will be used.
+        <p>
+        The Creative Commons defines several licenses with the aim of providing standardized ways for creators to grant copyright permissions to their work to the public.  This means their work is available for others to use in creative works such as remixes.  Each license provides levels of restrictions and requirements which can be specified by the creator or author.
+        <p>
+        Using Creative Commons licenses in the classroom achieves two goals:<ul>
+
+        <li>Making users aware of the rules around publishing and reusing media.
+        <li>Ensuring that the work made by individuals is not subject to copyright violations (though most student work is generally safe from copyright violation and covered by fair use as long as it stays in the classroom, this is a good practice to learn).</ul>
+
+        <p>
+        There are a few basic terms for licenses which are combined in some cases.<ul>
+
+        <li><strong>Attribution</strong> licenses require credit given to the original author.
+        <li><strong>ShareAlike</strong> licenses require attribution and that any new work is licensed under identical terms.  This means the person using the media in a remix or new work would have to publish using the same Creative Commons license.
+        <li><strong>NoDerivs</strong> allows for redistribution as long as the work is unchanged.
+        <li><strong>NonCommercial</strong> requires attribution and that new works must be non-commercial, or not for sale.</ul>
+
+        <p>
+        The sounds available on the websites listed in the resources page will specify their license type.  Some sites also allow the sounds to be filtered according to the license.
+        <p>
+        The most permissive Creative Commons license is the 0 (zero) license which permits reuse without attribution for any purpose.
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>Sound Files</p>
+    </div>
+    <div class="span8">
+            <p>Sounds hosted on the web come in a variety of different files formats.  File formats are standards used to encode the data of a recorded sound in a way that can be recognized and played back by many different software platforms.
+            <p>
+            Most sound file formats, along with other types of media like images and videos, use a data processing technique called <strong>compression</strong> to make the audio data take up less computer memory, making it easier to store and transfer files on the internet.
+            <p>
+            Compression algorithms reduce file size in various ways, some of which are <strong>lossy</strong>, meaning that some data from the original file or recorded sound is omitted.  Lossy formats attempt to remove parts of the sound that will go unnoticed by human listeners.
+            <p>
+            This is a brief overview of some of the common file formats.  WAV and MP3 are the most common formats found on the web, and MP3 is recommended for class projects.
+            <p>
+            <table class="table">
+              <tr>
+               <td>Extension
+               </td>
+               <td>Format
+               </td>
+               <td>Year
+               </td>
+               <td>Description
+               </td>
+              </tr>
+              <tr>
+               <td>.wav
+               </td>
+               <td>Waveform Audio File Format
+               </td>
+               <td>1991
+               </td>
+               <td>Uncompressed - Large file size, high quality
+               </td>
+              </tr>
+              <tr>
+               <td>.mp3
+               </td>
+               <td>MPEG-2 Audio Layer III
+               </td>
+               <td>1993
+               </td>
+               <td>Highly compressed, relatively low quality, most common consumer audio format
+               </td>
+              </tr>
+              <tr>
+               <td>.aac
+               </td>
+               <td>Advanced Audio Coding
+               </td>
+               <td>1997
+               </td>
+               <td>Highly compressed mp3 competitor with higher sound quality, similar bit rate.
+               </td>
+              </tr>
+              <tr>
+               <td>.flac
+               </td>
+               <td>Free Lossless Audio Codec
+               </td>
+               <td>2001
+               </td>
+               <td>Open source, free format, high quality with compression
+               </td>
+              </tr>
+              <tr>
+               <td>.ogg
+               </td>
+               <td>Ogg
+               </td>
+               <td>2003
+               </td>
+               <td>Highly compressed, open source software
+               </td>
+              </tr>
+              <tr>
+               <td>.webm
+               </td>
+               <td>WebM
+               </td>
+               <td>2010
+               </td>
+               <td>Web-specific format
+               </td>
+              </tr>
+              <tr>
+               <td>.aiff
+               </td>
+               <td>Audio Interchange File Format
+               </td>
+               <td>1988
+               </td>
+               <td>Uncompressed, developed by Apple
+               </td>
+              </tr>
+            </table></p>
+
+            <p>Although MP3s have a lower quality, they became the most popular sound file format because they were an early way to share music relatively easily because they greatly reduced the file size or the amount of space a file takes in a computer's memory.  This was especially important in the early days of the internet when connection speeds were slow and a downloading a song at 3MB, typical MP3 size, vs 30MB for a WAV file.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Downloading a Sound</p>
+    </div>
+    <div class="span8">
+        <p>Create an account on <a href="www.freesound.org">www.freesound.org</a>. Once logged into Freesound.org, you can find sounds by browsing in the <strong>Sounds</strong> tab or using the <strong>Search</strong> bar.
+        <p><img src="../../../images/lessons/unit_3/5.1/explosion4.png"/><p>
+        <p><img src="../../../images/lessons/unit_3/5.1/freesound.png"/><p>
+        <p><img src="../../../images/lessons/unit_3/5.1/solo.png"/><p>
+
+        <p>
+        The results page will list Search results with some information about the sound file and preview player.  The sound can be played to preview here but can only be downloaded from the sound page.
+        <p>
+        The search results show the duration of the sound file, the user who uploaded the file, the name, rating, number of downloads and date of upload.
+        <p><img src="../../../images/lessons/unit_3/5.1/altosolo.png"/><p>
+        Next to the search results, there are filters to find specific attributes within the results.
+        <p>
+        The first is the license.
+        <p><img src="../../../images/lessons/unit_3/5.1/licenses.png"/><p>
+        Here are all Creative Commons licenses, with the number of results using each.
+        <p>
+        Next are tags.
+        <p><img src="../../../images/lessons/unit_3/5.1/tags.png"/><p>
+        Then <strong>file type</strong>.
+        <p><img src="../../../images/lessons/unit_3/5.1/type.png"/><p>
+        Depending on what kind of sound you search for you may get very different results here.  Because it is a site for sound hobbyists, you often see results with better quality sound formats such as AIFF, WAV, and FLAC.
+        <p>
+        It even filters by file parameters such as <strong>sample rate</strong>.
+        <p><img src="../../../images/lessons/unit_3/5.1/samplerate.png"/><p>
+        The higher sample rate the higher quality sound, and also possibly larger file size.
+        <p><img src="../../../images/lessons/unit_3/5.1/bitdepth.png"/><p>
+        <strong>Bit depth</strong> works the same way, a higher number means higher quality and larger file size.  There is also bit rate, which wasn't covered in the intro lesson on sound and is more complex to explain but has the same relationship, higher bit rate, higher quality, higher file size.
+        <p><img src="../../../images/lessons/unit_3/5.1/channels.png"/><p>
+        <strong>Channels</strong> refer to one or two channels.  Most sounds are recorded in stereo, meaning two channels representing the left and right ear for recreating natural human hearing.  Many sound files are mixed to be mono or single channel to significantly reduce file size.  A mono sound has both channels repeated in the left and right output.
+        <p>
+        Once you choose a file to use, click on the file name to go to the file page where more information is available.
+        <p><img src="../../../images/lessons/unit_3/5.1/altosolo.png"/><p>
+        This page has a download button to save the file, comments from users and a link to the specific license used by the file.
+        <p>
+        Keep links to all of the files used for their projects, regardless of the license. In the comments at the top of the sketch add the link to the original sound source.
+        <p><img src="../../../images/lessons/unit_3/5.1/playasound.png"/><p>
+        After clicking on the Download button, the file should be downloaded to the <strong>Downloads</strong> folder on their computer, depending on what operating system they are using. Locate the file and go through the steps to upload it to a p5 sketch. Files downloaded from Freesound.org tend to have long names, it is recommended to rename the files something shorter before uploading.
+        <p><img src="../../../images/lessons/unit_3/5.1/tenor.png"/><p>
+        <p><img src="../../../images/lessons/unit_3/5.1/saxwav.png"/><p>
+        Duplicate the previous lesson p5 sketch and upload the sound file by following these steps:.<ol>
+
+        <li>Open the file browser in the alpha editor.<p>
+        <img src="../../../images/lessons/unit_3/5.1/playcircle.png"/></li>
+        <li>Click the drop-down arrow next to the main project folder and click<strong> Add file</strong>.<p>
+        <img src="../../../images/lessons/unit_3/5.1/projectfoldercircle.png"/><br>
+        <img src="../../../images/lessons/unit_3/5.1/projectfolder2.png"/></li>
+        <li>Click on the large <strong>Drop files</strong> box to open a file browser to choose a file from the computer or drag a file on top of the area.<p>
+        <img src="../../../images/lessons/unit_3/5.1/addfilenofile.png"/><br>
+        <img src="../../../images/lessons/unit_3/5.1/addfile.png"/></li></ol>
+        <p>The file will now be in the main project folder and can be referenced from the sketch.
+        <p><img src="../../../images/lessons/unit_3/5.1/projectfolder.png"/><p>
+        After adding sounds, you simply have to edit the existing code and change the argument in <code>loadSound</code> to play the new sound.
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Add Sounds To A Sketch</p>
+    </div>
+    <div class="span8">
+        <p>Find three sounds to download and add to a p5 sketch.  Think of three sounds that you relate to. This could be sounds that make you think of activities, mood, favorite instruments, or anything else.
+        <p>
+        Now search for them in Freesound.org. Sounds should be 10 seconds long at the most. You might not find the exact same sound, so you will need to be flexible and adapt to the search results.
+        <p>
+        For each sound, include a link to the original sound source in the comments.
+        <p>
+        Use this <a href="https://editor.p5js.org/cs4all/sketches/yh1JNqlF2">sample code</a> to get you started. Read the comments to get a better understanding. In the next lesson, we'll go over these new functions.
+        <p>
+        Checklist<ol>
+
+        <li>Download three creative commons sound files
+        <li>Upload all sounds to a p5 sketch
+        <li>Add links to each sound source in comments
+        <li>Make a version of the sketch to play each sound file individually.
+        <li>Variables names describe the sounds.</li></ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Extensions</p>
+    </div>
+    <div class="span8">
+        <ul>
+
+        <li>Use <code>mousePressed()</code> and boolean logic to play the sound or add a button to trigger the sound.
+        <li><a href="https://p5js.org/examples/sound-record-save-audio.html">This example</a> continues from the example in the previous sketch and adds saving a sound file from the recorded sound.  Comments in the example explain how to track recording states and using keyboard events to advance the recording.  The sketch only supports making one recording, simply restart it by pressing the Play button to make a new one.</ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_5.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>

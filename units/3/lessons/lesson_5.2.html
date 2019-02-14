@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5.2 Playing Sounds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_5.2">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>5.2 Playing Sounds</h1>
+	<h2>How can can sounds be embedded with code?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This lesson also covers some of the basic qualities of sound and loading a sound in a p5 sketch, re-introduces keyboard events with p5 functions, and reviews conditionals to create conditional keyboard events with specific keys.</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> load and play a sound file in a p5 sketch.  </li>
+			
+				<li> use keyboard events to trigger a sound file.  </li>
+			
+				<li> use a specific keyboard key to trigger a sound file.  </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> Library </th>
+						<td> A collection of additional features or functions built by other users or programmers that extend the functionality of a programming language. </td>
+					</tr>
+				
+					<tr>
+						<th> Method </th>
+						<td> A method is a type of function associated with an object. </td>
+					</tr>
+				
+					<tr>
+						<th> Event </th>
+						<td> An action or occurrence recognized by the software, often originating from the external environment, such as a mouse click or keyboard press. </td>
+					</tr>
+				
+					<tr>
+						<th> Trigger </th>
+						<td> Cause (an event or situation) to happen or exist. </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=Pn1g1wjxl_0&index=1&list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW">Coding Train Sound Examples Playlist</a></li>
+				
+					<li><a href="https://science.howstuffworks.com/sound-info.htm">How Stuff Works: Sound</a></li>
+				
+					<li><a href="https://p5js.org/reference/#/p5/keyTyped">keyTyped</a></li>
+				
+					<li><a href="http://alpha.editor.p5js.org/owenroberts/sketches/rJiSCwUV7">Key press to trigger sound example</a></li>
+				
+					<li><a href="https://p5js.org/reference/#/p5/key">key</a></li>
+				
+					<li><a href="https://p5js.org/reference/#/p5/keyCode">keyCode</a></li>
+				
+					<li><a href="http://keycode.info/">keyCode.info</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
+<div class="row">
+    <div class="span2">
+        <p>Sound Code</p>
+    </div>
+    <div class="span8">
+        <table class="table">
+          <tr>
+           <td><strong>Code</strong>
+           </td>
+           <td><strong>Type</strong>
+           </td>
+           <td><strong>Purpose</strong>
+           </td>
+           <td><strong>Example</strong>
+           </td>
+          </tr>
+          <tr>
+           <td><code>loadSound</code>
+           </td>
+           <td>function
+           </td>
+           <td>Load sound file data.
+           </td>
+           <td><code>var sound = loadSound("sample.wav");</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>preload</code>
+           </td>
+           <td>function
+           </td>
+           <td>Preloads sound and image files before setup.
+           </td>
+           <td><code>function preload() {</code>
+        <p>
+        <code>  // load sounds</code>
+        <p>
+        <code>}</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>play</code>
+           </td>
+           <td>method
+           </td>
+           <td>Plays a sound file.
+           </td>
+           <td><code>sound.play();</code>
+           </td>
+          </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="span2">
+        <p>p5.js Sound Library</p>
+    </div>
+    <div class="span8">
+        <p>Often, programming languages have additional features or functions built by other users or programmers. This is what's called a <strong>library</strong>. They collect functions and extends its functionality. They also come with documentation and reference resources.
+        <p>
+        In this learning activity, we'll work with a library called <strong><a href="https://p5js.org/reference/#/libraries/p5.sound">p5.sound</a></strong>.
+        <p>
+        <strong>p5.sound</strong> extends p5 with Web Audio functionality including audio input, playback, analysis, and synthesis. This library is referenced automatically in the HTML header, so we don't need to do anything else to access it.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Playing A Sound In p5</p>
+    </div>
+    <div class="span8">
+        <p>To add sounds to a p5 sketch, first, a sound file needs to be <strong><em>uploaded to the p5 project folder</em></strong>. To play the sound in a p5 sketch it first has to be <strong><em>loaded into the computer's memory</em></strong>. All projects in previous units had graphics generated by p5 so we didn't need to upload files to p5.
+        <p>
+        In the case of audio, we are loading a pre-recorded sound file into memory.  This is known as <strong>external media</strong>.  Using external media requires a new function called <strong><code>preload()</code></strong>.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Playing A Sound In p5</p>
+    </div>
+    <div class="span8">
+        <p>We preload sounds using a new function called <code>preload()</code> and <strong>storing them in variables</strong>. We can then call sounds in a lot of different ways, like by having keys pressed or mouse clicks.
+        <p>
+        The <strong><code>preload()</code></strong> function actually runs before the <code>setup</code> function.  However, it isn't used to draw anything or create HTML or CSS.  The <code>preload</code> function should only be used to load external media files.  This makes the setup function act like a callback, the whole program waits until the media is done loading and then starts.
+        This is kind of like the callback functions added to buttons in the art remix examples.  Those functions defined an action that should wait until a specific event, the button press, to run.  In this case, our whole sketch is waiting for a different event, the files finished loading, to start.
+        <p>
+        Preload allows us to access our sounds in a much faster way since the program will wait until the files are loaded and then it starts. Then inside <code>preload()</code>, we use another function called <strong><code>loadSound()</code></strong> to call the sound from our folder.
+        <div class="sketch_container">
+            <div class = "editor" id="editor_1" style="height:250px;">
+            </div>
+        </div>
+        <p>Walk through <a href="https://editor.p5js.org/cs4all/sketches/HJN9NhG-E">this example</a> . This sketch demonstrates loading the sound file and then playing it when the sketch is loaded.  Comments in the code explain the program structure and the sound object.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>.play()</p>
+    </div>
+    <div class="span8">
+        <p>The previous example introduces a new syntax that we've seen before in the context of arrays: <strong>dot notation</strong>.
+        <p>
+        Since we are storing data in a variable we need a way to attach it to function. A method is a type of function associated with an object. All of our sounds are stored as objects.
+        <p>
+        In this case, to play back our sound we'll need to write something like this:
+        <p>
+        <code>happySong.play()</code>
+        <p>
+        <strong><code>.play()</code></strong> is a method that plays a sound.
+        The .play() method should always be put in the setup() function or an event function like mousePressed().
+        <p>
+        <em>.play() should never be put in the draw() function.</em>
+        <p>
+        This is because <code>draw()</code> is a loop which is updating approximately 60 times a second. If <code>.play()</code> is put inside the draw function, the sound will be restarting over and over again instead of just playing once.
+        <p>
+        As an exercise to review how the draw function works and why we don't want to put .play() inside it, you could try and start a sound in <code>draw()</code>, listen to the result and explain what is happening.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #1: Load Multiple Sounds</p>
+    </div>
+    <div class="span8">
+        <p>Using the starter template, fill in the code to load the three sounds you've already downloaded. You need to store each sound in its own variable. Attach one sound to the play method to test that each one was loaded correctly.<ul>
+        <li><a href="https://editor.p5js.org/cs4all/sketches/opik8xLJz">Starter code</a></li></ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>keyPressed Code</p>
+    </div>
+    <div class="span8">
+        <table class="table">
+          <tr>
+           <td colspan="4" >New code in this section
+           </td>
+          </tr>
+          <tr>
+           <td>Code
+           </td>
+           <td>Type
+           </td>
+           <td>Purpose
+           </td>
+           <td>Example
+           </td>
+          </tr>
+          <tr>
+           <td><code>keyTyped</code>
+           </td>
+           <td>event
+           </td>
+           <td>a function is called when the key is typed (pressed and released)
+           </td>
+           <td><code>function keyTyped() {</code>
+        <p>
+        <code>  // play sound</code>
+        <p>
+        <code>}</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>keyPressed</code>
+           </td>
+           <td>event
+           </td>
+           <td>function is called when key is pressed
+           </td>
+           <td><code>function keyPressed() {</code>
+        <p>
+        <code>  // play sound</code>
+        <p>
+        <code>}</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>keyReleased</code>
+           </td>
+           <td>event
+           </td>
+           <td>function is called when key is released
+           </td>
+           <td><code>function keyReleased() {</code>
+        <p>
+        <code>  // play sound</code>
+        <p>
+        <code>}</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>pause</code>
+           </td>
+           <td>method
+           </td>
+           <td>pauses a sound file playback
+           </td>
+           <td><code>sound.pause();</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>stop</code>
+           </td>
+           <td>method
+           </td>
+           <td>stops a sound file playback
+           </td>
+           <td><code>sound.stop();</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>playMode</code>
+           </td>
+           <td>method
+           </td>
+           <td>changes the sample to play multiple times or restart when triggered
+           </td>
+           <td><code>sound.playMode('sustain');</code>
+        <p>
+        <code>sound.playMode('restart');</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>key</code>
+           </td>
+           <td>system variable
+           </td>
+           <td>stores the alphabetical value of the last key pressed by user
+           </td>
+           <td><code>if (key == 'A') {</code>
+        <p>
+        <code>  sound.play();</code>
+        <p>
+        <code>}</code>
+           </td>
+          </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #2: Use a keypress to trigger a single sound</p>
+    </div>
+    <div class="span8">
+        <p>Starting from the previous lesson sketch with three sound files, use a keypress to trigger one of the sounds.  Try testing the <code>keyPress</code> function with all three sounds.
+        <p>
+        You may want to choose new sounds after adding keyboard presses to make your project more fun to play depending on the length of the sounds you're using and how they sound when they're playing together.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Keyboard Conditional Code</p>
+    </div>
+    <div class="span8">
+        <table class="table">
+          <tr>
+           <td colspan="4" ><code>Ex. var sound = loadSound("sample.wav");</code>
+           </td>
+          </tr>
+          <tr>
+           <td>Code
+           </td>
+           <td>Type
+           </td>
+           <td>Purpose
+           </td>
+           <td>Example
+           </td>
+          </tr>
+          <tr>
+           <td><code>isPlaying</code>
+           </td>
+           <td>method
+           </td>
+           <td>is <code>true</code> if a sound is playing, <code>false</code> if a sound is stopped or paused. <strong>Note</strong> the parentheses at the end, unlike <code>keyIsPressed</code>.
+           </td>
+           <td><code>if (sound.isPlaying()) {</code>
+        <p>
+        <code>  sound.pause();</code>
+        <p>
+        <code>}</code>
+           </td>
+          </tr>
+          <tr>
+           <td><code>key</code>
+           </td>
+           <td>system variable
+           </td>
+           <td>stores the alphabetical value of the last key pressed by user
+           </td>
+           <td><code>if (key == 'A') {</code>
+            <p>
+            <code>  sound.play();</code>
+            <p>
+            <code>}</code>
+               </td>
+              </tr>
+              <tr>
+               <td><code>keyCode</code>
+               </td>
+               <td>system variable
+               </td>
+               <td>stores the ASCII (numerical) value of the last key pressed by user
+               </td>
+               <td><code>// space bar</code>
+                <p>
+                <code>if (keyCode == 32) {</code>
+                <p>
+                <code>  sound.play();</code>
+                <p>
+                <code>}</code>
+           </td>
+          </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Keyboard Conditionals</p>
+    </div>
+    <div class="span8">
+        <p>Sound objects in p5 have a method called .<code>isPlaying()</code> which will return <code>true</code> when a sound is playing and <code>false</code> when it is paused or stopped.  Using this with a conditional statement, a sound can be played and stopped by pressing the same key. <ol>
+
+        <li><a href="https://editor.p5js.org/cs4all/sketches/rySgK3GbN">This example</a> adds a conditional statement to toggle the background color depending on whether the sound is being played or not.  <ol>
+
+         <li>In order to use specific keys to play different sound files, a conditional statement can be used to determine if the current <code>key</code> value is a specific key on the keyboard.</ol>
+        <li>In <a href="https://editor.p5js.org/cs4all/sketches/Sy0N_hMWN">this example</a>, a conditional is added to specify a key to trigger the sound.  A second conditional statement makes another key stop the sound.
+        <li><a href="https://editor.p5js.org/cs4all/sketches/ByLmY2zb4">This variation</a> uses the same key to start and stop the sound.  Both examples include comments explaining the use of key variables.</ol>
+
+        <p>
+        <strong>Note the difference between <code>pause</code> and <code>stop</code>:</strong>  Pausing a sound means it will pick up again playing where it left off.  Stop makes the sound go back to the beginning.
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Exercise #3: Add an event and conditional statements to play each sound</p>
+    </div>
+    <div class="span8">
+        <p>Starting from the previous lesson sketch with three sound files, add an event and conditional statements to play each sound with a different key on the keyboard.  Also, include a single key to stop all of the sounds.
+        <p>
+        You can take a look at this <a href="https://editor.p5js.org/cs4all/sketches/M24hlHmTa">sample code</a> to get you started.
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_5.2/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>
