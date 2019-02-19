@@ -198,7 +198,7 @@ a:hover {
 }
 
 .span8 img {
-	width: 420px;
+	width: auto;
 	border: 1px solid black;
 }
 

@@ -231,7 +231,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
 
 <div class="row">
     <div class="span2">
-        <p>Playing A Sound In p5</p>
+        <p>preload(), loadsound()</p>
     </div>
     <div class="span8">
         <p>We preload sounds using a new function called <code>preload()</code> and <strong>storing them in variables</strong>. We can then call sounds in a lot of different ways, like by having keys pressed or mouse clicks.
@@ -391,6 +391,24 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
            </td>
           </tr>
         </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span2">
+        <p>Keyboard Events</p>
+    </div>
+    <div class="span8">
+        <p>Like <code>mouseClicked</code>, <code>mousePressed</code> and <code>mouseReleased</code>, keyboard events are functions that are called once an event occurs.
+        <p>
+        For the keyboard, the callback event functions defined by p5 are:<ul>
+
+        <li><code>keyPressed</code>: when the user first presses a key
+        <li><code>keyReleased</code>: when the key is released
+        <li><code>keyTyped</code>: which indicates a key has been pressed and released</ul>
+
+        <p>Since we are working with sound, a time-based medium, <code>keyPressed</code> will be used, meaning the sample will be triggered as soon as a key is pressed, rather than after the key is released, to give immediate feedback to the user.  This introduces a bit of a bug, however, which is that the <code>keyPressed</code> will set the <code>key</code> environment variable to upper case letters, even when lower case letters are pressed.  To accommodate this, use only upper case letters in the key conditional examples.  For more on this, check this page in the <a href="https://github.com/processing/p5.js/issues/536">p5 Issues</a>.
+        In <a href="https://editor.p5js.org/cs4all/sketches/r1ypD2GZN">this example</a>, any key pressed will trigger the saxophone solo.
     </div>
 </div>
 

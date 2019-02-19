@@ -6,7 +6,7 @@ function draw() {
     background(220);
     var x= 100;//initialize the variable to 0 so that the x position of the 1st shape will be 20
 
-    while(x<width){ //check for a condition (keep this loop going as long as this is true)
+    while(width > x){ //check for a condition (keep this loop going as long as this is true)
 
         fill(255,0,0);//add a red fill
         ellipse(x,60,40,40); //draw an ellipse at the x-location of the variable x

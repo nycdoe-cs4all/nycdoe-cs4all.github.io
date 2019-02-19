@@ -207,10 +207,13 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
             <li>Optional: height (in pixels) - if we would like to resize. </ol>
                 <p>
         Once you get one image working, trying to get more! As a special challenge, see if you can find images with <em>transparent backgrounds</em> so you can overlap them instead of having an unsightly grid of pictures.
+        <p><img src="../../../images/lessons/unit_3/3.1/tree.png"/>
         <div class="sketch_container">
              <div class = "editor" id="editor_3" style="height:250px;">
              </div>
         </div>
+        <p><a href="https://editor.p5js.org/cs4all/sketches/Yy5DF2sOL">Code</a>
+
     </div>
 </div>
 
@@ -221,6 +224,7 @@ TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
     <div class="span8">
         <p>In some cases, we do not know which image we need to load at the time we are writing the code. Perhaps it comes from a social media account that updates while our sketch is running after <code>preload</code> has been called. In cases like this, we can use a <em>callback</em> function. Instead of placing our call to <code>loadImage</code> within the <code>preload</code> function, we place it in our <code>setup</code> or <code>draw </code>functions as appropriate, passing an extra parameter to it. This second parameter is the name of the function p5 should call once <code>loadImage</code> is done. In this case, we called it <code>imageLoaded</code>. Within this function, it is safe to draw the image to the canvas.
         <p>Both methods will allow you to successfully load and draw an image in your program. For the purposes of this course, you can pick your favorite to use on any projects we create. As you become a more sophisticated program, it may become obvious, in certain situations, why one method is better than another, just like a practiced artist knows when to use which type of pen or pencil.
+        <p><img src="../../../images/lessons/unit_3/3.1/tree.png"/>
         <div class="sketch_container">
              <div class = "editor" id="editor_4" style="height:250px;">
              </div>
