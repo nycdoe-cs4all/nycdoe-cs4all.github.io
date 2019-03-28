@@ -1,11 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.1 Preload, Load Image, Display Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="canonical" href="/units/3/lessons/lesson_3.1">
+    <meta charset="utf-8">
+    <script src="/javascript/libs/jquery.min.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <body>
+      <?php include_once("analyticstracking.php")   ?>
+      <div class="container">
+        <div class="row header-row">   
+	<div class=" span12">
+	  <!-- <div class="menu">
+	    	<h1>Introduction to Computational Media with p5.js</h1>
+	    	<div class="nav">
+	      		<a href="/index.html">INDEX</a>&emsp;
+	    	</div>
+	  </div> -->
+	</div>  
+</div>
+
+
+
+        <!-- Link back to parent unit -->
+
+
+
+<div class="row unit_header">
+	<img src="/images/header_image/cs_for_all.png" width="160px" height="auto"/>
+	<a href="/units/3/overview"><h3>Unit 3 Loops, Arrays, Media<br/>
+	How can sounds, images, and fonts can be combined and manipulated with code?</h3></a>
+	<h1>3.1 Preload, Load Image, Display Image</h1>
+	<h2>How can I utilize the preload function and load images into my program?</h2></br>
+</div>
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Overview</p>
+		</div>
+		<div class="span6">
+			<p>This learning activity demonstrates asynchronous calls and the need to use p5`s preload function or callback functions to make sure media files are fully loaded before trying to access them in our sketches. We will also review how to save images and image file types before doing light coding to add our first images!</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Suggested Duration</p>
+		</div>
+		<div class="span6">
+			<p>45 minutes</p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Objectives</p>
+		</div>
+		<div class="span6">
+			<p>Students will be able to:</p>
+			<ul>
+			
+				<li> Add the preload function to their code  </li>
+			
+				<li> Identify file types   </li>
+			
+		</ul>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Student Outcomes</p>
+		</div>
+		<div class="span6">
+			<p><strong>Algorithms:</strong> </p> <ul>
+<li>Explain the positive and negative impacts of an algorithm&#39;s design on my family or my community.
+<li>Describe how instructions can have different outputs depending on inputs. </li> </ul> <p> <strong>Prototype:</strong> </p> <ul>
+<li>Experiment with the commands of a programming language.</li></ul></p>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Vocabulary</p>
+		</div>
+		<div class="span8">
+			<table class="table">
+				
+					<tr>
+						<th> <code>preload()</code> </th>
+						<td> a function that loads data before the other functions begin running </td>
+					</tr>
+				
+					<tr>
+						<th> callback </th>
+						<td> a function that will execute at a certain time, once another task has been completed </td>
+					</tr>
+				
+					<tr>
+						<th> File Type / Extension </th>
+						<td> the .EXT after a file determines how a computer interprets the data in the file. Common image file types: .gif, .jpeg, .png, .tiff, .svg </td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+
+
+
+	<div class="mainrow row">
+		<div class="span2">
+			<p>Resources</p>
+		</div>
+		<div class="span6">
+			<ul>
+				
+					<li><a href="https://www.youtube.com/watch?v=rO6M5hj0V-o">Coding Train - Uploading Media Files</a></li>
+				
+					<li><a href="https://editor.p5js.org/cs4all/sketches/Yy5DF2sOL">p5.js Media Example #1</a></li>
+				
+					<li><a href="https://editor.p5js.org/cs4all/sketches/3-Ldo0Vsx">p5.js Media Example #2 (callback function)</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+<!--
+TEMPORARY CODE TO AUTOMATICALLY LOAD ALL PLACEHOLDER EXAMPLES FOR UNITS 4 to 6
+ -->
+<!--  -->
+
 <div class="row">
     <div class="span2">
-        <p>Finding, Saving &amp;&amp; Uploading Images</p>
+        <p>Finding, Saving && Uploading Images</p>
     </div>
     <div class="span8">
         <p>Did you know that p5 has been hiding things from you? When we type into the editor, we have so far just been typing into a Javascript file - but Javascript works alongside HTML and CSS to create websites. This HTML and CSS has been there the whole time, hidden by the p5 Editor. If we click the little arrow on the side, we will expand to be able to see our hidden files - and have a space to upload our own files. While we can look through the HTML and CSS if we want (and those of us with some web dev skills might want to start making fully realize sites!) we are going to mostly ignore them for now.
-        <p><img src="../../../images/lessons/unit_3/3.1/image2.gif" /><p>
-        To upload an image, we first need to find an image. The easiest place to do this is to go to Google images and search, but we could pull images from most websites we go on - we can even take screenshots and use those! If you are unsure whether the images are allowed to be used in your project, please select the following filters when searching on Google Images: Click on Tools -&gt; Usage rights -&gt; labeled for reuse. When you want to save an image, right click (or control-click) and select 'Save Image As…' Keep track of the folder where you're saving your images! Most operating systems will save them to a folder called "Downloads".
+        <p><img src="../../../images/lessons/unit_3/3.1/image2.gif"/><p>
+        To upload an image, we first need to find an image. The easiest place to do this is to go to Google images and search, but we could pull images from most websites we go on - we can even take screenshots and use those! If you are unsure whether the images are allowed to be used in your project, please select the following filters when searching on Google Images: Click on Tools -> Usage rights -> labeled for reuse. When you want to save an image, right click (or control-click) and select 'Save Image As…' Keep track of the folder where you're saving your images! Most operating systems will save them to a folder called "Downloads".
         <p>
         Make sure when you save your image you give it an easy to remember name <strong>without any spaces</strong>. Because of how computers process spaces, they <em>hate</em> file names that start with capitals and that include spaces, and that will throw a lot of errors our way.
         <p>
@@ -14,11 +163,11 @@
             <li>.jpg
             <li>.png
             <li>.tiff
-            <li>.bmp&lt;/ul&gt;
+            <li>.bmp</ul>
         <p>Ideally, for this project, we would work with JPEG and PNG files as they're typically small in size and won't take much memory. While we can also use .gif files, we will notice that they do not play their animation in p5. There is a workaround for this, but for now, we will focus on static images. To upload an image, click the downward arrow next to <strong>program-file</strong>, select 'add file', and drag/drop or select the image you'd like to upload. Once you've done this, you can rename the image to an easy file name! Be sure to leave the file's extension.
-        <p><img src="../../../images/lessons/unit_3/3.1/image1.gif" /><p>
-    &lt;/div&gt;
-&lt;/div&gt;
+        <p><img src="../../../images/lessons/unit_3/3.1/image1.gif"/><p>
+    </div>
+</div>
 
 <div class="row">
     <div class="span2">
@@ -28,14 +177,14 @@
         <p>p5 can draw images, text with certain font types, and play sounds. In order to display (or play) them, it must first load the file in question. Take a look at the sketch below: we load the birch.png file within setup(), and then call the image function to draw it in draw(). From this code, one would expect to see an image in the sketch. However, chances are you are only seeing the gray background.
 
         <div class="sketch_container">
-             <iframe id="canvas_iframe_1" src="" width="400px" height="400px"></iframe>
-             <div class="editor" id="editor_1" style="height:250px;">
+             <iframe id="canvas_iframe_1"  src="" width="400px" height="400px"></iframe>
+             <div class = "editor" id="editor_1" style="height:250px;">
              </div>
         </div>
         <p><a href="https://editor.p5js.org/cs4all/sketches/P8cSm0I12">Code</a>
         <p>Why is this happening? Let's look at what loadImage does in more detail. The file birch.png is stored in on a server computer somewhere on the web. loadImage makes a request to the server to send the file to the computer where p5 is running. Image files can be sizeable: the transfer takes some time. This would not be a problem if Javascript, the language we are programming in, was synchronous ––if, after calling a function, it paused running until that function has finished doing its task. Javascript, however, is asynchronous, meaning that it allows multiple things to happen at the same time. After we call loadImage, and while the transfer is still not complete, p5 goes on to execute the lines that come next on our program: it creates the canvas (line 5), and continues to the draw function, where it draws the gray background), and attempts to draw birch.png, most likely before it has been fully transferred to our computer.
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
 <div class="row">
     <div class="span2">
@@ -45,13 +194,13 @@
         <p>To solve this problem, p5 adds another step to our familiar <code>setup()</code> once, and <code>draw()</code> forever program flow: the <code>preload()</code> function. When it runs our sketch, p5 calls <code>preload()</code> first, and then pauses execution until <code>loadImage</code> has finished loading our image file. In the following example, we place our call to <code>loadImage</code> within the preload function, to make sure that the image drawing function will never be called before <code>birch.png</code> is fully loaded.
 
         <div class="sketch_container">
-             <div class="editor" id="editor_2" style="height:250px;">
+             <div class = "editor" id="editor_2" style="height:250px;">
              </div>
         </div>
         <p><a href="https://editor.p5js.org/cs4all/sketches/Yy5DF2sOL">Code</a>
         <p>
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
 <div class="row">
     <div class="span2">
@@ -67,18 +216,18 @@
             <li>x position
             <li>y position
             <li>Optional: width (in pixels) - if we would like to resize.
-            <li>Optional: height (in pixels) - if we would like to resize. &lt;/ol&gt;
+            <li>Optional: height (in pixels) - if we would like to resize. </ol>
                 <p>
         Once you get one image working, trying to get more! As a special challenge, see if you can find images with <em>transparent backgrounds</em> so you can overlap them instead of having an unsightly grid of pictures.
-        <p><img src="../../../images/lessons/unit_3/3.1/tree.png" />
+        <p><img src="../../../images/lessons/unit_3/3.1/tree.png"/>
         <div class="sketch_container">
-             <div class="editor" id="editor_3" style="height:250px;">
+             <div class = "editor" id="editor_3" style="height:250px;">
              </div>
         </div>
         <p><a href="https://editor.p5js.org/cs4all/sketches/Yy5DF2sOL">Code</a>
 
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
 <div class="row">
     <div class="span2">
@@ -87,13 +236,60 @@
     <div class="span8">
         <p>In some cases, we do not know which image we need to load at the time we are writing the code. Perhaps it comes from a social media account that updates while our sketch is running after <code>preload</code> has been called. In cases like this, we can use a <em>callback</em> function. Instead of placing our call to <code>loadImage</code> within the <code>preload</code> function, we place it in our <code>setup</code> or <code>draw </code>functions as appropriate, passing an extra parameter to it. This second parameter is the name of the function p5 should call once <code>loadImage</code> is done. In this case, we called it <code>imageLoaded</code>. Within this function, it is safe to draw the image to the canvas.
         <p>Both methods will allow you to successfully load and draw an image in your program. For the purposes of this course, you can pick your favorite to use on any projects we create. As you become a more sophisticated program, it may become obvious, in certain situations, why one method is better than another, just like a practiced artist knows when to use which type of pen or pencil.
-        <p><img src="../../../images/lessons/unit_3/3.1/tree.png" />
+        <p><img src="../../../images/lessons/unit_3/3.1/tree.png"/>
         <div class="sketch_container">
-             <div class="editor" id="editor_4" style="height:250px;">
+             <div class = "editor" id="editor_4" style="height:250px;">
              </div>
         </div>
         <p><a href="https://editor.p5js.org/cs4all/sketches/3-Ldo0Vsx">Code</a>
         <p>Both the preload and callback techniques apply to any other type of media files that need to be loaded into your sketch, such as sound or font files.
-    &lt;/div&gt;
-&lt;/div&gt;
-</p></p></p></p></p></div></div></p></p></p></li></li></li></li></li></ol></p></p></p></div></div></p></p></p></div></div></p></p></p></div></div></p></p></p></li></li></li></li></li></ul></p></p></p></p></p></div></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var editor;
+	var folder = "../../../code/unit_3/lesson_3.1/";
+
+    $(document).ready(function() {
+
+    	$('.editor').each(function( index ) {
+    		var i = index + 1;
+    		var path = folder + 'ex_' + i;
+    		var code =  path + '/sketch.js'
+    		$("#" + this.id).load(code, function(){
+    			$('#canvas_iframe_' + i).attr("src", path + '/index.html');
+
+    			editor = ace.edit(this);
+			  	editor.setTheme("ace/theme/monokai");
+			  	editor.getSession().setMode('ace/mode/csharp');
+			  	editor.setOption("maxLines", 1000);
+			  	var editor_div = document.getElementById('editor');
+    			editor_div.style.height = editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + 'px';
+    			editor.resize();
+
+    			/* For Reference:
+    				editor.getSession().getDocument().getLength() *
+					editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+				*/
+
+			  });
+		});
+    });
+</script>
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>  
+
+        <div class="extra-room">
+        </div>
+      </div>
+    </body>
+</html>
